@@ -1,14 +1,76 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Filarmónica
     </ion-title>
+    <button ion-button small>Button</button>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-slides pager>
+    <ion-slide style="background-color: green">
+      <h2>Slide 1</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
+  <ion-slides pager>
+    <ion-slide style="background-color: blue">
+      <h2>Slide 1</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: green">
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: red">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
+  <ion-slides pager>
+    <ion-slide style="background-color: red">
+      <h2>Slide 1</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: blue">
+      <h2>Slide 2</h2>
+    </ion-slide>
+
+    <ion-slide style="background-color: green">
+      <h2>Slide 3</h2>
+    </ion-slide>
+  </ion-slides>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons start>
+      <button ion-button icon-end>
+        Inicio
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+      <button ion-button icon-end>
+        Calendario de servicios
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+      <button ion-button icon-end>
+        Formación musical
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+      <button ion-button icon-end>
+        Contenido audiovisual
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+      <button ion-button icon-end>
+        Trivia
+        <ion-icon name="person-add"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
