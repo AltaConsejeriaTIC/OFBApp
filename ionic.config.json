@@ -1,0 +1,7 @@
+{
+  "name": "OFBApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
