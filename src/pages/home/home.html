@@ -1,75 +1,86 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Filarmónica
-    </ion-title>
-    <button ion-button small>Button</button>
+    <ion-icon id="icon-filarmonica" name="icon-nombre-filarmonica"></ion-icon>
+    <img id="header-logo-alcaldia" src="../../assets/icon/Logo_alcaldía.svg" alt="logo alcaldia" />
+    <div id="header-line"></div>
+    <button ion-button icon-only>
+      <ion-icon name="icon-icono-menu"></ion-icon>
+    </button>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content>
   <ion-slides pager>
-    <ion-slide style="background-color: green">
-      <h2>Slide 1</h2>
+    <ion-slide>
+      <img src="../../assets/imgs/XMLID_7_.png">
     </ion-slide>
-
-    <ion-slide style="background-color: blue">
-      <h2>Slide 2</h2>
+    <ion-slide>
+      <ion-slide style="background-color: blue">
+        <h2>Slide 2</h2>
+      </ion-slide>
     </ion-slide>
-
     <ion-slide style="background-color: red">
       <h2>Slide 3</h2>
     </ion-slide>
   </ion-slides>
-  <ion-slides pager>
-    <ion-slide style="background-color: blue">
-      <h2>Slide 1</h2>
-    </ion-slide>
+  <div class="info-concert">
+    <h2>Informacion conciertos</h2>
+  </div>
 
+  <ion-slides pager>
+    <ion-slide>
+      <img src="../../assets/imgs/XMLID_8_.png">
+    </ion-slide>
     <ion-slide style="background-color: green">
       <h2>Slide 2</h2>
     </ion-slide>
-
     <ion-slide style="background-color: red">
       <h2>Slide 3</h2>
     </ion-slide>
   </ion-slides>
-  <ion-slides pager>
-    <ion-slide style="background-color: red">
-      <h2>Slide 1</h2>
-    </ion-slide>
+  <div class="info">
+    <h2>Info noticias</h2>
+  </div>
 
+  <ion-slides pager>
+    <ion-slide>
+      <img src="../../assets/imgs/XMLID_9_.png">
+    </ion-slide>
     <ion-slide style="background-color: blue">
       <h2>Slide 2</h2>
     </ion-slide>
-
     <ion-slide style="background-color: green">
       <h2>Slide 3</h2>
     </ion-slide>
   </ion-slides>
+  <div class="info">
+    <h2>Info clases</h2>
+  </div>
+
 </ion-content>
+
 <ion-footer>
   <ion-toolbar>
     <ion-buttons start>
-      <button ion-button icon-end>
+      <button ion-button icon-start>
+        <ion-icon name="icon-icono-inicio"></ion-icon>
         Inicio
-        <ion-icon name="person-add"></ion-icon>
       </button>
-      <button ion-button icon-end>
+      <button ion-button icon-start>
         Calendario de servicios
-        <ion-icon name="person-add"></ion-icon>
+        <ion-icon name="icon-icono-calendario"></ion-icon>
       </button>
-      <button ion-button icon-end>
+      <button ion-button icon-start>
         Formación musical
-        <ion-icon name="person-add"></ion-icon>
+        <ion-icon name="icon-icono-formacion"></ion-icon>
       </button>
-      <button ion-button icon-end>
+      <button ion-button icon-start>
         Contenido audiovisual
-        <ion-icon name="person-add"></ion-icon>
+        <ion-icon name="icon-icono-contenido"></ion-icon>
       </button>
-      <button ion-button icon-end>
+      <button ion-button icon-start>
         Trivia
-        <ion-icon name="person-add"></ion-icon>
+        <ion-icon name="icon-icono-trivia"></ion-icon>
       </button>
     </ion-buttons>
   </ion-toolbar>

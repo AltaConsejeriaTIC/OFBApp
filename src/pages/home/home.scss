@@ -1,3 +1,71 @@
 page-home {
+  * {
+    margin: 0;
+  }
 
+  ion-header {
+    width: 100%;
+    max-height: 11%;
+
+    ion-navbar {
+      max-height: inherit;
+      align-items: center;
+      ion-icon {
+        color: #ffffff;
+      }
+    }
+    .toolbar-background {
+      background-color: color($colors, primary, base);
+    }
+    .button {
+      vertical-align: top;
+      margin-top: 4%;
+      margin-left: 2%;
+    }
+  }
+
+  ion-content {
+    .scroll-content {
+      background-color: color($colors, primary, base);
+    }
+  }
+
+  ion-footer {
+    width: 100%;
+    height: 11%;
+    .toolbar-background {
+      background-color: color($colors, primary, base);
+    }
+    ion-icon {
+      color: #ffffff;
+    }
+  }
+
+  #icon-filarmonica {
+    margin-left: 6%;
+    font-size: 4.5em;
+    color: #ffffff;
+  }
+  #header-logo-alcaldia {
+    margin-top: 3.3%;
+    margin-left: 17%;
+    width: 31%;
+    height: auto;
+    vertical-align: top;
+  }
+  #header-line {
+    display: inline-block;
+    border-left: 2px solid rgba(255, 255, 255, 0.15);
+    height: 3.5em;
+    margin-left: 5%;
+    vertical-align: top;
+    margin-top: 2%;
+  }
+  .info-concert {
+    background-color: #222433;
+    color: #ffffff;
+  }
+  .info {
+    background-color: green;
+  }
 }
