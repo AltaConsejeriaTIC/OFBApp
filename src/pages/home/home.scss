@@ -32,13 +32,39 @@ page-home {
 
   ion-footer {
     width: 100%;
-    height: 11%;
-    .toolbar-background {
-      background-color: color($colors, primary, base);
-    }
-    ion-icon {
-      color: #ffffff;
-    }
+    height: 10vh;
+    background-color: color($colors, primary, base);
+
+
+    ion-buttons {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      width: 100%;
+      height: 100%;
+      
+      .button {
+        margin: 0;
+        padding: 0;
+        width: calc(100vh - 93vh);
+        height: 70%;
+        font-size: 0.8em;
+        border-radius: 50%;
+
+        &:hover {
+          background-color: color($colors, primary, base)
+        }
+      };
+
+      ion-icon {
+        margin: 0;
+        padding: 0;
+        color: #ffffff;
+      };
+    };
+
+
   }
 
   #icon-filarmonica {
