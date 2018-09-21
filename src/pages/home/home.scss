@@ -61,11 +61,17 @@ page-home {
     vertical-align: top;
     margin-top: 2%;
   }
-  .info-concert {
+  .slide-concernt {
     background-color: #222433;
-    color: #ffffff;
-  }
-  .info {
-    background-color: green;
+    ion-card {
+      margin: 0px;
+      width: 100%;
+    }
+    .ion-card-content {
+      width: 100%;
+      border: none;
+      background-color: #222433;
+      color: white;
+    }
   }
 }
