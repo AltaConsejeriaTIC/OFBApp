@@ -1,6 +1,7 @@
 page-home {
   * {
     margin: 0;
+    color: #ffffff;
   }
 
   ion-header {
@@ -35,7 +36,6 @@ page-home {
     height: 10vh;
     background-color: color($colors, primary, base);
 
-
     ion-buttons {
       display: flex;
       justify-content: space-between;
@@ -43,7 +43,7 @@ page-home {
       padding: 0 15px;
       width: 100%;
       height: 100%;
-      
+
       .button {
         margin: 0;
         padding: 0;
@@ -53,20 +53,21 @@ page-home {
         border-radius: 50%;
 
         &:hover {
-          background-color: color($colors, primary, base)
+          background-color: color($colors, primary, base);
         }
-      };
+      }
 
       ion-icon {
         margin: 0;
         padding: 0;
         color: #ffffff;
-      };
-    };
-
-
+      }
+    }
   }
 
+  #icon-button-inicio {
+    background-color: color($colors, navBarHome, base);
+  }
   #icon-filarmonica {
     margin-left: 6%;
     font-size: 4.5em;
@@ -87,17 +88,31 @@ page-home {
     vertical-align: top;
     margin-top: 2%;
   }
-  .slide-concernt {
+  .section {
+    margin-top: 5vh;
+    margin-left: 2vh;
+
+    .section-line {
+      display: block;
+      border-bottom: 3px solid rgba(255, 74, 193, 0.8);
+      width: 13vw;
+      margin: 4vw 0vw;
+    }
+    .card-md {
+      margin: 0px;
+    }
+    .swiper-slide img {
+      width: 100%;
+    }
+  }
+  .slide-concert {
     background-color: #222433;
     ion-card {
       margin: 0px;
       width: 100%;
     }
-    .ion-card-content {
+    .swiper-slide img {
       width: 100%;
-      border: none;
-      background-color: #222433;
-      color: white;
     }
   }
 }
