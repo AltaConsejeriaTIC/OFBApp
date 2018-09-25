@@ -5,21 +5,30 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
-import { HomePage } from '../pages/home/home';
+import { PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module'
+import { HomePageModule } from '../pages/home/home.module';
+import { CalendarPageModule } from '../pages/calendar/calendar.module';
+import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
+import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
+import { TriviaPageModule } from '../pages/trivia/trivia.module';
 
 @NgModule({
   declarations: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    PrimaryTabsPageModule,
+    HomePageModule,
+    CalendarPageModule,
+    EduProjectPageModule,
+    AudVisContentPageModule,
+    TriviaPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
-    HomePage
+    MyApp
   ],
   providers: [
     StatusBar,
