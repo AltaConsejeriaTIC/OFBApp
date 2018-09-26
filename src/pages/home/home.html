@@ -10,7 +10,8 @@
 </ion-header>
 
 <ion-content>
-  <ion-slides class="slide-concert" pager>
+  <ion-icon name="icon-flecha-izquierda" class="arrows" (click)="prevSlide()"></ion-icon>
+  <ion-slides class="slide-concert" #slides pager>
     <ion-slide>
       <ion-card>
         <img src="../../assets/imgs/XMLID_7_.png" />
@@ -19,13 +20,8 @@
           <ion-card-title>
             concierto 1
           </ion-card-title>
-          <<<<<<< HEAD <p>
-            LAALALAL
-            </p>
-            =======
-            <p>Teatro Mayor Julio Mario Santo Domingo</p>
-            <p>8:30 p.m.</p>
-            >>>>>>> 51ab390924ac2b36738dadcb9ec1c5100f97d632
+          <p>Teatro Mayor Julio Mario Santo Domingo</p>
+          <p>8:30 p.m.</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>
@@ -56,12 +52,13 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
+  <ion-icon name="icon-flecha-derecha-1" class="arrows" (click)="nextSlide()"></ion-icon>
 
   <div class="section">
     <h5>NOTICIAS</h5>
     <div class="section-line"></div>
 
-    <ion-slides spaceBetween="5" centeredSlides="false">
+    <ion-slides class="news" spaceBetween="10" centeredSlides="false" #slides (ionSlideDidChange)="slideChanged()">
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/XMLID_8_.png" />
@@ -116,8 +113,8 @@
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/XMLID_9_.png" />
-          <ion-card-content>
-            <ion-card-title>
+          <ion-card-content class="card-content-magistrales">
+            <ion-card-title color="white">
               Clase magistral 1
             </ion-card-title>
             <p>3 Agosto, 2018 - 2:00 p.m.</p>
@@ -127,8 +124,9 @@
       </ion-slide>
       <ion-slide>
         <ion-card>
-          <img src="../../assets/imgs/violinista.png" />
-          <ion-card-content>
+          <img src="
+            ../../assets/imgs/violinista.png" />
+          <ion-card-content class="card-content-magistrales">
             <ion-card-title>
               Clase magistral 2
             </ion-card-title>
@@ -142,7 +140,7 @@
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/XMLID_9_.png" />
-          <ion-card-content>
+          <ion-card-content class="card-content-magistrales">
             <ion-card-title>
               Clase magistral 3
             </ion-card-title>

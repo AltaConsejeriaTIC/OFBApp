@@ -31,36 +31,6 @@ page-home {
     }
   }
 
-  ion-footer {
-    width: 100%;
-    height: 10vh;
-    background-color: color($colors, primary, base);
-
-    ion-buttons {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 15px;
-      width: 100%;
-      height: 100%;
-
-      .button {
-        margin: 0;
-        padding: 0;
-        width: calc(100vh - 93vh);
-        height: 70%;
-        font-size: 0.8em;
-        border-radius: 50%;
-      }
-
-      ion-icon {
-        margin: 0;
-        padding: 0;
-        color: #ffffff;
-      }
-    }
-  }
-
   #icon-button-inicio {
     background-color: color($colors, navBarHome, base);
   }
@@ -85,8 +55,8 @@ page-home {
     margin-top: 2%;
   }
   .section {
-    margin-top: 5vh;
-    margin-left: 2vh;
+    margin-top: 6vh;
+    margin-left: 0vh;
 
     .section-line {
       display: block;
@@ -94,13 +64,48 @@ page-home {
       width: 13vw;
       margin: 4vw 0vw;
     }
-    .card-md {
-      margin: 0px;
+    .swiper-slide:first-child {
+      margin-left: 5vh;
     }
-    .swiper-slide img {
+    .swiper-slide {
+      width: 85% !important;
+      img {
+        width: 100%;
+      }
+    }
+    .card-md {
+      border-radius: 12px;
+      margin: 0px;
       width: 100%;
     }
+    .swiper-slide:last-child {
+      margin-right: 5vh;
+    }
+    .card-content-md {
+      background-color: color($colors, primary, base);
+    }
   }
+  .arrows {
+    position: absolute;
+    top: 47%;
+    z-index: 2;
+    color: white;
+    font-size: 1.6em;
+    border-radius: 50%;
+    border: 2px solid greenyellow;
+    color: white;
+    padding: 1.5%;
+    background: rgba(0, 0, 0, 0);
+    backdrop-filter: blur(30px);
+    transform: rotate(0.29deg);
+  }
+  .ion-md-icon-flecha-derecha-1 {
+    right: 5%;
+  }
+  .ion-md-icon-flecha-izquierda {
+    left: 5%;
+  }
+
   .slide-concert {
     background-color: #222433;
     ion-card {
@@ -109,6 +114,9 @@ page-home {
     }
     .swiper-slide img {
       width: 100%;
+    }
+    .card-content-md {
+      background-color: #222433;
     }
   }
 }
