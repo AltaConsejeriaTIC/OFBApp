@@ -207,25 +207,42 @@ page-home {
     height: 60vh;
 
     .slide-zoom {
-    height: 100%;
-}
+        height: 100%;
+    }
+    .swiper-slide:last-child .card{
+      height: 30vh;
+      width: 30vh;
+      border: 2px solid white;
+      border-radius: 4%;
+
+    }
   }
 
   .classesSection{
     height: 55vh;
     margin-bottom: 15vh;
+
     .slide-zoom {
         height: 100%;
     }
+
     .swiper-slide:not(:last-child) .card{
          height: 100%;
          align-items: flex-end;
          display: flex;
-         background-size: 100% 100% !important;
+         background-size: 100% 80% !important;
          background-repeat: no-repeat !important;
-              background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../../assets/imgs/XMLID_9_.png");
-            }
-  }
+         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../../assets/imgs/XMLID_9_.png");
+    }
 
+    .swiper-slide:last-child .card{
+      height: 30vh;
+      width: 30vh;
+      border: 2px solid white;
+      border-radius: 4%;
+
+    }
+
+  }
 
 }
