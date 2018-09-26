@@ -17,12 +17,22 @@
       <ion-card>
         <img src="../../assets/imgs/XMLID_7_.png" />
         <ion-card-content>
-          <h3>01 Oct</h3>
-          <ion-card-title>
-            concierto 1
-          </ion-card-title>
-          <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
-          <p class="eventTime">8:30 p.m.</p>
+
+          <ion-row>
+            <ion-col col-2 class="concertDateText">
+              <h3>01 Oct</h3>
+            </ion-col>
+
+            <ion-col col-10 class="concertDataText">
+                <ion-card-title>
+                    concierto 1
+                </ion-card-title>
+                <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
+                <p class="eventTime">8:30 p.m.</p>
+            </ion-col>
+
+          </ion-row>
+
         </ion-card-content>
       </ion-card>
     </ion-slide>
@@ -31,12 +41,20 @@
       <ion-card>
         <img src="../../assets/imgs/violinista.png" />
         <ion-card-content>
-          <h3>05 Oct</h3>
-          <ion-card-title>
-            concierto 2
-          </ion-card-title>
-          <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
-          <p class="eventTime">8:30 p.m.</p>
+          <ion-row>
+            <ion-col col-2 class="concertDateText">
+              <h3>01 Oct</h3>
+            </ion-col>
+
+            <ion-col col-10 class="concertDataText">
+                <ion-card-title>
+                    concierto 1
+                </ion-card-title>
+                <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
+                <p class="eventTime">8:30 p.m.</p>
+            </ion-col>
+
+          </ion-row>
         </ion-card-content>
       </ion-card>
     </ion-slide>
@@ -45,12 +63,20 @@
       <ion-card>
         <img src="../../assets/imgs/XMLID_9_.png" />
         <ion-card-content>
-          <h3>10 Oct</h3>
-          <ion-card-title>
-            concierto 3
-          </ion-card-title>
-          <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
-          <p class="eventTime">8:30 p.m.</p>
+          <ion-row>
+            <ion-col col-2 class="concertDateText">
+              <h3>01 Oct</h3>
+            </ion-col>
+
+            <ion-col col-10 class="concertDataText">
+                <ion-card-title>
+                    concierto 1
+                </ion-card-title>
+                <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
+                <p class="eventTime">8:30 p.m.</p>
+            </ion-col>
+
+          </ion-row>
         </ion-card-content>
       </ion-card>
     </ion-slide>
@@ -59,7 +85,7 @@
 
   <ion-icon name="icon-flecha-derecha-1" class="arrows" (click)="nextSlide()"></ion-icon>
 
-  <div class="section">
+  <div class="section newsSection">
 
      <div class="headerSection">
        <h5>NOTICIAS</h5>
@@ -101,7 +127,7 @@
 
       <ion-slide>
         <ion-card>
-          <img src="../../assets/imgs/XMLID_9_.png" />
+
           <ion-card-content>
             <ion-card-title>
               Noticia 3
@@ -118,7 +144,7 @@
 
   </div>
 
-  <div class="section">
+  <div class="section classesSection">
 
     <div class="headerSection">
         <h3>CLASES MAGISTRALES</h3>
@@ -129,45 +155,40 @@
     <ion-slides class="clases" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide>
         <ion-card>
-          <img src="../../assets/imgs/XMLID_9_.png" />
+          <!-- <img src="../../assets/imgs/XMLID_9_.png" /> -->
           <ion-card-content class="card-content-magistrales">
             <ion-card-title color="white">
               Clase magistral 1
             </ion-card-title>
-            <p>3 Agosto, 2018 - 2:00 p.m.</p>
-            <p>Auditorio Teresa Cuervo</p>
+                <p class="classPlace">3 Agosto, 2018 - 8:30 p.m.</p>
+                <p class="classDate">Teatro Mayor Julio Mario Santo Domingo</p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
+
       <ion-slide>
         <ion-card>
-          <img src="
-            ../../assets/imgs/violinista.png" />
+          <!-- <img src="../../assets/imgs/violinista.png" /> -->
           <ion-card-content class="card-content-magistrales">
             <ion-card-title>
               Clase magistral 2
             </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
-            </p>
+                  <p class="classPlace">3 Agosto, 2018 - 8:30 p.m.</p>
+                <p class="classDate">Teatro Mayor Julio Mario Santo Domingo</p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
+
       <ion-slide>
         <ion-card>
-          <img src="../../assets/imgs/XMLID_9_.png" />
-          <ion-card-content class="card-content-magistrales">
-            <ion-card-title>
-              Clase magistral 3
-            </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
-            </p>
+          <!-- <img src="../../assets/imgs/XMLID_9_.png" /> -->
+          <ion-card-content class="todas">
+
+                  <p class="classDate">Teatro Mayor Julio Mario Santo Domingo</p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
+
     </ion-slides>
   </div>
 </ion-content>

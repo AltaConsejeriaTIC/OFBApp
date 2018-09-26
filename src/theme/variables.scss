@@ -72,6 +72,15 @@ $colors: (
 @import 'untitled-font-1';
 
 // Fonts
+@font-face {
+font-family: Bitter;
+src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
+}
+
+@font-face {
+font-family: OpenSans;
+src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf");
+}
 // --------------------------------------------------
 
 @import 'roboto';

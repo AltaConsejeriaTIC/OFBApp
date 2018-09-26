@@ -4,10 +4,6 @@ page-home {
     color: #ffffff;
   }
 
-  ion-slides {
-    height: 80%;
-}
-
   ion-header {
     width: 100%;
     max-height: 11%;
@@ -61,6 +57,18 @@ page-home {
 
   .slide-concert {
     background-color: #222433;
+    height: 80%;
+
+    .card-content{
+        padding: 4% 1%;
+    }
+
+    .ion-card, .card-ios, .card-md, .card{
+      border: 0 !important;
+      border-style: none !important;
+      box-shadow: none !important;
+      background-color: black;
+    }
 
     .card-content-md {
       background-color: #222433;
@@ -71,11 +79,20 @@ page-home {
   }
 
     .card-md {
+
       margin: 0;
       width: 100%;
       height: 100%;
         h3, ion-card-title{
           color: white;
+        }
+        ion-card-title{
+          margin: 1% 0;
+          padding: 1% 10%;
+        }
+        h3{
+          margin: 1% 0;
+          padding: 1% 20%;
         }
         .titleText{
           color:rgba(255, 255, 255, 0.8);
@@ -87,10 +104,32 @@ page-home {
     }
 
     .swiper-slide img {
+      position: relative;
       width: 100%;
-      max-width: 100%;
       height: 67%;
-      max-height: 100%;
+    }
+
+    .card-content {
+      height: 34%;
+    }
+
+    .concertDateText{
+      display: flex;
+      align-items: center;
+    }
+
+    .concertDateText:before {
+                   background-color: rgba(255, 255, 255, 0.15);
+                   content: '';
+                   height: 100%;
+                   right: 1px;
+                   position: absolute;
+                   top: 0;
+                   width: 1px;
+               }
+
+    .concertDataText{
+      text-align: left;
     }
 
   }
@@ -117,7 +156,8 @@ page-home {
   }
 
   .section {
-    margin-top: 6vh;
+    margin-top: 5vh;
+    margin-bottom: 8vh;
 
     .headerSection {
         margin-left: 12vw;
@@ -142,16 +182,49 @@ page-home {
         border-radius: 2px;
         width: 100%;
         background-color: #161824;
+        text-align: left;
    }
 
    .card-title-md {
     color: white;
     }
 
-    .card-md p {
+    .card-content{
+        padding: 1% 0;
+    }
+
+    .card-md p, .classDate {
         color: #999999;
     }
 
+    .classPlace{
+      color:#FF4AC1 !important;
+    }
+
+  }
+
+  .newsSection{
+    height: 60vh;
+
+    .slide-zoom {
+    height: 100%;
+}
+  }
+
+  .classesSection{
+    height: 55vh;
+    margin-bottom: 15vh;
+    .slide-zoom {
+        height: 100%;
+    }
+    .swiper-slide:not(:last-child) .card{
+         height: 100%;
+         align-items: flex-end;
+         display: flex;
+         background-size: 100% 100% !important;
+         background-repeat: no-repeat !important;
+              background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../../assets/imgs/XMLID_9_.png");
+            }
   }
 
 
