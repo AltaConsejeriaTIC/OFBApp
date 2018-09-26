@@ -12,6 +12,7 @@
 <ion-content>
   <ion-icon name="icon-flecha-izquierda" class="arrows" (click)="prevSlide()"></ion-icon>
   <ion-slides class="slide-concert" #slides pager>
+
     <ion-slide>
       <ion-card>
         <img src="../../assets/imgs/XMLID_7_.png" />
@@ -20,11 +21,12 @@
           <ion-card-title>
             concierto 1
           </ion-card-title>
-          <p>Teatro Mayor Julio Mario Santo Domingo</p>
-          <p>8:30 p.m.</p>
+          <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
+          <p class="eventTime">8:30 p.m.</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>
+
     <ion-slide>
       <ion-card>
         <img src="../../assets/imgs/violinista.png" />
@@ -33,11 +35,12 @@
           <ion-card-title>
             concierto 2
           </ion-card-title>
-          <p>Teatro Mayor Julio Mario Santo Domingo</p>
-          <p>5:30 p.m.</p>
+          <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
+          <p class="eventTime">8:30 p.m.</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>
+
     <ion-slide>
       <ion-card>
         <img src="../../assets/imgs/XMLID_9_.png" />
@@ -46,19 +49,25 @@
           <ion-card-title>
             concierto 3
           </ion-card-title>
-          <p>Teatro Mayor Julio Mario Santo Domingo</p>
-          <p>6:30 p.m.<p>
+          <p class="titleText">Teatro Mayor Julio Mario Santo Domingo</p>
+          <p class="eventTime">8:30 p.m.</p>
         </ion-card-content>
       </ion-card>
     </ion-slide>
+
   </ion-slides>
+
   <ion-icon name="icon-flecha-derecha-1" class="arrows" (click)="nextSlide()"></ion-icon>
 
   <div class="section">
-    <h5>NOTICIAS</h5>
-    <div class="section-line"></div>
 
-    <ion-slides class="news" spaceBetween="10" centeredSlides="false" #slides (ionSlideDidChange)="slideChanged()">
+     <div class="headerSection">
+       <h5>NOTICIAS</h5>
+       <div class="section-line"></div>
+     </div>
+
+    <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
+
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/XMLID_8_.png" />
@@ -74,6 +83,7 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
+
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/director.png" />
@@ -88,6 +98,7 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
+
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/XMLID_9_.png" />
@@ -102,14 +113,20 @@
           </ion-card-content>
         </ion-card>
       </ion-slide>
+
     </ion-slides>
+
   </div>
 
   <div class="section">
-    <h3>CLASES MAGISTRALES</h3>
-    <div class="section-line"></div>
 
-    <ion-slides>
+    <div class="headerSection">
+        <h3>CLASES MAGISTRALES</h3>
+        <div class="section-line"></div>
+    </div>
+
+
+    <ion-slides class="clases" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide>
         <ion-card>
           <img src="../../assets/imgs/XMLID_9_.png" />
