@@ -26,6 +26,10 @@ page-home {
   }
 
   ion-content {
+    .scroll-content{
+      margin-bottom: 0px !important;
+    }
+
     .scroll-content {
       background-color: color($colors, primary, base);
     }

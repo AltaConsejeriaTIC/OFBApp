@@ -42,6 +42,10 @@ $colors: (
   navBarTrivia: #A6FD29,
 );
 
+//NavBar variables 
+$tabs-background : #161824;
+$tabs-md-tab-icon-color: white;
+
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
@@ -63,6 +67,10 @@ $colors: (
 
 @import 'ionic.theme.default';
 
+
+ion-tabs .button-effect {
+ display:none !important;
+}
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:

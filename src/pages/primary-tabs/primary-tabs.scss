@@ -1,3 +1,147 @@
 page-primary-tabs {
 
+  .button-effect{
+    display: none !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  
+  .tabs-md .tab-button[aria-selected=true] .tab-button-icon {
+   color: black;
+  }
+
+  .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
+    margin-top: 2px;
+    height: 15px;
+    font-size: 8px;
+    color: white;
+  }
+
+  .tabbar {
+
+    box-shadow: 0px -4px 3px rgba(22, 24, 36, 4);
+    height: 60px;
+
+    a {
+      height: 100%;
+
+      ion-icon{
+        padding: 5px;
+        border: 1px solid color($colors, navBarHome, base);
+        border-radius: 100%;      
+      }
+
+      span {
+
+        &:after {
+          content: '';
+          position: absolute;
+          display: inline;
+          width: 3px;
+          height: 3px;
+          bottom: 3px;
+          left: 50%;
+          margin-left: -1.5px;
+          margin-top: 2px;
+          border-radius: 1.5px;
+          background-color: color($colors, navBarHome, base);
+          transition: width 0.5s, bottom 0.5s, margin-left 0.5s;
+        } 
+      }
+
+      &:nth-child(2){
+        ion-icon{
+          border: 1px solid color($colors, navBarCalendar, base);
+        }
+
+        span:after {
+          background: color($colors, navBarCalendar, base);
+        }
+      }
+      &:nth-child(3){
+        ion-icon {
+          border: 1px solid color($colors, navBarEducative, base);
+        }
+
+        span:after {
+          background: color($colors, navBarEducative, base);
+        }
+      }
+      &:nth-child(4){
+        ion-icon {
+          border: 1px solid color($colors, navBarAudCont, base);
+        }
+
+        span:after {
+          background: color($colors, navBarAudCont, base);
+        }
+      }
+      &:nth-child(5){
+        ion-icon {
+          border: 1px solid color($colors, navBarTrivia, base);
+        }
+
+        span:after {
+          background: color($colors, navBarTrivia, base);
+        }
+      }
+    }
+
+    a[aria-selected=true] {
+      ion-icon {
+        border: 2px solid color($colors, navBarHome, base);
+        background-color: color($colors, navBarHome, base);
+      }
+
+      span:after {
+        width: 20px;
+        height: 2px;
+        margin-left: -10px;
+        bottom: 3px;
+        background: color($colors, navBarHome, base);
+      }
+
+      &:nth-child(2){
+        ion-icon {
+          border: 2px solid color($colors, navBarCalendar, base);
+          background-color: color($colors, navBarCalendar, base);
+        }
+
+        span:after {
+          background: color($colors, navBarCalendar, base);
+
+        }
+      }
+      &:nth-child(3){
+        ion-icon {
+          border: 2px solid color($colors, navBarEducative, base);
+          background-color: color($colors, navBarEducative, base);
+        }
+
+        span:after {
+          background: color($colors, navBarEducative, base);
+        }
+      }
+      &:nth-child(4){
+        ion-icon {
+          border: 2px solid color($colors, navBarAudCont, base);
+          background-color: color($colors, navBarAudCont, base);
+        }
+
+        span:after {
+          background: color($colors, navBarAudCont, base);
+        }
+      }
+      &:nth-child(5){
+        ion-icon {
+          border: 2px solid color($colors, navBarTrivia, base);
+          background-color: color($colors, navBarTrivia, base);
+        }
+
+        span:after {
+          background: color($colors, navBarTrivia, base);
+        }
+      }
+    }
+  }
 }
