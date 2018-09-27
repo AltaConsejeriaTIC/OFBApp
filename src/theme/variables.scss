@@ -77,9 +77,16 @@ ion-tabs .button-effect {
 // http://ionicframework.com/docs/ionicons/
 
 @import 'ionicons';
-@import 'untitled-font-1';
 
 // Fonts
+
+// --------------------------------------------------
+
+@import 'roboto';
+@import 'noto-sans';
+
+$font-family-untitled-font-1: 'untitled-font-1';
+
 @font-face {
 font-family: Bitter;
 src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
@@ -89,9 +96,13 @@ src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
 font-family: OpenSans;
 src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf");
 }
-// --------------------------------------------------
 
-@import 'roboto';
-@import 'noto-sans';
+$font-family-ios-base: "Bitter";
+$font-family-md-base: "Bitter";
+$font-family-wp-base: "Bitter";
+$font-family-Bitter: "Bitter";
 
-$font-family-untitled-font-1: 'untitled-font-1';
+$font-family-ios-base: "OpenSans";
+$font-family-md-base: "OpenSans";
+$font-family-wp-base: "OpenSans";
+$font-family-OpenSans: "OpenSans";

@@ -92,17 +92,49 @@ page-home {
         }
         ion-card-title{
           margin: 1% 0;
-          padding: 1% 10%;
+          padding: 1% 0;
+          font-size: 2.5rem;
         }
-        h3{
-          margin: 1% 0;
-          padding: 1% 20%;
+        .concertDateText{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+              padding: 2% 2%;
+            h3{
+              margin: 1% 0;
+              letter-spacing: 0.1em;
+              font-size: 2.2rem;
+              font-weight: bold;
+
+            }
+            .dateMont{
+              color: white;
+              font-family: "OpenSans";
+              letter-spacing: 0.2em;
+              text-transform: uppercase;
+            }
+
         }
+
+        .concertDateText:before {
+                       background-color: rgba(255, 255, 255, 0.15);
+                       content: '';
+                       height: 100%;
+                       right: 1px;
+                       position: absolute;
+                       top: 0;
+                       width: 1px;
+                   }
+
         .titleText{
+          font-family: "OpenSans";
           color:rgba(255, 255, 255, 0.8);
+          font-size: 1.3rem;
         }
         .eventTime{
+          font-family: "OpenSans";
           color:#FF4AC1;
+              font-size: 1.3rem;
         }
 
     }
@@ -117,23 +149,9 @@ page-home {
       height: 34%;
     }
 
-    .concertDateText{
-      display: flex;
-      align-items: center;
-    }
-
-    .concertDateText:before {
-                   background-color: rgba(255, 255, 255, 0.15);
-                   content: '';
-                   height: 100%;
-                   right: 1px;
-                   position: absolute;
-                   top: 0;
-                   width: 1px;
-               }
-
     .concertDataText{
       text-align: left;
+      padding-left: 4%;
     }
 
   }
@@ -165,6 +183,12 @@ page-home {
 
     .headerSection {
         margin-left: 12vw;
+        h5{
+          font-weight: bold;
+          font-size: 1.9rem;
+          letter-spacing: 0.06em;
+          text-transform: uppercase;
+        }
     }
 
     .section-line {
@@ -190,6 +214,7 @@ page-home {
    }
 
    .card-title-md {
+     padding-bottom: 7%;
     color: white;
     }
 
@@ -197,18 +222,41 @@ page-home {
         padding: 1% 0;
     }
 
-    .card-md p, .classDate {
-        color: #999999;
+    .classPlace, .classDate {
+        font-family: "OpenSans";
+        line-height: 13px;
+        font-size: 1.2rem;
+
+    }
+
+    .classDate{
+          color:#FF4AC1 !important;
+
     }
 
     .classPlace{
-      color:#FF4AC1 !important;
+      padding-top: 1.2vh;
+      color: #999999;
+
     }
 
   }
 
   .newsSection{
     height: 60vh;
+
+    ion-card-title{
+      font-weight: bold;
+      line-height: 24px;
+      font-size: 1.7rem;
+    }
+
+    p{
+      font-family: "OpenSans";
+      line-height: 21px;
+      font-size: 1.3rem;
+      color: #999999;
+    }
 
     .slide-zoom {
         height: 100%;
@@ -224,7 +272,31 @@ page-home {
 
   .classesSection{
     height: 55vh;
-    margin-bottom: 15vh;
+    margin-bottom: 20vh;
+
+h3{
+  font-weight: bold;
+  font-size: 1.9rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.card-content{
+      padding: 1% 7%;
+      .instrument{
+        font-family: "OpenSans";
+            line-height: 1.5vh;
+        font-size: 1.2rem;
+        color: #999999;
+      }
+      .teacherName{
+        font-weight: bold;
+        line-height: 24px;
+        font-size: 1.7rem;
+        color: white;
+      }
+}
+
 
     .slide-zoom {
         height: 100%;
