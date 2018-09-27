@@ -61,7 +61,7 @@ page-home {
 
   .slide-concert {
     background-color: #222433;
-    height: 80%;
+    height: 63vh;
 
     .card-content{
         padding: 4% 1%;
@@ -146,7 +146,7 @@ page-home {
     }
 
     .card-content {
-      height: 34%;
+      height: 33%;
     }
 
     .concertDataText{
@@ -163,9 +163,10 @@ page-home {
     color: white;
     font-size: 1.6em;
     border-radius: 50%;
-    border: 2px solid greenyellow;
+    border: 2px solid #BBFF00;
+    box-sizing: border-box;
     color: white;
-    padding: 1.5%;
+    padding: 2.5%;
     background: rgba(0, 0, 0, 0);
     backdrop-filter: blur(30px);
     transform: rotate(0.29deg);
@@ -185,7 +186,7 @@ page-home {
         margin-left: 12vw;
         h5{
           font-weight: bold;
-          font-size: 1.9rem;
+          font-size: 1.55rem;
           letter-spacing: 0.06em;
           text-transform: uppercase;
         }
@@ -271,18 +272,23 @@ page-home {
   }
 
   .classesSection{
-    height: 55vh;
+    height: 60vh;
     margin-bottom: 20vh;
 
 h3{
   font-weight: bold;
-  font-size: 1.9rem;
+  font-size: 1.55rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
 
 .card-content{
-      padding: 1% 7%;
+      padding: 0 16px;
+      background: #1D1F2B;
+      width: 100%;
+      height: 31%;
+      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      border-radius: 0px 0px 7px 7px;
       .instrument{
         font-family: "OpenSans";
             line-height: 1.5vh;
@@ -308,7 +314,7 @@ h3{
          display: flex;
          background-size: 100% 80% !important;
          background-repeat: no-repeat !important;
-         background: linear-gradient(180deg, rgba(0, 0, 0, 0) 45%, rgba(0, 0, 0, 0.445897) 60%, rgba(0, 0, 0, 0.74) 80%), url("../../assets/imgs/XMLID_9_.png");
+         background: linear-gradient(0deg, #1D1F2B 15%, rgba(29, 31, 43, 0.346409) 28.83%, rgba(29, 31, 43, 0) 57%), url("../../assets/imgs/XMLID_9_.png");
     }
 
     .swiper-slide:last-child .card{
