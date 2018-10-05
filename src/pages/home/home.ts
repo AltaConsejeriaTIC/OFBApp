@@ -8,6 +8,9 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
  * Ionic pages and navigation.
  */
 
+// Custom components
+import { NewsPage } from '../news/news'
+
 @IonicPage()
 @Component({
   selector: 'page-home',
@@ -16,8 +19,45 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 export class HomePage {
   @ViewChild('slides')
   slides: Slides;
+  events = [{
+    date: {
+      day: '15',
+      month: 'OCT',
+      time: '8:30 PM'
+    },
+    category: 'prensa',
+    title: 'El pedazo de título',
+    description: 'Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera',
+    imgPath: 'http://www.granjasantaisabel.com/otras-aves/images/pato-domestico.jpg',
+    
+  },
+  {
+    date: {
+      day: '15',
+      month: 'OCT',
+      time: '8:30 PM'
+    },
+    category: 'prensa',
+    title: 'El pedazo de título de este evento.',
+    description: 'Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera',
+    imgPath: 'http://www.granjasantaisabel.com/otras-aves/images/pato-domestico.jpg',
+    
+  },
+  {
+    date: {
+      day: '15',
+      month: 'OCT',
+      time: '8:30 PM'
+    },
+    category: 'prensa',
+    title: 'El pedazo de título de este evento.',
+    description: 'Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera',
+    imgPath: 'http://www.granjasantaisabel.com/otras-aves/images/pato-domestico.jpg',
+    
+  }]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
@@ -30,6 +70,13 @@ export class HomePage {
   nextSlide() {
     this.slides.slideNext();
   }
+
+//------------------------ Navigation ---------------------- 
+  goToNews() {
+    console.log("goToNews")
+    this.navCtrl.push(NewsPage);
+  }
+//------------------------ Navigation ----------------------
 
   slideChanged() {
     console.log('slide Changed');

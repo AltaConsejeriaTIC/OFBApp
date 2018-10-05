@@ -11,6 +11,7 @@ import { CalendarPageModule } from '../pages/calendar/calendar.module';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
+import { NewsPageModule } from '../pages/news/news.module';
 
 @NgModule({
   declarations: [
@@ -24,11 +25,12 @@ import { TriviaPageModule } from '../pages/trivia/trivia.module';
     CalendarPageModule,
     EduProjectPageModule,
     AudVisContentPageModule,
-    TriviaPageModule
+    TriviaPageModule,
+    NewsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp
+    MyApp,
   ],
   providers: [
     StatusBar,
