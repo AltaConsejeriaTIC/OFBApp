@@ -26,33 +26,33 @@ export class HomePage {
       time: '8:30 PM'
     },
     category: 'prensa',
-    title: 'El pedazo de título',
-    description: 'Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera',
-    imgPath: 'http://www.granjasantaisabel.com/otras-aves/images/pato-domestico.jpg',
+    title: 'Aterciopelados',
+    description: 'Teatro Mayor Julio Mario Santo Domingo.',
+    imgPath: '../../assets/imgs/XMLID_7_.png',
     
   },
   {
     date: {
-      day: '15',
+      day: '09',
       month: 'OCT',
-      time: '8:30 PM'
+      time: '8:30 AM'
     },
     category: 'prensa',
-    title: 'El pedazo de título de este evento.',
-    description: 'Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera',
-    imgPath: 'http://www.granjasantaisabel.com/otras-aves/images/pato-domestico.jpg',
+    title: 'Concierto 2',
+    description: 'Teatro Mayor Julio Mario Santo Domingo.',
+    imgPath: '../../assets/imgs/violinista.png',
     
   },
   {
     date: {
-      day: '15',
+      day: '12',
       month: 'OCT',
-      time: '8:30 PM'
+      time: '1:30 PM'
     },
     category: 'prensa',
-    title: 'El pedazo de título de este evento.',
-    description: 'Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera Horrenda description tan áspera',
-    imgPath: 'http://www.granjasantaisabel.com/otras-aves/images/pato-domestico.jpg',
+    title: 'Concierto 2',
+    description: 'Teatro Colon de Bogotá',
+    imgPath: '../../assets/imgs/evento.png',
     
   }]
 
