@@ -19,7 +19,8 @@ import { NewsPage } from '../news/news'
 export class HomePage {
   @ViewChild('slides')
   slides: Slides;
-  events = [{
+  events = [
+  {
     date: {
       day: '15',
       month: 'OCT',
@@ -29,7 +30,6 @@ export class HomePage {
     title: 'Aterciopelados',
     description: 'Teatro Mayor Julio Mario Santo Domingo.',
     imgPath: '../../assets/imgs/XMLID_7_.png',
-    
   },
   {
     date: {
@@ -54,7 +54,8 @@ export class HomePage {
     description: 'Teatro Colon de Bogotá',
     imgPath: '../../assets/imgs/evento.png',
     
-  }]
+  }
+  ]
   news = [{
     date: {
       day: '15',

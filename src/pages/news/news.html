@@ -5,6 +5,22 @@
   </ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
 
+<ion-content padding>
+  <ion-card  *ngFor='let new of news'>
+    <img src="../../assets/imgs/XMLID_8_.png" />
+    <ion-card-content>
+      <div class="newsTitle">
+        <span class="newsCategory">{{new.category}}</span>
+        <span class="newsDate">{{new.date}}</span>
+      </div>
+      <div class="separator"></div>
+      <ion-card-title>
+        {{new.title}}
+      </ion-card-title>
+      <p>
+        {{new.content}}
+      </p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
