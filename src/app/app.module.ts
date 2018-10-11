@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module'
 import { HomePageModule } from '../pages/home/home.module';
+import { CalendarHomePageModule } from '../pages/calendar-home/calendar-home.module';
 import { CalendarPageModule } from '../pages/calendar/calendar.module';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
@@ -22,6 +23,7 @@ import { NewsPageModule } from '../pages/news/news.module';
     IonicModule.forRoot(MyApp),
     PrimaryTabsPageModule,
     HomePageModule,
+    CalendarHomePageModule,
     CalendarPageModule,
     EduProjectPageModule,
     AudVisContentPageModule,

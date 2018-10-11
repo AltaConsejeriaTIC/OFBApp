@@ -1,0 +1,87 @@
+page-calendar-home {
+
+  .toolbar-background {
+    background-color: black;
+}
+
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    letter-spacing: 0.06em;
+  }
+
+  .toolbar-ios ion-title {
+    padding: 0 50px 1px;
+  }
+
+  .bar-button-default {
+    color: white;
+}
+
+  ion-title{
+    text-transform: uppercase;
+  }
+
+  .headerMonth{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 7vh;
+    background-color: #F8774E;
+    p{
+      text-transform: uppercase;
+      color: black;
+      text-align: center;
+      align-self: center;font-weight: bold;
+      letter-spacing: 0.08em;
+    }
+  }
+
+  .scroll-content{
+    padding: 0 !important;
+    background-color: black;
+  }
+
+  .months{
+    padding: 3%;
+    height: 100%;
+    ion-row{
+      height: 20.7%;
+    }
+    ion-col.col{
+      background-color: #282a3580;
+      margin: 1.5%;
+      width: 30%;
+      border-radius: 3px;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+      display: flex;
+      color: #ffffff47;
+      font-weight: bold;
+      font-size: 1.2rem;
+      letter-spacing: 0.06em;
+    }
+    .pending{
+      background-color: #282A35 !important;
+      color: white !important;
+    }
+    .actual{
+      background-color: #F8774E !important;
+      color: black !important;
+    }
+    span{
+      color: #F8774E;
+    }
+    .advertencia{
+      color: white;
+      text-align: right;
+      padding-right: 2.5%;
+      font-size: 1.2rem;
+
+    }
+  }
+
+}
