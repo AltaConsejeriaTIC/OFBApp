@@ -1,12 +1,49 @@
 page-calendar {
 
+  .toolbar-background {
+    background-color: black;
+}
+
+  .toolbar-title.toolbar-title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: white;
+    letter-spacing: 0.06em;
+  }
+
+  .toolbar-ios ion-title {
+    padding: 0 50px 1px;
+  }
+
+  .bar-button-default {
+    color: white;
+}
+
   ion-title{
     text-transform: uppercase;
   }
 
   .headerMonth{
+      text-transform: uppercase;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
       height: 7vh;
       background-color: #F8774E;
+      font-family: 'OpenSans';
+
+      p{
+          font-size: 1.4rem;
+          font-family: 'OpenSans' !important;
+      }
+
+      ion-icon {
+          font-size: 1.7em;
+          background-color: #F8774E;
+      }
+
   }
 
   .scroll-content{
@@ -43,12 +80,17 @@ page-calendar {
             text-align: center;
 
             span.button-inner {
-                font-size: 1.1rem;
+                font-size: 1.4rem;
+                font-family: "OpenSans";
+                text-transform: none;
             }
 
             .button-md.button-default.button-default-md {
                 margin: 0.8rem 0.2rem;
                 padding: 0 2.1em;
+                background-color: #F8774E;
+                color: black;
+
             }
         }
 
@@ -79,8 +121,20 @@ page-calendar {
               margin: 0;
           }
 
+          .priceEvent{
+            font-family: "OpenSans" !important;
+            font-weight: bold;
+          }
+
           .dayAndMonthEvent{
               padding-bottom: 6vh;
+              .eventDay{
+                font-size: 2.4rem;
+              }
+              .eventMonth{
+                font-family: "OpenSans" !important;
+                letter-spacing: 0.2em;
+              }
           }
 
           .priceEvent{
@@ -104,8 +158,34 @@ page-calendar {
           display: flex;
           flex-direction: column;
           justify-content: space-around;
+
+          .icon-icon-icono-menu:before,
+          .ion-icon-icono-menu:before,
+          .ion-ios-icon-icono-menu:before,
+          .ion-ios-icon-icono-menu-outline:before,
+          .ion-md-icon-icono-menu:before,
+          .ion-md-icon-icono-menu-outline:before{
+            color: #F8774E !important;
+          }
+
           p{
             margin: 0 0 0 1.1vh;
+          }
+
+          .eventAutor{
+              font-family: "OpenSans" !important;
+              font-size: 600;
+              color: #F8774E;
+          }
+
+          .eventTitle{
+            font-weight: bold;
+            font-size: 1.8rem;
+          }
+
+          .eventTime, .eventPlace{
+            color: #AEAEAE;
+              font-family: "OpenSans" !important;
           }
       }
 
