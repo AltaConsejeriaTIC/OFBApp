@@ -1,5 +1,42 @@
 page-news {
-	* {
-		background-color: color($colors, background, base);
-	}
+  * {
+    background-color: color($colors, background, base);
+  }
+
+  ion-header {
+    width: 100%;
+    max-height: 10vh;
+
+    ion-navbar {
+      max-height: inherit;
+      align-items: center;
+      
+      ion-icon {
+        color: #ffffff;
+      }
+
+      ion-title {
+
+        .toolbar-title-ios,
+        .toolbar-title-md
+        .toolbar-title {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .toolbar-ios,
+    .toolbar-md,
+    .toolbar {
+      padding-left: 10px;
+    }
+    .toolbar-background {
+      background-color: color($colors, background, base);
+    }
+    .button {
+      vertical-align: top;
+      margin-top: 4%;
+      margin-left: 2%;
+    }
+  }
 }

@@ -55,6 +55,76 @@ export class HomePage {
     imgPath: '../../assets/imgs/evento.png',
     
   }]
+  news = [{
+    date: {
+      day: '15',
+      month: 'OCT',
+      time: '8:30 PM'
+    },
+    category: 'prensa',
+    title: 'Aterciopelados',
+    description: 'Teatro Mayor Julio Mario Santo Domingo.',
+    imgPath: '../../assets/imgs/XMLID_7_.png',
+    
+  },
+  {
+    date: {
+      day: '09',
+      month: 'OCT',
+      time: '8:30 AM'
+    },
+    category: 'prensa',
+    title: 'Concierto 2',
+    description: 'Teatro Mayor Julio Mario Santo Domingo.',
+    imgPath: '../../assets/imgs/violinista.png',
+    
+  },
+  {
+    date: {
+      day: '12',
+      month: 'OCT',
+      time: '1:30 PM'
+    },
+    category: 'prensa',
+    title: 'Concierto 2',
+    description: 'Teatro Colon de Bogotá',
+    imgPath: '../../assets/imgs/evento.png',
+  }]
+  classes = [{
+    date: {
+      day: '15',
+      month: 'OCT',
+      time: '8:30 PM'
+    },
+    category: 'prensa',
+    title: 'Aterciopelados',
+    description: 'Teatro Mayor Julio Mario Santo Domingo.',
+    imgPath: '../../assets/imgs/XMLID_7_.png',
+    
+  },
+  {
+    date: {
+      day: '09',
+      month: 'OCT',
+      time: '8:30 AM'
+    },
+    category: 'prensa',
+    title: 'Concierto 2',
+    description: 'Teatro Mayor Julio Mario Santo Domingo.',
+    imgPath: '../../assets/imgs/violinista.png',
+    
+  },
+  {
+    date: {
+      day: '12',
+      month: 'OCT',
+      time: '1:30 PM'
+    },
+    category: 'prensa',
+    title: 'Concierto 2',
+    description: 'Teatro Colon de Bogotá',
+    imgPath: '../../assets/imgs/evento.png',
+  }]
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
