@@ -5,22 +5,114 @@ page-calendar {
   }
 
   .headerMonth{
-    height: 7vh;
-    background-color: #F8774E;
+      height: 7vh;
+      background-color: #F8774E;
   }
 
   .scroll-content{
-    padding: 0 !important;
+      padding: 0 !important;
 
     .calendarBox{
-      height: 40vh;
-      background-color: black;
+        height: 40vh;
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .filterText{
+          position:  relative;
+        }
+
+        .filterText:before{
+          background-color: lightgray;
+          content: '';
+          width: 90%;
+          bottom: 0;
+          position: absolute;
+          left: 5%;
+          height: 1px;
+        }
+
+        p{
+          padding-left: 5%;
+          color: white;
+        }
+
+        .calendarButton{
+            position: relative;
+            text-align: center;
+
+            span.button-inner {
+                font-size: 1.1rem;
+            }
+
+            .button-md.button-default.button-default-md {
+                margin: 0.8rem 0.2rem;
+                padding: 0 2.1em;
+            }
+        }
+
+        .calendarButton:before{
+            background-color: lightgray;
+            content: '';
+            width: 90%;
+            top: 0;
+            position: absolute;
+            left: 5%;
+            height: 1px;
+        }
     }
 
     .event{
       height: 20vh;
       background-color: black;
       border-top: 1px solid white;
+
+      .eventDate{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+
+          p{
+              margin: 0;
+          }
+
+          .dayAndMonthEvent{
+              padding-bottom: 6vh;
+          }
+
+          .priceEvent{
+              position: relative;
+          }
+
+          .priceEvent:before{
+              background-color: #db4f0a;
+              content: '';
+              width: 100%;
+              top: -1vh;
+              position: absolute;
+              left: 0;
+              height: 1px;
+          }
+      }
+
+      .eventInfo{
+          height: 19.9vh;
+          background-color: #282A35;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          p{
+            margin: 0 0 0 1.1vh;
+          }
+      }
+
+      p{
+          color:white;
+          font-size: 1.2rem;
+      }
   }
 
 }
