@@ -18,6 +18,29 @@ export class EduProjectPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  openExternalLink(index) {
+    switch(index) { 
+       case 1: { 
+          //statements; 
+          window.open('http://www.google.com', '_system');
+          break; 
+       } 
+       case 2: { 
+          //statements; 
+          window.open('http://www.twitter.com', '_system');
+          break; 
+       }
+       case 3: {
+          window.open('http://www.spotify.com', '_system');
+          break;
+       } 
+       default: { 
+          //statements; 
+          break; 
+       } 
+    }
+  }
+
   ionViewDidLoad() {
     console.log('ionViewDidLoad EduProjectPage');
   }

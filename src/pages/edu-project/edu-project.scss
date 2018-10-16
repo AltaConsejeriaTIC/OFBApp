@@ -1,3 +1,75 @@
 page-edu-project {
+  background-color: color($colors, background, base);
 
+  ion-header {
+    width: 100%;
+    max-height: 10vh;
+
+    ion-navbar {
+      max-height: inherit;
+      align-items: center;
+
+      ion-title {
+        .toolbar-title-ios,
+        .toolbar-title-md
+        .toolbar-title {
+          color: #ffffff;
+        }
+      }
+    }
+
+    .toolbar-background {
+      background-color: color($colors, background, base);
+    }
+  }
+
+  ion-content {
+
+    .fixed-content {
+      background-color: color($colors, newsSectionBackground, base);
+    }
+
+    ion-card {
+      img {
+        height: 80px;
+        object-fit: cover;
+      }
+
+      &.card-ios,
+      &.card-md {
+        margin: 0;
+        width: 100%;
+        border-radius: 0px;
+        text-align: left;
+        margin-bottom: 20px;
+        background-color: color($colors, background, base);        
+      }
+
+      .card-content {
+        background-color: color($colors, newsCardBackground, base);
+        padding: 8px 40px 8px 5px;
+
+
+        .card-title-ios,
+        .card-title-md {
+          padding-bottom: 0;
+          font-size: 18px;
+          font-weight: 800;
+          margin-bottom: 10px;
+          color: white;
+        }
+
+        .separator {
+          width: 100%;
+          height: 1px;
+          background-color: color($colors, separator, base);
+        }
+
+        p {
+          color: color($colors, mainText, base);
+          font-size: 13px;
+        }
+      }
+    }
+  }
 }
