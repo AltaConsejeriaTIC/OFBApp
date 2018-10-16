@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, LOCALE_ID } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -13,6 +13,14 @@ import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { NewsPageModule } from '../pages/news/news.module';
+import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
+
+import { CalendarModule } from "ion2-calendar";
+
+import es from '@angular/common/locales/es';
+
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(es);
 
 @NgModule({
   declarations: [
@@ -28,7 +36,9 @@ import { NewsPageModule } from '../pages/news/news.module';
     EduProjectPageModule,
     AudVisContentPageModule,
     TriviaPageModule,
-    NewsPageModule
+    NewsPageModule,
+    EventsMonthPageModule,
+    CalendarModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,7 +47,8 @@ import { NewsPageModule } from '../pages/news/news.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    {provide: LOCALE_ID, useValue: "es" }
   ]
 })
 export class AppModule {}

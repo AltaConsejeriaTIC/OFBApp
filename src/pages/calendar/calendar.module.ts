@@ -1,6 +1,8 @@
-import { NgModule } from '@angular/core';
+import { NgModule, LOCALE_ID } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CalendarPage } from './calendar';
+import { CalendarModule} from 'ion2-calendar';
+import { registerLocaleData } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -8,6 +10,8 @@ import { CalendarPage } from './calendar';
   ],
   imports: [
     IonicPageModule.forChild(CalendarPage),
+    CalendarModule
   ],
 })
-export class CalendarPageModule {}
+export class CalendarPageModule {
+}

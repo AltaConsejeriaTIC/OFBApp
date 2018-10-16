@@ -37,8 +37,10 @@ export class CalendarHomePage {
     this.navCtrl.push(CalendarPage);
   }
 
-  close(){
+  close() {
     this.navCtrl.push(HomePage);
   }
+
+
 
 }
