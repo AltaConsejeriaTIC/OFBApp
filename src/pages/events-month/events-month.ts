@@ -24,7 +24,7 @@ export class EventsMonthPage {
   }
 
   close() {
-    this.navCtrl.push(CalendarPage);
+    this.navCtrl.pop();
   }
 
 }

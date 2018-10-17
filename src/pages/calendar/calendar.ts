@@ -36,7 +36,7 @@ export class CalendarPage {
   }
 
   close(){
-    this.navCtrl.push(CalendarHomePage);
+    this.navCtrl.pop();
   }
 
   closeCalendar(){

@@ -36,12 +36,5 @@ export class CalendarHomePage {
   openCalendarPage() {
     this.navCtrl.push(CalendarPage);
   }
-  
-
-  close() {
-    this.navCtrl.push(HomePage);
-  }
-
-
 
 }
