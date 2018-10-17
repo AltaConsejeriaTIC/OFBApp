@@ -19,12 +19,18 @@ page-primary-tabs {
 
   .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text,
   .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
-    margin-bottom: 8px;
     height: 15px;
     font-size: 10px;
     color: white;
     font-family: "OpenSans";
   }
+  .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text{
+    margin-bottom: 8px;
+  }
+  .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
+      margin-bottom: 4px;
+  }
+
 
   .tabbar {
     box-shadow: 0px -5px 10px 5px rgba(22, 24, 36, 4);

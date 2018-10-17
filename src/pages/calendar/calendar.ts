@@ -47,4 +47,8 @@ export class CalendarPage {
     this.navCtrl.push(EventsMonthPage);
   }
 
+  onChange(){
+    return;
+  }
+
 }
