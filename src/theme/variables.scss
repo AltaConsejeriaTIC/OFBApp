@@ -54,7 +54,7 @@ $colors: (
   newsCardBackground: #1C1D26,
 );
 
-//NavBar variables 
+//NavBar variables
 $tabs-background : #161824;
 $tabs-md-tab-icon-color: white;
 
@@ -101,12 +101,37 @@ $font-family-untitled-font-1: 'untitled-font-1';
 
 @font-face {
 font-family: Bitter;
+font-weight: 400;
 src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
+font-style: normal;
+}
+
+@font-face {
+font-family: Bitter;
+font-weight: 700;
+src: url("../assets/fonts/Bitter/Bitter-Bold.ttf");
+font-style: bold;
 }
 
 @font-face {
 font-family: OpenSans;
+font-weight: 600;
+src: url("../assets/fonts/OpenSans/OpenSans-SemiBold.ttf");
+font-style: semi-bold;
+}
+
+@font-face {
+font-family: OpenSans;
+font-weight: 400;
 src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf");
+font-style: normal;
+}
+
+@font-face {
+font-family: OpenSans;
+font-weight: 700;
+src: url("../assets/fonts/OpenSans/OpenSans-Bold.ttf");
+font-style: bold;
 }
 
 $font-family-ios-base: "Bitter";
