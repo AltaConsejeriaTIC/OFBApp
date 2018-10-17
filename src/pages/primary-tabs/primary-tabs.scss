@@ -31,6 +31,10 @@ page-primary-tabs {
       margin-bottom: 4px;
   }
 
+   .tabs-md .tabbar>a[aria-selected=true] span:after{
+       bottom: 0px !important;
+  }
+
 
   .tabbar {
     box-shadow: 0px -5px 10px 5px rgba(22, 24, 36, 4);
@@ -98,8 +102,11 @@ page-primary-tabs {
         width: 20px;
         height: 2px;
         margin-left: -10px;
-        bottom: 0px;
+        bottom: 5px;
         background: color($colors, navBarHome, base);
+      }
+      .md{
+        bottom: 0px;
       }
 
       &:nth-child(2){
