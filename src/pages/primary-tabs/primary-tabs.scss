@@ -17,6 +17,13 @@ page-primary-tabs {
     height: 30px;
   }
 
+  .tabs-md .tab-button-icon {
+    margin-top: 2px;
+}
+.tabs-md .tab-button {
+    min-height: 6rem;
+}
+
   .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text,
   .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
     height: 15px;

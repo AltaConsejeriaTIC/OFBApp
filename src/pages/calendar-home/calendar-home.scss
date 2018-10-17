@@ -51,24 +51,27 @@ page-calendar-home {
       height: 20.7%;
     }
     ion-col.col{
-      background-color: #282a3580;
+      background-color: #535353;
       margin: 1.5%;
       width: 30%;
+      opacity: 0.25;
       border-radius: 3px;
       text-transform: uppercase;
       justify-content: center;
       align-items: center;
       display: flex;
-      color: #ffffff47;
+      color: white;
       font-weight: bold;
       font-size: 1.2rem;
       letter-spacing: 0.06em;
     }
     .pending{
+      opacity: 1 !important;
       background-color: #282A35 !important;
       color: white !important;
     }
     .actual{
+      opacity: 1 !important;
       background-color: #F8774E !important;
       color: black !important;
     }
