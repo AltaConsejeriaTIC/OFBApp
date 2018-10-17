@@ -5,7 +5,7 @@ page-primary-tabs {
     transform: none !important;
     transition: none !important;
   }
-  
+
   .tabs-ios .tab-button[aria-selected=true] .tab-button-icon,
   .tabs-md .tab-button[aria-selected=true] .tab-button-icon,
   .tabs-ios .tab-button-icon,
@@ -28,7 +28,7 @@ page-primary-tabs {
 
   .tabbar {
     box-shadow: 0px -5px 10px 5px rgba(22, 24, 36, 4);
-    
+
     a {
       border-radius: 0px;
       height: 100%;
@@ -92,7 +92,7 @@ page-primary-tabs {
         width: 20px;
         height: 2px;
         margin-left: -10px;
-        bottom: 5px;
+        bottom: 0px;
         background: color($colors, navBarHome, base);
       }
 
