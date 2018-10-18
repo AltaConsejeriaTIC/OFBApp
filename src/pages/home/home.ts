@@ -18,6 +18,7 @@ import { NewsPage } from '../news/news'
 })
 export class HomePage {
   @ViewChild('slides')
+  @ViewChild('selectionSelect') selectionSelect: Select;
   slides: Slides;
   events = [
   {
@@ -40,8 +41,7 @@ export class HomePage {
     category: 'prensa',
     title: 'Concierto 2',
     description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/violinista.png',
-    
+    imgPath: '../../assets/imgs/violinista.png', 
   },
   {
     date: {
@@ -52,8 +52,7 @@ export class HomePage {
     category: 'prensa',
     title: 'Concierto 2',
     description: 'Teatro Colon de Bogotá',
-    imgPath: '../../assets/imgs/evento.png',
-    
+    imgPath: '../../assets/imgs/evento.png', 
   }
   ]
   news = [{
@@ -148,6 +147,10 @@ export class HomePage {
     this.navCtrl.push(NewsPage);
   }
 //------------------------ Navigation ----------------------
+//------------------------ Menu ----------------------
+
+
+//------------------------ Menu ----------------------
 
   slideChanged() {
     console.log('slide Changed');

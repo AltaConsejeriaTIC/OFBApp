@@ -195,11 +195,11 @@ page-home {
     color: white;
     font-size: 1.6em;
     border-radius: 50%;
-    border: 2px solid #bbff00;
     box-sizing: border-box;
-    color: white;
+    box-shadow: 0 0 10px 1px #282A35;
+    color: #282A35;
     padding: 2.5%;
-    background: rgba(0, 0, 0, 0);
+    background: white;
     backdrop-filter: blur(30px);
     transform: rotate(0.29deg);
     
