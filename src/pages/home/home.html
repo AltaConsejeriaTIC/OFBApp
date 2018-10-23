@@ -11,7 +11,7 @@
 
 <ion-content>
   <ion-icon name="icon-flecha-izquierda" class="arrows left" (click)="prevSlide()"></ion-icon>
-  <ion-slides class="slide-concert" #slides pager  loop="true">
+  <ion-slides class="slide-concert" #slides pager loop="true">
     <ion-slide *ngFor='let event of events'>
       <ion-card>
         <ion-card-content>
@@ -43,61 +43,36 @@
     </div>
 
     <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
-
-      <ion-slide>
+      <ion-slide *ngFor='let new of news'>
         <ion-card>
-          <img src="../../assets/imgs/XMLID_8_.png" />
+          <img src={{new.image}}/>
           <ion-card-content>
-            <p class="slideDate newsDate">15 Octubre, 2018 - 8:30 p.m.</p>
+            <p class="slideDate newsDate">{{new.date}}</p>
             <ion-card-title>
-              Convocatoria #1 Orquesta Filarmónica Juvenil
+              {{new.title}}
             </ion-card-title>
-            <p>
-              a Orquesta Filarmónica de Bogotá convoca a jóvenes
-              músicos entre los 18 y 26 años que deseen hacer
-              parte de la Orquesta ...
-            </p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <img src="../../assets/imgs/director.png" />
-          <ion-card-content>
-            <ion-card-title>
-              Noticia 1
-            </ion-card-title>
-            <p>
-              The most popular industrial group ever, and largely
-              responsible for bringing the music to a mass audience.
+            <p [innerHtml]='new.content'>
             </p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
       <ion-slide>
-        <ion-card>
-          <ion-card-content id="last-slide-news-content" (click)="goToNews()">
-            <ion-icon id="last-slide-icon" name="paper"></ion-icon>
-            <div id="last-slide-title">
-              <p class="classPlace">Ver todas las noticias</p>
-            </div>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
+          <ion-card>
+            <ion-card-content class="last-slide-news-content" (click)="goToNews()">
+              <ion-icon class="last-slide-icon" name="paper"></ion-icon>
+              <div class="last-slide-title">
+                <p>Ver todas las noticias</p>
+              </div>
+            </ion-card-content>
+          </ion-card>
+        </ion-slide>
     </ion-slides>
-
   </div>
-
   <div class="section classesSection">
-
     <div class="headerSection">
       <h3>CLASES MAGISTRALES</h3>
       <div class="section-line"></div>
     </div>
-
-
     <ion-slides class="clases" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide>
         <ion-card>
@@ -105,69 +80,20 @@
             <ion-card-title>
               <p class="teacherName">Alexander Buzlov, <span class="country">Rusia</span></p>
             </ion-card-title>
-            <div class="separator"></div>
             <p class="classPlace">28 septiembre, 2018 - 8:30 p.m. Teatro Colon Bogotá</p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
       <ion-slide>
         <ion-card>
-          <ion-card-content class="card-content-magistrales">
-            <ion-card-title>
-              <p class="teacherName"> Profesor magistral 2</p>
-            </ion-card-title>
-            <p class="classPlace">28 septiembre, 2018 - 8:30 p.m. Teatro Colon Bogotá</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <ion-card-content class="card-content-magistrales">
-            <ion-card-title>
-              <p class="teacherName">Alexander Buzlov, <span class="country">Rusia</span></p>
-
-            </ion-card-title>
-            <p class="classPlace">28 septiembre, 2018 - 8:30 p.m. Teatro Colon Bogotá</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <ion-card-content class="card-content-magistrales">
-            <ion-card-title>
-              <p class="teacherName"> Profesor magistral 4</p>
-            </ion-card-title>
-            <p class="classPlace">28 septiembre, 2018 - 8:30 p.m. Teatro Colon Bogotá</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <ion-card-content class="card-content-magistrales">
-            <ion-card-title>
-              <p class="teacherName">Alexander Buzlov, <span class="country">Rusia</span></p>
-
-            </ion-card-title>
-            <p class="classPlace">28 septiembre, 2018 - 8:30 p.m. Teatro Colon Bogotá</p>
-          </ion-card-content>
-        </ion-card>
-      </ion-slide>
-
-      <ion-slide>
-        <ion-card>
-          <ion-card-content id="all-classes">
-            <ion-icon id="last-slide-icon" name="icon-icono-formacion"></ion-icon>
-            <div id="last-slide-title">
-              <p class="classPlace">Ver todas las clases magistrales</p>
+          <ion-card-content class="all-classes">
+            <ion-icon class="last-slide-icon" name="icon-icono-formacion"></ion-icon>
+            <div class="last-slide-title">
+              <p>Ver todas las clases magistrales</p>
             </div>
           </ion-card-content>
         </ion-card>
       </ion-slide>
-
     </ion-slides>
   </div>
 </ion-content>

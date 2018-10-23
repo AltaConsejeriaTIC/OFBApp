@@ -5,8 +5,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module'
 import { HomePageModule } from '../pages/home/home.module';
+import { HomeService } from '../pages/home/home.service';
 import { CalendarHomePageModule } from '../pages/calendar-home/calendar-home.module';
 import { CalendarPageModule } from '../pages/calendar/calendar.module';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
@@ -14,13 +16,18 @@ import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-conten
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { NewsPageModule } from '../pages/news/news.module';
 
+
+
 @NgModule({
   declarations: [
     MyApp
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    HttpClientModule,
+    IonicModule.forRoot(MyApp, {
+      tabsHideOnSubPages: true,
+    }),
     PrimaryTabsPageModule,
     HomePageModule,
     CalendarHomePageModule,
@@ -37,7 +44,8 @@ import { NewsPageModule } from '../pages/news/news.module';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HomeService
   ]
 })
 export class AppModule {}

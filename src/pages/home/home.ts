@@ -9,7 +9,8 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
  */
 
 // Custom components
-import { NewsPage } from '../news/news'
+import { HomeService } from './home.service';
+import { NewsPage } from '../news/news';
 
 @IonicPage()
 @Component({
@@ -17,8 +18,8 @@ import { NewsPage } from '../news/news'
   templateUrl: 'home.html'
 })
 export class HomePage {
+
   @ViewChild('slides')
-  @ViewChild('selectionSelect') selectionSelect: Select;
   slides: Slides;
   events = [
   {
@@ -126,11 +127,12 @@ export class HomePage {
     imgPath: '../../assets/imgs/evento.png',
   }]
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad HomePage');
+    this.getRecentNews();
   }
 
   prevSlide() {
@@ -146,14 +148,33 @@ export class HomePage {
     console.log("goToNews")
     this.navCtrl.push(NewsPage);
   }
-//------------------------ Navigation ----------------------
-//------------------------ Menu ----------------------
-
-
-//------------------------ Menu ----------------------
 
   slideChanged() {
     console.log('slide Changed');
     this.slides.update();
   }
+//------------------------ Navigation ----------------------
+//------------------------ Menu ----------------------
+
+
+//------------------------ Menu ----------------------
+//------------------------ http requests -------------------
+  getRecentNews() {
+    this.homeService.getRecentNews()
+      .subscribe((data) => {
+        this.normalizeNewsData(data);
+        this.news = data;
+      });
+  }
+
+  normalizeNewsData(data){
+    const normalizeData = []
+    data.forEach((newsObject) => {
+      newsObject.content = newsObject.content.substring(0, 139);
+    })
+    console.log(data)
+  }
+
+//------------------------ http requests -------------------
+
 }
