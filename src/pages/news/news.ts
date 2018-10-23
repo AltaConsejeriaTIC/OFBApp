@@ -8,7 +8,6 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news.html',
 })
 export class NewsPage {
-
   news = [{
     title: 'Convocatoria #2 Orquesta folarmónica Juvenil',
     category: 'Prensa',
@@ -28,8 +27,8 @@ export class NewsPage {
     content: 'La orquesta Filarmónica de Bogotá convoca a jóvenes'
   }]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-
   }
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad News');
