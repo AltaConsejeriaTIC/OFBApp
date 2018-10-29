@@ -17,8 +17,8 @@ import { CalendarComponentOptions} from 'ion2-calendar'
 })
 export class EventsMonthPage {
   month: string;
-  day: string;
-  year: string;
+  day: number;
+  year: number;
   showcalendar: boolean = false;
   date: string;
   type: 'string';
