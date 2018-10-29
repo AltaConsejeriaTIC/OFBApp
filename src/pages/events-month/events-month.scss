@@ -34,20 +34,138 @@ page-events-month {
       background-color: #F8774E;
       font-family: 'OpenSans';
 
+      .calendarButton{
+        background-color: #F5A288 !important;
+        height: 3rem;
+        padding: 0 0.7em;
+        ion-icon.icon.icon-md.ion-md-calendar{
+          padding-right: 0.4em;
+        }
+      }
+
       p{
           font-size: 1.4rem;
           font-family: 'OpenSans' !important;
+          padding-left: 1.5em;
       }
 
       ion-icon {
-          font-size: 1.7em;
-          background-color: #F8774E;
+        font-size: 1.7em;
+        color: black;
       }
 
   }
 
   .scroll-content{
       padding: 0 !important;
+    }
+
+    .calendarBox{
+        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        .filterText{
+          position:  relative;
+          p{
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+          }
+        }
+
+        .filterText:before{
+          background-color: lightgray;
+          content: '';
+          width: 90%;
+          bottom: 0;
+          position: absolute;
+          left: 5%;
+          height: 1px;
+        }
+
+        button.days-btn.next-month-day{
+          p{
+                color: black !important;
+          }
+        }
+
+        p{
+          padding-left: 5%;
+          color: white !important;
+        }
+
+        ion-calendar{
+          background-color: black;
+          padding: 0;
+
+          .title{
+            display: none;
+          }
+
+          button.days-btn {
+              border-radius: 4vh;
+              width: 4vh;
+              height: 4vh;
+          }
+
+          .days {
+              width: 14%;
+              height: 5vh;
+              margin-bottom: 0;
+          }
+
+          p, li{
+            font-size: 1.2rem;
+            font-family: "OpenSans";
+            font-weight: 600;
+          }
+          .days-box {
+              padding: 0;
+          }
+          button.today {
+            background-color: #F8774E;
+            p{
+            color: black !important;
+            }
+          }
+
+        }
+
+        .calendarButton{
+            position: relative;
+            text-align: center;
+
+            .button-md{
+              height: 3.1rem;
+              font-size: 1.4rem;
+            }
+
+            span.button-inner {
+                font-size: 1.3rem;
+                font-family: "OpenSans";
+                text-transform: none;
+            }
+
+            .button-md.button-default.button-default-md {
+                margin: 0.8rem 0.2rem;
+                padding: 0 2.1em;
+                background-color: #F8774E;
+                color: black;
+
+            }
+        }
+
+        .calendarButton:before{
+            background-color: lightgray;
+            content: '';
+            width: 90%;
+            top: 0;
+            position: absolute;
+            left: 5%;
+            height: 1px;
+        }
     }
 
   .event{

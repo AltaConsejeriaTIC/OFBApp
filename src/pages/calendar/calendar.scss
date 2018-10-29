@@ -34,14 +34,24 @@ page-calendar {
       background-color: #F8774E;
       font-family: 'OpenSans';
 
+      .calendarButton{
+        background-color: #F5A288;
+        height: 3rem;
+        padding: 0 0.7em;
+        ion-icon.icon.icon-md.ion-md-calendar{
+          padding-right: 0.4em;
+        }
+      }
+
       p{
           font-size: 1.4rem;
           font-family: 'OpenSans' !important;
+          padding-left: 1.5em;
       }
 
       ion-icon {
           font-size: 1.7em;
-          background-color: #F8774E;
+          color: black;
       }
 
   }

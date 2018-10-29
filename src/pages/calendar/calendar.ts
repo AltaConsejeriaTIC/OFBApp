@@ -17,7 +17,9 @@ import { CalendarComponentOptions} from 'ion2-calendar'
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
-
+  month: string;
+  day: string;
+  year: string;
   showcalendar: boolean = true;
   date: string;
   type: 'string';
@@ -33,14 +35,27 @@ export class CalendarPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CalendarPage');
+    this.getDate();
+  }
+
+  getDate(){
+    const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    this.month = monthNames[(new Date()).getMonth()];
+    this.day = new Date().getDate();
+    this.year = new Date().getFullYear();
   }
 
   close(){
     this.navCtrl.pop();
   }
 
-  closeCalendar(){
-    this.showcalendar= false;
+  toggleCalendar(){
+    if(this.showcalendar){
+        this.showcalendar= false;
+    }
+    else{
+        this.showcalendar= true;
+    }
   }
 
   openEventsMonthPage(){

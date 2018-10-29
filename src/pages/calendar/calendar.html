@@ -12,7 +12,11 @@
 
       <div class="headerMonth">
         <ion-icon name="icon-fleacha-atras"></ion-icon>
-        <p>03 septiembre, 2018</p>
+        <p>{{day}} {{month}}, {{year}}</p>
+        <button class="calendarButton" ion-button (click)="toggleCalendar()">
+          <ion-icon name="md-calendar"></ion-icon>
+          <ion-icon name="ios-arrow-down"></ion-icon>
+        </button>
         <ion-icon name="icon-flecha-derecha"></ion-icon>
       </div>
 
