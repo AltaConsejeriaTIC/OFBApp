@@ -61,7 +61,7 @@ export class CalendarPage {
   }
 
   openEventsMonthPage(){
-    this.navCtrl.push(EventsMonthPage);
+  
   }
 
   nextMonthChange($event){
