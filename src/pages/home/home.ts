@@ -11,6 +11,7 @@ import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 // Custom components
 import { HomeService } from './home.service';
 import { NewsPage } from '../news/news';
+import { NewsDetailsPage } from '../news-details/news-details';
 
 @IonicPage()
 @Component({
@@ -89,8 +90,7 @@ export class HomePage {
   getRecentNews() {
     this.homeService.getRecentNews()
     .subscribe((data) => {
-      //this.normalizeNewsData(data);
-      console.log(data)
+      this.normalizeNewsData(data);
       this.news = data;
     });
   }
@@ -98,8 +98,7 @@ export class HomePage {
   getFeaturedEvents() {
     this.homeService.getFeaturedEvents()
     .subscribe((data) => {
-      //this.normalizeNewsData(data);
-      console.log(data)
+      this.normalizeNewsData(data);
       this.featuredEvents = data;
     });
   }
@@ -107,14 +106,28 @@ export class HomePage {
   getMagistralClasses() {
     this.homeService.getMagistralClasses()
     .subscribe((data) => {
+      this.normalizeNewsData(data);
       this.magistralClasses = data;
     });
   }
 
   normalizeNewsData(data){
     data.forEach((newsObject) => {
-      newsObject.content = newsObject.content.substring(0, 139);
+      newsObject.title = this.removeHTMLTagFromString(newsObject.title)
+      newsObject.content = this.removeHTMLTagFromString(newsObject.content)
+      newsObject.stripedTitle = newsObject.title.substring(0, 70);
+      newsObject.stripedContent = newsObject.content.substring(0, 140);
+      if(newsObject.stripedTitle.length == 70){
+        newsObject.stripedTitle = newsObject.stripedTitle + '...';
+      }
+      if(newsObject.stripedContent.length == 140){
+        newsObject.stripedContent = newsObject.stripedContent + '...';
+      }
     })
+  }
+
+  removeHTMLTagFromString(str){
+    return str.replace(/<[^>]+>/g, '');
   }
 
 //------------------------ http requests -------------------
@@ -125,6 +138,10 @@ export class HomePage {
 
   slideChanged() {
     this.slides.update();
+  }
+
+  goToDetails(newObject) {
+    this.navCtrl.push(NewsDetailsPage, newObject);
   }
 //------------------------ Navigation ----------------------
 

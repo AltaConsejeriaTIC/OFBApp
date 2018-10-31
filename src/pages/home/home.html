@@ -43,16 +43,16 @@
     </div>
 
     <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
-      <ion-slide *ngFor='let new of news'>
+      <ion-slide *ngFor='let new of news' (click)='goToDetails(new)'>
         <ion-card>
           <img src="../../assets/imgs/XMLID_7_.png"/>
           <!--<img src={{new.image}}/>-->
           <ion-card-content>
             <p class="slideDate newsDate">{{new.date}}</p>
             <ion-card-title>
-              {{new.title}}
+              {{new.stripedTitle}}
             </ion-card-title>
-            <p [innerHtml]='new.content'>
+            <p class="new-content" [innerHtml]='new.stripedContent'>
             </p>
           </ion-card-content>
         </ion-card>
@@ -89,7 +89,7 @@
       <ion-slide>
         <ion-card>
           <ion-card-content class="all-classes">
-            <ion-icon class="last-slide-icon" name="icon-icono-educacion"></ion-icon>
+            <ion-icon class="last-slide-icon" name="icon-icono-magistrales"></ion-icon>
             <div class="last-slide-title">
               <p>Ver todas las clases magistrales</p>
             </div>

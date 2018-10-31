@@ -39,9 +39,6 @@ export class NewsPage {
 
 //-------------------------- Navigation ---------------------------------
   goToDetails(newObject) {
-    console.log('newObject');
-    console.log(newObject);
-    console.log('newObject');
     this.navCtrl.push(NewsDetailsPage, newObject);
   }
 
