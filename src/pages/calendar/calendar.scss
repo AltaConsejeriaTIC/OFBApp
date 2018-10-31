@@ -24,6 +24,14 @@ page-calendar {
     text-transform: uppercase;
   }
 
+  .headerCenter{
+    justify-content: center !important;
+  }
+
+  .padding-right{
+    padding-right: 5% !important;
+  }
+
   .headerMonth{
       text-transform: uppercase;
       font-weight: bold;
@@ -34,16 +42,62 @@ page-calendar {
       background-color: #F8774E;
       font-family: 'OpenSans';
 
+      .calendarButton{
+        background-color: #F5A288;
+        height: 3rem;
+        padding: 0 0.5em;
+        ion-icon.icon.icon-md.ion-md-icon-icono-calendario{
+          padding-right: 0.3em;
+          font-size: 1.6em;
+        }
+      }
+
       p{
           font-size: 1.4rem;
           font-family: 'OpenSans' !important;
+          padding-left: 1.5em;
+          position: relative;
       }
 
       ion-icon {
-          font-size: 1.7em;
-          background-color: #F8774E;
+          font-size: 2.4em;
+          color: black;
       }
 
+      ion-icon.icon.icon-md.ion-md-icon-fleacha-atras{
+        position: relative;
+        padding-left: 1%;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-fleacha-atras:after{
+          background-color: rgba(0, 0, 0, 0.15);
+          content: '';
+          height: 90%;
+          right: -1vh;
+          position: absolute;
+          top: 5%;
+          width: 2px;
+
+      }
+
+      ion-icon.icon.icon-md.ion-ios-arrow-up, ion-icon.icon.icon-md.ion-ios-arrow-down{
+        font-size: 2rem;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-flecha-derecha{
+        position: relative;
+        padding-right: 1%;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-flecha-derecha:after{
+        background-color: rgba(0, 0, 0, 0.15);
+        content: '';
+        height: 90%;
+        left: -1vh;
+        position: absolute;
+        top: 5%;
+        width: 2px;
+      }
   }
 
   .scroll-content{
