@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CalendarPage } from '../calendar/calendar';
-import { CalendarComponentOptions} from 'ion2-calendar'
+import { CalendarComponentOptions, CalendarComponent} from 'ion2-calendar'
 
 /**
  * Generated class for the EventsMonthPage page.
@@ -16,8 +16,10 @@ import { CalendarComponentOptions} from 'ion2-calendar'
   templateUrl: 'events-month.html',
 })
 export class EventsMonthPage {
+  @ViewChild('calendario') calendario: CalendarComponent;
+
   month: string;
-  day: number;
+  day: any;
   year: number;
   showcalendar: boolean = false;
   date: string;
@@ -30,17 +32,19 @@ export class EventsMonthPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EventsMonthPage');
     this.getDate();
   }
+
+
+
 
   getDate(){
     const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
     this.month = monthNames[(new Date()).getMonth()];
-    this.day = new Date().getDate();
     this.year = new Date().getFullYear();
   }
 
@@ -57,8 +61,25 @@ export class EventsMonthPage {
     this.navCtrl.pop();
   }
 
-  onChange(){
-    return;
+  onSelect($event) {
+    console.log($event.title);
+  }
+
+  nextMonthChange($event){
+        this.calendario.next();
+         console.log('monthChange',$event);
+
+  }
+
+  prevMonthChange($event){
+        this.calendario.prev();
+         console.log('monthChange',$event);
+  }
+
+  monthChange($event) {
+    const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    this.month = monthNames[$event.newMonth.dateObj.getMonth()];
+    this.year = $event.newMonth.dateObj.getFullYear();
   }
 
 }

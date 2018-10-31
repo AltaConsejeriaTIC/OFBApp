@@ -11,13 +11,14 @@
     </ion-navbar>
 
     <div class="headerMonth">
-      <ion-icon name="icon-fleacha-atras"></ion-icon>
-        <p>{{day}} {{month}}, {{year}}</p>
+      <ion-icon name="icon-fleacha-atras" (click)="prevMonthChange($event)"></ion-icon>
+        <p>{{month}}, {{year}}</p>
       <button class="calendarButton" ion-button (click)="toggleCalendar()">
-        <ion-icon name="md-calendar"></ion-icon>
-        <ion-icon name="ios-arrow-down"></ion-icon>
+        <ion-icon name="icon-icono-calendario"></ion-icon>
+        <ion-icon name="ios-arrow-up" *ngIf="showcalendar"></ion-icon>
+        <ion-icon name="ios-arrow-down" *ngIf="!showcalendar"></ion-icon>
       </button>
-      <ion-icon name="icon-flecha-derecha"></ion-icon>
+      <ion-icon name="icon-flecha-derecha" (click)="nextMonthChange($event)"></ion-icon>
     </div>
 
 </ion-header>
@@ -31,11 +32,10 @@
         <p>Filtrar por día</p>
     </div>
 
-      <ion-calendar [(ngModel)]="date"
-          (onChange)="onChange($event)"
-          [type]="type"
-          [options]="optionsMulti"
-          [format]="'YYYY-MM-DD'">
+      <ion-calendar #calendario [(ngModel)]="_calendarMonthValue"
+                          (onSelect)="onSelect($event)"
+                          [options]="optionsMulti"
+                          (monthChange)="monthChange($event)">
       </ion-calendar>
 
   </div>

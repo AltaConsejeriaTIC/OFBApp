@@ -37,9 +37,10 @@ page-events-month {
       .calendarButton{
         background-color: #F5A288 !important;
         height: 3rem;
-        padding: 0 0.7em;
-        ion-icon.icon.icon-md.ion-md-calendar{
-          padding-right: 0.4em;
+        padding: 0 0.5em;
+        ion-icon.icon.icon-md.ion-md-icon-icono-calendario{
+          padding-right: 0.3em;
+          font-size: 1.6em;
         }
       }
 
@@ -50,8 +51,43 @@ page-events-month {
       }
 
       ion-icon {
-        font-size: 1.7em;
+        font-size: 2.4em;
         color: black;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-fleacha-atras{
+        position: relative;
+        padding-left: 1%;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-fleacha-atras:after{
+          background-color: rgba(0, 0, 0, 0.15);
+          content: '';
+          height: 80%;
+          right: -1vh;
+          position: absolute;
+          top: 10%;
+          width: 2px;
+
+      }
+
+      ion-icon.icon.icon-md.ion-ios-arrow-up{
+        font-size: 2rem;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-flecha-derecha{
+        position: relative;
+        padding-right: 1%;
+      }
+
+      ion-icon.icon.icon-md.ion-md-icon-flecha-derecha:after{
+        background-color: rgba(0, 0, 0, 0.15);
+        content: '';
+        height: 80%;
+        left: -1vh;
+        position: absolute;
+        top: 10%;
+        width: 2px;
       }
 
   }
