@@ -21,8 +21,7 @@ export class HomePage {
 
   @ViewChild('slides')
   slides: Slides;
-  events = [
-  {
+  public events = [{
     date: {
       day: '15',
       month: 'OCT',
@@ -56,83 +55,16 @@ export class HomePage {
     imgPath: '../../assets/imgs/evento.png', 
   }
   ]
-  news = [{
-    date: {
-      day: '15',
-      month: 'OCT',
-      time: '8:30 PM'
-    },
-    category: 'prensa',
-    title: 'Aterciopelados',
-    description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/XMLID_7_.png',
-    
-  },
-  {
-    date: {
-      day: '09',
-      month: 'OCT',
-      time: '8:30 AM'
-    },
-    category: 'prensa',
-    title: 'Concierto 2',
-    description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/violinista.png',
-    
-  },
-  {
-    date: {
-      day: '12',
-      month: 'OCT',
-      time: '1:30 PM'
-    },
-    category: 'prensa',
-    title: 'Concierto 2',
-    description: 'Teatro Colon de Bogotá',
-    imgPath: '../../assets/imgs/evento.png',
-  }]
-  classes = [{
-    date: {
-      day: '15',
-      month: 'OCT',
-      time: '8:30 PM'
-    },
-    category: 'prensa',
-    title: 'Aterciopelados',
-    description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/XMLID_7_.png',
-    
-  },
-  {
-    date: {
-      day: '09',
-      month: 'OCT',
-      time: '8:30 AM'
-    },
-    category: 'prensa',
-    title: 'Concierto 2',
-    description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/violinista.png',
-    
-  },
-  {
-    date: {
-      day: '12',
-      month: 'OCT',
-      time: '1:30 PM'
-    },
-    category: 'prensa',
-    title: 'Concierto 2',
-    description: 'Teatro Colon de Bogotá',
-    imgPath: '../../assets/imgs/evento.png',
-  }]
+  public featuredEvents = [];
+  public news = [];
+  public magistralClasses = [];
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
-    this.getRecentNews();
+    
+    this.initView();
   }
 
   prevSlide() {
@@ -143,17 +75,12 @@ export class HomePage {
     this.slides.slideNext();
   }
 
-//------------------------ Navigation ---------------------- 
-  goToNews() {
-    console.log("goToNews")
-    this.navCtrl.push(NewsPage);
-  }
+  initView() {
+    this.getRecentNews();
+    this.getFeaturedEvents();
+    this.getMagistralClasses();
 
-  slideChanged() {
-    console.log('slide Changed');
-    this.slides.update();
   }
-//------------------------ Navigation ----------------------
 //------------------------ Menu ----------------------
 
 
@@ -161,20 +88,44 @@ export class HomePage {
 //------------------------ http requests -------------------
   getRecentNews() {
     this.homeService.getRecentNews()
-      .subscribe((data) => {
-        this.normalizeNewsData(data);
-        this.news = data;
-      });
+    .subscribe((data) => {
+      //this.normalizeNewsData(data);
+      console.log(data)
+      this.news = data;
+    });
+  }
+
+  getFeaturedEvents() {
+    this.homeService.getFeaturedEvents()
+    .subscribe((data) => {
+      //this.normalizeNewsData(data);
+      console.log(data)
+      this.featuredEvents = data;
+    });
+  }
+
+  getMagistralClasses() {
+    this.homeService.getMagistralClasses()
+    .subscribe((data) => {
+      this.magistralClasses = data;
+    });
   }
 
   normalizeNewsData(data){
-    const normalizeData = []
     data.forEach((newsObject) => {
       newsObject.content = newsObject.content.substring(0, 139);
     })
-    console.log(data)
   }
 
 //------------------------ http requests -------------------
+//------------------------ Navigation ---------------------- 
+  goToNews(news) {
+    this.navCtrl.push(NewsPage, news);
+  }
+
+  slideChanged() {
+    this.slides.update();
+  }
+//------------------------ Navigation ----------------------
 
 }

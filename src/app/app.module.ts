@@ -15,6 +15,7 @@ import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { NewsPageModule } from '../pages/news/news.module';
+import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
 import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
 
 import { CalendarModule } from "ion2-calendar";
@@ -35,6 +36,8 @@ registerLocaleData(es);
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
+      backButtonText: '',
+      backButtonIcon: 'icon-flecha-izquierda',
     }),
     PrimaryTabsPageModule,
     HomePageModule,
@@ -44,6 +47,7 @@ registerLocaleData(es);
     AudVisContentPageModule,
     TriviaPageModule,
     NewsPageModule,
+    NewsDetailsPageModule,
     EventsMonthPageModule,
     CalendarModule
   ],

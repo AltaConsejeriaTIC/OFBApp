@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card  *ngFor='let new of news'>
+  <ion-card  *ngFor='let new of news' (click)='goToDetails(new)'>
     <img src="../../assets/imgs/XMLID_8_.png" />
     <ion-card-content>
       <div class="newsTitle">
@@ -18,8 +18,7 @@
       <ion-card-title>
         {{new.title}}
       </ion-card-title>
-      <p>
-        {{new.content}}
+      <p [innerHtml]='new.content'>
       </p>
     </ion-card-content>
   </ion-card>

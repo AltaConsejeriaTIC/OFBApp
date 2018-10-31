@@ -1,0 +1,121 @@
+page-news-details {
+  font-color: gray;
+
+  ion-navbar {
+    position: absolute;
+    max-height: inherit;
+    align-items: center;
+    z-index: 1;
+
+    .button-inner{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+      border-radius: 50%;
+
+      .back-button-icon-md,
+      .back-button-icon-ios
+      .back-button-icon {
+        font-size: 16px;
+      }
+    }
+
+    ion-icon {
+      color: #000000;
+    }
+
+    .toolbar-background-ios,
+    .toolbar-background-md,
+    .toolbar-background {
+      background-color: transparent;
+    }
+  }
+
+  .gradient {
+    width: 100%;
+    position: absolute;
+    height: 100vw;
+    background: linear-gradient(transparent 50%, white 76%);
+  }
+
+  img {
+    width: 100%;
+    height: 100vw;
+    height: auto;
+    z-index: -1;
+  }
+
+  .newsContent{
+    position: relative;
+    padding: 0 25px;
+    margin-top: -50px;
+    color: color($colors, newsDetailsTextColor, base);
+    font-family: 'open-sans';
+
+    h2 {
+      color: black;
+    }
+  }
+
+  .separator {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 1px;
+    
+    div {
+      background-color: color($colors, newsDetailsTextColor, base);
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .social-media {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    margin-bottom: 15px;
+
+    button,
+    .button-md, 
+    .button-ios {
+      box-shadow: none;
+      width: 40px;
+      height: 40px;
+      background-color: white;
+      border: none;
+      padding: 0;
+      margin-left: 15px;
+      
+      span{
+        border: none;
+        padding: 0; 
+
+        ion-icon{
+          border: none;
+          font-size: 40px;
+        }
+      }
+      
+      &.facebook-button {
+        span{
+          color: #3B5998;
+        }
+      }
+
+      &.twitter-button {
+        span {
+          color: #1DA1F2;
+
+        }
+      }
+    }
+
+    span {
+      color: #818181;
+      flex-grow: 1;
+      left: 0;
+    }
+  }
+}

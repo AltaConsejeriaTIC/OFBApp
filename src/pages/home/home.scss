@@ -258,6 +258,7 @@ page-home {
 
     .separator {
       width: 100%;
+      margin-top: 10px;
       height: 1px;
       background-color: color($colors, separator, base);
     }
@@ -267,23 +268,18 @@ page-home {
       padding: 5px 8px;
     }
 
-    .classPlace,
+    .classContent,
     .slideDate {
-      margin: 15px 0;
+      margin: 8px 0;
       font-family: 'OpenSans';
       line-height: 13px;
       font-size: 1.2rem;
       color: color($colors, highlightText, base);
-      
-      &.newsDate {
-        margin: 8px 0 0 0;
-      }
     }
 
-    .classPlace {
+    .classContent {
       color: color($colors, mainText, base);
     }
-
   }
   .last-slide-news-content,
   .all-classes {

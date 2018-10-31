@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+//Custom components
+import { NewsDetailsPage } from '../news-details/news-details';
 
 @IonicPage()
 @Component({
@@ -8,7 +10,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'news.html',
 })
 export class NewsPage {
-  news = [{
+  public news = [{
     title: 'Convocatoria #2 Orquesta folarmónica Juvenil',
     category: 'Prensa',
     date: '04 Sep 2018',
@@ -27,11 +29,25 @@ export class NewsPage {
     content: 'La orquesta Filarmónica de Bogotá convoca a jóvenes'
   }]
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.news = navParams['data']
   }
-
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad News');
+    console.log(this.news)
   }
+
+//-------------------------- Navigation ---------------------------------
+  goToDetails(newObject) {
+    console.log('newObject');
+    console.log(newObject);
+    console.log('newObject');
+    this.navCtrl.push(NewsDetailsPage, newObject);
+  }
+
+//-------------------------- Navigation ---------------------------------
+
+
+
 
 }

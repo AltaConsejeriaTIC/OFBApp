@@ -45,7 +45,8 @@
     <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide *ngFor='let new of news'>
         <ion-card>
-          <img src={{new.image}}/>
+          <img src="../../assets/imgs/XMLID_7_.png"/>
+          <!--<img src={{new.image}}/>-->
           <ion-card-content>
             <p class="slideDate newsDate">{{new.date}}</p>
             <ion-card-title>
@@ -58,8 +59,8 @@
       </ion-slide>
       <ion-slide>
           <ion-card>
-            <ion-card-content class="last-slide-news-content" (click)="goToNews()">
-              <ion-icon class="last-slide-icon" name="paper"></ion-icon>
+            <ion-card-content class="last-slide-news-content" (click)="goToNews(news)">
+              <ion-icon class="last-slide-icon" name="icon-noticias"></ion-icon>
               <div class="last-slide-title">
                 <p>Ver todas las noticias</p>
               </div>
@@ -74,13 +75,14 @@
       <div class="section-line"></div>
     </div>
     <ion-slides class="clases" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
-      <ion-slide>
+      <ion-slide *ngFor='let class of magistralClasses'>
         <ion-card>
           <ion-card-content class="card-content-magistrales">
             <ion-card-title>
-              <p class="teacherName">Alexander Buzlov, <span class="country">Rusia</span></p>
+              <p class="teacherName">{{class.title}}</p>
             </ion-card-title>
-            <p class="classPlace">28 septiembre, 2018 - 8:30 p.m. Teatro Colon Bogotá</p>
+            <div class="separator"></div>
+            <p class="classContent" [innerHtml]='class.content'></p>
           </ion-card-content>
         </ion-card>
       </ion-slide>

@@ -1,0 +1,21 @@
+<ion-content>
+  <ion-navbar>
+  </ion-navbar>
+  <div class="gradient"></div>
+  <img src='../../assets/imgs/XMLID_7_.png'/>
+  <div class="newsContent">
+    <h2>{{newsObject.title}}</h2>
+    <div class="separator"><div></div></div>
+    <div [innerHTML]='newsObject.content'></div>
+    <div class="separator"><div></div></div>
+    <div class="social-media">
+      <button ion-button class="facebook-button">
+        <ion-icon name="icon-facebook"></ion-icon>
+      </button>
+      <button ion-button class="twitter-button">
+        <ion-icon name="icon-twitter"></ion-icon>
+      </button>
+      <span>Comparte esta noticia</span>
+    </div>
+  </div>
+</ion-content>

@@ -37,6 +37,7 @@ $colors: (
   // Main Backgorund color
   background: #161824,
   separator: #474747,
+  newDetailSeparator: #E5E5E5,
 
   // NavBar buttons background colors
   navBarBackground: #000000,
@@ -49,9 +50,13 @@ $colors: (
 
   mainText: #8E8E9C,
   highlightText: #FF4AC1,
+  
   //News section
   newsSectionBackground: #282A35,
   newsCardBackground: #1C1D26,
+
+  //News Details section
+  newsDetailsTextColor: #5B5E6D,
 );
 
 //NavBar variables

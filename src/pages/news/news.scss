@@ -7,7 +7,6 @@ page-news {
 
     ion-navbar {
       max-height: inherit;
-      align-items: center;
       
       ion-icon {
         color: #ffffff;
@@ -16,9 +15,14 @@ page-news {
       ion-title {
 
         .toolbar-title-ios,
-        .toolbar-title-md
+        .toolbar-title-md,
         .toolbar-title {
           color: #ffffff;
+        }
+        &.title-md {
+          .toolbar-title-md {
+           color: #ffffff; 
+          }
         }
       }
     }
@@ -28,6 +32,7 @@ page-news {
     .toolbar {
       padding-left: 10px;
     }
+
     .toolbar-background {
       background-color: color($colors, background, base);
     }
