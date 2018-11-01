@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 
 export class CalendarService {
-  public mainDomain = 'http://127.0.0.1:10010/';
+  public mainDomain = 'http://192.168.88.57:10010/';
   public BACKEND_ENDPOINTS = {
   	MONTHLY_EVENTS: 'eventos/mes',
   };
