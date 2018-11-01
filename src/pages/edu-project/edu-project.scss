@@ -7,12 +7,14 @@ page-edu-project {
 
     ion-navbar {
       max-height: inherit;
-      align-items: center;
 
       ion-title {
         .toolbar-title-ios,
-        .toolbar-title-md
+        .toolbar-title-md,
         .toolbar-title {
+          display: flex;
+          justify-content: center;
+          font-family: Bitter;
           color: #ffffff;
         }
       }

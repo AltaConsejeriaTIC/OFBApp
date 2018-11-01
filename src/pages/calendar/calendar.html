@@ -5,7 +5,7 @@
         <ion-title text-center>Calendario de conciertos</ion-title>
         <ion-buttons left>
           <button ion-button icon-only (click)="close()">
-            <ion-icon name="icon-fleacha-atras"></ion-icon>
+            <ion-icon name="icon-flecha-atras"></ion-icon>
           </button>
         </ion-buttons>
       </ion-navbar>
@@ -60,8 +60,8 @@
           <ion-col col-9 class="eventInfo">
               <p class="eventAutor">{{event.label}}</p>
               <p class="eventTitle">{{event.stripedTitle}}</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>{{event.startHour}}</p>
-              <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
+              <p class="eventTime"><ion-icon name="icon-clock"></ion-icon>{{event.startHour}}</p>
+              <p class="eventPlace"><ion-icon name="icon-map-marker" ></ion-icon>Auditorio Leon de Greiff</p>
           </ion-col>
 
         </ion-row>

@@ -208,6 +208,7 @@ page-calendar {
     .event{
       height: 20vh;
       background-color: black;
+      margin-bottom: 1px;
       border-top: 1px solid white;
 
       .eventDate{
@@ -238,22 +239,22 @@ page-calendar {
           }
 
           .priceEvent{
-              position: relative;
+            position: relative;
           }
 
           .priceEvent:before{
-              background-color: #db4f0a;
-              content: '';
-              width: 100%;
-              top: -1vh;
-              position: absolute;
-              left: 0;
-              height: 1px;
+            background-color: #db4f0a;
+            content: '';
+            width: 100%;
+            top: -1vh;
+            position: absolute;
+            left: 0;
+            height: 1px;
           }
       }
 
       .eventInfo{
-          height: 19.9vh;
+          height: 20vh;
           background-color: #282A35;
           display: flex;
           flex-direction: column;
@@ -284,8 +285,22 @@ page-calendar {
           }
 
           .eventTime, .eventPlace{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
             color: #AEAEAE;
-              font-family: "OpenSans" !important;
+            font-family: "OpenSans" !important;
+            font-size: 12px;
+            margin-bottom: 3px;
+
+            ion-icon {
+              margin-right: 10px;
+              color: color($colors, navBarCalendar, base);
+            }
+
+            &.last-child {
+              margin-bottom: 0;
+            }
           }
       }
 
