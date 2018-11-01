@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the NewsDetailsPage page.
+ * Generated class for the EventDetailsPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
@@ -10,18 +10,19 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 @IonicPage()
 @Component({
-  selector: 'page-news-details',
-  templateUrl: 'news-details.html',
+  selector: 'page-event-details',
+  templateUrl: 'event-details.html',
 })
-export class NewsDetailsPage {
+export class EventDetailsPage {
+  public event: any;
 
-  newsObject: any;
-  
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    this.newsObject = navParams['data']
+    this.event = navParams['data'];
+    console.log(this.event)
   }
 
   ionViewDidLoad() {
+    console.log('ionViewDidLoad EventDetailsPage');
   }
 
 }

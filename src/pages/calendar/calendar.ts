@@ -2,14 +2,11 @@ import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CalendarHomePage } from '../calendar-home/calendar-home';
 import { EventsMonthPage } from '../events-month/events-month';
+import { EventDetailsPage } from '../event-details/event-details';
 import { CalendarComponentOptions, CalendarComponent} from 'ion2-calendar'
 
-/**
- * Generated class for the CalendarPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+// Custom components
+import { CalendarService } from './calendar.service';
 
 @IonicPage()
 @Component({
@@ -19,6 +16,8 @@ import { CalendarComponentOptions, CalendarComponent} from 'ion2-calendar'
 export class CalendarPage {
   @ViewChild('calendario') calendario: CalendarComponent;
 
+  selectedMonth: any;
+  events: any;
   month: string;
   day: any;
   year: number;
@@ -32,48 +31,48 @@ export class CalendarPage {
      weekStart: 1
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private calendarService: CalendarService) {
+    this.selectedMonth = navParams['data']
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CalendarPage');
     this.getDate();
-  }
+    this.getMonthlyEvents();
+  };
 
   getDate(){
     const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
     this.month = monthNames[(new Date()).getMonth()];
     this.day = new Date().getDate();
     this.year = new Date().getFullYear();
-  }
+  };
 
   close(){
     this.navCtrl.pop();
-  }
+  };
 
   toggleCalendar(){
     if(this.showcalendar){
-        this.showcalendar= false;
+      this.showcalendar= false;
     }
     else{
-        this.showcalendar= true;
+      this.showcalendar= true;
     }
-  }
+  };
 
   openEventsMonthPage(){
   
-  }
+  };
 
   nextMonthChange($event){
-        this.calendario.next();
-         console.log('monthChange',$event);
-  }
+    this.calendario.next();
+    console.log('monthChange',$event);
+  };
 
   prevMonthChange($event){
-        this.calendario.prev();
-         console.log('monthChange',$event);
-
-  }
+    this.calendario.prev();
+    console.log('monthChange',$event);
+  };
 
   onChange($event){
     $event = $event.split("-");
@@ -90,5 +89,36 @@ export class CalendarPage {
     this.day = "";
   }
 
+//------------------------ http requests -------------------
+  getMonthlyEvents() {
+    this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
+    .subscribe((data) => {
+      const normalizedData = this.normalizeEventData(data);
+      console.log(normalizedData);
+      this.events = normalizedData;
+    });
+  }
 
+  normalizeEventData(data){
+    data.forEach((eventObject) => {
+      eventObject.splitedDate = eventObject.date.split(' ');
+      eventObject.stripedTitle = eventObject.title.substring(0, 70);
+      if(eventObject.stripedTitle.length == 70){
+        eventObject.stripedTitle = eventObject.stripedTitle + '...';
+      }
+    })
+    return data;
+  }
+
+  removeHTMLTagFromString(str){
+    return str.replace(/<[^>]+>/g, '');
+  }
+
+//------------------------ http requests -------------------
+//------------------------ Navigation ----------------------
+
+  goToEventDetails(event){
+    this.navCtrl.push(EventDetailsPage, event);
+  }
+//------------------------ Navigation ----------------------
 }

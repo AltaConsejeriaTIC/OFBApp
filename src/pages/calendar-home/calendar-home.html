@@ -76,11 +76,11 @@
 
     <ion-row>
 
-        <ion-col [ngClass]="{'actual': month == 10, 'pending': month < 10 }" (click)=openCalendarPage()>
+        <ion-col [ngClass]="{'actual': month == 10, 'pending': month < 10 }">
           <p >octubre</p>
         </ion-col>
 
-        <ion-col [ngClass]="{'actual': month == 11, 'pending': month < 11 }">
+        <ion-col [ngClass]="{'actual': month == 11, 'pending': month < 11 }" (click)="openCalendarPage(month)">
           <p>noviembre</p>
         </ion-col>
 

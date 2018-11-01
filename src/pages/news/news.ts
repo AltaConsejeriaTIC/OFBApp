@@ -34,7 +34,6 @@ export class NewsPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad News');
-    console.log(this.news)
   }
 
 //-------------------------- Navigation ---------------------------------

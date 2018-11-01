@@ -56,9 +56,9 @@ export class HomePage {
     imgPath: '../../assets/imgs/evento.png', 
   }
   ]
-  public featuredEvents = [];
-  public news = [];
-  public magistralClasses = [];
+  public featuredEvents : any;
+  public news : any;
+  public magistralClasses : any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) {
   }
@@ -90,6 +90,7 @@ export class HomePage {
   getRecentNews() {
     this.homeService.getRecentNews()
     .subscribe((data) => {
+      console.log(data)
       this.normalizeNewsData(data);
       this.news = data;
     });

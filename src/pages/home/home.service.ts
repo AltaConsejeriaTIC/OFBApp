@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class HomeService {
   public mainDomain = 'http://127.0.0.1:10010/';
   public BACKEND_ENDPOINTS = {
-  	RECENT_EVENT: 'eventos/home/',
+  	RECENT_EVENTS: 'eventos/home/',
   	RECENT_NEWS: 'blog/home/',
   	MAGISTRAL_CLASSES: 'clases-magistrales/home',
   };
@@ -16,7 +16,7 @@ export class HomeService {
   // Backend endpoints constants
 
   getFeaturedEvents() {
-    return this.http.get(this.mainDomain + this.BACKEND_ENDPOINTS.RECENT_EVENT);
+    return this.http.get(this.mainDomain + this.BACKEND_ENDPOINTS.RECENT_EVENTS);
   };
 
   getRecentNews() {

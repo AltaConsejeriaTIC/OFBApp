@@ -1,0 +1,124 @@
+page-event-details {
+
+  ion-navbar {
+    position: absolute;
+    max-height: inherit;
+    align-items: center;
+    z-index: 1;
+
+    .button-inner{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: color($colors, navBarCalendar, base);
+      border-radius: 50%;
+
+      .back-button-icon-md,
+      .back-button-icon-ios
+      .back-button-icon {
+        font-size: 22px;
+      }
+    }
+
+    ion-icon {
+      color: black;
+
+    }
+
+    .toolbar-background-ios,
+    .toolbar-background-md,
+    .toolbar-background {
+      background-color: transparent;
+    }
+  }
+
+  ion-content {
+    img {
+      width: 100%;
+      height: 80vw;
+    }
+
+    .eventContent{
+      position: relative;
+      padding: 0 25px;
+      color: color($colors, newsDetailsTextColor, base);
+
+      h2 {
+        font-family: 'Bitter';
+        font-weight: 800;
+        font-size: 18px;
+        color: black;
+      }
+    }
+
+    .separator {
+      width: 100%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      height: 1px;
+      
+      div {
+        background-color: #E5E5E5;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .eventInfo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      div {
+        display: flex;
+        font-size: 16px;
+        align-items: center;
+        margin-bottom: 5px;
+
+        ion-icon {
+          color: black;
+          font-size: 20px;
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .buyTicketsButton,
+    .shareEventButton {
+      width: 100%;
+      height: 42px;
+      margin-bottom: 10px;
+      font-weight: 800;
+      font-size: 15px;
+      border-radius: 4px;
+      background-color: color($colors, navBarCalendar, base);
+      font-family: 'OpenSans';
+    }
+
+    .shareEventButton {
+      margin-bottom: 0;
+      background-color: #E3E3E3;
+    }
+
+    .htmlContent {
+      margin-bottom: 10px;
+    }
+
+    .mapTag {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      ion-icon {
+        color: color($colors, navBarCalendar, base);
+        font-size: 25px;
+        margin-right: 10px;
+      }
+
+      h6 {
+        font-weight: 800;  
+        margin: 0;
+      }
+    }
+  }
+}

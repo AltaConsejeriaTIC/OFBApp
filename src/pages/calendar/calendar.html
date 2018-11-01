@@ -33,10 +33,11 @@
             <p>Filtrar por día</p>
         </div>
 
-        <ion-calendar #calendario [(ngModel)]="_calendarMonthValue"
-                            [options]="optionsMulti"
-                            (onChange)="onChange($event)"
-                            (monthChange)="monthChange($event)">
+        <ion-calendar #calendario
+          [(ngModel)]="_calendarMonthValue"
+          [options]="optionsMulti"
+          (onChange)="onChange($event)"
+          (monthChange)="monthChange($event)">
         </ion-calendar>
 
 
@@ -46,122 +47,20 @@
 
       </div>
 
-      <div class="event">
-
+      <div class="event" *ngFor='let event of events' (click)="goToEventDetails(event)">
         <ion-row>
           <ion-col col-3 class="eventDate">
             <div class="dayAndMonthEvent">
-                <p class="eventDay">03</p>
-                <p class="eventMonth">SEPT</p>
+                <p class="eventDay">{{event.splitedDate[0]}}</p>
+                <p class="eventMonth">{{event.splitedDate[1]}}</p>
             </div>
                 <p class="priceEvent">Evento gratuito</p>
           </ion-col>
 
           <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">Orquesta Filarmónica de Bogotá</p>
-              <p class="eventTitle">Director y solista: Christian Lindberg</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>6:30 PM</p>
-              <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
-          </ion-col>
-
-        </ion-row>
-
-      </div>
-
-      <div class="event">
-        <ion-row>
-          <ion-col col-3 class="eventDate">
-            <div class="dayAndMonthEvent">
-                <p class="eventDay">03</p>
-                <p class="eventMonth">SEPT</p>
-            </div>
-                <p class="priceEvent">Evento gratuito</p>
-          </ion-col>
-
-          <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">Orquesta Filarmónica de Bogotá</p>
-              <p class="eventTitle">Director y solista: Christian Lindberg</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>6:30 PM</p>
-              <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
-          </ion-col>
-
-        </ion-row>
-      </div>
-
-      <div class="event">
-        <ion-row>
-          <ion-col col-3 class="eventDate">
-            <div class="dayAndMonthEvent">
-                <p class="eventDay">03</p>
-                <p class="eventMonth">SEPT</p>
-            </div>
-                <p class="priceEvent">Evento gratuito</p>
-          </ion-col>
-
-          <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">Orquesta Filarmónica de Bogotá</p>
-              <p class="eventTitle">Director y solista: Christian Lindberg</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>6:30 PM</p>
-              <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
-          </ion-col>
-
-        </ion-row>
-      </div>
-
-      <div class="event">
-        <ion-row>
-          <ion-col col-3 class="eventDate">
-            <div class="dayAndMonthEvent">
-                <p class="eventDay">03</p>
-                <p class="eventMonth">SEPT</p>
-            </div>
-                <p class="priceEvent">Evento gratuito</p>
-          </ion-col>
-
-          <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">Orquesta Filarmónica de Bogotá</p>
-              <p class="eventTitle">Director y solista: Christian Lindberg</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>6:30 PM</p>
-              <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
-          </ion-col>
-
-        </ion-row>
-      </div>
-
-      <div class="event">
-        <ion-row>
-          <ion-col col-3 class="eventDate">
-            <div class="dayAndMonthEvent">
-                <p class="eventDay">03</p>
-                <p class="eventMonth">SEPT</p>
-            </div>
-                <p class="priceEvent">Evento gratuito</p>
-          </ion-col>
-
-          <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">Orquesta Filarmónica de Bogotá</p>
-              <p class="eventTitle">Director y solista: Christian Lindberg</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>6:30 PM</p>
-              <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
-          </ion-col>
-
-        </ion-row>
-      </div>
-
-      <div class="event">
-        <ion-row>
-          <ion-col col-3 class="eventDate">
-            <div class="dayAndMonthEvent">
-                <p class="eventDay">03</p>
-                <p class="eventMonth">SEPT</p>
-            </div>
-                <p class="priceEvent">Evento gratuito</p>
-          </ion-col>
-
-          <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">Orquesta Filarmónica de Bogotá</p>
-              <p class="eventTitle">Director y solista: Christian Lindberg</p>
-              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>6:30 PM</p>
+              <p class="eventAutor">{{event.label}}</p>
+              <p class="eventTitle">{{event.stripedTitle}}</p>
+              <p class="eventTime"><ion-icon name="icon-icono-menu" ></ion-icon>{{event.startHour}}</p>
               <p class="eventPlace"><ion-icon name="icon-icono-menu" ></ion-icon>Auditorio Leon de Greiff</p>
           </ion-col>
 

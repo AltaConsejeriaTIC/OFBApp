@@ -1,0 +1,41 @@
+<ion-content>
+  <ion-navbar>
+  </ion-navbar>
+  <img src={{event.image}}/>
+  <div class="eventContent">
+    <h2>{{event.title}}</h2>
+    <div class="separator"><div></div></div>
+    <div class="eventInfo">
+    	<div>
+    		<ion-icon name="icon-event-calendar"></ion-icon>
+    		<span>{{event.date}}</span>
+    	</div>
+    	<div>
+    		<ion-icon name="icon-clock"></ion-icon>
+    		<span>{{event.startHour}}</span>
+    	</div>
+    	<div>
+    		<ion-icon name="icon-map-marker"></ion-icon>
+    		<span>TBS</span>
+    	</div>
+   	</div>
+   	<div class="separator"><div></div></div>
+   	<button [ngClass]="{'hide': event.entry != 'Tuboleta' && event.entry != 'primerafila'}" class="buyTicketsButton">
+   		Comprar boleta
+   	</button>
+   	<button class="shareEventButton">
+   		Compartir este evento
+   	</button>
+   	<div class="separator"><div></div></div>
+   	<div class="htmlContent" [innerHtml]='event.content'></div>
+   	<div class="separator"><div></div></div>
+	  <div class="mapTag">
+			<ion-icon name="icon-map-marker"></ion-icon>
+			<div>
+				<h6>Lugar de la función</h6>
+				<span>TBS</span>
+			</div>
+		</div>
+		<div class="separator"><div></div></div>
+  </div>
+</ion-content>

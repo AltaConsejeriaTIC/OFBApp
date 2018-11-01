@@ -34,7 +34,7 @@ export class CalendarHomePage {
   }
 
   openCalendarPage() {
-    this.navCtrl.push(CalendarPage);
+    this.navCtrl.push(CalendarPage, this.month);
   }
 
 }

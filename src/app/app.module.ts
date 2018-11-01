@@ -11,12 +11,14 @@ import { HomePageModule } from '../pages/home/home.module';
 import { HomeService } from '../pages/home/home.service';
 import { CalendarHomePageModule } from '../pages/calendar-home/calendar-home.module';
 import { CalendarPageModule } from '../pages/calendar/calendar.module';
+import { CalendarService } from '../pages/calendar/calendar.service';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { NewsPageModule } from '../pages/news/news.module';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
 import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
+import { EventDetailsPageModule } from '../pages/event-details/event-details.module';
 
 import { CalendarModule } from "ion2-calendar";
 
@@ -49,7 +51,8 @@ registerLocaleData(es);
     NewsPageModule,
     NewsDetailsPageModule,
     EventsMonthPageModule,
-    CalendarModule
+    CalendarModule,
+    EventDetailsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -60,7 +63,8 @@ registerLocaleData(es);
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: "es" },
-    HomeService
+    HomeService,
+    CalendarService
   ]
 })
 export class AppModule {}
