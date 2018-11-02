@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 
 export class HomeService {
-  public mainDomain = 'http://192.168.88.57:10010/';
+  public mainDomain = 'http://192.168.88.62:10010/';
   public BACKEND_ENDPOINTS = {
   	RECENT_EVENTS: 'eventos/home/',
   	RECENT_NEWS: 'blog/home/',
