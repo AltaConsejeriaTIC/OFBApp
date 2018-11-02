@@ -19,15 +19,42 @@ page-home {
     .toolbar-ios,
     .toolbar-md,
     .toolbar {
+      max-height: 10vh;
+    } 
+
+    .toolbar-content-ios,
+    .toolbar-content-md,
+    .toolbar-content {
+      width: 100%;
+      max-height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 0;
     }
+
     .toolbar-background {
       background-color: color($colors, background, base);
     }
-    .button {
-      vertical-align: top;
-      margin-top: 4%;
-      margin-left: 2%;
+
+    .icon-filarmonica {
+      flex-grow: 1;
+      margin-left: 6%;
+      font-size: 4.5em;
+      color: #ffffff;
+    }
+    
+    .header-logo-alcaldia {
+      height: 90%;
+      width: auto;
+      object-fit: contain;
+    }
+    
+    .header-line {
+      margin-left: 10px;
+      background-color: rgba(#ffffff, 0.15);
+      width: 2px;
+      height: 7vh;
     }
   }
 
@@ -53,30 +80,6 @@ page-home {
     .scroll-content {
       background-color: color($colors, background, base);
     }
-  }
-
-  #icon-button-inicio {
-    background-color: color($colors, navBarHome, base);
-  }
-  #icon-filarmonica {
-    margin-left: 6%;
-    font-size: 4.5em;
-    color: #ffffff;
-  }
-  #header-logo-alcaldia {
-    margin-top: 3.3%;
-    margin-left: 17%;
-    width: 31%;
-    height: auto;
-    vertical-align: top;
-  }
-  #header-line {
-    display: inline-block;
-    border-left: 2px solid rgba(255, 255, 255, 0.15);
-    height: 3.5em;
-    margin-left: 5%;
-    vertical-align: top;
-    margin-top: 2%;
   }
 
   .slide-concert {
