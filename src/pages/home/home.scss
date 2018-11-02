@@ -60,7 +60,6 @@ page-home {
 
   ion-content {
     .menu {
-      display: none;
       position: absolute;
       display: relative;
       right: 10px;
@@ -162,13 +161,17 @@ page-home {
         width: 1px;
       }
 
+      ion-card-title {
+        padding-right: 10px;
+        font-size: 19px;
+      }
+
       .eventDescription {
         font-family: 'OpenSans';
         color: rgba(255, 255, 255, 0.8);
         font-size: 1.3rem;
         text-align: justify;
         padding-right: 20px; 
-        height: 3.2rem;
         overflow: hidden;
 
         &:after{

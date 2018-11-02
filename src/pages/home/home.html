@@ -3,7 +3,7 @@
     <ion-icon class="icon-filarmonica" name="icon-nombre-filarmonica"></ion-icon>
     <img class="header-logo-alcaldia" src="../../assets/icon/Logo_alcaldía.svg" alt="logo alcaldia"/>
     <div class="header-line"></div>
-    <button ion-button icon-only>
+    <button ion-button icon-only (click)="toogleMenu()">
       <ion-icon name="icon-icono-menu"></ion-icon>
     </button>
     <!--
@@ -18,24 +18,24 @@
 </ion-header>
 
 <ion-content>
-  <div class="menu"></div>
+  <div class="menu" ></div>
   <ion-icon name="icon-flecha-izquierda" class="arrows left" (click)="prevSlide()"></ion-icon>
   <ion-slides class="slide-concert" #slides pager loop="true">
-    <ion-slide *ngFor='let event of events'>
+    <ion-slide *ngFor='let event of featuredEvents'>
       <ion-card>
         <ion-card-content>
           <div class="img-container">
-            <img src={{event.imgPath}}/>
+            <img src={{event.image}}/>
           </div >
           <ion-row>
             <ion-col col-2 class="concertDateText">
-              <h3 class="dateNumber">{{event.date.day}}</h3>
-              <p class="dateMont">{{event.date.month}}</p>
+              <h3 class="dateNumber">{{event.splitedDate[0]}}</h3>
+              <p class="dateMont">{{event.splitedDate[1]}}</p>
             </ion-col>
             <ion-col col-10 class="concertDataText">
-              <ion-card-title>{{event.title}}</ion-card-title>
-              <p class="eventDescription">{{event.description}}</p>
-              <p class="eventTime">{{event.date.time}}</p>
+              <ion-card-title>{{event.stripedTitle}}</ion-card-title>
+              <p class="eventDescription">Lugar del evento</p>
+              <p class="eventTime">{{event.date}}</p>
             </ion-col>
           </ion-row>
         </ion-card-content>

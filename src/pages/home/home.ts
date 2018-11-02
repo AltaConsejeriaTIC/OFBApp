@@ -22,43 +22,11 @@ export class HomePage {
 
   @ViewChild('slides')
   slides: Slides;
-  public events = [{
-    date: {
-      day: '15',
-      month: 'OCT',
-      time: '8:30 PM'
-    },
-    category: 'prensa',
-    title: 'Aterciopelados',
-    description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/XMLID_7_.png',
-  },
-  {
-    date: {
-      day: '09',
-      month: 'OCT',
-      time: '8:30 AM'
-    },
-    category: 'prensa',
-    title: 'Concierto 2',
-    description: 'Teatro Mayor Julio Mario Santo Domingo.',
-    imgPath: '../../assets/imgs/violinista.png', 
-  },
-  {
-    date: {
-      day: '12',
-      month: 'OCT',
-      time: '1:30 PM'
-    },
-    category: 'prensa',
-    title: 'Concierto 2',
-    description: 'Teatro Colon de Bogotá',
-    imgPath: '../../assets/imgs/evento.png', 
-  }
-  ]
+  public showMenu = false;
   public featuredEvents : any;
   public news : any;
   public magistralClasses : any;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) {
   }
@@ -83,7 +51,10 @@ export class HomePage {
 
   }
 //------------------------ Menu ----------------------
-
+  toogleMenu(){
+    this.showMenu = !this.showMenu;
+    console.log(this.showMenu)
+  }
 
 //------------------------ Menu ----------------------
 //------------------------ http requests -------------------
@@ -99,7 +70,8 @@ export class HomePage {
   getFeaturedEvents() {
     this.homeService.getFeaturedEvents()
     .subscribe((data) => {
-      this.normalizeNewsData(data);
+      this.normalizeEventsData(data);
+      console.log(data)
       this.featuredEvents = data;
     });
   }
@@ -114,6 +86,22 @@ export class HomePage {
 
   normalizeNewsData(data){
     data.forEach((newsObject) => {
+      newsObject.title = this.removeHTMLTagFromString(newsObject.title)
+      newsObject.content = this.removeHTMLTagFromString(newsObject.content)
+      newsObject.stripedTitle = newsObject.title.substring(0, 70);
+      newsObject.stripedContent = newsObject.content.substring(0, 140);
+      if(newsObject.stripedTitle.length == 70){
+        newsObject.stripedTitle = newsObject.stripedTitle + '...';
+      }
+      if(newsObject.stripedContent.length == 140){
+        newsObject.stripedContent = newsObject.stripedContent + '...';
+      }
+    })
+  }
+
+  normalizeEventsData(data){
+    data.forEach((newsObject) => {
+      newsObject.splitedDate = newsObject.date.split(' ');
       newsObject.title = this.removeHTMLTagFromString(newsObject.title)
       newsObject.content = this.removeHTMLTagFromString(newsObject.content)
       newsObject.stripedTitle = newsObject.title.substring(0, 70);
