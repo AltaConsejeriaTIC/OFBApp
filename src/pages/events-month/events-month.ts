@@ -1,14 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CalendarPage } from '../calendar/calendar';
 import { CalendarComponentOptions, CalendarComponent} from 'ion2-calendar'
-
-/**
- * Generated class for the EventsMonthPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({

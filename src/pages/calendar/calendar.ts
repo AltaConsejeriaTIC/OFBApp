@@ -1,9 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CalendarHomePage } from '../calendar-home/calendar-home';
-import { EventsMonthPage } from '../events-month/events-month';
 import { EventDetailsPage } from '../event-details/event-details';
-import { CalendarComponentOptions, CalendarComponent} from 'ion2-calendar'
+import { CalendarComponentOptions, CalendarComponent } from 'ion2-calendar'
 
 // Custom components
 import { CalendarService } from './calendar.service';
@@ -61,7 +59,7 @@ export class CalendarPage {
   };
 
   openEventsMonthPage(){
-  
+
   };
 
   nextMonthChange($event){
