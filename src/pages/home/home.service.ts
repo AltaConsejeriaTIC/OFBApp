@@ -1,30 +1,24 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
+import * as ServerConstants from '../../app/utilities/server-constants';
 
 @Injectable()
 
 export class HomeService {
-  public mainDomain = 'http://127.0.0.1:10010/';
-  public BACKEND_ENDPOINTS = {
-  	RECENT_EVENTS: 'eventos/home/',
-  	RECENT_NEWS: 'blog/home/',
-  	MAGISTRAL_CLASSES: 'clases-magistrales/home',
-  };
   
   constructor(private http: HttpClient) { }
   // Backend endpoints constants
 
   getFeaturedEvents() {
-    return this.http.get(this.mainDomain + this.BACKEND_ENDPOINTS.RECENT_EVENTS);
+    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.RECENT_EVENTS);
   };
 
   getRecentNews() {
-    return this.http.get(this.mainDomain + this.BACKEND_ENDPOINTS.RECENT_NEWS);
+    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.RECENT_NEWS);
   };
 
   getMagistralClasses() {
-    return this.http.get(this.mainDomain + this.BACKEND_ENDPOINTS.MAGISTRAL_CLASSES);
+    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.MAGISTRAL_CLASSES);
   };
 
 }
