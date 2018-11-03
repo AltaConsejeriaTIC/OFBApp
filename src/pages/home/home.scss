@@ -61,15 +61,38 @@ page-home {
   ion-content {
     .menu {
       position: absolute;
-      display: relative;
+      display: flex;
+      flex-direction: column;
       right: 10px;
-      top: 1px;
       width: 55vw;
-      height: 100px;
+      height: 90px;
+      padding: 2.5px 10px;
       background-color: white;
       border-radius: 4px;
       z-index: 2;
 
+      button {
+        display: flex;
+        height: 40px;
+        width: 100%;
+        text-align: left;
+        background-color: white;
+        color: #161824;
+        font-family: 'OpenSans';
+        font-size: 12px;
+
+        ion-icon {
+          color: #222433;
+          margin-right: 10px;
+        }
+      }
+
+      .separator {
+        width: 100%;
+        margin: 2.5px 0;
+        height: 2px;
+        background-color: color($colors, altSeparator, base);
+      }
     }
 
     .scroll-content {

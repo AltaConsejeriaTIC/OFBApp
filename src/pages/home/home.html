@@ -18,7 +18,17 @@
 </ion-header>
 
 <ion-content>
-  <div class="menu" ></div>
+  <div class="menu" [ngClass]="{'hide': showMenu}">
+    <button (click)='goToAbout()'>
+      <ion-icon class="icon-filarmonica" name="icon-icono-configuracion"></ion-icon>
+      Quiénes somos
+    </button>
+    <div class="separator"></div>
+    <button (click)="goToToS()">
+      <ion-icon class="icon-filarmonica" name="icon-icono-configuracion"></ion-icon>
+      Términos y condiciones
+    </button>
+  </div>
   <ion-icon name="icon-flecha-izquierda" class="arrows left" (click)="prevSlide()"></ion-icon>
   <ion-slides class="slide-concert" #slides pager loop="true">
     <ion-slide *ngFor='let event of featuredEvents'>

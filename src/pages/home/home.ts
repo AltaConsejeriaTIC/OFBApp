@@ -22,7 +22,7 @@ export class HomePage {
 
   @ViewChild('slides')
   slides: Slides;
-  public showMenu = false;
+  public showMenu = true;
   public featuredEvents : any;
   public news : any;
   public magistralClasses : any;
@@ -71,7 +71,6 @@ export class HomePage {
     this.homeService.getFeaturedEvents()
     .subscribe((data) => {
       this.normalizeEventsData(data);
-      console.log(data)
       this.featuredEvents = data;
     });
   }
@@ -123,6 +122,16 @@ export class HomePage {
 //------------------------ Navigation ---------------------- 
   goToNews(news) {
     this.navCtrl.push(NewsPage, news);
+  }
+
+  goToAbout() {
+    console.log("go To About");
+    //this.navCtrl.push();
+  }
+
+  goToToS() {
+    console.log("go To Terms of Service")
+    //this.navCtrl.push();
   }
 
   slideChanged() {
