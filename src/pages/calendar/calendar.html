@@ -11,7 +11,7 @@
       </ion-navbar>
 
       <div [ngClass]="{'headerCenter': showcalendar == false }" class="headerMonth">
-        <ion-icon name="icon-fleacha-atras" *ngIf="showcalendar" (click)="prevMonthChange($event)"></ion-icon>
+        <ion-icon name="icon-flecha-atras" *ngIf="showcalendar" (click)="prevMonthChange($event)"></ion-icon>
         <p [ngClass]="{'padding-right': showcalendar == false }">{{day}} {{month}}, {{year}}</p>
         <button class="calendarButton" ion-button (click)="toggleCalendar()">
           <ion-icon name="icon-icono-calendario"></ion-icon>
@@ -30,7 +30,7 @@
       <div *ngIf="showcalendar" class="calendarBox">
 
         <div class="filterText">
-            <p>Filtrar por día</p>
+            <p>Selecciona un día:</p>
         </div>
 
         <ion-calendar #calendario
@@ -41,20 +41,20 @@
         </ion-calendar>
 
 
-        <div class="calendarButton" (click)="openEventsMonthPage()">
+        <div class="calendarButton" (click)="showAllEvents()">
             <button ion-button>Ver todos los eventos del mes</button>
         </div>
 
       </div>
 
-      <div class="event" *ngFor='let event of events' (click)="goToEventDetails(event)">
+      <div class="event" *ngFor='let event of selectedDayEvents' (click)="goToEventDetails(event)">
         <ion-row>
           <ion-col col-3 class="eventDate">
             <div class="dayAndMonthEvent">
                 <p class="eventDay">{{event.splitedDate[0]}}</p>
                 <p class="eventMonth">{{event.splitedDate[1]}}</p>
             </div>
-                <p class="priceEvent">Evento gratuito</p>
+                <p class="priceEvent" [ngClass]="{'paid-event': event.isFree == false}">{{event.isFree ? 'Entrada Libre*' : 'Evento pago'}}</p>
           </ion-col>
 
           <ion-col col-9 class="eventInfo">
@@ -63,8 +63,11 @@
               <p class="eventTime"><ion-icon name="icon-clock"></ion-icon>{{event.startHour}}</p>
               <p class="eventPlace"><ion-icon name="icon-map-marker" ></ion-icon>Auditorio Leon de Greiff</p>
           </ion-col>
-
         </ion-row>
+      </div>
+
+      <div *ngIf="noEvents" class="no-events-available">
+        <span>Actualmente no hay eventos programados para este día.</span>
       </div>
 
 </ion-content>

@@ -14,8 +14,10 @@ import { CalendarService } from './calendar.service';
 export class CalendarPage {
   @ViewChild('calendario') calendario: CalendarComponent;
 
-  selectedMonth: any;
   events: any;
+  calendarIndex: any;
+  selectedDayEvents: any;
+  selectedMonth: any;
   month: string;
   day: any;
   year: number;
@@ -39,10 +41,12 @@ export class CalendarPage {
   };
 
   getDate(){
+    const currentDate = new Date();
     const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-    this.month = monthNames[(new Date()).getMonth()];
-    this.day = new Date().getDate();
-    this.year = new Date().getFullYear();
+    this.year = currentDate.getFullYear();
+    this.month = monthNames[(currentDate).getMonth()];
+    this.day = '' + currentDate.getDate();
+    if(this.day.length < 2) this.day = '0' + this.day;
   };
 
   close(){
@@ -58,8 +62,9 @@ export class CalendarPage {
     }
   };
 
-  openEventsMonthPage(){
-
+  showAllEvents(){
+    this.selectedDayEvents = this.events;
+    this.toggleCalendar();
   };
 
   nextMonthChange($event){
@@ -78,6 +83,7 @@ export class CalendarPage {
     this.month = monthNames[$event[1]-1];
     this.day = $event[2];
     this.year = $event[0];
+    this.selectedDayEvents = this.getEventsForDay();
   }
 
   monthChange($event) {
@@ -87,25 +93,47 @@ export class CalendarPage {
     this.day = "";
   }
 
+  getEventsForDay(){
+    if(!this.calendarIndex[this.day]){
+      this.noEvents = true;
+      return [];
+    };
+    const events = [];
+    this.calendarIndex[this.day].forEach((eventIndex) => {
+      events.push(this.events[eventIndex]);
+    });
+    this.noEvents = false;
+    return events;
+  }
+
 //------------------------ http requests -------------------
   getMonthlyEvents() {
     this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
     .subscribe((data) => {
       const normalizedData = this.normalizeEventData(data);
       console.log(normalizedData);
-      this.events = normalizedData;
+      this.events = normalizedData[0];
+      this.calendarIndex = normalizedData[1];
+      this.selectedDayEvents = this.getEventsForDay();
     });
   }
 
   normalizeEventData(data){
-    data.forEach((eventObject) => {
+    const calendarIndex = {}
+    data.forEach((eventObject, i) => {
+      eventObject.isFree = true;
       eventObject.splitedDate = eventObject.date.split(' ');
       eventObject.stripedTitle = eventObject.title.substring(0, 70);
       if(eventObject.stripedTitle.length == 70){
         eventObject.stripedTitle = eventObject.stripedTitle + '...';
       }
+      if(eventObject.entry == 'Tuboleta' || eventObject.entry == 'primerafila'){
+        eventObject.isFree = false;
+      }
+      calendarIndex[eventObject.splitedDate[0]] ?
+      calendarIndex[eventObject.splitedDate[0]].push(i) : calendarIndex[eventObject.splitedDate[0]] = [i];
     })
-    return data;
+    return [data, calendarIndex];
   }
 
   removeHTMLTagFromString(str){

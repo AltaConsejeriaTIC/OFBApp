@@ -1,7 +1,7 @@
 page-calendar {
 
   .toolbar-background {
-    background-color: black;
+    background-color: #161824;
 }
 
   .toolbar-title.toolbar-title {
@@ -32,284 +32,328 @@ page-calendar {
     padding-right: 5% !important;
   }
 
-  .headerMonth{
-      text-transform: uppercase;
-      font-weight: bold;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      height: 6vh;
-      background-color: #F8774E;
-      font-family: 'OpenSans';
+  ion-calendar-week {
+    ion-toolbar {
+      .toolbar-background {
+        background-color: #282A35;
+      }
 
-      .calendarButton{
-        background-color: #F5A288;
-        height: 3rem;
-        padding: 0 0.5em;
-        ion-icon.icon.icon-md.ion-md-icon-icono-calendario{
-          padding-right: 0.3em;
-          font-size: 1.6em;
+      li {
+        &:last-child, &:nth-last-child(2) {
+          color: #82452F;
         }
       }
+    }
+  }
 
-      p{
-          font-size: 1.4rem;
-          font-family: 'OpenSans' !important;
-          padding-left: 1.5em;
-          position: relative;
+  .headerMonth{
+    text-transform: uppercase;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 6vh;
+    background-color: #F8774E;
+    font-family: 'OpenSans';
+
+    .calendarButton{
+      background-color: #F5A288;
+      height: 3rem;
+      padding: 0 0.5em;
+      ion-icon.icon.icon-md.ion-md-icon-icono-calendario{
+        padding-right: 0.3em;
+        font-size: 1.6em;
       }
+    }
 
-      ion-icon {
-          font-size: 2.4em;
-          color: black;
-      }
-
-      ion-icon.icon.icon-md.ion-md-icon-fleacha-atras{
+    p {
+        font-size: 15px;
+        font-family: 'OpenSans' !important;
+        padding-left: 1.5em;
         position: relative;
-        padding-left: 1%;
-      }
+    }
 
-      ion-icon.icon.icon-md.ion-md-icon-fleacha-atras:after{
-          background-color: rgba(0, 0, 0, 0.15);
-          content: '';
-          height: 90%;
-          right: -1vh;
-          position: absolute;
-          top: 5%;
-          width: 2px;
+    ion-icon {
+        font-size: 2.4em;
+        color: black;
+    }
 
-      }
+    ion-icon.icon.icon-md.ion-md-icon-fleacha-atras{
+      position: relative;
+      padding-left: 1%;
+    }
 
-      ion-icon.icon.icon-md.ion-ios-arrow-up, ion-icon.icon.icon-md.ion-ios-arrow-down{
-        font-size: 2rem;
-      }
-
-      ion-icon.icon.icon-md.ion-md-icon-flecha-derecha{
-        position: relative;
-        padding-right: 1%;
-      }
-
-      ion-icon.icon.icon-md.ion-md-icon-flecha-derecha:after{
+    ion-icon.icon.icon-md.ion-md-icon-fleacha-atras:after{
         background-color: rgba(0, 0, 0, 0.15);
         content: '';
         height: 90%;
-        left: -1vh;
+        right: -1vh;
         position: absolute;
         top: 5%;
         width: 2px;
-      }
+
+    }
+
+    ion-icon.icon.icon-md.ion-ios-arrow-up, ion-icon.icon.icon-md.ion-ios-arrow-down{
+      font-size: 2rem;
+    }
+
+    ion-icon.icon.icon-md.ion-md-icon-flecha-derecha{
+      position: relative;
+      padding-right: 1%;
+    }
+
+    ion-icon.icon.icon-md.ion-md-icon-flecha-derecha:after{
+      background-color: rgba(0, 0, 0, 0.15);
+      content: '';
+      height: 90%;
+      left: -1vh;
+      position: absolute;
+      top: 5%;
+      width: 2px;
+    }
   }
 
   .scroll-content{
-      padding: 0 !important;
+    padding: 0 !important;
 
     .calendarBox{
-        background-color: black;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+      background-color: #282A35;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
 
-        .filterText{
-          position:  relative;
-          p{
-            margin-top: 10px;
-            margin-bottom: 10px;
-            font-size: 1.2rem;
-          }
-        }
-
-        .filterText:before{
-          background-color: lightgray;
-          content: '';
-          width: 90%;
-          bottom: 0;
-          position: absolute;
-          left: 5%;
-          height: 1px;
-        }
-
+      .filterText{
+        position:  relative;
         p{
-          padding-left: 5%;
-          color: white;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          font-size: 15px;
+        }
+      }
+
+      .filterText:before{
+        background-color: lightgray;
+        content: '';
+        width: 90%;
+        bottom: 0;
+        position: absolute;
+        left: 5%;
+        height: 1px;
+      }
+
+      p{
+        padding-left: 5%;
+        color: white;
+      }
+
+      ion-calendar{
+        background-color: #282A35;
+        padding: 0;
+
+        .title{
+          display: none;
         }
 
-        ion-calendar{
-          background-color: black;
-          padding: 0;
+        button.days-btn {
+          border-radius: 50%;
+          width: 24px;
+          height: 24px;
 
-          .title{
-            display: none;
-          }
-
-          button.days-btn {
-              border-radius: 4vh;
-              width: 4vh;
-              height: 4vh;
+          p {
+            margin-left: -2px;
           }
 
-          .days {
-              width: 14%;
-              height: 5vh;
-              margin-bottom: 0;
+          &.on-selected {
+            background-color: transparent;
+            border: 1px solid white;
           }
-
-          p, li{
-            font-size: 1.2rem;
-            font-family: "OpenSans";
-            font-weight: 600;
-          }
-          .days-box {
-              padding: 0;
-          }
-          button.today {
-            background-color: #F8774E;
-            p{
-            color: black !important;
-            }
-          }
-
         }
 
-        .calendarButton{
-            position: relative;
-            text-align: center;
-
-            .button-md{
-              height: 3.1rem;
-              font-size: 1.4rem;
-            }
-
-            span.button-inner {
-                font-size: 1.3rem;
-                font-family: "OpenSans";
-                text-transform: none;
-            }
-
-            .button-md.button-default.button-default-md {
-                margin: 0.8rem 0.2rem;
-                padding: 0 2.1em;
-                background-color: #F8774E;
-                color: black;
-
-            }
+        .days {
+          width: 14%;
+          height: 5vh;
+          margin-bottom: 0;
         }
 
-        .calendarButton:before{
-            background-color: lightgray;
-            content: '';
-            width: 90%;
-            top: 0;
-            position: absolute;
-            left: 5%;
-            height: 1px;
+        p, li{
+          font-size: 1.2rem;
+          font-family: "OpenSans";
+          font-weight: 600;
+          margin-left: -1px;
         }
+        .days-box {
+            padding: 0;
+        }
+        button.today {
+          background-color: #F8774E;
+          p{
+          color: black !important;
+          }
+        }
+
+      }
+
+      .calendarButton{
+        position: relative;
+        text-align: center;
+
+        .button-md{
+          height: 3.1rem;
+          font-size: 1.4rem;
+        }
+
+        span.button-inner {
+          font-size: 1.3rem;
+          font-family: "OpenSans";
+          text-transform: none;
+        }
+
+        .button-md.button-default.button-default-md {
+          margin: 0.8rem 0.2rem;
+          padding: 0 2.1em;
+          background-color: #F8774E;
+          color: black;
+        }
+      }
+
+      .calendarButton:before{
+        background-color: lightgray;
+        content: '';
+        width: 90%;
+        top: 0;
+        position: absolute;
+        left: 5%;
+        height: 1px;
+      }
     }
 
     .event{
       min-height: 130px;
-      background-color: black;
+      background-color: #1E2029;
       margin-bottom: 1px;
       border-top: 1px solid white;
 
       .eventDate{
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 0;
 
-          p{
-              margin: 0;
+        p{
+          margin: 0;
+        }
+
+        .priceEvent{
+          position: relative;
+          font-family: "OpenSans" !important;
+          font-weight: 800;
+          font-size: 13px;
+          padding: 0 6px;
+
+          &.paid-event {
+            background-color: #F8774E;
           }
 
-          .priceEvent{
-            font-family: "OpenSans" !important;
-            font-weight: bold;
-          }
-
-          .dayAndMonthEvent{
-              padding-bottom: 5vh;
-              .eventDay{
-                font-size: 2.4rem;
-              }
-              .eventMonth{
-                font-family: "OpenSans" !important;
-                letter-spacing: 0.2em;
-              }
-          }
-
-          .priceEvent{
-            position: relative;
-          }
-
-          .priceEvent:before{
-            background-color: #db4f0a;
+          &:before{
+            background-color: #F8774E;
             content: '';
             width: 100%;
-            top: -1vh;
+            top: -4px;
             position: absolute;
             left: 0;
             height: 1px;
           }
+        }
+
+        .dayAndMonthEvent{
+          padding-bottom: 5vh;
+
+          .eventDay{
+            font-weight: 800;
+            font-size: 2.4rem;
+            letter-spacing: 0.1em;
+          }
+          .eventMonth{
+            font-family: "OpenSans" !important;
+            letter-spacing: 0.2em;
+          }
+        }
+
       }
 
       .eventInfo{
-          height: 100%;
-          background-color: #282A35;
+        height: 100%;
+        background-color: #282A35;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .icon-icon-icono-menu:before,
+        .ion-icon-icono-menu:before,
+        .ion-ios-icon-icono-menu:before,
+        .ion-ios-icon-icono-menu-outline:before,
+        .ion-md-icon-icono-menu:before,
+        .ion-md-icon-icono-menu-outline:before{
+          color: #F8774E !important;
+        }
+
+        p {
+          margin: 0 0 0 1.1vh;
+        }
+
+        .eventAutor{
+          font-family: "OpenSans" !important;
+          font-weight: 800;
+          color: #F8774E;
+        }
+
+        .eventTitle{
+          font-weight: bold;
+          font-size: 1.7rem;
+        }
+
+        .eventTime, .eventPlace{
           display: flex;
-          flex-direction: column;
-          justify-content: space-around;
+          flex-direction: row;
+          align-items: center;
+          color: #AEAEAE;
+          font-family: "OpenSans" !important;
+          font-size: 12px;
+          margin-bottom: 3px;
 
-          .icon-icon-icono-menu:before,
-          .ion-icon-icono-menu:before,
-          .ion-ios-icon-icono-menu:before,
-          .ion-ios-icon-icono-menu-outline:before,
-          .ion-md-icon-icono-menu:before,
-          .ion-md-icon-icono-menu-outline:before{
-            color: #F8774E !important;
+          ion-icon {
+            margin-right: 10px;
+            color: color($colors, navBarCalendar, base);
           }
 
-          p{
-            margin: 0 0 0 1.1vh;
+          &.last-child {
+            margin-bottom: 0;
           }
-
-          .eventAutor{
-              font-family: "OpenSans" !important;
-              font-size: 600;
-              color: #F8774E;
-          }
-
-          .eventTitle{
-            font-weight: bold;
-            font-size: 1.7rem;
-          }
-
-          .eventTime, .eventPlace{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            color: #AEAEAE;
-            font-family: "OpenSans" !important;
-            font-size: 12px;
-            margin-bottom: 3px;
-
-            ion-icon {
-              margin-right: 10px;
-              color: color($colors, navBarCalendar, base);
-            }
-
-            &.last-child {
-              margin-bottom: 0;
-            }
-          }
+        }
       }
 
       p{
-          color:white;
-          font-size: 1.1rem;
+        color:white;
+        font-size: 1.1rem;
       }
+    } 
   }
 
-}
+  .no-events-available {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 100%;
+    height: 100px;
 
+    span {
+      font-family: 'OpenSans';
+      font-style: italic;
+      text-align: center;
+    }
+  }
 }
