@@ -1,17 +1,13 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
 
-/**
- * Generated class for the HomePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 // Custom components
 import { HomeService } from './home.service';
 import { NewsPage } from '../news/news';
 import { NewsDetailsPage } from '../news-details/news-details';
+import { EventDetailsPage } from '../event-details/event-details';
+import { ClassesPage } from '../classes/classes';
+import { ClassDetailsPage } from '../class-details/class-details';
 
 @IonicPage()
 @Component({
@@ -120,10 +116,6 @@ export class HomePage {
 
 //------------------------ http requests -------------------
 //------------------------ Navigation ---------------------- 
-  goToNews(news) {
-    this.navCtrl.push(NewsPage, news);
-  }
-
   goToAbout() {
     console.log("go To About");
     //this.navCtrl.push();
@@ -133,14 +125,34 @@ export class HomePage {
     console.log("go To Terms of Service")
     //this.navCtrl.push();
   }
+  goToNews(news) {
+    this.navCtrl.push(NewsPage, news);
+  }
+
+  goToNewDetails(newObject) {
+    this.navCtrl.push(NewsDetailsPage, newObject);
+  }
+
+  goToAllEvents(){
+    this.navCtrl.push(EventsPage);
+  }
+
+  goToEventDetails(event){
+    this.navCtrl.push(EventDetailsPage, event);
+  }
+  
+  goToAllClasses(classes){
+    this.navCtrl.push(ClassesPage, classes);
+  }
+
+  goToClassesDetails(){
+    this.navCtrl.push(ClassDetailsPage);
+  }
 
   slideChanged() {
     this.slides.update();
   }
 
-  goToDetails(newObject) {
-    this.navCtrl.push(NewsDetailsPage, newObject);
-  }
 //------------------------ Navigation ----------------------
 
 }

@@ -18,6 +18,7 @@ export class CalendarPage {
   calendarIndex: any;
   selectedDayEvents: any;
   selectedMonth: any;
+  noEvents: any;
   month: string;
   day: any;
   year: number;

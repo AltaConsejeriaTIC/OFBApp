@@ -196,17 +196,6 @@ page-home {
         text-align: justify;
         padding-right: 20px; 
         overflow: hidden;
-
-        &:after{
-          content: '';
-          position: absolute;
-          margin-left: -20px;
-          background: linear-gradient(90deg, transparent, #222433);
-          width: 20px;
-          height: 1.3em;
-          bottom: 2em;
-          right: 20px;
-        }
       }
       .eventTime {
         font-family: 'OpenSans';

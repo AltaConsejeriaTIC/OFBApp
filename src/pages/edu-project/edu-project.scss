@@ -8,20 +8,40 @@ page-edu-project {
     ion-navbar {
       max-height: inherit;
 
-      ion-title {
-        .toolbar-title-ios,
-        .toolbar-title-md,
-        .toolbar-title {
-          display: flex;
-          justify-content: center;
-          font-family: Bitter;
-          color: #ffffff;
+      ion-icon {
+        color: #ffffff;
+      }
+
+      .toolbar-content-md,
+      .toolbar-content-ios,
+      .toolbar-content {
+        position: absolute;
+        text-align: center;
+        z-index: -1;
+        width: 100%;
+
+        ion-title {
+          
+          .toolbar-title-ios,
+          .toolbar-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #ffffff;
+          }
+
+          &.title-md {
+            .toolbar-title-md {
+              font-size: 17px;
+              font-weight: 800;
+              color: #ffffff; 
+            }
+          }
         }
       }
-    }
 
-    .toolbar-background {
-      background-color: color($colors, background, base);
+      .toolbar-background {
+        background-color: color($colors, background, base);
+      }
     }
   }
 
@@ -33,7 +53,7 @@ page-edu-project {
 
     ion-card {
       img {
-        height: 80px;
+        height: 120px;
         object-fit: cover;
       }
 

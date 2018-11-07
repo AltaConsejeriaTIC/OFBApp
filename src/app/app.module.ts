@@ -15,10 +15,13 @@ import { CalendarService } from '../pages/calendar/calendar.service';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
-import { NewsPageModule } from '../pages/news/news.module';
+import { NewsPageModule} from '../pages/news/news.module';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
 import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
 import { EventDetailsPageModule } from '../pages/event-details/event-details.module';
+import { ClassesPageModule } from '../pages/classes/classes.module';
+import { ClassesService } from '../pages/classes/classes.service';
+import { ClassDetailsPageModule } from '../pages/class-details/class-details.module';
 
 import { CalendarModule } from "ion2-calendar";
 
@@ -52,7 +55,9 @@ registerLocaleData(es);
     NewsDetailsPageModule,
     EventsMonthPageModule,
     CalendarModule,
-    EventDetailsPageModule
+    EventDetailsPageModule,
+    ClassesPageModule,
+    ClassDetailsPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -64,7 +69,8 @@ registerLocaleData(es);
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     {provide: LOCALE_ID, useValue: "es" },
     HomeService,
-    CalendarService
+    CalendarService,
+    ClassesService
   ]
 })
 export class AppModule {}

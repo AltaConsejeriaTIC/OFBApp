@@ -22,16 +22,16 @@ export class EduProjectPage {
     switch(index) { 
        case 1: { 
           //statements; 
-          window.open('http://www.google.com', '_system');
+          window.open('http://apreciacionmusicalofb.gov.co/aula/page/2/', '_system');
           break; 
        } 
        case 2: { 
           //statements; 
-          window.open('http://www.twitter.com', '_system');
+          window.open('http://proyectoeducativo.ofb.gov.co/proyecto-educativo-orquesta-filarmonica-de-bogota/', '_system');
           break; 
        }
        case 3: {
-          window.open('http://www.spotify.com', '_system');
+          window.open('https://sites.google.com/a/ofb.gov.co/ofb-fomento/programas-de-formacion', '_system');
           break;
        } 
        default: { 

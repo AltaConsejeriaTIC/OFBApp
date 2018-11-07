@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>CLASES MAGISTRALES</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding (ionScrollEnd)='reachBottom($event)'>
+  <ion-card  *ngFor='let class of classes' (click)='goToClassesDetails(class)'>
+    <div class="gradient"></div>
+    <img src="../../assets/imgs/XMLID_9_.png" />
+    <ion-card-content>
+      <ion-card-title>
+        {{class.title}}
+      </ion-card-title>
+      <div class="separator"></div>
+      <p [innerHtml]='class.stripedContent'>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

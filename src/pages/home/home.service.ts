@@ -18,7 +18,7 @@ export class HomeService {
   };
 
   getMagistralClasses() {
-    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.MAGISTRAL_CLASSES);
+    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.MAGISTRAL_CLASSES_HOME);
   };
 
 }
