@@ -28,7 +28,7 @@ export class HomePage {
   }
 
   ionViewDidLoad() {
-    
+
     this.initView();
   }
 
@@ -115,12 +115,7 @@ export class HomePage {
   }
 
 //------------------------ http requests -------------------
-//------------------------ Navigation ---------------------- 
-  goToAbout() {
-    console.log("go To About");
-    //this.navCtrl.push();
-  }
-
+//------------------------ Navigation ----------------------
   goToToS() {
     console.log("go To Terms of Service")
     //this.navCtrl.push();
@@ -136,7 +131,7 @@ export class HomePage {
   goToEventDetails(event){
     this.navCtrl.push(EventDetailsPage, event);
   }
-  
+
   goToAllClasses(classes){
     this.navCtrl.push(ClassesPage, classes);
   }

@@ -43,7 +43,7 @@ registerLocaleData(es);
     IonicModule.forRoot(MyApp, {
       tabsHideOnSubPages: true,
       backButtonText: '',
-      backButtonIcon: 'icon-flecha-atras',
+      backButtonIcon: 'icon-flecha-atras'
     }),
     PrimaryTabsPageModule,
     HomePageModule,

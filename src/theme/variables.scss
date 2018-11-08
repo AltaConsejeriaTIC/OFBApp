@@ -1,31 +1,8 @@
-// Ionic Variables and Theming. For more info, please see:
-// http://ionicframework.com/docs/theming/
-
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
 $font-path: '../assets/fonts';
 
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
 $app-direction: ltr;
 
 @import 'ionic.globals';
-
-// Shared Variables
-// --------------------------------------------------
-// To customize the look and feel of this app, you can override
-// the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
-
-// Named Color Variables
-// --------------------------------------------------
-// Named colors makes it easy to reuse colors on various components.
-// It's highly recommended to change the default colors
-// to match your app's branding. Ionic uses a Sass map of
-// colors so you can add, rename and remove colors as needed.
-// The "primary" color is the only required color in the map.
 
 $colors: (
   primary: #161824,
@@ -50,37 +27,20 @@ $colors: (
 
   mainText: #8E8E9C,
   highlightText: #FF4AC1,
-  
+
   //News section
   newsSectionBackground: #282A35,
   newsCardBackground: #1C1D26,
 
   //News Details section
-  newsDetailsTextColor: #5B5E6D,
+  newsDetailsTextColor: #5b5e6d,
+
+  "white": #ffffff
 );
 
 //NavBar variables
 $tabs-background : #161824;
 $tabs-md-tab-icon-color: white;
-
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
-
-// App Material Design Variables
-// --------------------------------------------------
-// Material Design only Sass variables can go here
-
-// App Windows Variables
-// --------------------------------------------------
-// Windows only Sass variables can go here
-
-// App Theme
-// --------------------------------------------------
-// Ionic apps can have different themes applied, which can
-// then be future customized. This import comes last
-// so that the above variables are used and Ionic's
-// default are overridden.
 
 @import 'ionic.theme.default';
 
@@ -95,63 +55,55 @@ h1, h2, h3, h4, h5, h6, span, button {
 ion-tabs .button-effect {
  display:none !important;
 }
-// Ionicons
-// --------------------------------------------------
-// The premium icon font for Ionic. For more info, please see:
-// http://ionicframework.com/docs/ionicons/
 
 @import 'ionicons';
-
-// Fonts
-
-// --------------------------------------------------
-
 @import 'roboto';
 @import 'noto-sans';
 
 $font-family-untitled-font-1: 'untitled-font-1';
 
 @font-face {
-font-family: Bitter;
-font-weight: 400;
-src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
-font-style: normal;
+  font-family: Bitter;
+  font-weight: 400;
+  src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
+  font-style: normal;
 }
 
 @font-face {
-font-family: Bitter;
-font-weight: 700;
-src: url("../assets/fonts/Bitter/Bitter-Bold.ttf");
-font-style: bold;
+  font-family: Bitter;
+  font-weight: 700;
+  src: url("../assets/fonts/Bitter/Bitter-Bold.ttf");
+  font-style: bold;
 }
 
 @font-face {
-font-family: OpenSans;
-font-weight: 600;
-src: url("../assets/fonts/OpenSans/OpenSans-SemiBold.ttf");
-font-style: semi-bold;
+  font-family: OpenSans;
+  font-weight: 600;
+  src: url("../assets/fonts/OpenSans/OpenSans-SemiBold.ttf");
+  font-style: semi-bold;
 }
 
 @font-face {
-font-family: OpenSans;
-font-weight: 400;
-src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf");
-font-style: normal;
+  font-family: OpenSans;
+  font-weight: 400;
+  src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf");
+  font-style: normal;
 }
 
 @font-face {
-font-family: OpenSans;
-font-weight: 700;
-src: url("../assets/fonts/OpenSans/OpenSans-Bold.ttf");
-font-style: bold;
+  font-family: OpenSans;
+  font-weight: 700;
+  src: url("../assets/fonts/OpenSans/OpenSans-Bold.ttf");
+  font-style: bold;
 }
 
 $font-family-ios-base: "Bitter";
 $font-family-md-base: "Bitter";
-$font-family-wp-base: "Bitter";
 $font-family-Bitter: "Bitter";
 
 $font-family-ios-base: "OpenSans";
 $font-family-md-base: "OpenSans";
-$font-family-wp-base: "OpenSans";
 $font-family-OpenSans: "OpenSans";
+
+// Helpers ...
+@import './helpers/margin';
