@@ -1,3 +1,158 @@
 page-trivia {
+	background-color: color($colors, background, base);
 
+  ion-header {
+    width: 100%;
+    max-height: 10vh;
+
+    ion-navbar {
+      max-height: inherit;
+      
+      ion-icon {
+        color: #ffffff;
+      }
+
+      .toolbar-content-md,
+      .toolbar-content-ios,
+      .toolbar-content {
+        position: absolute;
+        text-align: center;
+        z-index: -1;
+        width: 100%;
+
+        ion-title {
+          
+          .toolbar-title-ios,
+          .toolbar-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #ffffff;
+          }
+
+          &.title-md {
+            .toolbar-title-md {
+              font-size: 17px;
+              font-weight: 800;
+              color: #ffffff; 
+            }
+          }
+        }
+      }
+      
+      .toolbar-background {
+        background-color: color($colors, background, base);
+      }
+    }
+  }
+
+  ion-content {
+
+    .scroll-content {
+      background-color: color($colors, newsSectionBackground, base);
+      
+      font-size: 12px;
+
+      .main-content{
+  			padding: 30px 40px;
+      	width: 100%;
+	      display: flex;
+	      flex-direction: column;
+	      align-items: center;
+
+	      img {
+	      	width: 35%;
+	      	height: auto;
+	      }
+
+	      p {
+	    		color: white;
+	    		
+	      	&.question {
+	      		font-size: 18px;
+	      		font-weight: 800;
+	    			font-family: 'Bitter';
+	      	}
+
+	      	&.caption {
+	      		font-family: 'OpenSans';
+	      		color: #A8ABBA;
+	      	}
+	      }
+
+	      button {
+	      	&.solve-trivia {
+	      		width: 100%;
+	      		height: 42px;
+	      		background-color: color($colors, navBarTrivia, base);
+	      		color: #161824;
+	      		font-size: 16px;
+	      		font-weight: 900;
+	      		font-family: 'OpenSans';
+	      		border-radius: 4px;
+	      	}
+	      }
+	    }
+    }
+
+    .count-down {
+    	padding: 0 40px;
+    	position: absolute;
+    	bottom: 0;
+    	width: 100%;
+    	height: 10vh;
+  		flex-direction: column;
+  		justify-content: center;
+    	background-color: rgba(22, 24, 36, 0.6);
+
+    	.main-container {
+	    	width: 100%;
+    		display: flex;
+    		flex-direction: row;
+    		justify-content: space-between;
+    		align-items: center;
+    		padding: 5px 0;
+
+    		p {
+    			margin: 0;
+    			color: #A8ABBA;
+    			width: 40%;
+    			height: 60%;
+    			font-family: 'OpenSans';
+    		}
+
+    		.timer {
+    			display: flex;
+    			flex-direction: row;
+
+    			div {
+    				height: 100%;
+    				display: flex;
+    				flex-direction: column;
+    				align-items: center;
+    				color: white;
+    				margin-right: 15px;
+
+    				&:last-child {
+    					margin: 0;
+    				}
+
+    				span {
+    					font-family: 'OpenSans';
+
+    					&.date-number{
+    						font-size: 20px;
+    						font-weight: 800;
+    					}
+    				}
+    			}
+    		}
+    	}
+    }
+
+    .separator {
+    	width: 100%;
+    	height: 2px;
+    	background-color: #434551;
+    }
+  }
 }
