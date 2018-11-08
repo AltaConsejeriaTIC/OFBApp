@@ -24,8 +24,8 @@ export class ClassesPage {
 
 //------------------------ Navigation ---------------------- 
 
-  goToClassesDetails(){
-    this.navCtrl.push(ClassDetailsPage);
+  goToClassesDetails(classObject){
+    this.navCtrl.push(ClassDetailsPage, classObject);
   }
 
   reachBottom(infiniteScroll){

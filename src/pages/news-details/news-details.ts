@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsDetailsPage {
 
-  newsObject: any;
+  public newsObject: any;
   
   constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.newsObject = navParams['data']

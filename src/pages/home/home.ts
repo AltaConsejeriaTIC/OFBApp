@@ -141,8 +141,8 @@ export class HomePage {
     this.navCtrl.push(ClassesPage, classes);
   }
 
-  goToClassesDetails(){
-    this.navCtrl.push(ClassDetailsPage);
+  goToClassesDetails(classObject){
+    this.navCtrl.push(ClassDetailsPage, classObject);
   }
 
   slideChanged() {

@@ -1,18 +1,15 @@
-<!--
-  Generated template for the ClassDetailsPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
+<ion-content>
   <ion-navbar>
-    <ion-title>classDetails</ion-title>
   </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+  <div class="gradient"></div>
+  <img src='../../assets/imgs/XMLID_7_.png'/>
+  <div class="newsContent">
+    <h2>{{classObject.title}}</h2>
+    <div class="separator"><div></div></div>
+    <div [innerHTML]='classObject.content'></div>
+    <div class="separator"><div></div></div>
+   	<button class="shareEventButton">
+   		Compartir este evento
+   	</button>
+   </div>
 </ion-content>

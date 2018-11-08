@@ -9,7 +9,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class ClassDetailsPage {
 
+  public classObject: any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    console.log(navParams['data'])
+    this.classObject = navParams['data']
   }
 
   ionViewDidLoad() {
