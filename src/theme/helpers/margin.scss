@@ -1,0 +1,15 @@
+$margin-sizes: (0, 4, 8, 16, 24, 32, 40, 44, 64, 96, 128, 256);
+$margin-names: ('top', 'right', 'bottom', 'left');
+$margin-positions: ('t', 'r', 'b', 'l');
+
+.m {
+  @each $position in $margin-positions {
+    $i: index($margin-positions, $position);
+
+    @each $size in $margin-sizes {
+      &#{$position}-#{$size} {
+        margin-#{nth($margin-names, $i)}: #{$size}px !important;
+      }
+    }
+  }
+}
