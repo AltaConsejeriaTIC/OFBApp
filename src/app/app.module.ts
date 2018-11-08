@@ -16,6 +16,7 @@ import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { NewsPageModule} from '../pages/news/news.module';
+import { NewsService } from '../pages/news/news.service';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
 import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
 import { EventDetailsPageModule } from '../pages/event-details/event-details.module';
@@ -70,7 +71,8 @@ registerLocaleData(es);
     {provide: LOCALE_ID, useValue: "es" },
     HomeService,
     CalendarService,
-    ClassesService
+    ClassesService,
+    NewsService
   ]
 })
 export class AppModule {}

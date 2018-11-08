@@ -133,10 +133,6 @@ export class HomePage {
     this.navCtrl.push(NewsDetailsPage, newObject);
   }
 
-  goToAllEvents(){
-    this.navCtrl.push(EventsPage);
-  }
-
   goToEventDetails(event){
     this.navCtrl.push(EventDetailsPage, event);
   }
