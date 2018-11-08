@@ -28,6 +28,7 @@ export class NewsPage {
   getNextPage(infiniteScroll) {
     this.newsService.getNewsPages()
     .subscribe((data) => {
+      console.log(data)
       this.normalizeNewsData(data);
       this.news = this.news.concat(data);
       infiniteScroll.complete();
@@ -47,6 +48,10 @@ export class NewsPage {
         newsObject.stripedContent = newsObject.stripedContent + '...';
       }
     })
+  }
+
+  removeHTMLTagFromString(str){
+    return str.replace(/<[^>]+>/g, '');
   }
 
 //-------------------------- Navigation ---------------------------------
