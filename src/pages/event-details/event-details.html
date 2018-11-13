@@ -3,6 +3,7 @@
   </ion-navbar>
   <img src={{event.image}}/>
   <div class="eventContent">
+    <span [ngClass]="{'hide': event.entry == 'Tuboleta' || event.entry == 'primerafila'}" class="free-event-tag">EVENTO GRATUITO</span>
     <h2>{{event.title}}</h2>
     <div class="separator"><div></div></div>
     <div class="eventInfo">
@@ -20,13 +21,14 @@
     	</div>
    	</div>
    	<div class="separator"><div></div></div>
-   	<button [ngClass]="{'hide': event.entry != 'Tuboleta' && event.entry != 'primerafila'}" class="buyTicketsButton">
+   	<button [ngClass]="{'hide': event.entry != 'Tuboleta' && event.entry != 'primerafila'}" class="buy-tickets-button">
    		Comprar boleta
    	</button>
    	<button class="shareEventButton">
    		Compartir este evento
    	</button>
    	<div class="separator"><div></div></div>
+    <h2 class="content-title">Descripción del evento:</h2>
    	<div class="htmlContent" [innerHtml]='event.content'></div>
    	<div class="separator"><div></div></div>
 	  <div class="mapTag">
