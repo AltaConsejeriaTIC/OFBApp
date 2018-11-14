@@ -1,0 +1,17 @@
+app-back-button {
+  .app-back-button {
+    background-color: color($colors, "white");
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    left: 10px;
+    top: 7px;
+    border-radius: 50%;
+    box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .15);
+    z-index: 9;
+
+    ion-icon {
+      font-size: 42px;
+    }
+  }
+}
