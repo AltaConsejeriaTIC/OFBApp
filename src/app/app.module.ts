@@ -32,8 +32,6 @@ import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(es);
 
-
-
 @NgModule({
   declarations: [
     MyApp
@@ -69,8 +67,8 @@ registerLocaleData(es);
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    {provide: LOCALE_ID, useValue: "es" },
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    { provide: LOCALE_ID, useValue: "es" },
     HomeService,
     CalendarService,
     ClassesService,

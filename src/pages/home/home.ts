@@ -114,12 +114,6 @@ export class HomePage {
     return str.replace(/<[^>]+>/g, '');
   }
 
-//------------------------ http requests -------------------
-//------------------------ Navigation ----------------------
-  goToToS() {
-    console.log("go To Terms of Service")
-    //this.navCtrl.push();
-  }
   goToNews(news) {
     this.navCtrl.push(NewsPage, news);
   }
@@ -143,7 +137,4 @@ export class HomePage {
   slideChanged() {
     this.slides.update();
   }
-
-//------------------------ Navigation ----------------------
-
 }
