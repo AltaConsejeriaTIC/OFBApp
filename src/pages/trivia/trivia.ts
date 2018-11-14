@@ -1,12 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
-/**
- * Generated class for the TriviaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TriviaNotAvailablePage } from '../trivia-not-available/trivia-not-available';
 
 @IonicPage()
 @Component({
@@ -14,12 +9,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'trivia.html',
 })
 export class TriviaPage {
+	public isTriviaAvailable = true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TriviaPage');
+    if(!this.isTriviaAvailable) {
+    	this.navCtrl.push(TriviaNotAvailablePage);
+    }
   }
 
 }

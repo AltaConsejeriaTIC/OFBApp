@@ -15,6 +15,7 @@ import { CalendarService } from '../pages/calendar/calendar.service';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
+import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/trivia-not-available.module';
 import { NewsPageModule} from '../pages/news/news.module';
 import { NewsService } from '../pages/news/news.service';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
@@ -52,6 +53,7 @@ registerLocaleData(es);
     EduProjectPageModule,
     AudVisContentPageModule,
     TriviaPageModule,
+    TriviaNotAvailablePageModule,
     NewsPageModule,
     NewsDetailsPageModule,
     EventsMonthPageModule,

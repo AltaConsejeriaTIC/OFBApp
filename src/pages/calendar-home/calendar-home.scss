@@ -1,5 +1,14 @@
 page-calendar-home {
 
+  ion-header {
+    width: 100%;
+    max-height: 10vh;
+
+    ion-navbar {
+      max-height: inherit;
+    }
+  }
+
   .toolbar-background {
     background-color: #161824;
 }

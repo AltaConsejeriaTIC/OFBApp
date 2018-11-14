@@ -1,0 +1,117 @@
+page-trivia-survey {
+  background-color: color($colors, background, base);
+
+  ion-header {
+    width: 100%;
+    max-height: 10vh;
+
+    ion-navbar {
+      max-height: inherit;
+      
+      ion-icon {
+        color: #ffffff;
+      }
+
+      .toolbar-content-md,
+      .toolbar-content-ios,
+      .toolbar-content {
+        position: absolute;
+        text-align: center;
+        z-index: -1;
+        width: 100%;
+
+        ion-title {
+          
+          .toolbar-title-ios,
+          .toolbar-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #ffffff;
+          }
+
+          &.title-md {
+            .toolbar-title-md {
+              font-size: 17px;
+              font-weight: 800;
+              color: #ffffff; 
+            }
+          }
+        }
+      }
+      
+      .toolbar-background {
+        background-color: color($colors, background, base);
+      }
+    }
+  }
+
+  ion-content {
+
+    .scroll-content {
+      background-color: color($colors, newsSectionBackground, base);
+      
+      font-size: 12px;
+
+      .main-content{
+        padding: 5px 40px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+
+        h2 {
+          color: white;
+          font-weight: 800;
+          font-size: 22px;
+          font-family: 'Bitter';
+          margin-top: 0;
+        }
+
+        h3 {
+          color: color($colors, navBarTrivia, base);
+          font-weight: 800;
+          font-size: 18px;
+          font-family: 'Bitter';
+          margin-bottom: 10px;
+        }
+
+        p {
+          margin-top: 0;
+          margin-bottom: 6px;
+          font-family: 'OpenSans';
+          color: #A8ABBA;
+        }
+
+        textarea {
+        	width: 100%;
+        	height: auto;
+        	resize: none;
+        	background-color: #1E1F29;
+    			border: solid #181923;
+    			border-radius: 4px;
+    			font-family: 'OpenSans';
+    			color: #A8ABBA;
+        }
+
+        input {
+        	width: 100%;
+        	height: 30px;
+        	background-color: #1E1F29;
+    			border: solid #181923;
+    			border-radius: 4px;
+    			font-family: 'OpenSans';
+    			color: #A8ABBA;
+    			margin-bottom: 10px;
+        }
+      }
+    }
+
+    .separator {
+      margin-top: 18px;
+      margin-bottom: 13px;
+      width: 100%;
+      height: 2px;
+      background-color: #434551;
+    }
+  }
+}
