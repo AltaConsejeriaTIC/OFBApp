@@ -115,6 +115,7 @@ page-calendar {
   }
 
   .scroll-content{
+    background-color: #282A35;
     padding: 0 !important;
 
     .calendarBox{
@@ -256,20 +257,15 @@ page-calendar {
           &.paid-event {
             background-color: #F8774E;
           }
-
-          &:before{
-            background-color: #F8774E;
-            content: '';
-            width: 100%;
-            top: -4px;
-            position: absolute;
-            left: 0;
-            height: 1px;
-          }
         }
 
         .dayAndMonthEvent{
-          padding-bottom: 5vh;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          flex-grow: 1;
+          justify-content: center;
+          padding: 2.5vh 0;
 
           .eventDay{
             font-weight: 800;
@@ -279,6 +275,18 @@ page-calendar {
           .eventMonth{
             font-family: "OpenSans" !important;
             letter-spacing: 0.2em;
+          }
+        }
+
+        .ticket-type {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          min-height: 50px;
+          border-top: solid 1px color($colors, navBarCalendar, base);
+
+          &.paid-event {
+            background-color: #F8774E;
           }
         }
 
@@ -318,6 +326,7 @@ page-calendar {
         .eventTime, .eventPlace{
           display: flex;
           flex-direction: row;
+          justify-content: center;
           align-items: center;
           color: #AEAEAE;
           font-family: "OpenSans" !important;
@@ -343,6 +352,9 @@ page-calendar {
   }
 
   .no-events-available {
+    background-color: #282A35;
+    border-top: solid 1px white;
+    padding: 0 15px; 
     display: flex;
     justify-content: center;
     align-items: center;

@@ -54,7 +54,9 @@
                 <p class="eventDay">{{event.splitedDate[0]}}</p>
                 <p class="eventMonth">{{event.splitedDate[1]}}</p>
             </div>
+            <div class="ticket-type" [ngClass]="{'paid-event': event.isFree == false}">
                 <p class="priceEvent" [ngClass]="{'paid-event': event.isFree == false}">{{event.isFree ? 'Entrada Libre*' : 'Evento pago'}}</p>
+            </div>
           </ion-col>
 
           <ion-col col-9 class="eventInfo">
