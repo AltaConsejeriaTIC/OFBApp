@@ -24,7 +24,7 @@
    	<button [ngClass]="{'hide': event.entry != 'Tuboleta' && event.entry != 'primerafila'}" class="buy-tickets-button">
    		Comprar boleta
    	</button>
-   	<button class="shareEventButton">
+   	<button class="shareEventButton" (click)='share()'>
    		Compartir este evento
    	</button>
    	<div class="separator"><div></div></div>

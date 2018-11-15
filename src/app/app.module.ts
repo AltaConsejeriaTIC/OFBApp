@@ -26,6 +26,7 @@ import { ClassesService } from '../pages/classes/classes.service';
 import { ClassDetailsPageModule } from '../pages/class-details/class-details.module';
 
 import { CalendarModule } from "ion2-calendar";
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 import es from '@angular/common/locales/es';
 
@@ -72,7 +73,8 @@ registerLocaleData(es);
     HomeService,
     CalendarService,
     ClassesService,
-    NewsService
+    NewsService,
+    SocialSharing
   ]
 })
 export class AppModule {}
