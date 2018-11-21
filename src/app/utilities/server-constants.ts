@@ -5,7 +5,7 @@ dev domain: http://165.227.254.52:8090/
 local dev domain: 'http://127.0.0.1:10010/'
 */
 
-export const BACKEND_MAIN_DOMAIN = 'http://165.227.254.52:8090/'
+export const BACKEND_MAIN_DOMAIN = 'http://165.227.254.52:10010/'
 
 export const END_POINTS = {
   RECENT_EVENTS: 'eventos/home',
