@@ -1,0 +1,51 @@
+page-multimedia {
+  .control {
+    border-bottom: 4px solid rgba(22, 24, 36, .4);
+    display: flex;
+    padding: 16px 0 14px;
+
+    &__box {
+      flex: 1;
+      text-align: center;
+
+      .img {
+        width: 30px;
+        height: 30px;
+        margin: auto;
+
+        &__hover {
+          display: none;
+        }
+      }
+
+      .text {
+        font-size: 10px;
+        font-weight: bold;
+        letter-spacing: 0.6px;
+        color: white;
+        margin-top: 7px;
+      }
+
+      &.is-active {
+        .img {
+          &__normal {
+            display: none;
+          }
+
+          &__hover {
+            display: block;
+          }
+        }
+
+        .text {
+          color: color($colors, 'wildStrawberry');
+          transition: .3s
+        }
+      }
+    }
+
+    &--border {
+      border-right: thin solid rgba(0, 0, 0, .3);
+    }
+  }
+}

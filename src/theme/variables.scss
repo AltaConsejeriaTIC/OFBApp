@@ -9,14 +9,9 @@ $colors: (
   secondary: #32db64,
   danger: #f53d3d,
   light: #f4f4f4,
-  dark: #222,
-
-  // Main Backgorund color
   background: #161824,
   separator: #474747,
   altSeparator: #E5E5E5,
-
-  // NavBar buttons background colors
   navBarBackground: #000000,
   navBarBorder: #818181,
   navBarHome: #FF4284,
@@ -24,86 +19,46 @@ $colors: (
   navBarEducative: #6AD2FF,
   navBarAudCont: #FF4284,
   navBarTrivia: #F7C933,
-
   mainText: #8E8E9C,
   highlightText: #FF4AC1,
-
-  //News section
   newsSectionBackground: #282A35,
   newsCardBackground: #1C1D26,
-
-  //News Details section
   newsDetailsTextColor: #5b5e6d,
-
-  "white": #ffffff
+  'white': #ffffff,
+  'dark': #282a35,
+  'darker': #161824,
+  'wildStrawberry': #ff4284
 );
 
-//NavBar variables
 $tabs-background : #161824;
 $tabs-md-tab-icon-color: white;
 
 @import 'ionic.theme.default';
-
-img {
-  object-fit: cover;
-}
 
 h1, h2, h3, h4, h5, h6, span, button {
   font-family: 'OpenSans'
 }
 
 ion-tabs .button-effect {
- display:none !important;
+  display:none !important;
 }
 
 @import 'ionicons';
-@import 'roboto';
 @import 'noto-sans';
+@import '../assets/fonts/bitter/bitter';
+@import '../assets/fonts/opensans/opensans';
+@import '../assets/fonts/roboto/roboto';
 
 $font-family-untitled-font-1: 'untitled-font-1';
-
-@font-face {
-  font-family: Bitter;
-  font-weight: 400;
-  src: url("../assets/fonts/Bitter/Bitter-Regular.ttf");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Bitter;
-  font-weight: 700;
-  src: url("../assets/fonts/Bitter/Bitter-Bold.ttf");
-  font-style: bold;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-weight: 600;
-  src: url("../assets/fonts/OpenSans/OpenSans-SemiBold.ttf");
-  font-style: semi-bold;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-weight: 400;
-  src: url("../assets/fonts/OpenSans/OpenSans-Regular.ttf");
-  font-style: normal;
-}
-
-@font-face {
-  font-family: OpenSans;
-  font-weight: 700;
-  src: url("../assets/fonts/OpenSans/OpenSans-Bold.ttf");
-  font-style: bold;
-}
+$font-family-Bitter: "Bitter";
+$font-family-OpenSans: 'OpenSans';
+$font-family-Roboto: 'Roboto', sans-serif;
 
 $font-family-ios-base: "Bitter";
 $font-family-md-base: "Bitter";
-$font-family-Bitter: "Bitter";
 
-$font-family-ios-base: "OpenSans";
-$font-family-md-base: "OpenSans";
-$font-family-OpenSans: "OpenSans";
+$font-family-ios-base: 'OpenSans';
+$font-family-md-base: 'OpenSans';
 
 // Helpers ...
 @import './helpers/margin';

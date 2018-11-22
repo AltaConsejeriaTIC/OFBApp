@@ -1,0 +1,11 @@
+app-navbar {
+  .navbar {
+    background-color:color($colors, 'darker');
+    color:color($colors, "white");
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 1px;
+  }
+}

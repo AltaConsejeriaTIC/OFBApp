@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,11 +7,5 @@ import { IonicPage, NavController } from 'ionic-angular';
   templateUrl: 'primary-tabs.html'
 })
 export class PrimaryTabsPage {
-  public homeRoot = 'HomePage';
-  public calendarHomeRoot = 'CalendarHomePage';
-  public eduProjectRoot = 'EduProjectPage';
-  public audVisContentRoot = 'AudVisContentPage';
-  public triviaRoot = 'TriviaPage';
-
-  constructor(public navCtrl: NavController) {}
+  constructor() { }
 }

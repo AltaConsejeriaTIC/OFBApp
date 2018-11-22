@@ -1,0 +1,13 @@
+$object-fit: ('fill', 'contain', 'cover', 'none', 'scale-down');
+
+.app-fit {
+  @each $fit in $object-fit {
+    &-#{$fit} {
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: #{$fit};
+      }
+    }
+  }
+}
