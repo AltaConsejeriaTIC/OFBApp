@@ -14,18 +14,18 @@ import { CalendarService } from './calendar.service';
 export class CalendarPage {
   @ViewChild('calendario') calendario: CalendarComponent;
 
-  events: any;
-  calendarIndex: any;
-  selectedDayEvents: any;
-  selectedMonth: any;
-  noEvents: any;
-  month: string;
-  day: any;
-  year: number;
-  showcalendar: boolean = true;
-  date: string;
-  type: 'string';
-  optionsMulti: CalendarComponentOptions = {
+  private events: any;
+  private calendarIndex: any;
+  private selectedDayEvents: any;
+  private selectedMonth: any;
+  private noEvents: any;
+  private month: string;
+  private day: any;
+  private year: number;
+  private showcalendar: boolean = true;
+  private date: string;
+  private type: 'string';
+  private optionsMulti: CalendarComponentOptions = {
      weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
      monthPickerFormat: ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
      monthFormat: 'MMM YYYY',
@@ -65,6 +65,7 @@ export class CalendarPage {
 
   showAllEvents(){
     this.selectedDayEvents = this.events;
+    this.noEvents = false;
     this.toggleCalendar();
   };
 

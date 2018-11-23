@@ -59,55 +59,162 @@ page-trivia-survey {
         flex-direction: column;
         align-items: left;
 
-        h2 {
-          color: white;
-          font-weight: 800;
-          font-size: 22px;
-          font-family: 'Bitter';
-          margin-top: 0;
-        }
+        form {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: left;
 
-        h3 {
-          color: color($colors, navBarTrivia, base);
-          font-weight: 800;
-          font-size: 18px;
-          font-family: 'Bitter';
-          margin-bottom: 10px;
-        }
+          h2 {
+            color: white;
+            font-weight: 800;
+            font-size: 22px;
+            font-family: 'Bitter';
+            margin-top: 0;
+            margin-bottom: 5px;
+          }
 
-        p {
-          margin-top: 0;
-          margin-bottom: 6px;
-          font-family: 'OpenSans';
-          color: #A8ABBA;
-        }
+          h3 {
+            color: color($colors, navBarTrivia, base);
+            font-weight: 800;
+            font-size: 18px;
+            font-family: 'Bitter';
+            margin-bottom: 10px;
+          }
 
-        textarea {
-        	width: 100%;
-        	height: auto;
-        	resize: none;
-        	background-color: #1E1F29;
-    			border: solid #181923;
-    			border-radius: 4px;
-    			font-family: 'OpenSans';
-    			color: #A8ABBA;
-        }
+          input[type="submit"] {
+            margin-left: 5%;
+            margin-bottom: 20px;
+            width: 90%;
+            height: 35px;
+            background-color: color($colors, navBarTrivia, base);
+            border: none;
+            border-radius: 4px;
+            font-family: 'OpenSans';
+            font-weight: 700;
+            font-size: 15px;
+          }
 
-        input {
-        	width: 100%;
-        	height: 30px;
-        	background-color: #1E1F29;
-    			border: solid #181923;
-    			border-radius: 4px;
-    			font-family: 'OpenSans';
-    			color: #A8ABBA;
-    			margin-bottom: 10px;
+          label {
+            display: flex;
+            flex-direction: column;
+            margin-top: 0;
+            min-height: 20px;
+            font-family: 'OpenSans';
+            color: #A8ABBA;
+
+            input {
+            	width: 100%;
+            	height: 30px;
+            	background-color: #1E1F29;
+        			border: solid 1px #181923;
+        			border-radius: 4px;
+        			font-family: 'OpenSans';
+        			color: #A8ABBA;
+        			margin: 10px 0;
+
+              &[type="text"] {
+                padding-left: 5px;
+              }
+
+            }
+
+            textarea {
+              width: 100%;
+              height: auto;
+              resize: none;
+              background-color: #1E1F29;
+              border: solid #181923;
+              border-radius: 4px;
+              font-family: 'OpenSans';
+              color: #A8ABBA;
+              margin-top: 10px;
+            }
+
+            &.checkbox-label{
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              position: relative;
+              padding-left: 35px;
+              margin-bottom: 12px;
+              -webkit-user-select: none;
+              -moz-user-select: none;
+              -ms-user-select: none;
+              user-select: none;
+
+              input {
+                font-family: 'OpenSans';
+                color: #A8ABBA;
+                position: absolute;
+                opacity: 0;
+                height: 0;
+                width: 0;
+
+                &:checked ~ .checkmark {
+                  background-color: #1E1F29;
+                }
+
+                &:checked ~ .checkmark:after {
+                  display: block;
+                }
+              }
+
+              .checkmark:after {
+                left: 6px;
+                top: 2px;
+                width: 3px;
+                height: 8px;
+                border: solid white;
+                border-width: 0 3px 3px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+              }
+
+              div {
+                font-family: 'OpenSans';
+
+                a {
+                  font-family: 'OpenSans';
+                  text-decoration: none;
+                  color: color($colors, navBarTrivia, base);
+                }
+              }
+            }
+          }
+
+          .checkmark {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            border: solid 1px #181923;
+            border-radius: 4px;
+            background-color: #1E1F29;
+
+            &:after {
+              content: "";
+              position: absolute;
+              display: none;
+            }
+          }
+
+          p {
+            font-family: 'OpenSans';
+            color: #A8ABBA;
+          }
+
+          .no-margin {
+            margin-bottom: 0;
+          }
         }
       }
     }
 
     .separator {
-      margin-top: 18px;
+      margin-top: 13px;
       margin-bottom: 13px;
       width: 100%;
       height: 2px;
