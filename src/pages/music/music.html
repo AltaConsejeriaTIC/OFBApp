@@ -3,7 +3,7 @@
 
   <div class="mt-22">
     <div class="song">
-      <div>
+      <div class="song__icon">
         <img src="./assets/icon/link.svg">
       </div>
       <div class="ml-18">
@@ -13,7 +13,7 @@
     </div>
 
     <div class="song">
-      <div>
+      <div class="song__icon">
         <img src="./assets/icon/link.svg">
       </div>
       <div class="ml-18">
@@ -23,7 +23,7 @@
     </div>
 
     <div class="song">
-      <div>
+      <div class="song__icon">
         <img src="./assets/icon/link.svg">
       </div>
       <div class="ml-18">
@@ -33,7 +33,7 @@
     </div>
 
     <div class="song">
-      <div>
+      <div class="song__icon">
         <img src="./assets/icon/link.svg">
       </div>
       <div class="ml-18">
@@ -43,7 +43,7 @@
     </div>
 
     <div class="song">
-      <div>
+      <div class="song__icon">
         <img src="./assets/icon/link.svg">
       </div>
       <div class="ml-18">
@@ -56,25 +56,25 @@
   <div class="more">Puedes escuchar más contenido en:</div>
 
   <div>
-    <div class="list">
+    <a class="list" [href]="deezerLink" target="_blank">
       <div class="list__icon">
         <img src="./assets/imgs/deezer-icon.png">
       </div>
       <div class="list__text">Deezer</div>
-    </div>
+    </a>
 
-    <div class="list">
+    <a class="list" [href]="spotifyLink" target="_blank">
       <div class="list__icon">
         <img src="./assets/icon/spotify.svg">
       </div>
       <div class="list__text">Spotify</div>
-    </div>
+    </a>
 
-    <div class="list">
+    <a class="list" [href]="itunesLink" target="_blank">
       <div class="list__icon">
         <img src="./assets/imgs/itunes-icon.png">
       </div>
       <div class="list__text">iTunes</div>
-    </div>
+    </a>
   </div>
 </div>

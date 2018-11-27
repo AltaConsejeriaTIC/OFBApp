@@ -20,6 +20,13 @@ page-music {
     align-items: center;
     margin-bottom: 5px;
 
+    &__icon {
+      img {
+        display: block;
+        width: 18px;
+      }
+    }
+
     &__title {
       color: white;
       font-size: 17px;

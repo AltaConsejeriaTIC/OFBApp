@@ -55,3 +55,6 @@ ng-xi18n.cmd
 ng-xi18n
 esvalidate
 ionic-app-scripts.cmd
+
+# Environment ...
+src/env.ts
