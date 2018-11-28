@@ -7,12 +7,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'video.html',
 })
 export class VideoPage {
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  public ionViewDidLoad() {
-    console.log('ionViewDidLoad VideoPage');
-  }
-
+  public ionViewDidLoad() { }
 }

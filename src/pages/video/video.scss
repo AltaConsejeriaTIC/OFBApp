@@ -1,3 +1,52 @@
 page-video {
+  .video {
+    &__container {
+      padding: 12px;
+    }
 
+    display: flex;
+
+    + .video {
+      margin-top: 12px;
+    }
+
+    &__thumbnail {
+      width: 160px;
+      height: 90px;
+      background-color: rgba(136, 136, 136, .2);
+      position: relative;
+    }
+
+    &__time {
+      background-color: rgba(17, 17, 17, .8);
+      border-radius: 2px;
+      color: rgb(238, 238, 238);
+      font-family: $font-family-Roboto;
+      font-size: 12px;
+      margin: 5px;
+      padding: 1px 4px;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    &__text {
+      flex: 1;
+      padding-left: 8px;
+    }
+
+    &__title {
+      color: rgb(238, 238, 238);
+      font-family: $font-family-Roboto;
+      font-size: 14px;
+      line-height: 17.5px;
+    }
+
+    &__author {
+      color: rgba(238, 238, 238, .6);
+      font-family: $font-family-Roboto;
+      font-size: 12px;
+      line-height: 15px;
+    }
+  }
 }

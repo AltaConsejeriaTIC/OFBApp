@@ -1,14 +1,14 @@
 import { Directive, Input, ElementRef, Renderer2, OnInit } from '@angular/core';
 
 @Directive({
-  selector: '[appBackground]'
+  selector: '[appLines]'
 })
-export class BackgroundDirective implements OnInit {
-  @Input('appBackground')
-  public background: string;
+export class LinesDirective implements OnInit {
+  @Input('appLines')
+  public lines: string;
 
   get cssClass(): string {
-    return `app-background-${this.background}`;
+    return `app-lines-${this.lines}`;
   }
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
