@@ -1,12 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-/**
- * Generated class for the TriviaSurveyPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { TabBarProvider } from '../../providers/tab-bar/tab-bar';
 
 @IonicPage()
 @Component({
@@ -14,12 +8,13 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'trivia-survey.html',
 })
 export class TriviaSurveyPage {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private tabBarService: TabBarProvider) { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  public ionViewDidLoad() {
+    this.tabBarService.show();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad TriviaSurveyPage');
+  public ionViewDidLeave() {
+    this.tabBarService.hide();
   }
-
 }

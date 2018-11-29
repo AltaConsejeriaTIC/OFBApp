@@ -19,10 +19,11 @@ page-primary-tabs {
 
   .tabs-md .tab-button-icon {
     margin-top: 2px;
-}
-.tabs-md .tab-button {
+  }
+
+  .tabs-md .tab-button {
     min-height: 6rem;
-}
+  }
 
   .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text,
   .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text {
@@ -31,17 +32,18 @@ page-primary-tabs {
     color: white;
     font-family: "OpenSans";
   }
+
   .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text{
     margin-bottom: 8px;
   }
+
   .tabs-md[tabsLayout=icon-top] .has-icon .tab-button-text{
-      margin-bottom: 4px;
+    margin-bottom: 4px;
   }
 
-   .tabs-md .tabbar>a[aria-selected=true] span:after{
-       bottom: 0px !important;
+  .tabs-md .tabbar>a[aria-selected=true] span:after{
+    bottom: 0px !important;
   }
-
 
   .tabbar {
     box-shadow: 0px -5px 10px 5px rgba(22, 24, 36, 4);
@@ -55,7 +57,6 @@ page-primary-tabs {
       }
 
       span {
-
         &:after {
           content: '';
           position: absolute;
@@ -72,12 +73,12 @@ page-primary-tabs {
         }
       }
 
-      &:nth-child(2){
-
+      &:nth-child(2) {
         span:after {
           background: color($colors, navBarCalendar, base);
         }
       }
+
       &:nth-child(3){
         span:after {
           background: color($colors, navBarEducative, base);
@@ -147,7 +148,7 @@ page-primary-tabs {
           background: color($colors, navBarAudCont, base);
         }
       }
-      &:nth-child(5){
+      &:nth-child(5) {
         ion-icon {
           border: 2px solid color($colors, navBarTrivia, base);
           background-color: color($colors, navBarTrivia, base);
@@ -158,5 +159,10 @@ page-primary-tabs {
         }
       }
     }
+
+  }
+
+  .tabbar--show .show-tabbar {
+    z-index: 9999;
   }
 }

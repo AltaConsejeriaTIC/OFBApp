@@ -25,13 +25,14 @@ import { ClassesPageModule } from '../pages/classes/classes.module';
 import { ClassesService } from '../pages/classes/classes.service';
 import { ClassDetailsPageModule } from '../pages/class-details/class-details.module';
 
-import { CalendarModule } from "ion2-calendar";
+import { CalendarModule } from 'ion2-calendar';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 import es from '@angular/common/locales/es';
-
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(es);
+
+import { TabBarProvider } from '../providers/tab-bar/tab-bar';
 
 @NgModule({
   declarations: [
@@ -69,12 +70,13 @@ registerLocaleData(es);
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: LOCALE_ID, useValue: "es" },
+    { provide: LOCALE_ID, useValue: 'es' },
     HomeService,
     CalendarService,
     ClassesService,
     NewsService,
-    SocialSharing
+    SocialSharing,
+    TabBarProvider
   ]
 })
 export class AppModule {}

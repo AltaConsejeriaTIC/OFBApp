@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, Events } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,5 +7,11 @@ import { IonicPage } from 'ionic-angular';
   templateUrl: 'primary-tabs.html'
 })
 export class PrimaryTabsPage {
-  constructor() { }
+  public hidden = false;
+
+  constructor(private events: Events) {
+    this.events.subscribe('tabbar-hidden', (hidden) => {
+      this.hidden = hidden;
+    });
+  }
 }
