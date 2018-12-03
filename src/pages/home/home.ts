@@ -1,7 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
 import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
-
-// Custom components
 import { HomeService } from './home.service';
 import { NewsPage } from '../news/news';
 import { NewsDetailsPage } from '../news-details/news-details';
@@ -15,46 +13,39 @@ import { ClassDetailsPage } from '../class-details/class-details';
   templateUrl: 'home.html'
 })
 export class HomePage {
+  public showMenu = true;
+  public featuredEvents: any;
+  public news: any;
+  public magistralClasses: any;
 
   @ViewChild('slides')
-  slides: Slides;
-  public showMenu = true;
-  public featuredEvents : any;
-  public news : any;
-  public magistralClasses : any;
+  public slides: Slides;
 
+  constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) {
-  }
-
-  ionViewDidLoad() {
-
+  public ionViewDidLoad() {
     this.initView();
   }
 
-  prevSlide() {
+  public prevSlide() {
     this.slides.slidePrev();
   }
 
-  nextSlide() {
+  public nextSlide() {
     this.slides.slideNext();
   }
 
-  initView() {
+  public initView() {
     this.getRecentNews();
     this.getFeaturedEvents();
     this.getMagistralClasses();
-
   }
-//------------------------ Menu ----------------------
-  toogleMenu(){
+
+  public toogleMenu() {
     this.showMenu = !this.showMenu;
-    console.log(this.showMenu)
   }
 
-//------------------------ Menu ----------------------
-//------------------------ http requests -------------------
-  getFeaturedEvents() {
+  public getFeaturedEvents() {
     this.homeService.getFeaturedEvents()
     .subscribe((data) => {
       this.normalizeEventsData(data);
@@ -62,80 +53,78 @@ export class HomePage {
     });
   }
 
-  getRecentNews() {
+  public getRecentNews() {
     this.homeService.getRecentNews()
     .subscribe((data) => {
-    console.log(data);
       this.normalizeNewsData(data);
       this.news = data;
     });
   }
 
-  getMagistralClasses() {
+  public getMagistralClasses() {
     this.homeService.getMagistralClasses()
     .subscribe((data) => {
-      console.log(data);
       this.normalizeNewsData(data);
       this.magistralClasses = data;
     });
   }
 
-  normalizeNewsData(data){
+  public normalizeNewsData(data) {
     data.forEach((newsObject) => {
-      newsObject.title = this.removeHTMLTagFromString(newsObject.title)
-      newsObject.content = this.removeHTMLTagFromString(newsObject.content)
+      newsObject.title = this.removeHTMLTagFromString(newsObject.title);
+      newsObject.content = this.removeHTMLTagFromString(newsObject.content);
       newsObject.stripedTitle = newsObject.title.substring(0, 70);
       newsObject.stripedContent = newsObject.content.substring(0, 140);
-      if(newsObject.stripedTitle.length == 70){
-        newsObject.stripedTitle = newsObject.stripedTitle + '...';
+      if (newsObject.stripedTitle.length === 70) {
+        newsObject.stripedTitle = `${newsObject.stripedTitle}...`;
       }
-      if(newsObject.stripedContent.length == 140){
-        newsObject.stripedContent = newsObject.stripedContent + '...';
+      if (newsObject.stripedContent.length === 140) {
+        newsObject.stripedContent = `${newsObject.stripedContent}...`;
       }
-    })
+    });
   }
 
-  normalizeEventsData(data){
+  public normalizeEventsData(data) {
     data.forEach((newsObject) => {
       newsObject.splitedDate = newsObject.date.split(' ');
-      newsObject.title = this.removeHTMLTagFromString(newsObject.title)
-      newsObject.content = this.removeHTMLTagFromString(newsObject.content)
+      newsObject.title = this.removeHTMLTagFromString(newsObject.title);
+      newsObject.content = this.removeHTMLTagFromString(newsObject.content);
       newsObject.stripedTitle = newsObject.title.substring(0, 70);
       newsObject.stripedContent = newsObject.content.substring(0, 140);
-      if(newsObject.stripedTitle.length == 70){
-        newsObject.stripedTitle = newsObject.stripedTitle + '...';
+      if (newsObject.stripedTitle.length === 70) {
+        newsObject.stripedTitle = `${newsObject.stripedTitle}...`;
       }
-      if(newsObject.stripedContent.length == 140){
-        newsObject.stripedContent = newsObject.stripedContent + '...';
+      if (newsObject.stripedContent.length === 140) {
+        newsObject.stripedContent = `${newsObject.stripedContent}...`;
       }
-    })
+    });
   }
 
-  removeHTMLTagFromString(str){
+  public removeHTMLTagFromString(str) {
     return str.replace(/<[^>]+>/g, '');
   }
 
-  goToNews(news) {
+  public goToNews(news) {
     this.navCtrl.push(NewsPage, news);
   }
 
-  goToNewDetails(newObject) {
+  public goToNewDetails(newObject) {
     this.navCtrl.push(NewsDetailsPage, newObject);
   }
 
-  goToEventDetails(event){
+  public goToEventDetails(event) {
     this.navCtrl.push(EventDetailsPage, event);
   }
 
-  goToAllClasses(classes){
+  public goToAllClasses(classes) {
     this.navCtrl.push(ClassesPage, classes);
   }
 
-  goToClassesDetails(classObject){
+  public goToClassesDetails(classObject) {
     this.navCtrl.push(ClassDetailsPage, classObject);
   }
 
-  slideChanged() {
+  public slideChanged() {
     this.slides.update();
   }
 }

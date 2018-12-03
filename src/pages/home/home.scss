@@ -20,7 +20,7 @@ page-home {
     .toolbar-md,
     .toolbar {
       max-height: 10vh;
-    } 
+    }
 
     .toolbar-content-ios,
     .toolbar-content-md,
@@ -48,6 +48,14 @@ page-home {
       background-color: white;
       border-radius: 4px;
       z-index: 2;
+
+      &__background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
 
       button {
         display: flex;
@@ -79,13 +87,13 @@ page-home {
       font-size: 4.5em;
       color: #ffffff;
     }
-    
+
     .header-logo-alcaldia {
       height: 90%;
       width: auto;
       object-fit: contain;
     }
-    
+
     .header-line {
       margin-left: 10px;
       background-color: rgba(#ffffff, 0.15);
@@ -184,7 +192,7 @@ page-home {
         color: rgba(255, 255, 255, 0.8);
         font-size: 1.3rem;
         text-align: justify;
-        padding-right: 20px; 
+        padding-right: 20px;
         overflow: hidden;
       }
       .eventTime {
@@ -216,7 +224,7 @@ page-home {
     box-shadow: 0 0 10px 1px #282A35;
     padding: 2.5%;
     background: white;
-    
+
     &.left {
       left: 5%;
       transform: rotate(180deg);
@@ -322,7 +330,7 @@ page-home {
       position: relative;
       padding: 15px;
       height: 100%;
-      
+
       .last-slide-title {
         position: absolute;
         padding-bottom: 15px;
