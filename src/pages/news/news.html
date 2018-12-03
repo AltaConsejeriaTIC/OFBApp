@@ -8,7 +8,7 @@
 
 <ion-content padding>
   <ion-card  *ngFor='let new of news' (click)='goToDetails(new)'>
-    <img src="../../assets/imgs/XMLID_8_.png" />
+    <img src={{new.image}} />
     <ion-card-content>
       <div class="newsTitle">
         <span class="newsCategory">{{new.category}}</span>

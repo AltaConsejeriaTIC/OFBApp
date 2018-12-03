@@ -54,7 +54,7 @@
     <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide *ngFor='let new of news' (click)='goToNewDetails(new)'>
         <ion-card>
-          <img src="../../assets/imgs/home/placeholder1.jpg"/>
+          <img src={{new.image}}/>
           <ion-card-content>
             <p class="slideDate newsDate">{{new.date}}</p>
             <ion-card-title>
@@ -86,7 +86,7 @@
       <ion-slide *ngFor='let class of magistralClasses' (click)='goToClassesDetails(class)'>
         <ion-card>
           <div class="gradient"></div>
-          <img src="../../assets/imgs/home/placeholder2.jpg"/>
+          <img src={{class.image}}/>
           <ion-card-content class="card-content-magistrales">
             <ion-card-title>
               <p class="teacherName">{{class.title}}</p>

@@ -57,7 +57,6 @@ export class HomePage {
   getFeaturedEvents() {
     this.homeService.getFeaturedEvents()
     .subscribe((data) => {
-    console.log(data);
       this.normalizeEventsData(data);
       this.featuredEvents = data;
     });
@@ -66,6 +65,7 @@ export class HomePage {
   getRecentNews() {
     this.homeService.getRecentNews()
     .subscribe((data) => {
+    console.log(data);
       this.normalizeNewsData(data);
       this.news = data;
     });
@@ -74,6 +74,7 @@ export class HomePage {
   getMagistralClasses() {
     this.homeService.getMagistralClasses()
     .subscribe((data) => {
+      console.log(data);
       this.normalizeNewsData(data);
       this.magistralClasses = data;
     });
