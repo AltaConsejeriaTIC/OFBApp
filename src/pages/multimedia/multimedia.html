@@ -1,8 +1,5 @@
 <ion-header no-border>
   <app-navbar title="contenido audiovisual"></app-navbar>
-</ion-header>
-
-<ion-content appBackground="dark">
   <div class="control">
     <div class="control__box control--border" (click)="changeTab('t1')" [ngClass]="{ 'is-active': tabs.t1 }">
       <div class="img" appFit="contain">
@@ -19,7 +16,9 @@
       <div class="text" text-uppercase>videos</div>
     </div>
   </div>
+</ion-header>
 
+<ion-content appBackground="dark">
   <page-music *ngIf="tabs.t1"></page-music>
   <page-video *ngIf="tabs.t2"></page-video>
 </ion-content>

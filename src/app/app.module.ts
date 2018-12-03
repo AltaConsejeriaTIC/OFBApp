@@ -6,7 +6,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module'
+import { PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module';
 import { HomePageModule } from '../pages/home/home.module';
 import { HomeService } from '../pages/home/home.service';
 import { CalendarHomePageModule } from '../pages/calendar-home/calendar-home.module';
@@ -16,7 +16,7 @@ import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/trivia-not-available.module';
-import { NewsPageModule} from '../pages/news/news.module';
+import { NewsPageModule } from '../pages/news/news.module';
 import { NewsService } from '../pages/news/news.service';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
 import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
@@ -32,6 +32,7 @@ import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(es);
 
+import { AudioProvider } from '../providers/audio/audio';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ registerLocaleData(es);
     ClassesService,
     NewsService,
     SocialSharing,
+    AudioProvider,
   ]
 })
 export class AppModule {}

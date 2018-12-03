@@ -1,5 +1,3 @@
-import { ENV } from '../env';
-
 export class ExternalConfig {
   public static deezer = 'https://www.deezer.com/en/album/62186412';
   public static itunes = 'https://itunes.apple.com/co/album/50-a%C3%B1os-tocando-para-ti/1376846673';

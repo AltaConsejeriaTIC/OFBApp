@@ -1,56 +1,18 @@
 <div class="container">
   <p class="m-0">Aquí puedes escuchar algunas obras interpretadas por la Orquesta Filarmónica de Bogotá</p>
 
-  <div class="mt-22">
-    <div class="song">
-      <div class="song__icon">
-        <img src="./assets/icon/link.svg">
-      </div>
-      <div class="song__text ml-18">
-        <div class="song__title mt-4" appLines="1">Moonlight Sonata Moonlight Sonata Moonlight Sonata Moonlight Sonata</div>
-        <div class="song__author mt-6" appLines="1">Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song__icon">
-        <img src="./assets/icon/link.svg">
-      </div>
-      <div class="song__text ml-18">
-        <div class="song__title mt-4" appLines="1">Moonlight Sonata Moonlight Sonata Moonlight Sonata Moonlight Sonata</div>
-        <div class="song__author mt-6" appLines="1">Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song__icon">
-        <img src="./assets/icon/link.svg">
-      </div>
-      <div class="song__text ml-18">
-        <div class="song__title mt-4" appLines="1">Moonlight Sonata Moonlight Sonata Moonlight Sonata Moonlight Sonata</div>
-        <div class="song__author mt-6" appLines="1">Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song__icon">
-        <img src="./assets/icon/link.svg">
-      </div>
-      <div class="song__text ml-18">
-        <div class="song__title mt-4" appLines="1">Moonlight Sonata Moonlight Sonata Moonlight Sonata Moonlight Sonata</div>
-        <div class="song__author mt-6" appLines="1">Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá Orquesta FIlarmónica de Bogotá</div>
-      </div>
-    </div>
-
-    <div class="song">
-      <div class="song__icon">
-        <img src="./assets/icon/link.svg">
-      </div>
-      <div class="song__text ml-18">
-        <div class="song__title mt-4" appLines="1">Moonlight Sonata</div>
-        <div class="song__author mt-6" appLines="1">Orquesta FIlarmónica de Bogotá</div>
-      </div>
-    </div>
+  <div class="mt-16">
+    <ng-container *ngIf="audios else loading">
+      <a class="song" *ngFor="let audio of audios" [href]="audio.url" target="_blank">
+        <div class="song__icon">
+          <img src="./assets/icon/link.svg">
+        </div>
+        <div class="song__text ml-18">
+          <div class="song__title mt-4" appLines="1">{{ audio.title }}</div>
+          <div class="song__author mt-6" appLines="1">{{ audio.artist }}</div>
+        </div>
+      </a>
+    </ng-container>
   </div>
 
   <div class="more">Puedes escuchar más contenido en:</div>
@@ -78,3 +40,7 @@
     </a>
   </div>
 </div>
+
+<ng-template #loading>
+  <h5 ion-text color="white" padding-vertical text-center>Cargando...</h5>
+</ng-template>
