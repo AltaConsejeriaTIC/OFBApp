@@ -43,6 +43,10 @@ ion-tabs .button-effect {
   display:none !important;
 }
 
+img {
+  object-fit: contain !important;
+}
+
 @import 'ionicons';
 @import 'noto-sans';
 @import '../assets/fonts/bitter/bitter';

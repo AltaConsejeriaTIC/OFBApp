@@ -7,28 +7,26 @@
       <ion-icon name="icon-icono-menu"></ion-icon>
     </button>
   </ion-navbar>
-</ion-header>
-
-<ion-content>
   <div class="menu" [ngClass]="{'hide': showMenu}">
-    <button navPush="AboutPage">
-      <ion-icon class="icon-filarmonica" name="icon-icono-configuracion"></ion-icon>
+    <button navPush="AboutPage" (click)="toogleMenu()">
+      <img src="../../assets/imgs/home/quienes_somos.svg">
       Quiénes somos
     </button>
     <div class="separator"></div>
-    <button navPush="TermsPage">
-      <ion-icon class="icon-filarmonica" name="icon-icono-configuracion"></ion-icon>
+    <button navPush="TermsPage" (click)="toogleMenu()">
+      <img src="../../assets/imgs/home/tos_icon.svg">
       Términos y condiciones
     </button>
   </div>
-  <ion-icon name="icon-flecha-izquierda" class="arrows left" (click)="prevSlide()"></ion-icon>
-  <ion-slides class="slide-concert" #slides pager loop="true">
+</ion-header>
+
+<ion-content>
+  <img src="../../assets/imgs/home/slider_arrow.svg" class="arrows left" (click)="prevSlide()">
+  <ion-slides class="slide-concert" #slides pager>
     <ion-slide *ngFor='let event of featuredEvents' (click)=goToEventDetails(event)>
       <ion-card>
         <ion-card-content>
-          <div class="img-container">
-            <img src={{event.image}}/>
-          </div >
+          <img src={{event.image}}/>
           <ion-row>
             <ion-col col-2 class="concertDateText">
               <h3 class="dateNumber">{{event.splitedDate[0]}}</h3>
@@ -36,7 +34,7 @@
             </ion-col>
             <ion-col col-10 class="concertDataText">
               <ion-card-title>{{event.stripedTitle}}</ion-card-title>
-              <p class="eventDescription">Lugar del evento</p>
+              <p class="eventDescription">{{event.place.name}}</p>
               <p class="eventTime">{{event.date}}</p>
             </ion-col>
           </ion-row>
@@ -44,7 +42,7 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
-  <ion-icon name="icon-flecha-derecha-1" class="arrows right" (click)="nextSlide()"></ion-icon>
+  <img src="../../assets/imgs/home/slider_arrow.svg" class="arrows right" (click)="nextSlide()">
 
   <div class="section newsSection">
 
@@ -56,8 +54,7 @@
     <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide *ngFor='let new of news' (click)='goToNewDetails(new)'>
         <ion-card>
-          <img src="../../assets/imgs/XMLID_7_.png"/>
-          <!--<img src={{new.image}}/>-->
+          <img src="../../assets/imgs/home/placeholder1.jpg"/>
           <ion-card-content>
             <p class="slideDate newsDate">{{new.date}}</p>
             <ion-card-title>
@@ -88,12 +85,14 @@
     <ion-slides class="clases" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide *ngFor='let class of magistralClasses' (click)='goToClassesDetails(class)'>
         <ion-card>
+          <div class="gradient"></div>
+          <img src="../../assets/imgs/home/placeholder2.jpg"/>
           <ion-card-content class="card-content-magistrales">
             <ion-card-title>
               <p class="teacherName">{{class.title}}</p>
             </ion-card-title>
             <div class="separator"></div>
-            <p class="classContent" [innerHtml]='class.content'></p>
+            <p class="classContent" [innerHtml]='class.stripedContent'></p>
           </ion-card-content>
         </ion-card>
       </ion-slide>

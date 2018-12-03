@@ -14,6 +14,21 @@ import { CalendarService } from './calendar.service';
 export class CalendarPage {
   @ViewChild('calendario') calendario: CalendarComponent;
 
+  private monthsNames = {
+    '01': 'ENERO',
+    '02': 'FEBRERO',
+    '03': 'MARZO',
+    '04': 'ABRIL',
+    '05': 'MAYO',
+    '06': 'JUNIO',
+    '07': 'JULIO',
+    '08': 'AGOSTO',
+    '09': 'SEPTIEMBRE',
+    '10': 'OCTUBRE',
+    '11': 'NOVIEMBRE',
+    '12': 'DICIEMBRE',
+  }
+
   private events: any;
   private calendarIndex: any;
   private selectedDayEvents: any;
@@ -33,8 +48,8 @@ export class CalendarPage {
   };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private calendarService: CalendarService) {
-    this.selectedMonth = navParams['data']
-  }
+    this.selectedMonth = navParams['data'];
+  };
 
   ionViewDidLoad() {
     this.getDate();
@@ -55,45 +70,51 @@ export class CalendarPage {
   };
 
   toggleCalendar(){
-    if(this.showcalendar){
-      this.showcalendar= false;
-    }
-    else{
-      this.showcalendar= true;
-    }
+    this.showcalendar = !this.showcalendar;
   };
 
-  showAllEvents(){
+  showAllEvents(toggling){
     this.selectedDayEvents = this.events;
     this.noEvents = false;
-    this.toggleCalendar();
+    if ( toggling ) this.toggleCalendar();
   };
 
   nextMonthChange($event){
     this.calendario.next();
-    console.log('monthChange',$event);
+    // this.selectedMonth = this.selectedMonth + 1;
+    // if (this.selectedMonth === 13) {
+    //   this.selectedMonth = 1;
+    // }
+    // this.getMonthlyEvents();
   };
 
   prevMonthChange($event){
     this.calendario.prev();
-    console.log('monthChange',$event);
+    // this.selectedMonth = this.selectedMonth - 1;
+    // if (this.selectedMonth === 0) {
+    //   this.selectedMonth = 12;
+    // }
+    // this.getMonthlyEvents();
   };
 
   onChange($event){
-    $event = $event.split("-");
-    const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-    this.month = monthNames[$event[1]-1];
-    this.day = $event[2];
-    this.year = $event[0];
+    console.log($event)
+    const splitedDate = $event.split("-");
+    this.month = this.monthsNames[splitedDate[1]];
+    this.day = splitedDate[2];
+    this.year = splitedDate[0];
     this.selectedDayEvents = this.getEventsForDay();
-  }
+  };
 
   monthChange($event) {
-    const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-    this.month = monthNames[$event.newMonth.dateObj.getMonth()];
-    this.year = $event.newMonth.dateObj.getFullYear();
-    this.day = "";
-  }
+    console.log($event);
+    const splitedDate = $event.newMonth.string.split("-");
+    this.month = this.monthsNames[splitedDate[1]];
+    this.selectedMonth = $event.newMonth.months;
+    this.year = $event.newMonth.years;
+    this.day = $event.newMonth.date;
+    this.refreshMonthlyEvents();
+  };
 
   getEventsForDay(){
     if(!this.calendarIndex[this.day]){
@@ -106,7 +127,7 @@ export class CalendarPage {
     });
     this.noEvents = false;
     return events;
-  }
+  };
 
 //------------------------ http requests -------------------
   getMonthlyEvents() {
@@ -117,6 +138,17 @@ export class CalendarPage {
       this.events = normalizedData[0];
       this.calendarIndex = normalizedData[1];
       this.selectedDayEvents = this.getEventsForDay();
+    });
+  }
+
+  refreshMonthlyEvents() {
+    this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
+    .subscribe((data) => {
+      const normalizedData = this.normalizeEventData(data);
+      console.log(normalizedData);
+      this.events = normalizedData[0];
+      this.calendarIndex = normalizedData[1];
+      this.showAllEvents(false);
     });
   }
 

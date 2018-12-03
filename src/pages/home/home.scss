@@ -37,6 +37,42 @@ page-home {
       background-color: color($colors, background, base);
     }
 
+    .menu {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      right: 10px;
+      width: 55vw;
+      height: 90px;
+      padding: 2.5px 10px;
+      background-color: white;
+      border-radius: 4px;
+      z-index: 2;
+
+      button {
+        display: flex;
+        height: 40px;
+        width: 100%;
+        text-align: left;
+        align-items: center;
+        background-color: white;
+        color: #161824;
+        font-family: 'OpenSans';
+        font-size: 12px;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+
+      .separator {
+        width: 100%;
+        margin: 2.5px 0;
+        height: 2px;
+        background-color: color($colors, altSeparator, base);
+      }
+    }
+
     .icon-filarmonica {
       flex-grow: 1;
       margin-left: 6%;
@@ -59,41 +95,6 @@ page-home {
   }
 
   ion-content {
-    .menu {
-      position: absolute;
-      display: flex;
-      flex-direction: column;
-      right: 10px;
-      width: 55vw;
-      height: 90px;
-      padding: 2.5px 10px;
-      background-color: white;
-      border-radius: 4px;
-      z-index: 2;
-
-      button {
-        display: flex;
-        height: 40px;
-        width: 100%;
-        text-align: left;
-        background-color: white;
-        color: #161824;
-        font-family: 'OpenSans';
-        font-size: 12px;
-
-        ion-icon {
-          color: #222433;
-          margin-right: 10px;
-        }
-      }
-
-      .separator {
-        width: 100%;
-        margin: 2.5px 0;
-        height: 2px;
-        background-color: color($colors, altSeparator, base);
-      }
-    }
 
     .scroll-content {
       margin-bottom: 0px !important;
@@ -106,27 +107,15 @@ page-home {
 
   .slide-concert {
     background-color: #222433;
-    height: 80vh;
+    height: auto;
 
     .swiper-pagination-bullet {
       background: #ffffff;
     }
 
-    .card-content {
-      padding: 0;
-
-      .img-container{
-        width: 100%;
-        height:70%;
-        img {
-          height: 100%;
-          object-fit: cover;
-          
-        }
-      }
-    }
     .card-content-ios,
     .card-content-md {
+      padding: 0;
       background-color: #222433;
     }
 
@@ -191,6 +180,7 @@ page-home {
 
       .eventDescription {
         font-family: 'OpenSans';
+        margin-bottom: 6px;
         color: rgba(255, 255, 255, 0.8);
         font-size: 1.3rem;
         text-align: justify;
@@ -201,13 +191,8 @@ page-home {
         font-family: 'OpenSans';
         color: #ff4ac1;
         font-size: 1.3rem;
+        margin-bottom: 20px;
       }
-    }
-
-    .swiper-slide img {
-      position: relative;
-      width: 100%;
-      height: 67%;
     }
 
     .card-content {
@@ -222,21 +207,19 @@ page-home {
 
   .arrows {
     position: absolute;
-    top: 35%;
+    top: 15%;
     z-index: 2;
-    color: white;
-    font-size: 1.8em;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     box-sizing: border-box;
     box-shadow: 0 0 10px 1px #282A35;
-    color: #282A35;
     padding: 2.5%;
     background: white;
-    backdrop-filter: blur(30px);
-    transform: rotate(0.29deg);
     
     &.left {
       left: 5%;
+      transform: rotate(180deg);
     }
 
     &.right {
@@ -265,12 +248,6 @@ page-home {
       margin: 4vw 0vw;
     }
 
-    .swiper-slide img {
-      position: relative;
-      width: 100%;
-      height: 30vh;
-    }
-
     .card-ios,
     .card-md {
       border-radius: 12px;
@@ -296,26 +273,26 @@ page-home {
     }
 
     .card-content {
-      height: 26vh;
+      width: 100%;
+      height: auto;
       padding: 5px 8px;
     }
 
     .classContent,
     .slideDate {
-      margin: 8px 0;
       font-family: 'OpenSans';
-      line-height: 13px;
-      font-size: 1.2rem;
       color: color($colors, highlightText, base);
     }
 
     .classContent {
+      margin: 10px 0 0 0;
+      font-size: 13px;
       color: color($colors, mainText, base);
     }
   }
 
   .newsSection {
-    height: 60vh;
+    height: auto;
 
     ion-card-title {
       font-family: OpenSans;
@@ -327,7 +304,6 @@ page-home {
     p {
       margin-top: 10px;
       font-family: OpenSans;
-      line-height: 21px;
       font-size: 1.3rem;
       color: #999999;
     }
@@ -336,8 +312,8 @@ page-home {
       height: 100%;
     }
     .swiper-slide:last-child .card {
-      height: 30vh;
-      width: 30vh;
+      height: 188px;
+      width: 188px;
       border: 2px solid white;
       border-radius: 4%;
     }
@@ -372,8 +348,9 @@ page-home {
   }
 
   .classesSection {
-    height: 60vh;
-    margin-bottom: 20vh;
+    position: relative;
+    height: auto;
+    margin-bottom: 10vh;
 
     h3 {
       font-weight: bold;
@@ -382,14 +359,30 @@ page-home {
       text-transform: uppercase;
     }
 
+    img {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100px;
+        height: 100px;
+        background: linear-gradient(transparent 50%, white 76%);
+        z-index: 2;
+      }
+    }
+
     .card-content {
-      padding: 0 16px;
+
+
+      padding: 0 16px 10px 16px;
       background: #1d1f2b;
       width: 100%;
-      height: 31%;
-      max-height: 31%;
       box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       border-radius: 0px 0px 7px 7px;
+
       .instrument {
         font-family: 'OpenSans';
         line-height: 1.5vh;
@@ -437,24 +430,13 @@ page-home {
       }
    }
 
-
     .slide-zoom {
       height: 100%;
     }
 
-    .swiper-slide:not(:last-child) .card {
-      height: 100%;
-      align-items: flex-end;
-      display: flex;
-      background-size: 100% 80% !important;
-      background-repeat: no-repeat !important;
-      background: linear-gradient(0deg, #1d1f2b 15%, rgba(29, 31, 43, 0.346409) 28.83%, rgba(29, 31, 43, 0) 57%),
-        url('../../assets/imgs/XMLID_9_.png');
-    }
-
     .swiper-slide:last-child .card {
-      height: 30vh;
-      width: 30vh;
+      height: 188px;
+      width: 188px;
       border: 2px solid white;
       border-radius: 4%;
     }

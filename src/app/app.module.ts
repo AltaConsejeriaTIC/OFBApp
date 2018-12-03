@@ -32,7 +32,6 @@ import es from '@angular/common/locales/es';
 import { registerLocaleData } from '@angular/common';
 registerLocaleData(es);
 
-import { TabBarProvider } from '../providers/tab-bar/tab-bar';
 
 @NgModule({
   declarations: [
@@ -76,7 +75,6 @@ import { TabBarProvider } from '../providers/tab-bar/tab-bar';
     ClassesService,
     NewsService,
     SocialSharing,
-    TabBarProvider
   ]
 })
 export class AppModule {}

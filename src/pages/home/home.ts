@@ -54,20 +54,20 @@ export class HomePage {
 
 //------------------------ Menu ----------------------
 //------------------------ http requests -------------------
-  getRecentNews() {
-    this.homeService.getRecentNews()
-    .subscribe((data) => {
-      console.log(data)
-      this.normalizeNewsData(data);
-      this.news = data;
-    });
-  }
-
   getFeaturedEvents() {
     this.homeService.getFeaturedEvents()
     .subscribe((data) => {
+    console.log(data);
       this.normalizeEventsData(data);
       this.featuredEvents = data;
+    });
+  }
+
+  getRecentNews() {
+    this.homeService.getRecentNews()
+    .subscribe((data) => {
+      this.normalizeNewsData(data);
+      this.news = data;
     });
   }
 

@@ -9,9 +9,6 @@ import { IonicPage, Events } from 'ionic-angular';
 export class PrimaryTabsPage {
   public hidden = false;
 
-  constructor(private events: Events) {
-    this.events.subscribe('tabbar-hidden', (hidden) => {
-      this.hidden = hidden;
-    });
+  constructor(private events: Events) { 
   }
 }

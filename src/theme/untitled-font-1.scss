@@ -22,6 +22,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 @mixin makeIcon($arg, $val) {
   .icon-#{$arg}:before,
   .ion-#{$arg}:before,
@@ -33,25 +34,26 @@
   }
 }
 
-@include makeIcon(icon-flecha-atras, '\e003');
-@include makeIcon(icon-flecha-derecha, '\e004');
-@include makeIcon(icon-icono-configuracion, '\e006');
-@include makeIcon(icon-flecha-derecha-1, '\e001');
-@include makeIcon(icon-flecha-izquierda, '\e011');
-@include makeIcon(icon-icono-calendario, '\e018');
-@include makeIcon(icon-icono-contenido, '\e01a');
-@include makeIcon(icon-icono-educacion, '\e01b');
-@include makeIcon(icon-icono-magistrales, '\e01d');
-@include makeIcon(icon-icono-inicio, '\e01c');
-@include makeIcon(icon-icono-menu, '\e01e');
-@include makeIcon(icon-noticias, '\e01f');
-@include makeIcon(icon-icono-trivia, '\e020');
-@include makeIcon(icon-logo-alcaldia, '\e021');
-@include makeIcon(icon-nombre-filarmonica, '\e022');
-@include makeIcon(icon-external-link, '\e019');
-@include makeIcon(icon-event-calendar, '\e002');
-@include makeIcon(icon-clock, '\e000');
-@include makeIcon(icon-map-marker, '\e005');
-@include makeIcon(icon-facebook, '\e008');
-@include makeIcon(icon-twitter, '\e007');
+@include makeIcon(icon-event-details-calendar, 'a');
+@include makeIcon(icon-facebook, 'c');
+@include makeIcon(icon-flecha-derecha, 'd');
+@include makeIcon(icon-flecha-atras, 'e');
+@include makeIcon(icon-icono-calendario, 'f');
+@include makeIcon(icon-external-link, 'i');
+@include makeIcon(icon-twitter, 'v');
+
+@include makeIcon(icon-map-marker, 's');
+@include makeIcon(icon-flecha-derecha-1, 'd');
+@include makeIcon(icon-flecha-izquierda, 'e');
+@include makeIcon(icon-icono-contenido, 'j');
+@include makeIcon(icon-icono-educacion, 'k');
+@include makeIcon(icon-icono-magistrales, 'n');
+@include makeIcon(icon-icono-inicio, 'm');
+@include makeIcon(icon-icono-menu, 'o');
+@include makeIcon(icon-noticias, 'q');
+@include makeIcon(icon-icono-trivia, 'r');
+@include makeIcon(icon-logo-alcaldia, 't');
+@include makeIcon(icon-nombre-filarmonica, 'u');
+@include makeIcon(icon-event-calendar, 'f');
+@include makeIcon(icon-clock, 'l');
 

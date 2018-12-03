@@ -8,7 +8,7 @@
     <div class="separator"><div></div></div>
     <div class="eventInfo">
     	<div>
-    		<ion-icon name="icon-event-calendar"></ion-icon>
+    		<ion-icon name="icon-event-details-calendar"></ion-icon>
     		<span>{{event.date}}</span>
     	</div>
     	<div>
@@ -17,7 +17,7 @@
     	</div>
     	<div>
     		<ion-icon name="icon-map-marker"></ion-icon>
-    		<span>TBS</span>
+    		<span>{{event.place.name}}</span>
     	</div>
    	</div>
    	<div class="separator"><div></div></div>
@@ -25,7 +25,8 @@
    		Comprar boleta
    	</button>
    	<button class="shareEventButton" (click)='share()'>
-   		Compartir este evento
+   		<img src='../../assets/icon/share-event.svg'>
+      Compartir este evento
    	</button>
    	<div class="separator"><div></div></div>
     <h2 class="content-title">Descripción del evento:</h2>
@@ -35,7 +36,7 @@
 			<ion-icon name="icon-map-marker"></ion-icon>
 			<div>
 				<h6>Lugar de la función</h6>
-				<span>TBS</span>
+				<span>{{event.place.name}}</span>
 			</div>
 		</div>
 		<div class="separator"><div></div></div>

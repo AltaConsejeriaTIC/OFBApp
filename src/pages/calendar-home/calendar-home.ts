@@ -15,7 +15,6 @@ export class CalendarHomePage {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad CalendarHomePage');
     this.getMonth();
   }
 
@@ -24,8 +23,8 @@ export class CalendarHomePage {
     this.month = this.month.getMonth()+1;
   }
 
-  openCalendarPage() {
-    this.navCtrl.push(CalendarPage, this.month);
+  openCalendarPage(month) {
+    this.navCtrl.push(CalendarPage, month);
   }
 
 }
