@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { Component, Input } from '@angular/core';
+import { IonicPage } from 'ionic-angular';
+import { Video } from '../../interfaces/video.interface';
 
 @IonicPage()
 @Component({
@@ -7,7 +8,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'video.html',
 })
 export class VideoPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+  @Input()
+  public videos: Video[];
 
-  public ionViewDidLoad() { }
+  constructor() { }
 }

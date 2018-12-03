@@ -19,7 +19,12 @@
 </ion-header>
 
 <ion-content appBackground="dark">
-  <page-music *ngIf="tabs.t1"></page-music>
-  <page-video *ngIf="tabs.t2"></page-video>
+  <ng-container *ngIf="audios && videos else loading">
+    <page-music [hidden]="!tabs.t1" [audios]="audios"></page-music>
+    <page-video [hidden]="!tabs.t2" [videos]="videos"></page-video>
+  </ng-container>
 </ion-content>
 
+<ng-template #loading>
+  <h5 ion-text color="white" padding-vertical text-center>Cargando...</h5>
+</ng-template>

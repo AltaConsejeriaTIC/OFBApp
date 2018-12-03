@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
+import { Video } from '../../interfaces/video.interface';
+import { VideoProvider } from '../../providers/video/video';
+import { AudioProvider } from '../../providers/audio/audio';
+import { Audio } from '../../interfaces/audio.interface';
 
 @IonicPage()
 @Component({
@@ -8,11 +12,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class MultimediaPage {
   public tabs = { t1: true, t2: false };
+  public videos: Video[];
+  public audios: Audio[];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(private videoService: VideoProvider, private audioService: AudioProvider) { }
+
+  public ionViewDidLoad() {
+    this.getAudios();
+    this.getVideos();
   }
-
-  public ionViewDidLoad() { }
 
   public changeTab(id: number) {
     this.disableAlltabs();
@@ -21,5 +29,17 @@ export class MultimediaPage {
 
   private disableAlltabs() {
     Object.keys(this.tabs).forEach((i) => { this.tabs[i] = false; });
+  }
+
+  private getAudios() {
+    this.audioService.getAudios().subscribe((response: any) => {
+      this.audios = response.slice(0, 5);
+    });
+  }
+
+  private getVideos() {
+    this.videoService.getVideos().subscribe((response: any) => {
+      this.videos = response;
+    });
   }
 }

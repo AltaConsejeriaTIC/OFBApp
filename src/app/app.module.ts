@@ -33,6 +33,7 @@ import { registerLocaleData } from '@angular/common';
 registerLocaleData(es);
 
 import { AudioProvider } from '../providers/audio/audio';
+import { VideoProvider } from '../providers/video/video';
 
 @NgModule({
   declarations: [
@@ -77,6 +78,7 @@ import { AudioProvider } from '../providers/audio/audio';
     NewsService,
     SocialSharing,
     AudioProvider,
+    VideoProvider,
   ]
 })
 export class AppModule {}
