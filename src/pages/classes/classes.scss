@@ -64,17 +64,18 @@ page-classes {
         background-color: color($colors, background, base);        
       }
 
-      .gradient {
-        width: 100%;
-        position: absolute;
-        height: 200px;
-        background: linear-gradient(transparent 50%, color($colors, newsCardBackground, base) 100%);
-      }
 
       img {
+        position: relative;
         width: 100%;
-        height: 199px;
-        z-index: -1;
+
+        &:after {
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(transparent 50%, color($colors, newsCardBackground, base) 100%);
+        }
       }
 
       .card-content {

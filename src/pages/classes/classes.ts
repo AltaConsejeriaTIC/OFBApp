@@ -54,6 +54,7 @@ export class ClassesPage {
         newsObject.stripedContent = newsObject.stripedContent + '...';
       }
     })
+    console.log(data)
   }
 
   removeHTMLTagFromString(str){
