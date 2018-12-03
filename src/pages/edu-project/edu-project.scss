@@ -54,7 +54,7 @@ page-edu-project {
     ion-card {
       img {
         height: 120px;
-        object-fit: cover;
+        object-fit: cover !important;
       }
 
       &.card-ios,
