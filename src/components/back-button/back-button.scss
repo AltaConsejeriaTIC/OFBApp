@@ -9,9 +9,13 @@ app-back-button {
     border-radius: 50%;
     box-shadow: 0 2px 7px 0 rgba(0, 0, 0, .15);
     z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     ion-icon {
-      font-size: 42px;
+      font-size: 20px;
+      margin-right: 3px;
     }
   }
 }
