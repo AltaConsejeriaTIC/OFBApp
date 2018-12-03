@@ -5,8 +5,7 @@
 </ion-header>
 <ion-content padding>
   <ion-card  *ngFor='let class of classes' (click)='goToClassesDetails(class)'>
-    <div class="gradient"></div>
-    <img src={{new.image}} />
+    <img src={{class.image}} />
     <ion-card-content>
       <ion-card-title>
         {{class.title}}
