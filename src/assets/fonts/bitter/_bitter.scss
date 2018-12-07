@@ -4,12 +4,12 @@ $bitter-font-path: "#{$font-path}/bitter";
   font-family: 'Bitter';
   font-style: normal;
   font-weight: 400;
-  src: local(Bitter), local('Bitter-Regular'), url("#{$bitter-font-path}/Bitter-Regular.ttf") format("truetype");
+  src: local(Bitter), local('Bitter-Regular'), url("#{$bitter-font-path}/Bitter-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: 'Bitter';
   font-style: bold;
   font-weight: 700;
-  src: local(Bitter), local('Bitter-Bold'), url("#{$bitter-font-path}/Bitter-Bold.ttf") format("truetype");
+  src: local(Bitter), local('Bitter-Bold'), url("#{$bitter-font-path}/Bitter-Bold.woff2") format("woff2");
 }

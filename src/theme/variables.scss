@@ -30,6 +30,8 @@ $colors: (
   'wildStrawberry': #ff4284
 );
 
+$background-color: #222433;
+
 $tabs-background : #161824;
 $tabs-md-tab-icon-color: white;
 
@@ -49,9 +51,7 @@ img {
 
 @import 'ionicons';
 @import 'noto-sans';
-@import '../assets/fonts/bitter/bitter';
-@import '../assets/fonts/opensans/opensans';
-@import '../assets/fonts/roboto/roboto';
+@import url('https://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:400,600,700|Roboto');
 
 $font-family-untitled-font-1: 'untitled-font-1';
 $font-family-Bitter: "Bitter";

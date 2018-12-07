@@ -1,7 +1,7 @@
 <ion-header>
   <ion-navbar>
     <ion-icon class="icon-filarmonica" name="icon-nombre-filarmonica"></ion-icon>
-    <img class="header-logo-alcaldia" src="../../assets/icon/Logo_alcaldía.svg" alt="logo alcaldia"/>
+    <img class="header-logo-alcaldia" src="./assets/icon/Logo_alcaldía.svg" alt="logo alcaldia"/>
     <div class="header-line"></div>
     <button ion-button icon-only (click)="toogleMenu()">
       <ion-icon name="icon-icono-menu"></ion-icon>
@@ -10,19 +10,19 @@
   <div class="menu__background" [hidden]="showMenu" (touchstart)="toogleMenu()"></div>
   <div class="menu" [hidden]="showMenu">
     <button navPush="AboutPage" (click)="toogleMenu()">
-      <img src="../../assets/imgs/home/quienes_somos.svg">
+      <img src="./assets/imgs/home/quienes_somos.svg">
       Quiénes somos
     </button>
     <div class="separator"></div>
     <button navPush="TermsPage" (click)="toogleMenu()">
-      <img src="../../assets/imgs/home/tos_icon.svg">
+      <img src="./assets/imgs/home/tos_icon.svg">
       Términos y condiciones
     </button>
   </div>
 </ion-header>
 
 <ion-content>
-  <img src="../../assets/imgs/home/slider_arrow.svg" class="arrows left" (click)="prevSlide()">
+  <img src="./assets/imgs/home/slider_arrow.svg" class="arrows left" (click)="prevSlide()">
   <ion-slides class="slide-concert" #slides pager>
     <ion-slide *ngFor='let event of featuredEvents' (click)=goToEventDetails(event)>
       <ion-card>
@@ -43,7 +43,7 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
-  <img src="../../assets/imgs/home/slider_arrow.svg" class="arrows right" (click)="nextSlide()">
+  <img src="./assets/imgs/home/slider_arrow.svg" class="arrows right" (click)="nextSlide()">
 
   <div class="section newsSection">
 
