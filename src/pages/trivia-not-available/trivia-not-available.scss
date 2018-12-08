@@ -8,7 +8,7 @@ page-trivia-not-available {
 
     ion-navbar {
       max-height: inherit;
-      
+
       ion-icon {
         color: #ffffff;
       }
@@ -22,7 +22,7 @@ page-trivia-not-available {
         width: 100%;
 
         ion-title {
-          
+
           .toolbar-title-ios,
           .toolbar-title {
             font-size: 17px;
@@ -34,12 +34,12 @@ page-trivia-not-available {
             .toolbar-title-md {
               font-size: 17px;
               font-weight: 800;
-              color: #ffffff; 
+              color: #ffffff;
             }
           }
         }
       }
-      
+
       .toolbar-background {
         background-color: color($colors, background, base);
       }
@@ -50,7 +50,7 @@ page-trivia-not-available {
 
     .scroll-content {
       background-color: color($colors, newsSectionBackground, base);
-      
+
       font-size: 12px;
 
       .main-content{
@@ -83,7 +83,7 @@ page-trivia-not-available {
 
         p {
           margin-top: 0;
-          font-family: 'OpenSans';
+          font-family: $font-family-OpenSans;
           color: #A8ABBA;
         }
       }

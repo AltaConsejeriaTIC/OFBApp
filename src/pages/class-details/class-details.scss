@@ -62,7 +62,7 @@ page-class-details {
     margin-top: 10px;
     margin-bottom: 10px;
     height: 1px;
-    
+
     div {
       background-color: color($colors, newsDetailsTextColor, base);
       width: 100%;
@@ -77,7 +77,7 @@ page-class-details {
     margin-bottom: 15px;
 
     button,
-    .button-md, 
+    .button-md,
     .button-ios {
       box-shadow: none;
       width: 40px;
@@ -86,17 +86,17 @@ page-class-details {
       border: none;
       padding: 0;
       margin-left: 15px;
-      
+
       span{
         border: none;
-        padding: 0; 
+        padding: 0;
 
         ion-icon{
           border: none;
           font-size: 40px;
         }
       }
-      
+
       &.facebook-button {
         span{
           color: #3B5998;
@@ -124,7 +124,7 @@ page-class-details {
     font-weight: 800;
     font-size: 15px;
     border-radius: 4px;
-    font-family: 'OpenSans';
+    font-family: $font-family-OpenSans;
     background-color: #E3E3E3;
   }
 }

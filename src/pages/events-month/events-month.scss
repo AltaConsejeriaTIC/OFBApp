@@ -32,7 +32,7 @@ page-events-month {
       align-items: center;
       height: 6vh;
       background-color: #F8774E;
-      font-family: 'OpenSans';
+      font-family: $font-family-OpenSans;
 
       .calendarButton{
         background-color: #F5A288 !important;
@@ -46,7 +46,7 @@ page-events-month {
 
       p{
           font-size: 1.4rem;
-          font-family: 'OpenSans' !important;
+          font-family: $font-family-OpenSans !important;
           padding-left: 1.5em;
       }
 
@@ -154,7 +154,7 @@ page-events-month {
 
           p, li{
             font-size: 1.2rem;
-            font-family: "OpenSans";
+            font-family: $font-family-OpenSans;
             font-weight: 600;
           }
           .days-box {
@@ -180,7 +180,7 @@ page-events-month {
 
             span.button-inner {
                 font-size: 1.3rem;
-                font-family: "OpenSans";
+                font-family: $font-family-OpenSans;
                 text-transform: none;
             }
 
@@ -221,7 +221,7 @@ page-events-month {
         }
 
         .priceEvent{
-          font-family: "OpenSans" !important;
+          font-family: $font-family-OpenSans !important;
           font-weight: bold;
         }
 
@@ -231,7 +231,7 @@ page-events-month {
               font-size: 2.4rem;
             }
             .eventMonth{
-              font-family: "OpenSans" !important;
+              font-family: $font-family-OpenSans !important;
               letter-spacing: 0.2em;
             }
         }
@@ -272,7 +272,7 @@ page-events-month {
         }
 
         .eventAutor{
-            font-family: "OpenSans" !important;
+            font-family: $font-family-OpenSans !important;
             font-size: 600;
             color: #F8774E;
         }
@@ -284,7 +284,7 @@ page-events-month {
 
         .eventTime, .eventPlace{
           color: #AEAEAE;
-            font-family: "OpenSans" !important;
+            font-family: $font-family-OpenSans !important;
         }
     }
 

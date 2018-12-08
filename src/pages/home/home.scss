@@ -65,7 +65,7 @@ page-home {
         align-items: center;
         background-color: white;
         color: #161824;
-        font-family: 'OpenSans';
+        font-family: $font-family-OpenSans;
         font-size: 12px;
 
         img {
@@ -165,7 +165,7 @@ page-home {
         }
         .dateMont {
           color: white;
-          font-family: 'OpenSans';
+          font-family: $font-family-OpenSans;
           letter-spacing: 0.2em;
           text-transform: uppercase;
         }
@@ -187,7 +187,7 @@ page-home {
       }
 
       .eventDescription {
-        font-family: 'OpenSans';
+        font-family: $font-family-OpenSans;
         margin-bottom: 6px;
         color: rgba(255, 255, 255, 0.8);
         font-size: 1.3rem;
@@ -196,7 +196,7 @@ page-home {
         overflow: hidden;
       }
       .eventTime {
-        font-family: 'OpenSans';
+        font-family: $font-family-OpenSans;
         color: #ff4ac1;
         font-size: 1.3rem;
         margin-bottom: 20px;
@@ -288,7 +288,7 @@ page-home {
 
     .classContent,
     .slideDate {
-      font-family: 'OpenSans';
+      font-family: $font-family-OpenSans;
       color: color($colors, highlightText, base);
     }
 
@@ -392,13 +392,13 @@ page-home {
       border-radius: 0px 0px 7px 7px;
 
       .instrument {
-        font-family: 'OpenSans';
+        font-family: $font-family-OpenSans;
         line-height: 1.5vh;
         font-size: 1.2rem;
         color: #999999;
       }
       .teacherName {
-        font-family: 'OpenSans';
+        font-family: $font-family-OpenSans;
         font-weight: bold;
         line-height: 24px;
         font-size: 1.7rem;

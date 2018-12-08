@@ -7,7 +7,7 @@ page-trivia-survey {
 
     ion-navbar {
       max-height: inherit;
-      
+
       ion-icon {
         color: #ffffff;
       }
@@ -21,7 +21,7 @@ page-trivia-survey {
         width: 100%;
 
         ion-title {
-          
+
           .toolbar-title-ios,
           .toolbar-title {
             font-size: 17px;
@@ -33,12 +33,12 @@ page-trivia-survey {
             .toolbar-title-md {
               font-size: 17px;
               font-weight: 800;
-              color: #ffffff; 
+              color: #ffffff;
             }
           }
         }
       }
-      
+
       .toolbar-background {
         background-color: color($colors, background, base);
       }
@@ -49,7 +49,7 @@ page-trivia-survey {
 
     .scroll-content {
       background-color: color($colors, newsSectionBackground, base);
-      
+
       font-size: 12px;
 
       .main-content{
@@ -90,7 +90,7 @@ page-trivia-survey {
             background-color: color($colors, navBarTrivia, base);
             border: none;
             border-radius: 4px;
-            font-family: 'OpenSans';
+            font-family: $font-family-OpenSans;
             font-weight: 700;
             font-size: 15px;
           }
@@ -100,7 +100,7 @@ page-trivia-survey {
             flex-direction: column;
             margin-top: 0;
             min-height: 20px;
-            font-family: 'OpenSans';
+            font-family: $font-family-OpenSans;
             color: #A8ABBA;
 
             input {
@@ -109,7 +109,7 @@ page-trivia-survey {
             	background-color: #1E1F29;
         			border: solid 1px #181923;
         			border-radius: 4px;
-        			font-family: 'OpenSans';
+        			font-family: $font-family-OpenSans;
         			color: #A8ABBA;
         			margin: 10px 0;
 
@@ -126,7 +126,7 @@ page-trivia-survey {
               background-color: #1E1F29;
               border: solid #181923;
               border-radius: 4px;
-              font-family: 'OpenSans';
+              font-family: $font-family-OpenSans;
               color: #A8ABBA;
               margin-top: 10px;
             }
@@ -144,7 +144,7 @@ page-trivia-survey {
               user-select: none;
 
               input {
-                font-family: 'OpenSans';
+                font-family: $font-family-OpenSans;
                 color: #A8ABBA;
                 position: absolute;
                 opacity: 0;
@@ -173,10 +173,10 @@ page-trivia-survey {
               }
 
               div {
-                font-family: 'OpenSans';
+                font-family: $font-family-OpenSans;
 
                 a {
-                  font-family: 'OpenSans';
+                  font-family: $font-family-OpenSans;
                   text-decoration: none;
                   color: color($colors, navBarTrivia, base);
                 }
@@ -202,7 +202,7 @@ page-trivia-survey {
           }
 
           p {
-            font-family: 'OpenSans';
+            font-family: $font-family-OpenSans;
             color: #A8ABBA;
           }
 

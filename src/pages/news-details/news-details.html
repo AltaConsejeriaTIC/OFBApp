@@ -1,15 +1,18 @@
-<ion-content>
-  <ion-navbar>
-  </ion-navbar>
-  <div class="gradient"></div>
-  <img src={{newsObject.image}}/>
-  <div class="newsContent">
-    <h2>{{newsObject.title}}</h2>
-    <div class="separator"><div></div></div>
-    <div [innerHTML]='newsObject.content'></div>
-    <div class="separator"><div></div></div>
-    <button class="shareEventButton">
-      Compartir
+<ion-content appBackground="white">
+  <app-back-button></app-back-button>
+  <div class="news__image" appFit="cover">
+    <img [src]="newsObject.image">
+    <div class="news__gradient"></div>
+  </div>
+  <div class="news__content">
+    <div class="news__title">{{ newsObject.title }}</div>
+    <div class="news__date">Martes, 04 Septiembre de 2018</div>
+    <hr class="news__separator">
+    <div class="news__description" [innerHTML]='newsObject.content'></div>
+    <hr class="news__separator">
+    <button class="news__share">
+      <ion-icon name="md-share"></ion-icon>
+      Compartir esta noticia
     </button>
   </div>
 </ion-content>

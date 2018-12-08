@@ -30,7 +30,7 @@ page-primary-tabs {
     height: 15px;
     font-size: 10px;
     color: white;
-    font-family: "OpenSans";
+    font-family: $font-family-OpenSans;
   }
 
   .tabs-ios[tabsLayout=icon-top] .has-icon .tab-button-text{

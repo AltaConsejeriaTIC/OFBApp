@@ -54,7 +54,7 @@ page-calendar {
     align-items: center;
     height: 6vh;
     background-color: #F8774E;
-    font-family: 'OpenSans';
+    font-family: $font-family-OpenSans;
 
     .calendarButton{
       background-color: #F5A288;
@@ -68,7 +68,7 @@ page-calendar {
 
     p {
         font-size: 15px;
-        font-family: 'OpenSans' !important;
+        font-family: $font-family-OpenSans !important;
         padding-left: 1.5em;
         position: relative;
     }
@@ -179,7 +179,7 @@ page-calendar {
 
         p, li{
           font-size: 1.2rem;
-          font-family: "OpenSans";
+          font-family: $font-family-OpenSans;
           font-weight: 600;
           margin-left: -1px;
         }
@@ -206,7 +206,7 @@ page-calendar {
 
         span.button-inner {
           font-size: 1.3rem;
-          font-family: "OpenSans";
+          font-family: $font-family-OpenSans;
           text-transform: none;
         }
 
@@ -249,7 +249,7 @@ page-calendar {
 
         .priceEvent{
           position: relative;
-          font-family: "OpenSans" !important;
+          font-family: $font-family-OpenSans !important;
           font-weight: 800;
           font-size: 13px;
           padding: 0 6px;
@@ -274,7 +274,7 @@ page-calendar {
             letter-spacing: 0.1em;
           }
           .eventMonth{
-            font-family: "OpenSans" !important;
+            font-family: $font-family-OpenSans !important;
             letter-spacing: 0.2em;
           }
         }
@@ -315,7 +315,7 @@ page-calendar {
         }
 
         .eventAutor{
-          font-family: "OpenSans" !important;
+          font-family: $font-family-OpenSans !important;
           font-weight: 800;
           color: #F8774E;
         }
@@ -331,7 +331,7 @@ page-calendar {
           justify-content: center;
           align-items: center;
           color: #AEAEAE;
-          font-family: "OpenSans" !important;
+          font-family: $font-family-OpenSans !important;
           font-size: 12px;
           margin-bottom: 3px;
 
@@ -350,13 +350,13 @@ page-calendar {
         color:white;
         font-size: 1.1rem;
       }
-    } 
+    }
   }
 
   .no-events-available {
     background-color: #282A35;
     border-top: solid 1px white;
-    padding: 0 15px; 
+    padding: 0 15px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -365,7 +365,7 @@ page-calendar {
     height: 100px;
 
     span {
-      font-family: 'OpenSans';
+      font-family: $font-family-OpenSans;
       font-style: italic;
       text-align: center;
     }

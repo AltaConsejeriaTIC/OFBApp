@@ -66,7 +66,7 @@ page-event-details {
       margin-top: 15px;
       margin-bottom: 15px;
       height: 1px;
-      
+
       div {
         background-color: #E5E5E5;
         width: 100%;
@@ -102,7 +102,7 @@ page-event-details {
       font-size: 15px;
       border-radius: 4px;
       background-color: color($colors, navBarCalendar, base);
-      font-family: 'OpenSans';
+      font-family: $font-family-OpenSans;
     }
 
     .shareEventButton {
@@ -153,7 +153,7 @@ page-event-details {
       }
 
       h6 {
-        font-weight: 800;  
+        font-weight: 800;
         margin: 0;
       }
     }

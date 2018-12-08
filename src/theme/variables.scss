@@ -11,7 +11,7 @@ $colors: (
   light: #f4f4f4,
   background: #161824,
   separator: #474747,
-  altSeparator: #E5E5E5,
+  altSeparator: #e5e5e5,
   navBarBackground: #000000,
   navBarBorder: #818181,
   navBarHome: #FF4284,
@@ -27,7 +27,11 @@ $colors: (
   'white': #ffffff,
   'dark': #282a35,
   'darker': #161824,
-  'wildStrawberry': #ff4284
+  'wildStrawberry': #ff4284,
+  'mercury': #e4e4e4,
+  'gray': #7f7f7f,
+  'black': #000,
+  'mid-gray': #5b5e6d
 );
 
 $background-color: #222433;
@@ -37,16 +41,9 @@ $tabs-md-tab-icon-color: white;
 
 @import 'ionic.theme.default';
 
-h1, h2, h3, h4, h5, h6, span, button {
-  font-family: 'OpenSans'
-}
 
 ion-tabs .button-effect {
   display:none !important;
-}
-
-img {
-  object-fit: contain !important;
 }
 
 @import 'ionicons';
@@ -55,14 +52,18 @@ img {
 
 $font-family-untitled-font-1: 'untitled-font-1';
 $font-family-Bitter: "Bitter";
-$font-family-OpenSans: 'OpenSans';
+$font-family-OpenSans: 'Open Sans', sans-serif;
 $font-family-Roboto: 'Roboto', sans-serif;
 
 $font-family-ios-base: "Bitter";
 $font-family-md-base: "Bitter";
 
-$font-family-ios-base: 'OpenSans';
-$font-family-md-base: 'OpenSans';
+$font-family-ios-base: $font-family-OpenSans;
+$font-family-md-base: $font-family-OpenSans;
 
 // Helpers ...
 @import './helpers/margin';
+
+h1, h2, h3, h4, h5, h6, span, button {
+  font-family: $font-family-OpenSans;
+}
