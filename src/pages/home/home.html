@@ -86,8 +86,9 @@
     <ion-slides class="clases" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
       <ion-slide *ngFor='let class of magistralClasses' (click)='goToClassesDetails(class)'>
         <ion-card>
-          <div class="gradient"></div>
-          <img src={{class.image}}/>
+          <div class="class__image" appFit="cover" appGradient="gray">
+            <img [src]="class.image">
+          </div>
           <ion-card-content class="card-content-magistrales">
             <ion-card-title>
               <p class="teacherName">{{class.title}}</p>
