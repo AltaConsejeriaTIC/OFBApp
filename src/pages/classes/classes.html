@@ -5,14 +5,13 @@
 </ion-header>
 <ion-content padding>
   <ion-card  *ngFor='let class of classes' (click)='goToClassesDetails(class)'>
-    <img src={{class.image}} />
+    <div class="class__image" appFit="cover" appGradient="gray">
+      <img [src]="class.image">
+    </div>
     <ion-card-content>
-      <ion-card-title>
-        {{class.title}}
-      </ion-card-title>
+      <ion-card-title>{{ class.title }}</ion-card-title>
       <div class="separator"></div>
-      <p [innerHtml]='class.stripedContent'>
-      </p>
+      <p [innerHtml]='class.stripedContent'></p>
     </ion-card-content>
   </ion-card>
   <ion-infinite-scroll (ionInfinite)='reachBottom($event)'>
