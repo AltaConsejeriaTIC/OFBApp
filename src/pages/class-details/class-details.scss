@@ -1,130 +1,61 @@
 page-class-details {
-  font-color: #5B5E6D;
+  .class {
+    &__image {
+      width: 100%;
+      height: 195px;
+    }
 
-  ion-navbar {
-    position: absolute;
-    max-height: inherit;
-    align-items: center;
-    z-index: 1;
+    &__content {
+      margin: -7px 28px 28px;
+    }
 
-    .button-inner{
+    &__title {
+      font-family: $font-family-Bitter;
+      font-weight: bold;
+      line-height: 36px;
+      font-size: 24px;
+      color: color($colors, 'black');
+      margin-bottom: 10px;
+    }
+
+    &__separator {
+      background-color: color($colors, 'mercury');
+      margin: 0;
+    }
+
+    &__description {
+      margin-top: 18px;
+      margin-bottom:18px;
+
+      p {
+        font-family: $font-family-OpenSans;
+        line-height: 27px;
+        font-size: 14px;
+        color: color($colors, 'mid-gray');
+      }
+    }
+
+    &__share {
+      max-width: 296px;
+      width: 100%;
+      height: 42px;
+      background-color: color($colors, 'mercury');
+      border-radius: 4px;
+      font-family: $font-family-OpenSans;
+      font-weight: bold;
+      font-size: 13px;
+      color: color($colors, 'black');
       display: flex;
       justify-content: center;
-      align-items: center;
-      background-color: white;
-      border-radius: 50%;
+      margin: 18px auto;
+      position: relative;
 
-      .back-button-icon-md,
-      .back-button-icon-ios
-      .back-button-icon {
+      ion-icon {
+        position: absolute;
+        left: 14px;
+        top: 8px;
+        font-size: 21px;
       }
     }
-
-    ion-icon {
-      font-size: 22px;
-      color: #000000;
-    }
-
-    .toolbar-background-ios,
-    .toolbar-background-md,
-    .toolbar-background {
-      background-color: transparent;
-    }
-  }
-
-  .gradient {
-    width: 100%;
-    position: absolute;
-    height: 90vw;
-    background: linear-gradient(transparent 50%, white 76%);
-  }
-
-  img {
-    width: 100%;
-    height: 89vw;
-    z-index: -1;
-  }
-
-  .newsContent{
-    position: relative;
-    padding: 0 25px;
-    margin-top: -100px;
-    color: color($colors, newsDetailsTextColor, base);
-    font-family: 'open-sans';
-
-    h2 {
-      color: black;
-    }
-  }
-
-  .separator {
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    height: 1px;
-
-    div {
-      background-color: color($colors, newsDetailsTextColor, base);
-      width: 100%;
-      height: 100%;
-    }
-  }
-
-  .social-media {
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-    margin-bottom: 15px;
-
-    button,
-    .button-md,
-    .button-ios {
-      box-shadow: none;
-      width: 40px;
-      height: 40px;
-      background-color: white;
-      border: none;
-      padding: 0;
-      margin-left: 15px;
-
-      span{
-        border: none;
-        padding: 0;
-
-        ion-icon{
-          border: none;
-          font-size: 40px;
-        }
-      }
-
-      &.facebook-button {
-        span{
-          color: #3B5998;
-        }
-      }
-
-      &.twitter-button {
-        span {
-          color: #1DA1F2;
-        }
-      }
-    }
-
-    span {
-      color: #818181;
-      flex-grow: 1;
-      left: 0;
-    }
-  }
-
-  .shareEventButton {
-    width: 100%;
-    height: 42px;
-    margin-bottom: 10px;
-    font-weight: 800;
-    font-size: 15px;
-    border-radius: 4px;
-    font-family: $font-family-OpenSans;
-    background-color: #E3E3E3;
   }
 }

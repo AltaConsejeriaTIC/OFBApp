@@ -18,7 +18,7 @@ export class TriviaWinnersPage {
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
+  public ionViewDidLoad() {
     console.log('ionViewDidLoad TriviaWinnersPage');
   }
 

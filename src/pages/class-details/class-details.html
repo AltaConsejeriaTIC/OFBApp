@@ -1,15 +1,16 @@
-<ion-content>
-  <ion-navbar>
-  </ion-navbar>
-  <div class="gradient"></div>
-  <img src='./assets/imgs/XMLID_7_.png'/>
-  <div class="newsContent">
-    <h2>{{classObject.title}}</h2>
-    <div class="separator"><div></div></div>
-    <div [innerHTML]='classObject.content'></div>
-    <div class="separator"><div></div></div>
-   	<button class="shareEventButton">
-   		Compartir
-   	</button>
-   </div>
+<ion-content appBackground="white">
+  <app-back-button></app-back-button>
+  <div class="class__image" appFit="cover" appGradient>
+    <img [src]="classObject.image">
+  </div>
+  <div class="class__content">
+    <div class="class__title">{{ classObject.title }}</div>
+    <hr class="class__separator">
+    <div class="class__description" [innerHTML]="description"></div>
+    <hr class="class__separator">
+    <button class="class__share">
+      <ion-icon name="md-share"></ion-icon>
+      Compartir esta noticia
+    </button>
+  </div>
 </ion-content>

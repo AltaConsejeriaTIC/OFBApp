@@ -8,8 +8,14 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsDetailsPage {
   public newsObject: any;
+  public description: string;
 
   constructor(public navParams: NavParams) {
     this.newsObject = navParams['data'];
+    this.paragraph();
+  }
+
+  private paragraph() {
+    this.description = `<p>${this.newsObject.content.replace(/\n/g, '</p><p>')}</p>`;
   }
 }

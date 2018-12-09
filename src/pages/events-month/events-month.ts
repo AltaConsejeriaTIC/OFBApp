@@ -8,15 +8,16 @@ import { CalendarComponentOptions, CalendarComponent} from 'ion2-calendar'
   templateUrl: 'events-month.html',
 })
 export class EventsMonthPage {
-  @ViewChild('calendario') calendario: CalendarComponent;
+  @ViewChild('calendario')
+  public calendario: CalendarComponent;
 
-  month: string;
-  day: any;
-  year: number;
-  showcalendar: boolean = false;
-  date: string;
-  type: 'string';
-  optionsMulti: CalendarComponentOptions = {
+  public month: string;
+  public day: any;
+  public year: number;
+  public showcalendar: boolean = false;
+  public date: string;
+  public type: 'string';
+  public optionsMulti: CalendarComponentOptions = {
      weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
      monthPickerFormat: ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
      monthFormat: 'MMM YYYY',
@@ -27,20 +28,20 @@ export class EventsMonthPage {
 
   }
 
-  ionViewDidLoad() {
+  public ionViewDidLoad() {
     this.getDate();
   }
 
 
 
 
-  getDate(){
+  public getDate(){
     const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
     this.month = monthNames[(new Date()).getMonth()];
     this.year = new Date().getFullYear();
   }
 
-  toggleCalendar(){
+  public toggleCalendar(){
     if(this.showcalendar){
         this.showcalendar= false;
     }
@@ -53,11 +54,11 @@ export class EventsMonthPage {
     this.navCtrl.pop();
   }
 
-  onSelect($event) {
+  public onSelect($event) {
     console.log($event.title);
   }
 
-  nextMonthChange($event){
+  public nextMonthChange($event){
         this.calendario.next();
          console.log('monthChange',$event);
 

@@ -8,16 +8,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'class-details.html',
 })
 export class ClassDetailsPage {
-
   public classObject: any;
+  public description: string;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    console.log(navParams['data'])
-    this.classObject = navParams['data']
+    this.classObject = navParams['data'];
+    this.paragraph();
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ClassDetailsPage');
+  private paragraph() {
+    this.description = `<p>${this.classObject.content.replace(/\n/g, '</p><p>')}</p>`;
   }
-
 }
