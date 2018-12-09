@@ -27,14 +27,6 @@ export class HomePage {
     this.initView();
   }
 
-  public prevSlide() {
-    this.slides.slidePrev();
-  }
-
-  public nextSlide() {
-    this.slides.slideNext();
-  }
-
   public initView() {
     this.getRecentNews();
     this.getFeaturedEvents();

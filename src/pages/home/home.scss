@@ -202,28 +202,6 @@ page-home {
     }
   }
 
-  .arrows {
-    position: absolute;
-    top: 15%;
-    z-index: 2;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    box-sizing: border-box;
-    box-shadow: 0 0 10px 1px #282A35;
-    padding: 2.5%;
-    background: white;
-
-    &.left {
-      left: 5%;
-      transform: rotate(180deg);
-    }
-
-    &.right {
-      right: 5%;
-    }
-  }
-
   .section {
     margin-top: 5vh;
     margin-bottom: 8vh;

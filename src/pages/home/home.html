@@ -22,7 +22,6 @@
 </ion-header>
 
 <ion-content>
-  <img src="./assets/imgs/home/slider_arrow.svg" class="arrows left" (click)="prevSlide()">
   <ion-slides class="slide-concert" #slides pager>
     <ion-slide *ngFor='let event of featuredEvents' (click)=goToEventDetails(event)>
       <ion-card>
@@ -45,7 +44,6 @@
       </ion-card>
     </ion-slide>
   </ion-slides>
-  <img src="./assets/imgs/home/slider_arrow.svg" class="arrows right" (click)="nextSlide()">
 
   <div class="section newsSection">
 
