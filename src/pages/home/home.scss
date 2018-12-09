@@ -171,16 +171,6 @@ page-home {
         }
       }
 
-      .concertDateText:before {
-        background-color: rgba(255, 255, 255, 0.15);
-        content: '';
-        height: 100%;
-        right: 1px;
-        position: absolute;
-        top: 0;
-        width: 1px;
-      }
-
       ion-card-title {
         padding-right: 10px;
         font-size: 19px;
@@ -209,7 +199,6 @@ page-home {
 
     .concertDataText {
       text-align: left;
-      padding-left: 4%;
     }
   }
 
@@ -448,5 +437,11 @@ page-home {
       border: 2px solid white;
       border-radius: 4%;
     }
+  }
+
+  .event--separator {
+    border-left: thin solid color($colors, 'bright-gray');
+    padding-left: 10px;
+    margin-top: 14px;
   }
 }

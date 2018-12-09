@@ -34,9 +34,11 @@
               <p class="dateMont">{{event.splitedDate[1]}}</p>
             </ion-col>
             <ion-col col-10 class="concertDataText">
-              <ion-card-title>{{event.stripedTitle}}</ion-card-title>
-              <p class="eventDescription">{{event.place.name}}</p>
-              <p class="eventTime">{{event.date}}</p>
+              <div class="event--separator">
+                <ion-card-title>{{event.stripedTitle}}</ion-card-title>
+                <p class="eventDescription">{{event.place.name}}</p>
+                <p class="eventTime">{{event.date}}</p>
+              </div>
             </ion-col>
           </ion-row>
         </ion-card-content>
