@@ -1,8 +1,0 @@
-$roboto-font-path: "#{$font-path}/roboto";
-
-@font-face {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 400;
-  src: local(Roboto), local('Roboto-Regular'), url("#{$roboto-font-path}/Roboto-Regular.ttf") format("truetype");
-}

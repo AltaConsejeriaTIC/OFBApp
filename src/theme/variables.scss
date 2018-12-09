@@ -48,8 +48,10 @@ ion-tabs .button-effect {
   display:none !important;
 }
 
+// Fonts ...
 @import 'ionicons';
 @import 'noto-sans';
+@import './untitled-font-1';
 @import url('https://fonts.googleapis.com/css?family=Bitter:400,700|Open+Sans:400,600,700|Roboto');
 
 $font-family-untitled-font-1: 'untitled-font-1';
@@ -63,6 +65,7 @@ $font-family-md-base: $font-family-OpenSans;
 // Helpers ...
 @import './helpers/margin';
 
+// Custom ...
 h1, h2, h3, h4, h5, h6, span, button {
   font-family: $font-family-OpenSans;
 }
