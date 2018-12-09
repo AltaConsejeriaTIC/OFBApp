@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-
-//Custom components
 import { NewsDetailsPage } from '../news-details/news-details';
 import { NewsService } from './/news.service';
 
@@ -13,19 +11,19 @@ import { NewsService } from './/news.service';
 export class NewsPage {
   public news: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private newsService : NewsService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private newsService: NewsService) {
     this.news = navParams['data'];
   }
 
-  ionViewDidLoad() {
+  public ionViewDidLoad() {
     console.log('ionViewDidLoad News');
   }
 
-  reachBottom(infiniteScroll){
+  public reachBottom(infiniteScroll) {
     this.getNextPage(infiniteScroll);
   }
 
-  getNextPage(infiniteScroll) {
+  public getNextPage(infiniteScroll) {
     this.newsService.getNewsPages()
     .subscribe((data) => {
       this.normalizeNewsData(data);
@@ -34,33 +32,26 @@ export class NewsPage {
     });
   }
 
-  normalizeNewsData(data){
+  public normalizeNewsData(data) {
     data.forEach((newsObject) => {
-      newsObject.title = this.removeHTMLTagFromString(newsObject.title)
-      newsObject.content = this.removeHTMLTagFromString(newsObject.content)
+      newsObject.title = this.removeHTMLTagFromString(newsObject.title);
+      newsObject.content = this.removeHTMLTagFromString(newsObject.content);
       newsObject.stripedTitle = newsObject.title.substring(0, 70);
       newsObject.stripedContent = newsObject.content.substring(0, 140);
-      if(newsObject.stripedTitle.length == 70){
-        newsObject.stripedTitle = newsObject.stripedTitle + '...';
+      if (newsObject.stripedTitle.length === 70) {
+        newsObject.stripedTitle = `${newsObject.stripedTitle}...`;
       }
-      if(newsObject.stripedContent.length == 140){
-        newsObject.stripedContent = newsObject.stripedContent + '...';
+      if (newsObject.stripedContent.length === 140) {
+        newsObject.stripedContent = `${newsObject.stripedContent}...`;
       }
-    })
+    });
   }
 
-  removeHTMLTagFromString(str){
+  public removeHTMLTagFromString(str) {
     return str.replace(/<[^>]+>/g, '');
   }
 
-//-------------------------- Navigation ---------------------------------
-  goToDetails(newObject) {
+  public goToDetails(newObject) {
     this.navCtrl.push(NewsDetailsPage, newObject);
   }
-
-//-------------------------- Navigation ---------------------------------
-
-
-
-
 }
