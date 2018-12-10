@@ -1,0 +1,11 @@
+.toolbar-title {
+  font-family: $font-family-Bitter;
+  line-height: normal;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color($colors, 'white');
+}
+
+.toolbar-ios ion-title {
+  padding: 0 50px;
+}

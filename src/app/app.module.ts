@@ -13,7 +13,6 @@ import { CalendarHomePageModule } from '../pages/calendar-home/calendar-home.mod
 import { CalendarPageModule } from '../pages/calendar/calendar.module';
 import { CalendarService } from '../pages/calendar/calendar.service';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
-import { AudVisContentPageModule } from '../pages/aud-vis-content/aud-vis-content.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/trivia-not-available.module';
 import { NewsPageModule } from '../pages/news/news.module';
@@ -43,6 +42,7 @@ import { VideoProvider } from '../providers/video/video';
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
+      mode: 'ios',
       tabsHideOnSubPages: true,
       backButtonText: '',
       backButtonIcon: 'icon-flecha-atras'
@@ -52,7 +52,6 @@ import { VideoProvider } from '../providers/video/video';
     CalendarHomePageModule,
     CalendarPageModule,
     EduProjectPageModule,
-    AudVisContentPageModule,
     TriviaPageModule,
     TriviaNotAvailablePageModule,
     NewsPageModule,

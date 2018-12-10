@@ -1,5 +1,7 @@
 <ion-content appBackground="white">
-  <app-back-button ion-fixed></app-back-button>
+  <ion-fab top left>
+    <app-back-button></app-back-button>
+  </ion-fab>
   <div class="news__image" appFit="cover" appGradient>
     <img [src]="newsObject.image">
   </div>
