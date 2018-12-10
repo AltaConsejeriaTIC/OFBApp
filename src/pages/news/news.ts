@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, InfiniteScroll } from 'ionic-angular';
 import { NewsDetailsPage } from '../news-details/news-details';
-import { NewsService } from './/news.service';
+import { NewsService } from './news.service';
 
 @IonicPage()
 @Component({
@@ -15,24 +15,20 @@ export class NewsPage {
     this.news = navParams['data'];
   }
 
-  public ionViewDidLoad() {
-    console.log('ionViewDidLoad News');
-  }
-
-  public reachBottom(infiniteScroll) {
-    this.getNextPage(infiniteScroll);
-  }
-
-  public getNextPage(infiniteScroll) {
-    this.newsService.getNewsPages()
-    .subscribe((data) => {
-      this.normalizeNewsData(data);
-      this.news = this.news.concat(data);
-      infiniteScroll.complete();
+  public getNextPage(infiniteScroll: InfiniteScroll) {
+    this.newsService.getNewsPages().subscribe((data: any[]) => {
+      console.log('Data: ', data.length);
+      if (data.length) {
+        this.normalizeNewsData(data);
+        this.news = this.news.concat(data);
+        infiniteScroll.complete();
+      } else {
+        infiniteScroll.enable(false);
+      }
     });
   }
 
-  public normalizeNewsData(data) {
+  private normalizeNewsData(data) {
     data.forEach((newsObject) => {
       newsObject.title = this.removeHTMLTagFromString(newsObject.title);
       newsObject.content = this.removeHTMLTagFromString(newsObject.content);

@@ -7,7 +7,7 @@ page-news {
 
     ion-navbar {
       max-height: inherit;
-      
+
       ion-icon {
         color: #ffffff;
       }
@@ -21,7 +21,7 @@ page-news {
         width: 100%;
 
         ion-title {
-          
+
           .toolbar-title-ios,
           .toolbar-title {
             font-size: 17px;
@@ -33,12 +33,12 @@ page-news {
             .toolbar-title-md {
               font-size: 17px;
               font-weight: 800;
-              color: #ffffff; 
+              color: #ffffff;
             }
           }
         }
       }
-      
+
       .toolbar-background {
         background-color: color($colors, background, base);
       }
@@ -58,7 +58,7 @@ page-news {
         border-radius: 5px;
         text-align: left;
         margin-bottom: 20px;
-        background-color: color($colors, background, base);        
+        background-color: color($colors, background, base);
       }
       .card-content {
         background-color: color($colors, newsCardBackground, base);
