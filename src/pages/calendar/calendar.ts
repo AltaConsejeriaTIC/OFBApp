@@ -98,7 +98,6 @@ export class CalendarPage {
   };
 
   onChange($event){
-    console.log($event)
     const splitedDate = $event.split("-");
     this.month = this.monthsNames[splitedDate[1]];
     this.day = splitedDate[2];
@@ -107,7 +106,6 @@ export class CalendarPage {
   };
 
   monthChange($event) {
-    console.log($event);
     const splitedDate = $event.newMonth.string.split("-");
     this.month = this.monthsNames[splitedDate[1]];
     this.selectedMonth = $event.newMonth.months;
@@ -134,7 +132,6 @@ export class CalendarPage {
     this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
     .subscribe((data) => {
       const normalizedData = this.normalizeEventData(data);
-      console.log(normalizedData);
       this.events = normalizedData[0];
       this.calendarIndex = normalizedData[1];
       this.selectedDayEvents = this.getEventsForDay();
@@ -145,7 +142,6 @@ export class CalendarPage {
     this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
     .subscribe((data) => {
       const normalizedData = this.normalizeEventData(data);
-      console.log(normalizedData);
       this.events = normalizedData[0];
       this.calendarIndex = normalizedData[1];
       this.showAllEvents(false);

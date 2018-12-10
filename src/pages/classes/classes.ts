@@ -18,11 +18,7 @@ export class ClassesPage {
     this.classes = navParams['data'];
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad ClassesPage');
-  }
-
-//------------------------ Navigation ---------------------- 
+//------------------------ Navigation ----------------------
 
   goToClassesDetails(classObject){
     this.navCtrl.push(ClassDetailsPage, classObject);
@@ -54,7 +50,6 @@ export class ClassesPage {
         newsObject.stripedContent = newsObject.stripedContent + '...';
       }
     })
-    console.log(data)
   }
 
   removeHTMLTagFromString(str){

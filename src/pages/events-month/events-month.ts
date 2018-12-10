@@ -54,19 +54,14 @@ export class EventsMonthPage {
     this.navCtrl.pop();
   }
 
-  public onSelect($event) {
-    console.log($event.title);
-  }
+  public onSelect($event) { }
 
   public nextMonthChange($event){
-        this.calendario.next();
-         console.log('monthChange',$event);
-
+    this.calendario.next();
   }
 
   prevMonthChange($event){
-        this.calendario.prev();
-         console.log('monthChange',$event);
+    this.calendario.prev();
   }
 
   monthChange($event) {

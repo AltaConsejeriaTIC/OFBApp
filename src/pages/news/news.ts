@@ -17,7 +17,6 @@ export class NewsPage {
 
   public getNextPage(infiniteScroll: InfiniteScroll) {
     this.newsService.getNewsPages().subscribe((data: any[]) => {
-      console.log('Data: ', data.length);
       if (data.length) {
         this.normalizeNewsData(data);
         this.news = this.news.concat(data);

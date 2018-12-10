@@ -13,7 +13,6 @@ export class NewsDetailsPage {
 
   constructor(public navParams: NavParams, private toastCtrl: ToastController, private socialSharing: SocialSharing) {
     this.newsObject = navParams['data'];
-    console.log('News: ', this.newsObject.link);
     this.paragraph();
   }
 

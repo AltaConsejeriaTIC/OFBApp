@@ -12,11 +12,6 @@ export class EventDetailsPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing) {
     this.event = navParams['data'];
-    console.log(this.event)
-  }
-
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EventDetailsPage');
   }
 
   share() {
@@ -25,7 +20,5 @@ export class EventDetailsPage {
     }).catch(() => {
       // Sharing via email is not possible
     });
-        console.log("alal")
   }
-
 }
