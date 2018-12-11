@@ -38,8 +38,7 @@ export class HomePage {
   }
 
   public getFeaturedEvents() {
-    this.homeService.getFeaturedEvents()
-    .subscribe((data) => {
+    this.homeService.getFeaturedEvents().subscribe((data) => {
       this.normalizeEventsData(data);
       this.featuredEvents = data;
     });
@@ -78,17 +77,8 @@ export class HomePage {
 
   public normalizeEventsData(data) {
     data.forEach((newsObject) => {
-      newsObject.splitedDate = newsObject.date.split(' ');
       newsObject.title = this.removeHTMLTagFromString(newsObject.title);
       newsObject.content = this.removeHTMLTagFromString(newsObject.content);
-      newsObject.stripedTitle = newsObject.title.substring(0, 70);
-      newsObject.stripedContent = newsObject.content.substring(0, 140);
-      if (newsObject.stripedTitle.length === 70) {
-        newsObject.stripedTitle = `${newsObject.stripedTitle}...`;
-      }
-      if (newsObject.stripedContent.length === 140) {
-        newsObject.stripedContent = `${newsObject.stripedContent}...`;
-      }
     });
   }
 

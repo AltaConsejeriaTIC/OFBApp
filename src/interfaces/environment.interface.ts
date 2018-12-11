@@ -1,3 +1,3 @@
 export interface Environment {
-  endpoint: string;
+  endpoint: { app: string, admin: string };
 }

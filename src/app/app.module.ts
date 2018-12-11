@@ -27,12 +27,12 @@ import { ClassDetailsPageModule } from '../pages/class-details/class-details.mod
 import { CalendarModule } from 'ion2-calendar';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
-import es from '@angular/common/locales/es';
-import { registerLocaleData } from '@angular/common';
-registerLocaleData(es);
-
 import { AudioProvider } from '../providers/audio/audio';
 import { VideoProvider } from '../providers/video/video';
+
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEs, 'es');
 
 @NgModule({
   declarations: [
@@ -70,7 +70,7 @@ import { VideoProvider } from '../providers/video/video';
     StatusBar,
     SplashScreen,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
-    { provide: LOCALE_ID, useValue: 'es' },
+    { provide: LOCALE_ID, useValue: 'es-CO' },
     HomeService,
     CalendarService,
     ClassesService,
@@ -80,4 +80,4 @@ import { VideoProvider } from '../providers/video/video';
     VideoProvider,
   ]
 })
-export class AppModule {}
+export class AppModule { }

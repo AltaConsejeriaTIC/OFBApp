@@ -8,15 +8,13 @@ import { TriviaNotAvailablePage } from '../trivia-not-available/trivia-not-avail
   templateUrl: 'trivia.html',
 })
 export class TriviaPage {
-	public isTriviaAvailable = true;
+  public isTriviaAvailable = true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  ionViewDidLoad() {
-    if(!this.isTriviaAvailable) {
-    	this.navCtrl.push(TriviaNotAvailablePage);
+  public ionViewDidLoad() {
+    if (!this.isTriviaAvailable) {
+      this.navCtrl.push(TriviaNotAvailablePage);
     }
   }
-
 }

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as ServerConstants from '../../app/utilities/server-constants';
+import { AppConfig } from '../../config/app.config';
 
 @Injectable()
 
@@ -11,7 +11,7 @@ export class NewsService {
 
   public getNewsPages() {
     this.pageIndex += 1;
-    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.NEWS + `?page=${this.pageIndex}`);
+    return this.http.get(`${AppConfig.news}?page=${this.pageIndex}`);
   }
 }
 

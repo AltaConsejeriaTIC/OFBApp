@@ -1,18 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import * as ServerConstants from '../../app/utilities/server-constants';
+import { AppConfig } from '../../config/app.config';
 
 @Injectable()
 
 export class ClassesService {
-
   constructor(private http: HttpClient) { }
-  // Backend endpoints constants
   private pageIndex = 1;
 
-  getMagistralClassesPages() {
+  public getMagistralClassesPages() {
     this.pageIndex += 1;
-    return this.http.get(ServerConstants.BACKEND_MAIN_DOMAIN + ServerConstants.END_POINTS.MAGISTRAL_CLASSES + `?page=${this.pageIndex}`);
+    return this.http.get(`${AppConfig.magistralClasses}?page=${this.pageIndex}`);
   }
 }
 
