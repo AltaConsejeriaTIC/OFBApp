@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, Events } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 
 @IonicPage()
 @Component({
@@ -7,8 +7,5 @@ import { IonicPage, Events } from 'ionic-angular';
   templateUrl: 'primary-tabs.html'
 })
 export class PrimaryTabsPage {
-  public hidden = false;
-
-  constructor(private events: Events) { 
-  }
+  constructor() { }
 }

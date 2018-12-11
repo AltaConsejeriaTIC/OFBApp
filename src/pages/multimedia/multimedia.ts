@@ -33,7 +33,7 @@ export class MultimediaPage {
 
   private getAudios() {
     this.audioService.getAudios().subscribe((response: any) => {
-      this.audios = response.slice(0, 5);
+      this.audios = response;
     });
   }
 
