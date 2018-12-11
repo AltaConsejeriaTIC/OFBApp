@@ -8,23 +8,20 @@ import { CalendarPage } from '../calendar/calendar';
   templateUrl: 'calendar-home.html',
 })
 export class CalendarHomePage {
+  public month: any;
 
-  month: any;
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
-
-  ionViewDidLoad() {
+  public ionViewDidLoad() {
     this.getMonth();
   }
 
-  getMonth(){
+  public getMonth() {
     this.month = new Date();
-    this.month = this.month.getMonth()+1;
+    this.month = this.month.getMonth() + 1;
   }
 
-  openCalendarPage(month) {
+  public openCalendarPage(month) {
     this.navCtrl.push(CalendarPage, month);
   }
-
 }
