@@ -14,60 +14,56 @@ export class EventsMonthPage {
   public month: string;
   public day: any;
   public year: number;
-  public showcalendar: boolean = false;
+  public showcalendar = false;
   public date: string;
   public type: 'string';
   public optionsMulti: CalendarComponentOptions = {
-     weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-     monthPickerFormat: ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'],
-     monthFormat: 'MMM YYYY',
-     weekStart: 1
+    weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+    monthPickerFormat: [
+      'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'
+    ],
+    monthFormat: 'MMM YYYY',
+    weekStart: 1
   };
+  private monthNames = [
+    'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+  ];
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-
-  }
+  constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
   public ionViewDidLoad() {
     this.getDate();
   }
 
-
-
-
-  public getDate(){
-    const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-    this.month = monthNames[(new Date()).getMonth()];
+  public getDate() {
+    this.month = this.monthNames[(new Date()).getMonth()];
     this.year = new Date().getFullYear();
   }
 
-  public toggleCalendar(){
-    if(this.showcalendar){
-        this.showcalendar= false;
-    }
-    else{
-        this.showcalendar= true;
+  public toggleCalendar() {
+    if (this.showcalendar) {
+        this.showcalendar = false;
+    } else {
+      this.showcalendar = true;
     }
   }
 
-  close() {
+  public close() {
     this.navCtrl.pop();
   }
 
   public onSelect($event) { }
 
-  public nextMonthChange($event){
+  public nextMonthChange($event) {
     this.calendario.next();
   }
 
-  prevMonthChange($event){
+  public prevMonthChange($event) {
     this.calendario.prev();
   }
 
-  monthChange($event) {
-    const monthNames = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-    this.month = monthNames[$event.newMonth.dateObj.getMonth()];
+  public monthChange($event) {
+    this.month = this.monthNames[$event.newMonth.dateObj.getMonth()];
     this.year = $event.newMonth.dateObj.getFullYear();
   }
-
 }
