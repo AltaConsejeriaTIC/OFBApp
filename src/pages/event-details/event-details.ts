@@ -1,24 +1,26 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavParams, ToastController } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
 @IonicPage()
 @Component({
   selector: 'page-event-details',
-  templateUrl: 'event-details.html',
+  templateUrl: 'event-details.html'
 })
 export class EventDetailsPage {
   public event: any;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private socialSharing: SocialSharing) {
+  constructor(public navParams: NavParams, private socialSharing: SocialSharing, private toastCtrl: ToastController) {
     this.event = navParams['data'];
   }
 
-  share() {
-    this.socialSharing.share("message", "Title?", null, this.event.link).then(() => {
-      // Sharing via email is possible
-    }).catch(() => {
-      // Sharing via email is not possible
+  public share() {
+    this.socialSharing.share(null, null, null, this.event.link).catch(() => {
+      this.toast('No es posible compartir el evento');
     });
+  }
+
+  private toast(message: string) {
+    this.toastCtrl.create({ message, duration: 3000 }).present();
   }
 }
