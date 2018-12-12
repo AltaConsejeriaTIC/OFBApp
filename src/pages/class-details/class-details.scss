@@ -33,6 +33,15 @@ page-class-details {
         font-size: 14px;
         color: color($colors, 'mid-gray');
       }
+
+      strong, b {
+        color: color($colors, 'cod-gray');
+      }
+
+      a {
+        color: color($colors, 'dodger-blue');
+        display: block;
+      }
     }
 
     &__share {

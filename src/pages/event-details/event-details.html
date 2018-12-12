@@ -30,7 +30,7 @@
      </button>
      <div class="separator"><div></div></div>
     <h2 class="content-title">Descripción del evento:</h2>
-     <div class="htmlContent" [innerHtml]='event.content'></div>
+     <div class="htmlContent" [innerHtml]="description | stripHtml:'p':'a':'strong':'b':'em':'h3' | html"></div>
      <div class="separator"><div></div></div>
     <div class="mapTag">
       <ion-icon name="icon-map-marker"></ion-icon>

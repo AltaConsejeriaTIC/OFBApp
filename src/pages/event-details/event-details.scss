@@ -139,6 +139,28 @@ page-event-details {
 
     .htmlContent {
       margin-bottom: 10px;
+      line-height: 1.7;
+      font-size: 14px;
+      color: color($colors, 'mid-gray');
+      font-family: $font-family-OpenSans;
+
+      h1, h2, h3, h4, h5, h6 {
+        font-family: $font-family-Bitter;
+        color: color($colors, 'cod-gray');
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      strong, b {
+        font-family: $font-family-OpenSans;
+        color: color($colors, 'cod-gray');
+      }
+
+      a {
+        font-family: $font-family-OpenSans;
+        color: color($colors, 'dodger-blue');
+        display: block;
+      }
     }
 
     .mapTag {

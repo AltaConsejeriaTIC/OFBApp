@@ -9,9 +9,15 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 })
 export class EventDetailsPage {
   public event: any;
+  public description: string;
 
   constructor(public navParams: NavParams, private socialSharing: SocialSharing, private toastCtrl: ToastController) {
     this.event = navParams['data'];
+    this.paragraph();
+  }
+
+  private paragraph() {
+    this.description = `<p>${this.event.content.replace(/\n/g, '</p><p>')}</p>`;
   }
 
   public share() {

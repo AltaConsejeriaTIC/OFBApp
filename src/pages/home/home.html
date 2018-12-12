@@ -55,16 +55,15 @@
     </div>
 
     <ion-slides class="news" slidesPerView="1.3" spaceBetween="20" centeredSlides="true" loop="false">
-      <ion-slide *ngFor='let new of news' (click)='goToNewDetails(new)'>
+      <ion-slide *ngFor='let new of news' [navPush]="'NewsDetailsPage'" [navParams]="new">
         <ion-card>
-          <img src={{new.image}}/>
+          <img [src]="new.image">
           <ion-card-content>
-            <p class="slideDate newsDate">{{new.date}}</p>
+            <p class="slideDate newsDate">{{ new.date }}</p>
             <ion-card-title>
-              {{new.stripedTitle}}
+              <div appLines="2">{{ new.title }}</div>
             </ion-card-title>
-            <p class="new-content" [innerHtml]='new.stripedContent'>
-            </p>
+            <p class="new-content" [innerHtml]="new.content | stripHtml | html" appLines="3"></p>
           </ion-card-content>
         </ion-card>
       </ion-slide>
@@ -93,10 +92,10 @@
           </div>
           <ion-card-content class="card-content-magistrales">
             <ion-card-title>
-              <p class="teacherName">{{class.title}}</p>
+              <p class="teacherName" appLines="2">{{ class.title }}</p>
             </ion-card-title>
             <div class="separator"></div>
-            <p class="classContent" [innerHtml]='class.stripedContent'></p>
+            <p class="classContent" [innerHtml]="class.content | stripHtml" appLines="3"></p>
           </ion-card-content>
         </ion-card>
       </ion-slide>

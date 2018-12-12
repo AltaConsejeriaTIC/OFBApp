@@ -270,17 +270,19 @@ page-home {
     height: auto;
 
     ion-card-title {
-      font-family: OpenSans;
+      font-family: $font-family-Bitter;
       font-weight: bold;
       line-height: 24px;
-      font-size: 1.7rem;
+      font-size: 16px;
+      color: color($colors, 'white');
     }
 
     p {
+      font-family: $font-family-OpenSans;
+      line-height: 21px;
+      font-size: 13px;
+      color: color($colors, 'dusty-gray');
       margin-top: 10px;
-      font-family: OpenSans;
-      font-size: 1.3rem;
-      color: #999999;
     }
 
     .slide-zoom {
@@ -353,11 +355,11 @@ page-home {
         color: #999999;
       }
       .teacherName {
-        font-family: $font-family-OpenSans;
+        font-family: $font-family-Bitter;
         font-weight: bold;
-        line-height: 24px;
-        font-size: 1.7rem;
-        color: white;
+        line-height: 20px;
+        font-size: 16px;
+        color: color($colors, 'white');
       }
 
     }
