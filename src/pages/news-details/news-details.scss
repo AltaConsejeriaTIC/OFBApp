@@ -71,8 +71,11 @@ page-news-details {
       ion-icon {
         position: absolute;
         left: 14px;
-        top: 8px;
+        top: 0;
         font-size: 21px;
+        height: 100%;
+        display: flex;
+        align-items: center;
       }
     }
   }
