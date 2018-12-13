@@ -1,0 +1,18 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "./keys/debug.keystore",
+      "storePassword": "Abc543210*",
+      "alias": "debug",
+      "password": "Abc543210*",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "./keys/release.keystore",
+      "storePassword": "Abc543210*",
+      "alias": "release",
+      "password": "Abc543210*",
+      "keystoreType": ""
+    }
+  }
+}
