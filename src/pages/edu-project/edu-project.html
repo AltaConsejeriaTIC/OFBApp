@@ -1,50 +1,46 @@
-<!--
-  Generated template for the EduProjectPage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-  <ion-navbar>
-    <ion-title>Formación musical</ion-title>
+<ion-header no-border>
+  <ion-navbar color="darker">
+    <ion-title>formación musical</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-card (click)="openExternalLink(1)">
-    <img src="./assets/imgs/edu_project/class.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        Apreciación musical
-      </ion-card-title>
-      <p>
-        Este curso gratuito está dirigido al público en general que esté interesado en conocer la historia de la música clásica en Europa y Colombia, escuchar y analizar algunas obras representativas de cada periodo musical y poner a prueba sus conocimientos.
-        <ion-icon name="icon-external-link"></ion-icon>
-      </p>
-    </ion-card-content>
-  </ion-card>
-  <ion-card (click)="openExternalLink(2)">
-    <img src="./assets/imgs/edu_project/edu-project.jpg" />
-    <ion-card-content>
-      <ion-card-title>
-        Proyecto Educativo
-      </ion-card-title>
-      <p>
-        El Proyecto Educativo de la Orquesta Filarmónica de Bogotá ofrece procesos de formación musical a más de 25 mil niños y jóvenes entre 7 y 17 años, a través del Proyecto Filarmónico Escolar, los Centros Filarmónicos Locales y Hospitalarios.
-        <ion-icon name="icon-external-link"></ion-icon>
-      </p>
-    </ion-card-content>
-  </ion-card>
-  <ion-card (click)="openExternalLink(3)">
-    <img src="./assets/imgs/edu_project/virtual-classroom.png" />
-    <ion-card-content>
-      <ion-card-title>
-        Aula Virtual
-      </ion-card-title>
-      <p>
-        En 2018, se consolida el Modelo Educativo de la Orquesta Filarmónica de Bogotá con material pedagógico, videos y repertorios disponibles en el Aula Virtual de la página web de la Filarmónica.
-        <ion-icon name="icon-external-link"></ion-icon>
+<ion-content padding appBackground="dark">
+  <a [href]="musicalAppreciation" target="_blank">
+    <ion-card>
+      <img src="./assets/imgs/edu_project/class.jpg">
+      <ion-card-content>
+        <ion-card-title>Apreciación musical</ion-card-title>
+        <p>
+          Este curso gratuito está dirigido al público en general que esté interesado en conocer la historia de la música clásica en Europa y Colombia, escuchar y analizar algunas obras representativas de cada periodo musical y poner a prueba sus conocimientos.
+          <ion-icon name="icon-external-link"></ion-icon>
         </p>
-    </ion-card-content>
-  </ion-card>
+      </ion-card-content>
+    </ion-card>
+  </a>
+
+  <a [href]="educationalProject" target="_blank">
+    <ion-card>
+      <img src="./assets/imgs/edu_project/edu-project.jpg">
+      <ion-card-content>
+        <ion-card-title>Proyecto Educativo</ion-card-title>
+        <p>
+          El Proyecto Educativo de la Orquesta Filarmónica de Bogotá ofrece procesos de formación musical a más de 25 mil niños y jóvenes entre 7 y 17 años, a través del Proyecto Filarmónico Escolar, los Centros Filarmónicos Locales y Hospitalarios.
+          <ion-icon name="icon-external-link"></ion-icon>
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </a>
+
+  <a [href]="virtualClassroom" target="_blank">
+    <ion-card>
+      <img src="./assets/imgs/edu_project/virtual-classroom.png">
+      <ion-card-content>
+        <ion-card-title>Aula Virtual</ion-card-title>
+        <p>
+          En 2018, se consolida el Modelo Educativo de la Orquesta Filarmónica de Bogotá con material pedagógico, videos y repertorios disponibles en el Aula Virtual de la página web de la Filarmónica.
+          <ion-icon name="icon-external-link"></ion-icon>
+          </p>
+      </ion-card-content>
+    </ion-card>
+  </a>
 </ion-content>

@@ -1,108 +1,59 @@
 page-edu-project {
-  background-color: color($colors, background, base);
-
-  ion-header {
-    width: 100%;
-    max-height: 10vh;
-
-    ion-navbar {
-      max-height: inherit;
-
-      ion-icon {
-        color: #ffffff;
-      }
-
-      .toolbar-content-md,
-      .toolbar-content-ios,
-      .toolbar-content {
-        position: absolute;
-        text-align: center;
-        z-index: -1;
-        width: 100%;
-
-        ion-title {
-
-          .toolbar-title-ios,
-          .toolbar-title {
-            font-size: 17px;
-            font-weight: 800;
-            color: #ffffff;
-          }
-
-          &.title-md {
-            .toolbar-title-md {
-              font-size: 17px;
-              font-weight: 800;
-              color: #ffffff;
-            }
-          }
-        }
-      }
-
-      .toolbar-background {
-        background-color: color($colors, background, base);
-      }
-    }
-  }
-
-  ion-content {
-
-    .fixed-content {
-      background-color: color($colors, newsSectionBackground, base);
+  ion-card {
+    img {
+      height: 120px;
+      object-fit: cover !important;
     }
 
-    ion-card {
-      img {
-        height: 120px;
-        object-fit: cover !important;
+    &.card-ios,
+    &.card-md {
+      margin: 0;
+      width: 100%;
+      border-radius: 0px;
+      text-align: left;
+      margin-bottom: 20px;
+      background-color: color($colors, background, base);
+    }
+
+    .card-content {
+      background-color: color($colors, newsCardBackground, base);
+      padding: 8px 15px;
+
+
+      .card-title-ios, .card-title-md {
+        font-family: $font-family-Bitter;
+        font-weight: bold;
+        line-height: normal;
+        font-size: 18px;
+        letter-spacing: 0.01em;
+        color: color($colors, 'white');
+        padding-bottom: 0;
+        margin-bottom: 10px;
       }
 
-      &.card-ios,
-      &.card-md {
-        margin: 0;
+      .separator {
         width: 100%;
-        border-radius: 0px;
-        text-align: left;
-        margin-bottom: 20px;
-        background-color: color($colors, background, base);
+        height: 1px;
+        background-color: color($colors, separator, base);
       }
 
-      .card-content {
-        background-color: color($colors, newsCardBackground, base);
-        padding: 8px 15px;
+      p {
+        font-family: $font-family-OpenSans;
+        line-height: normal;
+        font-size: 13px;
+        letter-spacing: 0.01em;
+        color: color($colors, 'manatee');
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-grow: 1;
 
-
-        .card-title-ios,
-        .card-title-md {
-          padding-bottom: 0;
-          font-size: 18px;
-          font-weight: 800;
-          margin-bottom: 10px;
-          color: white;
-        }
-
-        .separator {
-          width: 100%;
-          height: 1px;
-          background-color: color($colors, separator, base);
-        }
-
-        p {
-          width: 100%;
-          display: flex;
-          flex-direction: row;
-          flex-grow: 1;
-          color: color($colors, mainText, base);
-          font-family: $font-family-OpenSans;
-          font-size: 13px;
-
-          ion-icon {
-            text-align: center;
-            font-size: 25px;
-            margin-top: 2px;
-            color: #62CFFF;
-            min-width: 15%;
-          }
+        ion-icon {
+          text-align: center;
+          font-size: 25px;
+          margin-top: 2px;
+          color: color($colors, 'malibu');
+          min-width: 15%;
         }
       }
     }
