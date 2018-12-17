@@ -1,11 +1,22 @@
+// Angular ...
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule, LOCALE_ID } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { MyApp } from './app.component';
+
+// Ionic ...
+import { SocialSharing } from '@ionic-native/social-sharing';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { CalendarModule } from 'ion2-calendar';
 
-import { MyApp } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
+// Locale language ...
+import { registerLocaleData } from '@angular/common';
+import localeEs from '@angular/common/locales/es';
+registerLocaleData(localeEs, 'es');
+
+// Pages ...
 import { PrimaryTabsPageModule } from '../pages/primary-tabs/primary-tabs.module';
 import { HomePageModule } from '../pages/home/home.module';
 import { HomeService } from '../pages/home/home.service';
@@ -24,15 +35,13 @@ import { ClassesPageModule } from '../pages/classes/classes.module';
 import { ClassesService } from '../pages/classes/classes.service';
 import { ClassDetailsPageModule } from '../pages/class-details/class-details.module';
 
-import { CalendarModule } from 'ion2-calendar';
-import { SocialSharing } from '@ionic-native/social-sharing';
-
+// Services ...
 import { AudioProvider } from '../providers/audio/audio';
 import { VideoProvider } from '../providers/video/video';
 
-import { registerLocaleData } from '@angular/common';
-import localeEs from '@angular/common/locales/es';
-registerLocaleData(localeEs, 'es');
+// Interceptors ...
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ResponseInterceptor } from '../interceptors/response.interceptor';
 
 @NgModule({
   declarations: [
@@ -78,6 +87,7 @@ registerLocaleData(localeEs, 'es');
     SocialSharing,
     AudioProvider,
     VideoProvider,
+    { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
   ]
 })
 export class AppModule { }
