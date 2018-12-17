@@ -2,14 +2,16 @@ import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
 import { CalendarPage } from './calendar';
 import { CalendarModule } from 'ion2-calendar';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @NgModule({
   declarations: [
-    CalendarPage,
+    CalendarPage
   ],
   imports: [
     IonicPageModule.forChild(CalendarPage),
-    CalendarModule
+    CalendarModule,
+    PipesModule
   ],
 })
 export class CalendarPageModule { }

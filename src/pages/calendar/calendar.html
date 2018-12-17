@@ -51,8 +51,8 @@
         <ion-row>
           <ion-col col-3 class="eventDate">
             <div class="dayAndMonthEvent">
-                <p class="eventDay">{{event.splitedDate[0]}}</p>
-                <p class="eventMonth">{{event.splitedDate[1]}}</p>
+                <p class="eventDay">{{ event.date | date:'d' }}</p>
+                <p class="eventMonth" text-uppercase>{{ event.date | date:'MMM' | replace:'.' }}</p>
             </div>
             <div class="ticket-type" [ngClass]="{'paid-event': event.isFree == false}">
                 <p class="priceEvent" [ngClass]="{'paid-event': event.isFree == false}">{{event.isFree ? 'Entrada Libre*' : 'Concierto pago'}}</p>
