@@ -13,6 +13,7 @@ export class BackButtonComponent {
     statusBar.overlaysWebView(false);
     statusBar.styleLightContent();
     statusBar.backgroundColorByHexString('#161824');
+    // StatusBar.styleDefault();
 
     if (!this.color) {
       this.color = 'white';

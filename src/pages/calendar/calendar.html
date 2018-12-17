@@ -49,7 +49,10 @@
         <p class="eventAutor">{{ event.label }}</p>
         <p class="eventTitle">{{ event.stripedTitle }}</p>
         <p class="eventTime"><ion-icon name="icon-clock"></ion-icon>{{ event.startHour }}</p>
-        <p class="eventPlace"><ion-icon name="icon-map-marker"></ion-icon>Auditorio Leon de Greiff</p>
+        <p class="eventPlace">
+          <ion-icon name="icon-map-marker"></ion-icon>
+          {{ event.place.name }}
+        </p>
       </ion-col>
     </ion-row>
   </div>
