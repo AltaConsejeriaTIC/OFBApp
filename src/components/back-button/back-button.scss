@@ -9,6 +9,8 @@ app-back-button {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: constant(safe-area-inset-top);
+    padding-top: env(safe-area-inset-top);
 
     ion-icon {
       font-size: 20px;
