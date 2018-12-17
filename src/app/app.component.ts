@@ -11,6 +11,7 @@ export class MyApp {
 
   constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
     platform.ready().then(() => {
+      statusBar.overlaysWebView(false);
       statusBar.styleLightContent();
       statusBar.backgroundColorByHexString('#161824');
       splashScreen.hide();

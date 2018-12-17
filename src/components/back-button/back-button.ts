@@ -9,9 +9,10 @@ export class BackButtonComponent {
   @Input()
   public color: string;
 
-  constructor(private statusBar: StatusBar) {
-    this.statusBar.styleLightContent();
-    this.statusBar.backgroundColorByHexString('#161824');
+  constructor(statusBar: StatusBar) {
+    statusBar.overlaysWebView(false);
+    statusBar.styleLightContent();
+    statusBar.backgroundColorByHexString('#161824');
 
     if (!this.color) {
       this.color = 'white';
