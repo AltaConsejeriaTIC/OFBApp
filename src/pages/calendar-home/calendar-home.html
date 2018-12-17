@@ -1,33 +1,16 @@
-<!--
-  Generated template for the CalendarHomePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
-<ion-header>
-
-  <ion-navbar mode="ios" hideBackButton>
-    <ion-title text-center>Calendario de eventos</ion-title>
-    <ion-buttons left>
-      <button ion-button icon-only>
-      </button>
-    </ion-buttons>
-
+<ion-header no-border>
+  <ion-navbar color="darker">
+    <ion-title>calendario de eventos</ion-title>
   </ion-navbar>
-
 </ion-header>
 
-
 <ion-content padding>
-
   <div class="headerMonth">
-        <p>programación 2018*</p>
+    <p>programación 2018*</p>
   </div>
 
   <div class="months">
-
     <ion-row>
-
         <ion-col [ngClass]="{'actual': month == 1 }" (click)="openCalendarPage(1)">
           <p>enero</p>
         </ion-col>
@@ -39,7 +22,6 @@
         <ion-col [ngClass]="{'actual': month == 3, 'pending': month < 3 }" (click)="openCalendarPage(3)">
           <p>marzo</p>
         </ion-col>
-
     </ion-row>
 
     <ion-row>

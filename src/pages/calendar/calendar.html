@@ -1,75 +1,58 @@
+<ion-header no-border>
+  <ion-navbar color="darker">
+    <ion-title>calendario de conciertos</ion-title>
+  </ion-navbar>
 
-<ion-header>
-
-      <ion-navbar mode="ios" hideBackButton>
-        <ion-title text-center>Calendario de conciertos</ion-title>
-        <ion-buttons left>
-          <button ion-button icon-only (click)="close()">
-            <ion-icon name="icon-flecha-atras"></ion-icon>
-          </button>
-        </ion-buttons>
-      </ion-navbar>
-
-      <div [ngClass]="{'headerCenter': showcalendar == false }" class="headerMonth">
-        <ion-icon name="icon-flecha-atras" *ngIf="showcalendar" (click)="prevMonthChange($event)"></ion-icon>
-        <p [ngClass]="{'padding-right': showcalendar == false }">{{day}} {{month}}, {{year}}</p>
-        <button class="calendarButton" ion-button (click)="toggleCalendar()">
-          <ion-icon name="icon-icono-calendario"></ion-icon>
-          <ion-icon name="ios-arrow-up" *ngIf="showcalendar"></ion-icon>
-          <ion-icon name="ios-arrow-down" *ngIf="!showcalendar"></ion-icon>
-        </button>
-        <ion-icon name="icon-flecha-derecha" *ngIf="showcalendar" (click)="nextMonthChange($event)"></ion-icon>
-      </div>
-
+  <div [ngClass]="{ headerCenter: showcalendar == false }" class="headerMonth">
+    <ion-icon name="icon-flecha-atras" *ngIf="showcalendar" (click)="prevMonthChange($event)"></ion-icon>
+    <p [ngClass]="{ 'padding-right': showcalendar == false }">{{ day }} {{ month }}, {{ year }}</p>
+    <button class="calendarButton" ion-button (click)="toggleCalendar()">
+      <ion-icon name="icon-icono-calendario"></ion-icon>
+      <ion-icon name="ios-arrow-up" *ngIf="showcalendar"></ion-icon>
+      <ion-icon name="ios-arrow-down" *ngIf="!showcalendar"></ion-icon>
+    </button>
+    <ion-icon name="icon-flecha-derecha" *ngIf="showcalendar" (click)="nextMonthChange($event)"></ion-icon>
+  </div>
 </ion-header>
 
+<ion-content padding appBackground="dark">
+  <div *ngIf="showcalendar" class="calendarBox">
+    <div class="filterText"><p>Selecciona un día:</p></div>
 
+    <ion-calendar
+      #calendario
+      [(ngModel)]="_calendarMonthValue"
+      [options]="optionsMulti"
+      (onChange)="onChange($event)"
+      (monthChange)="monthChange($event)"
+    >
+    </ion-calendar>
 
-<ion-content padding>
+    <div class="calendarButton" (click)="showAllEvents(true)"><button ion-button>Ver todos los eventos del mes</button></div>
+  </div>
 
-      <div *ngIf="showcalendar" class="calendarBox">
-
-        <div class="filterText">
-            <p>Selecciona un día:</p>
+  <div class="event" *ngFor="let event of selectedDayEvents" (click)="goToEventDetails(event)">
+    <ion-row>
+      <ion-col col-3 class="eventDate">
+        <div class="dayAndMonthEvent">
+          <p class="eventDay">{{ event.date | date: 'd' }}</p>
+          <p class="eventMonth" text-uppercase>{{ event.date | date: 'MMM' | replace: '.' }}</p>
         </div>
-
-        <ion-calendar #calendario
-          [(ngModel)]="_calendarMonthValue"
-          [options]="optionsMulti"
-          (onChange)="onChange($event)"
-          (monthChange)="monthChange($event)">
-        </ion-calendar>
-
-
-        <div class="calendarButton" (click)="showAllEvents(true)">
-            <button ion-button>Ver todos los eventos del mes</button>
+        <div class="ticket-type" [ngClass]="{ 'paid-event': event.isFree == false }">
+          <p class="priceEvent" [ngClass]="{ 'paid-event': event.isFree == false }">
+            {{ event.isFree ? 'Entrada Libre*' : 'Concierto pago' }}
+          </p>
         </div>
+      </ion-col>
 
-      </div>
+      <ion-col col-9 class="eventInfo">
+        <p class="eventAutor">{{ event.label }}</p>
+        <p class="eventTitle">{{ event.stripedTitle }}</p>
+        <p class="eventTime"><ion-icon name="icon-clock"></ion-icon>{{ event.startHour }}</p>
+        <p class="eventPlace"><ion-icon name="icon-map-marker"></ion-icon>Auditorio Leon de Greiff</p>
+      </ion-col>
+    </ion-row>
+  </div>
 
-      <div class="event" *ngFor='let event of selectedDayEvents' (click)="goToEventDetails(event)">
-        <ion-row>
-          <ion-col col-3 class="eventDate">
-            <div class="dayAndMonthEvent">
-                <p class="eventDay">{{ event.date | date:'d' }}</p>
-                <p class="eventMonth" text-uppercase>{{ event.date | date:'MMM' | replace:'.' }}</p>
-            </div>
-            <div class="ticket-type" [ngClass]="{'paid-event': event.isFree == false}">
-                <p class="priceEvent" [ngClass]="{'paid-event': event.isFree == false}">{{event.isFree ? 'Entrada Libre*' : 'Concierto pago'}}</p>
-            </div>
-          </ion-col>
-
-          <ion-col col-9 class="eventInfo">
-              <p class="eventAutor">{{event.label}}</p>
-              <p class="eventTitle">{{event.stripedTitle}}</p>
-              <p class="eventTime"><ion-icon name="icon-clock"></ion-icon>{{event.startHour}}</p>
-              <p class="eventPlace"><ion-icon name="icon-map-marker" ></ion-icon>Auditorio Leon de Greiff</p>
-          </ion-col>
-        </ion-row>
-      </div>
-
-      <div *ngIf="noEvents" class="no-events-available">
-        <span>Actualmente no hay eventos programados para este día.</span>
-      </div>
-
+  <div *ngIf="noEvents" class="no-events-available"><span>Actualmente no hay eventos programados para este día.</span></div>
 </ion-content>

@@ -37,7 +37,8 @@ $colors: (
   'dusty-gray': #999,
   'cod-gray': #161616,
   'manatee': #8e8e9c,
-  'malibu': #62cfff
+  'malibu': #62cfff,
+  'coral': #f8774e
 );
 
 $background-color: #222433;
@@ -77,3 +78,7 @@ h1, h2, h3, h4, h5, h6, span, button {
 $toolbar-ios-height: 50px;
 $toolbar-ios-title-font-size: 14px;
 $toolbar-ios-title-font-weight: bold;
+
+.back-button-icon-ios {
+  font-size: 2rem!important;
+}

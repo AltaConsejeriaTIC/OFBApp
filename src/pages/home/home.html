@@ -59,7 +59,7 @@
         <ion-card>
           <img [src]="new.image">
           <ion-card-content>
-            <p class="slideDate newsDate">{{ new.date }}</p>
+            <p class="slideDate newsDate">{{ new.date | date:'d MMMM y' }}</p>
             <ion-card-title>
               <div appLines="2">{{ new.title }}</div>
             </ion-card-title>

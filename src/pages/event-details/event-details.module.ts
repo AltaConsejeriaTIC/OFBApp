@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { EventDetailsPage } from './event-details';
 import { DirectivesModule } from '../../directives/directives.module';
 import { PipesModule } from '../../pipes/pipes.module';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PipesModule } from '../../pipes/pipes.module';
   imports: [
     IonicPageModule.forChild(EventDetailsPage),
     DirectivesModule,
-    PipesModule
+    PipesModule,
+    ComponentsModule
   ]
 })
 export class EventDetailsPageModule { }

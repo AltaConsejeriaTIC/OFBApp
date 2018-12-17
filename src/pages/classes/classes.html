@@ -1,17 +1,18 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>CLASES MAGISTRALES</ion-title>
+<ion-header no-border>
+  <ion-navbar color="darker">
+    <ion-title>clases magistrales</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-content padding>
+
+<ion-content padding appBackground="dark">
   <ion-card  *ngFor='let class of classes' (click)='goToClassesDetails(class)'>
     <div class="class__image" appFit="cover" appGradient="gray">
       <img [src]="class.image">
     </div>
     <ion-card-content>
-      <ion-card-title>{{ class.title }}</ion-card-title>
+      <ion-card-title appLines="2">{{ class.title }}</ion-card-title>
       <div class="separator"></div>
-      <p [innerHtml]='class.stripedContent'></p>
+      <p [innerHtml]="class.content | stripHtml" appLines="3"></p>
     </ion-card-content>
   </ion-card>
   <ion-infinite-scroll (ionInfinite)='reachBottom($event)'>

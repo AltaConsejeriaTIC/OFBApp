@@ -1,9 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-back-button',
   templateUrl: 'back-button.html'
 })
 export class BackButtonComponent {
-  constructor() { }
+  @Input()
+  public color: string;
+
+  constructor() {
+    if (!this.color) {
+      this.color = 'white';
+    }
+  }
 }

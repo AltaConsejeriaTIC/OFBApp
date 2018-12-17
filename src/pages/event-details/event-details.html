@@ -1,7 +1,6 @@
 <ion-content appBackground="white">
-  <ion-navbar>
-  </ion-navbar>
-  <img src={{event.image}}/>
+  <app-back-button ion-fixed color="coral"></app-back-button>
+  <img [src]="event.image">
   <div class="eventContent">
     <span [ngClass]="{'hide': event.entry == 'Tuboleta' || event.entry == 'primerafila'}" class="free-event-tag">ENTRADA LIBRE</span>
     <h2>{{event.title}}</h2>

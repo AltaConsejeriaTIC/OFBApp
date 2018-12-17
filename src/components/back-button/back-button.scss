@@ -1,6 +1,8 @@
 app-back-button {
   .app-back-button {
-    background-color: color($colors, 'white');
+    position: absolute;
+    top: 16px;
+    left: 16px;
     height: 42px;
     width: 42px;
     border-radius: 50%;
