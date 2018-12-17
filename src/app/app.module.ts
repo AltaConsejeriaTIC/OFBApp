@@ -25,6 +25,7 @@ import { CalendarPageModule } from '../pages/calendar/calendar.module';
 import { CalendarService } from '../pages/calendar/calendar.service';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
+import { TriviaService } from '../pages/trivia/trivia.service';
 import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/trivia-not-available.module';
 import { NewsPageModule } from '../pages/news/news.module';
 import { NewsService } from '../pages/news/news.service';
@@ -52,7 +53,7 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       mode: 'ios',
-      tabsHideOnSubPages: true,
+      tabsHideOnSubPages: false,
       backButtonText: '',
       backButtonIcon: 'icon-flecha-atras'
     }),
@@ -87,6 +88,7 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
     SocialSharing,
     AudioProvider,
     VideoProvider,
+    TriviaService,
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
   ]
 })

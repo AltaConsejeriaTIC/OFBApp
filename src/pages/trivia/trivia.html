@@ -7,7 +7,7 @@
 <ion-content appBackground="dark">
   <div class='main-content'>
     <img src='./assets/imgs/trivia/home.svg'>
-    <p class='question'>La sonata para piano nº8 en do menor es una de las obras cumbre de Beethoven ¿Con cuál otro nombre se le conoce?</p>
+    <p class='question'>{{trivia.content}}</p>
     <button class='solve-trivia' navPush='TriviaSurveyPage'>RESPONDE LA TRIVIA</button>
     <p class='caption'>Respondiendo a la pregunta puedes ganar entradas gratis para alguno de nuestros conciertos.</p>
   </div>
@@ -16,15 +16,15 @@
       <p>Tiempo límite para responder la trivia</p>
       <div class='timer'>
         <div>
-          <span class='date-number'>2</span>
+          <span class='date-number'>{{remainingTime.d}}</span>
           <span class='date-text'>DÍAS</span>
         </div>
         <div>
-          <span class='date-number'>14</span>
+          <span class='date-number'>{{remainingTime.h}}</span>
           <span class='date-text'>HORAS</span>
         </div>
         <div>
-          <span class='date-number'>30</span>
+          <span class='date-number'>{{remainingTime.m}}</span>
           <span class='date-text'>MINUTOS</span>
         </div>
       </div>

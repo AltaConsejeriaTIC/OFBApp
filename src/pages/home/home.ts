@@ -44,6 +44,7 @@ export class HomePage {
 
   public getRecentNews() {
     this.homeService.getRecentNews().subscribe((data) => {
+      console.log(data)
       this.news = data;
     });
   }
