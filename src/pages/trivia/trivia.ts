@@ -10,12 +10,12 @@ import { TriviaService } from './trivia.service';
 })
 export class TriviaPage {
   public isTriviaAvailable = true;
-  public trivia = {};
-  public remainingTime = {
+  public trivia: any = {};
+  public remainingTime: any = {
     d: '-',
     h: '-',
-    m: '-',
-  }
+    m: '-'
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) { }
 
@@ -25,12 +25,10 @@ export class TriviaPage {
     }
     this.getTrivia();
   }
-  
+
   public getTrivia() {
     this.triviaService.getTrivia().subscribe((data) => {
-      console.log(data)
-      if(Object.keys(data).length === 0 && data.constructor === Object){
-        //objeto vacío, no hay trivia.
+      if (Object.keys(data).length === 0 && data.constructor === Object) {
         this.isTriviaAvailable = false;
       } else {
         this.trivia = data;

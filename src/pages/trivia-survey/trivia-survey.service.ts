@@ -8,12 +8,12 @@ export class TriviaSurveyService {
   constructor(private http: HttpClient) { }
 
   public uploadAnswer(answer) {
-    return this.http.get(
-    	AppConfig.uploadAnswer, 
-    	answer, 
-			{
-			  headers: { 'Content-Type': 'application/json' }
-			});
+    return this.http.put(
+      AppConfig.uploadAnswer,
+      answer,
+      {
+        headers: { 'Content-Type': 'application/json' }
+      });
   }
 }
 
