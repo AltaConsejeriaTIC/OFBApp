@@ -1,12 +1,12 @@
 <div class="video__container">
   <div class="video" *ngFor="let video of videos">
     <a class="video__thumbnail" [href]="video.url" target="_blank" appFit>
-      <img src="https://i.ytimg.com/vi/4b533S13SwU/hqdefault.jpg?sqp=-oaymwEZCPYBEIoBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLCmJ5ks_iXXUCXMmkWK-wJNMMImgA">
-      <div class="video__time">13:41</div>
+      <img [src]="video.thumbnail" *ngIf="video.thumbnail">
+      <div class="video__time">{{ video.time }}</div>
     </a>
     <div class="video__text">
       <div class="video__title" appLines="3">{{ video.title }}</div>
-      <div class="video__author" appLines="1">-</div>
+      <div class="video__author" appLines="1">{{ video.channel }}</div>
     </div>
   </div>
 </div>
