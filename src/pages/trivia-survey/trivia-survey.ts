@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
-
+import { TriviaSurveyService } from './trivia-survey.service';
 import { TriviaPage } from '../trivia/trivia';
 
 @IonicPage()
@@ -31,8 +31,9 @@ export class TriviaSurveyPage {
   }
   private inputError = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private triviaSurveyService: TriviaSurveyService) {
     this.triviaContent = navParams['data'];
+    console.log(navParams)
   }
 
   public ionViewDidLeave() {
@@ -40,9 +41,22 @@ export class TriviaSurveyPage {
 
   public uploadAnswer() {
   	if(!this.validateFields()){
-      this.showSuccessAlert();
+      const answer = {
+        name: this.inputs.name,
+        lastName: this.inputs.lastName,
+        email: this.inputs.email,
+        cellphone: this.inputs.phone,
+        contactPreference: this.inputs.newsletterEmail ? 'email' : '' + this.inputs.newsletterPhone ? ' phone' : '', 
+        answer: this.inputs.triviaAnswer,
+      }
+      this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
+        console.log(data.data);
+        this.showSuccessAlert();
+      });
     }
   }
+
+
 
   public validateFields() {
     let inputError = false;
@@ -76,7 +90,7 @@ export class TriviaSurveyPage {
     } else {
       this.inputsError.phone = false;
     }
-    if(this.inputs.tos === '') {
+    if(this.inputs.tos) {
       this.inputsError.tos = true;
       let inputError = true;
     } else {

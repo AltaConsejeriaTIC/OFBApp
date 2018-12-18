@@ -9,4 +9,5 @@ export class AppConfig {
   public static magistralClasses = `${ENV.endpoint.app}/clases-magistrales`;
   public static monthlyEvents = `${ENV.endpoint.app}/eventos/mes`;
   public static trivia = `${ENV.endpoint.app}/trivia/question`;
+  public static uploadAnswer = `${ENV.endpoint.app}/trivia/upload-answer`
 }

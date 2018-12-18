@@ -36,7 +36,6 @@ export class TriviaPage {
         this.trivia = data;
         this.getRemainingTime();
       }
-
     });
   }
 

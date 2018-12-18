@@ -26,6 +26,7 @@ import { CalendarService } from '../pages/calendar/calendar.service';
 import { EduProjectPageModule } from '../pages/edu-project/edu-project.module';
 import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { TriviaService } from '../pages/trivia/trivia.service';
+import { TriviaSurveyService } from '../pages/trivia-survey/trivia-survey.service';
 import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/trivia-not-available.module';
 import { NewsPageModule } from '../pages/news/news.module';
 import { NewsService } from '../pages/news/news.service';
@@ -89,6 +90,7 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
     AudioProvider,
     VideoProvider,
     TriviaService,
+    TriviaSurveyService,
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
   ]
 })
