@@ -5,7 +5,8 @@
     <author email="vivelab@unal.edu.co" href="http://vivelabbogota.com/">ViveLab Bogota</author>
     <content src="index.html" />
     <access origin="*" />
-    <access origin="*.ytimg.com" />
+    <allow-intent href="https://i.ytimg.com/*" />
+    <allow-navigation href="https://i.ytimg.com/*" />
     <allow-navigation href="http://localhost:8080/*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
