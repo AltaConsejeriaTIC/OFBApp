@@ -27,11 +27,16 @@ export class TriviaPage {
   }
   
   public getTrivia() {
-    console.log("helo?")
     this.triviaService.getTrivia().subscribe((data) => {
-      this.trivia = data;
       console.log(data)
-      this.getRemainingTime();
+      if(Object.keys(data).length === 0 && data.constructor === Object){
+        //objeto vacío, no hay trivia.
+        this.isTriviaAvailable = false;
+      } else {
+        this.trivia = data;
+        this.getRemainingTime();
+      }
+
     });
   }
 

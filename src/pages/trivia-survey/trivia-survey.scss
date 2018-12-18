@@ -116,7 +116,6 @@ page-trivia-survey {
               &[type="text"] {
                 padding-left: 5px;
               }
-
             }
 
             textarea {
@@ -182,6 +181,16 @@ page-trivia-survey {
                 }
               }
             }
+
+            .input-error {
+              margin: 0;
+              color: red;
+
+              &.personal-data-error {
+                margin-top: -8px;
+                margin-bottom: 8px;
+              }
+            }
           }
 
           .checkmark {
@@ -219,6 +228,34 @@ page-trivia-survey {
       width: 100%;
       height: 2px;
       background-color: #434551;
+    }
+  }
+}
+
+.trivia-alert {
+  .alert-wrapper {
+    border-radius: 4px;
+
+    .alert-head {
+      .alert-title {
+        font-size: 24px;
+        font-family: 'Bitter';
+        text-align: left;
+        margin-bottom: 5px;
+      }
+    }
+
+    .alert-message {
+      font-size: 15px;
+      font-family: 'Open Sans';
+      text-align: left;
+    }
+
+    button {
+      span {
+        font-size: 14px;
+        color: #E3AE00;
+      }
     }
   }
 }

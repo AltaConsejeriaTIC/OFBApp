@@ -8,28 +8,33 @@
 <ion-content>
 	<div class='main-content'>
 		<form>
-			<h3>La sonata para piano nº 8 en do menor es una de las obras cumbres de Beethoven ¿Con cuál otro nombre se le conoce?</h3>
+			<h3>{{triviaContent ? triviaContent : 'Cargando...'}}</h3>
 			<div class="separator"></div>
 			<label>Escribe tu respuesta
 				<textarea name="triviaAnswer" rows="5" placeholder="Escribe tu respuesta" (input)=onInputChange($event)></textarea>
+				<p class="input-error" [ngClass]="{'hide': !inputError && !inputsError.triviaAnswer}">Escribe tu respuesta!</p>
 			</label>
 			<div class="separator"></div>
 			<h2>Datos personales:</h2>
 			<label>
 				Nombre
 				<input type="text" name="name" placeholder="Nombre" (input)=onInputChange($event)>
+				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputError && !inputsError.name}">Escribe tu nombre.</p>
 			</label>
 			<label>
 				Apellidos
-				<input class="no-margin" type="text" name="lastName" placeholder="Apellidos">
+				<input type="text" name="lastName" placeholder="Apellidos" (input)=onInputChange($event)>
+				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputError && !inputsError.lastName}">Escribe tus apellidos.</p>
 			</label>
 			<label>
 				Correo electrónico
 				<input type="text" name="email" placeholder="Correo electrónico" (input)=onInputChange($event)>
+				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputError && !inputsError.email}">Debes ingresar un email válido.</p>
 			</label>
 			<label>
 				Teléfono
-				<input type="text" name="phone" placeholder="Teléfono" (input)=onInputChange($event)>
+				<input type="text" name="phone" placeholder="3001234567" (input)=onInputChange($event)>
+				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputError && !inputsError.phone}">Debes ingresar un número de célular válido.</p>
 			</label>
 			<div class="separator"></div>
 			<p>Deseo recibir comunicaciones de la Orquesta Filamónica de Bogotá por:</p>
@@ -45,7 +50,7 @@
 			</label>
 			<div class="separator"></div>
 			<label class="checkbox-label">
-				<input type="checkbox" name="rememberData">
+				<input type="checkbox" name="rememberData" (input)=onInputChange($event)>
 				<span class="checkmark"></span>
 				Deseo que la aplicación recuerde mis datos.
 			</label>
@@ -54,6 +59,7 @@
 				<span class="checkmark"></span>
 				<div>
 					Al participar en la trivia acepto los <a navPush="TermsPage">términos y condiciones</a>. Sólo pueden participar mayores de edad.
+					<p class="input-error" [ngClass]="{'hide': !inputError && !inputsError.name}">Para enviar tu respuesta, debes aceptar antes los términos y condiciones.</p>
 				</div>
 			</label>
 			<input class="submit-button" type="submit" name="submit" value="Enviar respuesta" (click)='uploadAnswer()'> 
