@@ -1,59 +1,11 @@
 page-trivia-not-available {
-
-  background-color: color($colors, background, base);
-
-  ion-header {
-    width: 100%;
-    max-height: 10vh;
-
-    ion-navbar {
-      max-height: inherit;
-
-      ion-icon {
-        color: #ffffff;
-      }
-
-      .toolbar-content-md,
-      .toolbar-content-ios,
-      .toolbar-content {
-        position: absolute;
-        text-align: center;
-        z-index: -1;
-        width: 100%;
-
-        ion-title {
-
-          .toolbar-title-ios,
-          .toolbar-title {
-            font-size: 17px;
-            font-weight: 800;
-            color: #ffffff;
-          }
-
-          &.title-md {
-            .toolbar-title-md {
-              font-size: 17px;
-              font-weight: 800;
-              color: #ffffff;
-            }
-          }
-        }
-      }
-
-      .toolbar-background {
-        background-color: color($colors, background, base);
-      }
-    }
-  }
-
   ion-content {
-
     .scroll-content {
       background-color: color($colors, newsSectionBackground, base);
 
       font-size: 12px;
 
-      .main-content{
+      .main-content {
         padding: 30px 40px;
         width: 100%;
         display: flex;
@@ -84,7 +36,7 @@ page-trivia-not-available {
         p {
           margin-top: 0;
           font-family: $font-family-OpenSans;
-          color: #A8ABBA;
+          color: #a8abba;
         }
       }
     }

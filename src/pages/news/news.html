@@ -1,20 +1,20 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>NOTICIAS</ion-title>
+<ion-header no-border>
+  <ion-navbar color="darker">
+    <ion-title>noticias</ion-title>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding appBackground="dark">
   <ion-card  *ngFor='let new of news' (click)="goToDetails(new)">
     <img [src]="new.image">
     <ion-card-content>
       <div class="newsTitle">
         <span class="newsCategory">{{new.category}}</span>
-        <span class="newsDate">{{new.date}}</span>
+        <span class="newsDate">{{ new.date | date:'d MMMM y' }}</span>
       </div>
       <div class="separator"></div>
-      <ion-card-title>{{new.title}}</ion-card-title>
-      <p [innerHtml]="new.stripedContent"></p>
+      <ion-card-title appLines="2">{{ new.title }}</ion-card-title>
+      <p [innerHtml]="new.content | stripHtml" appLines="3"></p>
     </ion-card-content>
   </ion-card>
 

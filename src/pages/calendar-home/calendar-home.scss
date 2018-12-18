@@ -1,45 +1,11 @@
 page-calendar-home {
-
-  ion-header {
-    width: 100%;
-    max-height: 10vh;
-
-    ion-navbar {
-      max-height: inherit;
-    }
-  }
-
-  .toolbar-background {
-    background-color: #161824;
-}
-
-  .toolbar-title.toolbar-title {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 1.4rem;
-    color: white;
-    letter-spacing: 0.06em;
-  }
-
-  .toolbar-ios ion-title {
-    padding: 0 50px 1px;
-  }
-
-  .bar-button-default {
-    color: white;
-}
-
-  ion-title{
-    text-transform: uppercase;
-  }
-
-  .headerMonth{
+  .headerMonth {
     display: flex;
     align-items: center;
     justify-content: center;
     height: 7vh;
     background-color: #F8774E;
-    p{
+    p {
       text-transform: uppercase;
       color: black;
       text-align: center;
@@ -48,18 +14,18 @@ page-calendar-home {
     }
   }
 
-  .scroll-content{
+  .scroll-content {
     padding: 0 !important;
     background-color: #161824;
   }
 
-  .months{
+  .months {
     padding: 3%;
     height: 90%;
-    ion-row{
+    ion-row {
       height: 22.7%;
     }
-    ion-col.col{
+    ion-col.col {
       background-color: #535353;
       margin: 1.5%;
       width: 30%;
@@ -74,26 +40,24 @@ page-calendar-home {
       font-size: 1.2rem;
       letter-spacing: 0.06em;
     }
-    .pending{
+    .pending {
       opacity: 1 !important;
       background-color: #282A35 !important;
       color: white !important;
     }
-    .actual{
+    .actual {
       opacity: 1 !important;
       background-color: #F8774E !important;
       color: black !important;
     }
-    span{
+    span {
       color: #F8774E;
     }
-    .advertencia{
+    .advertencia {
       color: white;
       text-align: right;
       padding-right: 2.5%;
       font-size: 1.2rem;
-
     }
   }
-
 }

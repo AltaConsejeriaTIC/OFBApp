@@ -1,6 +1,8 @@
 app-back-button {
   .app-back-button {
-    background-color: color($colors, 'white');
+    position: absolute;
+    top: 16px;
+    left: 16px;
     height: 42px;
     width: 42px;
     border-radius: 50%;
@@ -9,8 +11,8 @@ app-back-button {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: constant(safe-area-inset-top);
-    padding-top: env(safe-area-inset-top);
+    margin-top: constant(safe-area-inset-top);
+    margin-top: env(safe-area-inset-top);
 
     ion-icon {
       font-size: 20px;

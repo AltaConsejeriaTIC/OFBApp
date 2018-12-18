@@ -1,9 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { StatusBar } from '@ionic-native/status-bar';
 
 @Component({
   selector: 'app-back-button',
   templateUrl: 'back-button.html'
 })
 export class BackButtonComponent {
-  constructor() { }
+  @Input()
+  public color: string;
+
+  constructor(statusBar: StatusBar) {
+    statusBar.overlaysWebView(false);
+    statusBar.styleLightContent();
+    statusBar.backgroundColorByHexString('#161824');
+    // StatusBar.styleDefault();
+
+    if (!this.color) {
+      this.color = 'white';
+    }
+  }
 }
