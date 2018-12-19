@@ -36,13 +36,15 @@ export class CalendarPage {
   public showcalendar = true;
   public date: string;
   public type: 'string';
+
   public optionsMulti: CalendarComponentOptions = {
     weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
     monthPickerFormat: [
       'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'
     ],
     monthFormat: 'MMM YYYY',
-    weekStart: 1
+    weekStart: 1,
+    from: new Date('2018-11-01')
   };
 
   @ViewChild('calendario')

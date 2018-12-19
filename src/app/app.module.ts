@@ -56,7 +56,13 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
       mode: 'ios',
       tabsHideOnSubPages: true,
       backButtonText: '',
-      backButtonIcon: 'icon-flecha-atras'
+      backButtonIcon: 'icon-flecha-atras',
+      monthNames: [
+        'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
+      ],
+      monthShortNames: [ 'ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sep', 'oct', 'nov', 'dic' ],
+      dayNames: [ 'domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado' ],
+      dayShortNames: [ 'dom', 'lun', 'mar', 'mie', 'jue', 'vie' ],
     }),
     PrimaryTabsPageModule,
     HomePageModule,

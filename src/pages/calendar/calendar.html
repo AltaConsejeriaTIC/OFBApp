@@ -15,19 +15,13 @@
   </div>
 </ion-header>
 
-<ion-content padding appBackground="dark">
-  <div *ngIf="showcalendar" class="calendarBox">
-    <div class="filterText"><p>Selecciona un día:</p></div>
-
-    <ion-calendar
-      #calendario
-      [options]="optionsMulti"
-      (onChange)="onChange($event)"
-      (monthChange)="monthChange($event)"
-    >
-    </ion-calendar>
-
-    <div class="calendarButton" (click)="showAllEvents(true)"><button ion-button>Ver todos los eventos del mes</button></div>
+<ion-content appBackground="dark">
+  <div *ngIf="showcalendar" class="calendar">
+    <div class="calendar__label">Selecciona un día:</div>
+    <ion-calendar #calendario [options]="optionsMulti" (onChange)="onChange($event)" (monthChange)="monthChange($event)"></ion-calendar>
+    <div class="calendar__view-all" (click)="showAllEvents(true)">
+      <button>Ver todos los eventos del mes</button>
+    </div>
   </div>
 
   <div class="event" *ngFor="let event of selectedDayEvents" (click)="goToEventDetails(event)">

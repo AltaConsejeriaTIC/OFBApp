@@ -13,7 +13,7 @@ page-calendar {
     .calendarButton {
       height: 32px;
       background-color: color($colors, 'salmon');
-      box-shadow: 0px 1px 5px rgba(0,0,0,.25);
+      box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.25);
       border-radius: 5px;
       padding: 0 9px;
 
@@ -76,241 +76,226 @@ page-calendar {
     }
   }
 
-  .scroll-content {
-    background-color: #282a35;
-    padding: 0 !important;
+  .calendar {
+    padding: 16px;
 
-    .calendarBox {
-      background-color: #282a35;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      border-bottom: thin solid color($colors, 'white');
+    &__label {
+      font-family: $font-family-Bitter;
+      font-size: 15px;
+      color: color($colors, 'white');
+      border-bottom: thin solid rgba(255, 255, 255, 0.1);
+      padding-bottom: 9px;
+    }
 
-      .filterText {
-        position: relative;
-        p {
-          margin-top: 10px;
-          margin-bottom: 10px;
+    ion-calendar {
+      background-color: color($colors, 'dark');
+      padding: 0;
+
+      .title {
+        display: none;
+      }
+
+      .week {
+        &-toolbar {
+          min-height: 0;
+        }
+
+        &-title {
+          color: color($colors, 'ship-gray');
+          font-family: $font-family-OpenSans;
+          font-style: normal;
+          font-weight: bold;
           font-size: 15px;
+          margin-top: 4px;
+          padding-top: 2px;
+          padding-bottom: 0;
+          height: 28px;
         }
       }
 
-      .filterText:before {
-        background-color: lightgray;
-        content: '';
-        width: 90%;
-        bottom: 0;
-        position: absolute;
-        left: 5%;
-        height: 1px;
-      }
-
-      p {
-        padding-left: 5%;
-        color: white;
-      }
-
-      ion-calendar {
-        background-color: #282a35;
-        padding: 0;
-
-        .title {
-          display: none;
-        }
-
-        button.days-btn {
-          border-radius: 50%;
-          width: 24px;
-          height: 24px;
-
-          p {
-            margin-left: -2px;
-          }
-
-          &.on-selected {
-            background-color: transparent;
-            border: 1px solid white;
-          }
-        }
-
+      &-month {
         .days {
-          width: 14%;
-          height: 5vh;
-          margin-bottom: 0;
-        }
+          .last-month-day, .next-month-day {
+            p {
+              display: none;
+            }
+          }
 
-        p,
-        li {
-          font-size: 1.2rem;
-          font-family: $font-family-OpenSans;
-          font-weight: 600;
-          margin-left: -1px;
-        }
-        .days-box {
-          padding: 0;
-        }
-        button.today {
-          background-color: #f8774e;
-          p {
-            color: black !important;
+          &-btn {
+            p {
+              font-family: $font-family-OpenSans;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 15px;
+              color: color($colors, 'ship-gray')!important;
+            }
+
+            &.today {
+              background: color($colors, 'coral');
+              font-family: $font-family-OpenSans;
+              font-style: normal;
+              font-weight: 600;
+              font-size: 15px;
+
+              p {
+                color: color($colors, 'black')!important;
+              }
+            }
+
+            &.on-selected {
+              border: thin solid color($colors, 'white');
+              background-color: transparent;
+
+              p {
+                color: color($colors, 'white')!important;
+              }
+            }
           }
         }
-      }
-
-      .calendarButton {
-        position: relative;
-        text-align: center;
-
-        .button-md {
-          height: 3.1rem;
-          font-size: 1.4rem;
-        }
-
-        span.button-inner {
-          font-size: 1.3rem;
-          font-family: $font-family-OpenSans;
-          text-transform: none;
-        }
-
-        .button-md.button-default.button-default-md {
-          margin: 0.8rem 0.2rem;
-          padding: 0 2.1em;
-          background-color: #f8774e;
-          color: black;
-        }
-      }
-
-      .calendarButton:before {
-        background-color: lightgray;
-        content: '';
-        width: 90%;
-        top: 0;
-        position: absolute;
-        left: 5%;
-        height: 1px;
       }
     }
 
-    .event {
-      min-height: 130px;
-      background-color: #1e2029;
-      margin-bottom: 1px;
+    &__view-all {
+      border-top: thin solid rgba(255, 255, 255, 0.2);
+      padding-top: 11px;
+      text-align: center;
 
-      .eventDate {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
+      button {
+        height: 37px;
+        background: color($colors, 'coral');
+        border-radius: 3px;
+        font-family: $font-family-OpenSans;
+        font-style: normal;
+        font-weight: normal;
+        line-height: normal;
+        font-size: 14px;
         text-align: center;
-        padding: 0;
+        color: color($colors, 'black');
+        padding-left: 2em;
+        padding-right: 2em;
+      }
+    }
+  }
 
-        p {
-          margin: 0;
-        }
+  .event {
+    min-height: 130px;
+    background-color: #1e2029;
+    margin-bottom: 1px;
+    border-top: thin solid color($colors, 'alto');
 
-        .priceEvent {
-          position: relative;
-          font-family: $font-family-OpenSans !important;
-          font-weight: 800;
-          font-size: 13px;
-          padding: 0 6px;
+    .eventDate {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0;
 
-          &.paid-event {
-            color: black;
-            background-color: #f8774e;
-          }
-        }
+      p {
+        margin: 0;
+      }
 
-        .dayAndMonthEvent {
-          display: flex;
-          flex-direction: column;
-          width: 100%;
-          flex-grow: 1;
-          justify-content: center;
-          padding: 2.5vh 0;
+      .priceEvent {
+        position: relative;
+        font-family: $font-family-OpenSans !important;
+        font-weight: 800;
+        font-size: 13px;
+        padding: 0 6px;
 
-          .eventDay {
-            font-weight: 800;
-            font-size: 2.4rem;
-            letter-spacing: 0.1em;
-          }
-          .eventMonth {
-            font-family: $font-family-OpenSans !important;
-            letter-spacing: 0.2em;
-          }
-        }
-
-        .ticket-type {
-          display: flex;
-          align-items: center;
-          width: 100%;
-          min-height: 50px;
-          border-top: solid 1px color($colors, navBarCalendar, base);
-
-          &.paid-event {
-            background-color: #f8774e;
-          }
+        &.paid-event {
+          color: black;
+          background-color: #f8774e;
         }
       }
 
-      .eventInfo {
-        background-color: #282a35;
+      .dayAndMonthEvent {
         display: flex;
-        align-items: start;
         flex-direction: column;
-        justify-content: space-around;
+        width: 100%;
+        flex-grow: 1;
+        justify-content: center;
+        padding: 2.5vh 0;
 
-        .icon-icon-icono-menu:before,
-        .ion-icon-icono-menu:before,
-        .ion-ios-icon-icono-menu:before,
-        .ion-ios-icon-icono-menu-outline:before,
-        .ion-md-icon-icono-menu:before,
-        .ion-md-icon-icono-menu-outline:before {
-          color: #f8774e !important;
-        }
-
-        p {
-          margin: 0 0 0 1.1vh;
-        }
-
-        .eventAutor {
-          font-family: $font-family-OpenSans !important;
+        .eventDay {
           font-weight: 800;
-          color: #f8774e;
+          font-size: 2.4rem;
+          letter-spacing: 0.1em;
         }
-
-        .eventTitle {
-          font-weight: bold;
-          font-size: 1.7rem;
-        }
-
-        .eventTime,
-        .eventPlace {
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          align-items: center;
-          color: #aeaeae;
+        .eventMonth {
           font-family: $font-family-OpenSans !important;
-          font-size: 12px;
-          margin-bottom: 3px;
-
-          ion-icon {
-            margin-right: 10px;
-            color: color($colors, navBarCalendar, base);
-          }
-
-          &.last-child {
-            margin-bottom: 0;
-          }
+          letter-spacing: 0.2em;
         }
+      }
+
+      .ticket-type {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        min-height: 50px;
+        border-top: solid 1px color($colors, navBarCalendar, base);
+
+        &.paid-event {
+          background-color: #f8774e;
+        }
+      }
+    }
+
+    .eventInfo {
+      background-color: #282a35;
+      display: flex;
+      align-items: start;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .icon-icon-icono-menu:before,
+      .ion-icon-icono-menu:before,
+      .ion-ios-icon-icono-menu:before,
+      .ion-ios-icon-icono-menu-outline:before,
+      .ion-md-icon-icono-menu:before,
+      .ion-md-icon-icono-menu-outline:before {
+        color: #f8774e !important;
       }
 
       p {
-        color: white;
-        font-size: 1.1rem;
+        margin: 0 0 0 1.1vh;
       }
+
+      .eventAutor {
+        font-family: $font-family-OpenSans !important;
+        font-weight: 800;
+        color: #f8774e;
+      }
+
+      .eventTitle {
+        font-weight: bold;
+        font-size: 1.7rem;
+      }
+
+      .eventTime,
+      .eventPlace {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        color: #aeaeae;
+        font-family: $font-family-OpenSans !important;
+        font-size: 12px;
+        margin-bottom: 3px;
+
+        ion-icon {
+          margin-right: 10px;
+          color: color($colors, navBarCalendar, base);
+        }
+
+        &.last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    p {
+      color: white;
+      font-size: 1.1rem;
     }
   }
 
