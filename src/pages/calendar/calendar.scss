@@ -1,62 +1,71 @@
 page-calendar {
-  .headerMonth{
+  .headerMonth {
     text-transform: uppercase;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 6vh;
-    background-color: #F8774E;
+    background-color: color($colors, 'coral');
     font-family: $font-family-OpenSans;
+    min-height: 40px;
 
-    .calendarButton{
-      background-color: #F5A288;
-      height: 3rem;
-      padding: 0 0.5em;
-      ion-icon.icon.icon-md.ion-md-icon-icono-calendario{
-        padding-right: 0.3em;
-        font-size: 1.6em;
+    .calendarButton {
+      height: 32px;
+      background-color: color($colors, 'salmon');
+      box-shadow: 0px 1px 5px rgba(0,0,0,.25);
+      border-radius: 5px;
+      padding: 0 9px;
+
+      ion-icon {
+        margin: 0;
+        font-size: 24px;
+      }
+
+      ion-icon + ion-icon {
+        margin-left: 4px;
       }
     }
 
     p {
-        font-size: 15px;
-        font-family: $font-family-OpenSans !important;
-        padding-left: 1.5em;
-        position: relative;
+      font-size: 15px;
+      font-family: $font-family-OpenSans !important;
+      padding-left: 1.5em;
+      position: relative;
     }
 
     ion-icon {
-        font-size: 2.4em;
-        color: black;
+      font-size: 2rem;
+      color: black;
+      margin: 0 7px;
     }
 
-    ion-icon.icon.icon-md.ion-md-icon-fleacha-atras{
+    ion-icon.icon.icon-md.ion-md-icon-fleacha-atras {
       position: relative;
       padding-left: 1%;
     }
 
-    ion-icon.icon.icon-md.ion-md-icon-fleacha-atras:after{
-        background-color: rgba(0, 0, 0, 0.15);
-        content: '';
-        height: 90%;
-        right: -1vh;
-        position: absolute;
-        top: 5%;
-        width: 2px;
-
+    ion-icon.icon.icon-md.ion-md-icon-fleacha-atras:after {
+      background-color: rgba(0, 0, 0, 0.15);
+      content: '';
+      height: 90%;
+      right: -1vh;
+      position: absolute;
+      top: 5%;
+      width: 2px;
     }
 
-    ion-icon.icon.icon-md.ion-ios-arrow-up, ion-icon.icon.icon-md.ion-ios-arrow-down{
+    ion-icon.icon.icon-md.ion-ios-arrow-up,
+    ion-icon.icon.icon-md.ion-ios-arrow-down {
       font-size: 2rem;
     }
 
-    ion-icon.icon.icon-md.ion-md-icon-flecha-derecha{
+    ion-icon.icon.icon-md.ion-md-icon-flecha-derecha {
       position: relative;
       padding-right: 1%;
     }
 
-    ion-icon.icon.icon-md.ion-md-icon-flecha-derecha:after{
+    ion-icon.icon.icon-md.ion-md-icon-flecha-derecha:after {
       background-color: rgba(0, 0, 0, 0.15);
       content: '';
       height: 90%;
@@ -67,26 +76,27 @@ page-calendar {
     }
   }
 
-  .scroll-content{
-    background-color: #282A35;
+  .scroll-content {
+    background-color: #282a35;
     padding: 0 !important;
 
-    .calendarBox{
-      background-color: #282A35;
+    .calendarBox {
+      background-color: #282a35;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      border-bottom: thin solid color($colors, 'white');
 
-      .filterText{
-        position:  relative;
-        p{
+      .filterText {
+        position: relative;
+        p {
           margin-top: 10px;
           margin-bottom: 10px;
           font-size: 15px;
         }
       }
 
-      .filterText:before{
+      .filterText:before {
         background-color: lightgray;
         content: '';
         width: 90%;
@@ -96,16 +106,16 @@ page-calendar {
         height: 1px;
       }
 
-      p{
+      p {
         padding-left: 5%;
         color: white;
       }
 
-      ion-calendar{
-        background-color: #282A35;
+      ion-calendar {
+        background-color: #282a35;
         padding: 0;
 
-        .title{
+        .title {
           display: none;
         }
 
@@ -130,29 +140,29 @@ page-calendar {
           margin-bottom: 0;
         }
 
-        p, li{
+        p,
+        li {
           font-size: 1.2rem;
           font-family: $font-family-OpenSans;
           font-weight: 600;
           margin-left: -1px;
         }
         .days-box {
-            padding: 0;
+          padding: 0;
         }
         button.today {
-          background-color: #F8774E;
-          p{
-          color: black !important;
+          background-color: #f8774e;
+          p {
+            color: black !important;
           }
         }
-
       }
 
-      .calendarButton{
+      .calendarButton {
         position: relative;
         text-align: center;
 
-        .button-md{
+        .button-md {
           height: 3.1rem;
           font-size: 1.4rem;
         }
@@ -166,12 +176,12 @@ page-calendar {
         .button-md.button-default.button-default-md {
           margin: 0.8rem 0.2rem;
           padding: 0 2.1em;
-          background-color: #F8774E;
+          background-color: #f8774e;
           color: black;
         }
       }
 
-      .calendarButton:before{
+      .calendarButton:before {
         background-color: lightgray;
         content: '';
         width: 90%;
@@ -182,13 +192,12 @@ page-calendar {
       }
     }
 
-    .event{
+    .event {
       min-height: 130px;
-      background-color: #1E2029;
+      background-color: #1e2029;
       margin-bottom: 1px;
-      border-top: 1px solid white;
 
-      .eventDate{
+      .eventDate {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -196,11 +205,11 @@ page-calendar {
         text-align: center;
         padding: 0;
 
-        p{
+        p {
           margin: 0;
         }
 
-        .priceEvent{
+        .priceEvent {
           position: relative;
           font-family: $font-family-OpenSans !important;
           font-weight: 800;
@@ -209,11 +218,11 @@ page-calendar {
 
           &.paid-event {
             color: black;
-            background-color: #F8774E;
+            background-color: #f8774e;
           }
         }
 
-        .dayAndMonthEvent{
+        .dayAndMonthEvent {
           display: flex;
           flex-direction: column;
           width: 100%;
@@ -221,12 +230,12 @@ page-calendar {
           justify-content: center;
           padding: 2.5vh 0;
 
-          .eventDay{
+          .eventDay {
             font-weight: 800;
             font-size: 2.4rem;
             letter-spacing: 0.1em;
           }
-          .eventMonth{
+          .eventMonth {
             font-family: $font-family-OpenSans !important;
             letter-spacing: 0.2em;
           }
@@ -240,15 +249,13 @@ page-calendar {
           border-top: solid 1px color($colors, navBarCalendar, base);
 
           &.paid-event {
-            background-color: #F8774E;
+            background-color: #f8774e;
           }
         }
-
       }
 
-      .eventInfo{
-        height: 100%;
-        background-color: #282A35;
+      .eventInfo {
+        background-color: #282a35;
         display: flex;
         align-items: start;
         flex-direction: column;
@@ -259,31 +266,32 @@ page-calendar {
         .ion-ios-icon-icono-menu:before,
         .ion-ios-icon-icono-menu-outline:before,
         .ion-md-icon-icono-menu:before,
-        .ion-md-icon-icono-menu-outline:before{
-          color: #F8774E !important;
+        .ion-md-icon-icono-menu-outline:before {
+          color: #f8774e !important;
         }
 
         p {
           margin: 0 0 0 1.1vh;
         }
 
-        .eventAutor{
+        .eventAutor {
           font-family: $font-family-OpenSans !important;
           font-weight: 800;
-          color: #F8774E;
+          color: #f8774e;
         }
 
-        .eventTitle{
+        .eventTitle {
           font-weight: bold;
           font-size: 1.7rem;
         }
 
-        .eventTime, .eventPlace{
+        .eventTime,
+        .eventPlace {
           display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
-          color: #AEAEAE;
+          color: #aeaeae;
           font-family: $font-family-OpenSans !important;
           font-size: 12px;
           margin-bottom: 3px;
@@ -299,15 +307,15 @@ page-calendar {
         }
       }
 
-      p{
-        color:white;
+      p {
+        color: white;
         font-size: 1.1rem;
       }
     }
   }
 
   .no-events-available {
-    background-color: #282A35;
+    background-color: #282a35;
     border-top: solid 1px white;
     padding: 0 15px;
     display: flex;

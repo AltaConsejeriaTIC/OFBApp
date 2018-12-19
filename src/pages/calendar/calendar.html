@@ -3,15 +3,15 @@
     <ion-title>calendario de conciertos</ion-title>
   </ion-navbar>
 
-  <div [ngClass]="{ headerCenter: showcalendar == false }" class="headerMonth">
-    <ion-icon name="icon-flecha-atras" *ngIf="showcalendar" (click)="prevMonthChange($event)"></ion-icon>
-    <p [ngClass]="{ 'padding-right': showcalendar == false }">{{ day }} {{ month }}, {{ year }}</p>
-    <button class="calendarButton" ion-button (click)="toggleCalendar()">
+  <div class="headerMonth">
+    <ion-icon name="icon-flecha-atras" (click)="prevMonthChange($event)" [appHidden]="!showcalendar"></ion-icon>
+    <p>{{ day }} {{ month }}, {{ year }}</p>
+    <button class="calendarButton" (click)="toggleCalendar()">
       <ion-icon name="icon-icono-calendario"></ion-icon>
       <ion-icon name="ios-arrow-up" *ngIf="showcalendar"></ion-icon>
       <ion-icon name="ios-arrow-down" *ngIf="!showcalendar"></ion-icon>
     </button>
-    <ion-icon name="icon-flecha-derecha" *ngIf="showcalendar" (click)="nextMonthChange($event)"></ion-icon>
+    <ion-icon name="icon-flecha-derecha" (click)="nextMonthChange($event)" [appHidden]="!showcalendar"></ion-icon>
   </div>
 </ion-header>
 
@@ -21,7 +21,6 @@
 
     <ion-calendar
       #calendario
-      [(ngModel)]="_calendarMonthValue"
       [options]="optionsMulti"
       (onChange)="onChange($event)"
       (monthChange)="monthChange($event)"
@@ -32,7 +31,7 @@
   </div>
 
   <div class="event" *ngFor="let event of selectedDayEvents" (click)="goToEventDetails(event)">
-    <ion-row>
+    <ion-row align-items-stretch>
       <ion-col col-3 class="eventDate">
         <div class="dayAndMonthEvent">
           <p class="eventDay">{{ event.date | date: 'd' }}</p>

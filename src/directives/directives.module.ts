@@ -4,6 +4,7 @@ import { FitDirective } from './fit/fit';
 import { LinesDirective } from './lines/lines';
 import { GradientDirective } from './gradient/gradient';
 import { PadIosDirective } from './pad-ios/pad-ios';
+import { HiddenDirective } from './hidden/hidden';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PadIosDirective } from './pad-ios/pad-ios';
     FitDirective,
     LinesDirective,
     GradientDirective,
-    PadIosDirective
+    PadIosDirective,
+    HiddenDirective
   ],
   imports: [],
   exports: [
@@ -19,7 +21,8 @@ import { PadIosDirective } from './pad-ios/pad-ios';
     FitDirective,
     LinesDirective,
     GradientDirective,
-    PadIosDirective
+    PadIosDirective,
+    HiddenDirective
   ]
 })
 export class DirectivesModule { }

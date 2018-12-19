@@ -3,6 +3,7 @@ import { IonicPageModule } from 'ionic-angular';
 import { CalendarPage } from './calendar';
 import { CalendarModule } from 'ion2-calendar';
 import { PipesModule } from '../../pipes/pipes.module';
+import { DirectivesModule } from '../../directives/directives.module';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import { PipesModule } from '../../pipes/pipes.module';
   imports: [
     IonicPageModule.forChild(CalendarPage),
     CalendarModule,
-    PipesModule
+    PipesModule,
+    DirectivesModule
   ],
 })
 export class CalendarPageModule { }
