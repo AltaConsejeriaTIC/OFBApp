@@ -75,9 +75,9 @@ ionic cordova run android --device
 
 | Medida    | nombre                    |
 |-----------|---------------------------|
+| 72 x 72   | drawable-hdpi-icon.png    |
 | 36 x 36   | drawable-ldpi-icon.png    |
 | 48 x 48   | drawable-mdpi-icon.png    |
-| 72 x 72   | drawable-hdpi-icon.png    |
 | 96 x 96   | drawable-xhdpi-icon.png   |
 | 144 x 144 | drawable-xxhdpi-icon.png  |
 | 192 x 192 | drawable-xxxhdpi-icon.png |
