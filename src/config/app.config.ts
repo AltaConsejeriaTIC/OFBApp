@@ -10,4 +10,5 @@ export class AppConfig {
   public static monthlyEvents = `${ENV.endpoint.app}/eventos/mes`;
   public static trivia = `${ENV.endpoint.app}/trivia/question`;
   public static uploadAnswer = `${ENV.endpoint.app}/trivia/upload-answer`;
+  public static getWinners = `${ENV.endpoint.app}/trivia/get-winners`;
 }

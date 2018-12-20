@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TriviaNotAvailablePage } from '../trivia-not-available/trivia-not-available';
+import { TriviaWinnersPage } from '../trivia-winners/trivia-winners';
 import { TriviaService } from './trivia.service';
 
 @IonicPage()
@@ -9,7 +10,6 @@ import { TriviaService } from './trivia.service';
   templateUrl: 'trivia.html',
 })
 export class TriviaPage {
-  public isTriviaAvailable = true;
   public trivia: any = {};
   public remainingTime: any = {
     d: '-',
@@ -19,20 +19,31 @@ export class TriviaPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) { }
 
-  public ionViewDidLoad() {
-    if (!this.isTriviaAvailable) {
-      this.navCtrl.push(TriviaNotAvailablePage);
-    }
+  public ionViewWillEnter() {
     this.getTrivia();
+  }
+
+  public goToNotTriviaAvailable() {
+    this.navCtrl.setRoot(TriviaNotAvailablePage);
   }
 
   public getTrivia() {
     this.triviaService.getTrivia().subscribe((data) => {
       if (Object.keys(data).length === 0 && data.constructor === Object) {
-        this.isTriviaAvailable = false;
+        this.getWinners();
       } else {
         this.trivia = data;
         this.getRemainingTime();
+      }
+    });
+  }
+
+  public getWinners() {
+    this.triviaService.getWinners().subscribe((data) => {
+      if (Object.keys(data).length === 0 && data.constructor === Object) {
+        this.goToNotTriviaAvailable();
+      } else {
+        this.navCtrl.setRoot(TriviaWinnersPage, data);
       }
     });
   }

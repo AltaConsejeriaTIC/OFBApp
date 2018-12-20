@@ -7,5 +7,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'trivia-winners.html',
 })
 export class TriviaWinnersPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams) { }
+	public winners = {};
+
+
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  	this.winners = navParams['data'];
+  	console.log(this.winners);
+  }
 }

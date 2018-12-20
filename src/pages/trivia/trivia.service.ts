@@ -10,5 +10,9 @@ export class TriviaService {
   public getTrivia() {
     return this.http.get(AppConfig.trivia);
   }
+
+  public getWinners() {
+    return this.http.get(AppConfig.getWinners);
+  }
 }
 

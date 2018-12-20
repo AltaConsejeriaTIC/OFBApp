@@ -19,7 +19,7 @@ export class ResponseInterceptor implements HttpInterceptor {
     return next.handle(request).do(
       (event: HttpEvent<any>) => {
         if (event instanceof HttpResponse) {
-          console.log('Interceptor response', event);
+          // console.log('Interceptor response', event);
         }
       },
       (exception: any) => {

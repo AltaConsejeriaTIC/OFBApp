@@ -15,7 +15,6 @@ export class TriviaSurveyPage {
     lastName: '',
     email: '',
     phone: '',
-    newsletterPhone: false,
     newsletterEmail: false,
     rememberData: false,
     tos: false,
@@ -49,41 +48,46 @@ export class TriviaSurveyPage {
         lastName: this.inputs.lastName,
         email: this.inputs.email,
         cellphone: this.inputs.phone,
-        contactPreference: this.inputs.newsletterEmail ? 'email' : this.inputs.newsletterPhone ? ' phone' : '',
+        contactPreference: this.inputs.newsletterEmail ? 'email' : '',
         answer: this.inputs.triviaAnswer,
       };
+      if (answer.contactPreference === '') { delete answer.contactPreference};
       this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
+        console.log(data)
         this.showSuccessAlert();
       });
     }
   }
 
-
-
   public validateFields() {
-    const inputError = false;
+    let inputError = false;
     if (this.inputs.triviaAnswer === '') {
       this.inputsError.triviaAnswer = true;
+      inputError = true;
     } else {
       this.inputsError.triviaAnswer = false;
     }
     if (this.inputs.name === '') {
       this.inputsError.name = true;
+      inputError = true;
     } else {
       this.inputsError.name = false;
     }
     if (this.inputs.lastName === '') {
       this.inputsError.lastName = true;
+      inputError = true;
     } else {
       this.inputsError.lastName = false;
     }
     if (!this.validateEmail()) {
       this.inputsError.email = true;
+      inputError = true;
     } else {
       this.inputsError.email = false;
     }
     if (!this.validatePhone()) {
       this.inputsError.phone = true;
+      inputError = true;
     } else {
       this.inputsError.phone = false;
     }
@@ -92,7 +96,9 @@ export class TriviaSurveyPage {
     } else {
       this.inputsError.tos = false;
     }
+    console.log(inputError)
     this.inputError = inputError;
+    console.log(this.inputsError)
     return inputError;
   }
 

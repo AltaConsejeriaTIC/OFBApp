@@ -8,13 +8,9 @@
 <ion-content appBackground="dark">
   <div class='main-content'>
     <img src='./assets/imgs/trivia/trivia-winners.svg'>
-    <h1>Los ganadores de esta trivia son:</h1>
-    <ul>
-      <li>Alejandro</li>
-      <li>Nombre Largo</li>
-      <li>Nombre</li>
-      <li>Sebastian</li>
-      <li>Lucas</li>
+    <h1>Los ganaores de esta trivia son:</h1>
+    <ul >
+      <li *ngFor='let winner of winners.winners'>{{winner}}</li>
     </ul>
     <p>La Orquesta Filarmónica de Bogotá se comunicará con los ganadores.</p>
     <div class="separator"></div>

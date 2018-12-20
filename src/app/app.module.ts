@@ -28,6 +28,7 @@ import { TriviaPageModule } from '../pages/trivia/trivia.module';
 import { TriviaService } from '../pages/trivia/trivia.service';
 import { TriviaSurveyService } from '../pages/trivia-survey/trivia-survey.service';
 import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/trivia-not-available.module';
+import { TriviaWinnersPageModule } from '../pages/trivia-winners/trivia-winners.module';
 import { NewsPageModule } from '../pages/news/news.module';
 import { NewsService } from '../pages/news/news.service';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
@@ -55,7 +56,7 @@ import { Firebase}  from "@ionic-native/firebase";
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       mode: 'ios',
-      tabsHideOnSubPages: true,
+      tabsHideOnSubPages: false,
       backButtonText: '',
       backButtonIcon: 'icon-flecha-atras',
       monthNames: [
@@ -72,6 +73,7 @@ import { Firebase}  from "@ionic-native/firebase";
     EduProjectPageModule,
     TriviaPageModule,
     TriviaNotAvailablePageModule,
+    TriviaWinnersPageModule,
     NewsPageModule,
     NewsDetailsPageModule,
     EventsMonthPageModule,
