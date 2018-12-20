@@ -44,6 +44,7 @@ import { VideoProvider } from '../providers/video/video';
 // Interceptors ...
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ResponseInterceptor } from '../interceptors/response.interceptor';
+import { Firebase}  from "@ionic-native/firebase";
 
 @NgModule({
   declarations: [
@@ -98,6 +99,7 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
     TriviaService,
     TriviaSurveyService,
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
+    Firebase
   ]
 })
 export class AppModule { }

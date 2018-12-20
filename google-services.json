@@ -1,0 +1,110 @@
+{
+  "project_info": {
+    "project_number": "819323735875",
+    "firebase_url": "https://ofbo-4fc79.firebaseio.com",
+    "project_id": "ofbo-4fc79",
+    "storage_bucket": "ofbo-4fc79.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819323735875:android:4a9d3e4fa26940b5",
+        "android_client_info": {
+          "package_name": "gov.altaconsejeriatic.ofbapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819323735875-00bivnprhrb1270sfj3s684uubumru8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA--p87CgLE2EPpf4TAcaPJ4FNkdVvm5To"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:819323735875:android:764d2cb7da3280eb",
+        "android_client_info": {
+          "package_name": "io.ionic.starter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "819323735875-e5bjh7ra119p0v8f040h9577gskvkgj5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "1dd27c0c3f028ee7aa3177008995857ebecf3045"
+          }
+        },
+        {
+          "client_id": "819323735875-m6jrk2jacm6iruhqpj8f2du7ae5rsa3v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "95bee153e6399a5648070d7dc36f711b7924ea39"
+          }
+        },
+        {
+          "client_id": "819323735875-ik0b893qivnhon91lps6bclnk2uutr8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.ionic.starter",
+            "certificate_hash": "4e28dfeb0de4dc8212ffbfe64ea3b679fea09824"
+          }
+        },
+        {
+          "client_id": "819323735875-00bivnprhrb1270sfj3s684uubumru8r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA--p87CgLE2EPpf4TAcaPJ4FNkdVvm5To"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "819323735875-00bivnprhrb1270sfj3s684uubumru8r.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "819323735875-n6hrd756n0d2orl9krkfr83p0vvp0bde.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "gov.altaconsejeriatic.ofbapp",
+                "app_store_id": "1447003286"
+              }
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
