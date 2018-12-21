@@ -56,7 +56,7 @@ import { Firebase}  from "@ionic-native/firebase";
     HttpClientModule,
     IonicModule.forRoot(MyApp, {
       mode: 'ios',
-      tabsHideOnSubPages: false,
+      tabsHideOnSubPages: true,
       backButtonText: '',
       backButtonIcon: 'icon-flecha-atras',
       monthNames: [
