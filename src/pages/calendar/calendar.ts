@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
 import { CalendarComponentOptions, CalendarComponent, DayConfig, CalendarComponentMonthChange } from 'ion2-calendar';
 import { CalendarService } from '../../providers/calendar/calendar.service';
 import { Event } from '../../interfaces/event.interface';
@@ -22,6 +22,9 @@ export class CalendarPage {
 
   @ViewChild('calendario')
   public calendario: CalendarComponent;
+
+  @ViewChild(Content)
+  public content: Content;
 
   get firstDay(): number {
     return new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(), 1).getDate();
@@ -117,6 +120,7 @@ export class CalendarPage {
 
   public toggleCalendar() {
     this.showcalendar = !this.showcalendar;
+    this.content.scrollToTop();
   }
 
   public allEvents() {
