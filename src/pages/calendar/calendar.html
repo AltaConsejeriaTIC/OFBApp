@@ -4,51 +4,59 @@
   </ion-navbar>
 
   <div class="headerMonth">
-    <ion-icon name="icon-flecha-atras" (click)="prevMonthChange($event)" [appHidden]="!showcalendar"></ion-icon>
-    <p>{{ day }} {{ month }}, {{ year }}</p>
+    <ion-icon name="icon-flecha-atras" (click)="prevMonthChange()" [appHidden]="!showcalendar"></ion-icon>
+    <div *ngIf="!all">{{ selectedDate | date:'longDate' }}</div>
+    <div *ngIf="all">{{ selectedDate | date:'MMMM' }} de {{ selectedDate | date:'y' }}</div>
     <button class="calendarButton" (click)="toggleCalendar()">
       <ion-icon name="icon-icono-calendario"></ion-icon>
       <ion-icon name="ios-arrow-up" *ngIf="showcalendar"></ion-icon>
       <ion-icon name="ios-arrow-down" *ngIf="!showcalendar"></ion-icon>
     </button>
-    <ion-icon name="icon-flecha-derecha" (click)="nextMonthChange($event)" [appHidden]="!showcalendar"></ion-icon>
+    <ion-icon name="icon-flecha-derecha" (click)="nextMonthChange()" [appHidden]="!showcalendar"></ion-icon>
   </div>
 </ion-header>
 
 <ion-content appBackground="dark">
-  <div *ngIf="showcalendar" class="calendar">
-    <div class="calendar__label">Selecciona un día:</div>
-    <ion-calendar #calendario [options]="optionsMulti" (onChange)="onChange($event)" (monthChange)="monthChange($event)"></ion-calendar>
-    <div class="calendar__view-all" (click)="showAllEvents(true)">
-      <button>Ver todos los eventos del mes</button>
+  <ng-container *ngIf="loaded else loading">
+    <div *ngIf="showcalendar" class="calendar">
+      <div class="calendar__label">Selecciona un día:</div>
+      <ion-calendar #calendario [(ngModel)]="selectedDate" [options]="options" (onChange)="onChange()" (monthChange)="monthChange($event)" type="js-date"></ion-calendar>
+      <div class="calendar__view-all" (click)="allEvents()">
+        <button>Ver todos los eventos del mes</button>
+      </div>
     </div>
-  </div>
 
-  <div class="event" *ngFor="let event of selectedDayEvents" (click)="goToEventDetails(event)">
-    <ion-row align-items-stretch>
-      <ion-col col-3 class="eventDate">
-        <div class="dayAndMonthEvent">
-          <p class="eventDay">{{ event.date | date: 'd' }}</p>
-          <p class="eventMonth" text-uppercase>{{ event.date | date: 'MMM' | replace: '.' }}</p>
-        </div>
-        <div class="ticket-type" [ngClass]="{ 'paid-event': event.isFree == false }">
-          <p class="priceEvent" [ngClass]="{ 'paid-event': event.isFree == false }">
-            {{ event.isFree ? 'Entrada Libre*' : 'Concierto pago' }}
-          </p>
-        </div>
-      </ion-col>
+    <div class="event" *ngFor="let event of dayEvents" [navPush]="'EventDetailsPage'" [navParams]="event">
+      <ion-row align-items-stretch>
+        <ion-col col-3 class="event__date">
+          <div class="dayAndMonthEvent">
+            <p class="event__day">{{ event.date | date: 'd' }}</p>
+            <p class="event__month" text-uppercase>{{ event.date | date: 'MMM' | replace: '.' }}</p>
+          </div>
+          <div class="ticket-type" [ngClass]="{ 'paid-event': !event.isFree }">
+            <p class="price-event" *ngIf="event.isFree">Entrada Libre*</p>
+            <p class="price-event paid-event" *ngIf="!event.isFree">Concierto pago</p>
+          </div>
+        </ion-col>
 
-      <ion-col col-9 class="eventInfo">
-        <p class="eventAutor">{{ event.label }}</p>
-        <p class="eventTitle">{{ event.stripedTitle }}</p>
-        <p class="eventTime"><ion-icon name="icon-clock"></ion-icon>{{ event.startHour }}</p>
-        <p class="eventPlace">
-          <ion-icon name="icon-map-marker"></ion-icon>
-          {{ event.place.name }}
-        </p>
-      </ion-col>
-    </ion-row>
-  </div>
+        <ion-col col-9 class="event__info">
+          <div class="event__info-author" appLines="1">{{ event.label }}</div>
+          <div class="event__info-title" appLines="2">{{ event.title }}</div>
+          <div class="event__info-time"><ion-icon name="icon-clock"></ion-icon>{{ event.startHour | empty:'-' }}</div>
+          <div class="event__info-place">
+            <ion-icon name="icon-map-marker"></ion-icon>
+            {{ event.place.name | empty:'-' }}
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
 
-  <div *ngIf="noEvents" class="no-events-available"><span>Actualmente no hay eventos programados para este día.</span></div>
+    <div *ngIf="!dayEvents.length" class="no-events-available">
+      <span>Actualmente no hay eventos programados para este día.</span>
+    </div>
+  </ng-container>
 </ion-content>
+
+<ng-template #loading>
+  <h3>Cargando...</h3>
+</ng-template>
