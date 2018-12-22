@@ -126,6 +126,7 @@ page-calendar {
 
           &.today {
             background: color($colors, 'coral')!important;
+            border: thin solid color($colors, 'coral')!important;
             font-family: $font-family-OpenSans;
             font-style: normal;
             font-weight: 600;
