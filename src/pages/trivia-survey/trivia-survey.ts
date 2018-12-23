@@ -51,9 +51,10 @@ export class TriviaSurveyPage {
         contactPreference: this.inputs.newsletterEmail ? 'email' : '',
         answer: this.inputs.triviaAnswer,
       };
-      if (answer.contactPreference === '') { delete answer.contactPreference};
+      if (answer.contactPreference === '') {
+        delete answer.contactPreference;
+      }
       this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
-        console.log(data)
         this.showSuccessAlert();
       });
     }

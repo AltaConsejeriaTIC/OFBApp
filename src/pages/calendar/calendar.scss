@@ -114,41 +114,37 @@ page-calendar {
       }
 
       &-month {
-        .days {
-          .last-month-day, .next-month-day {
-            p {
-              display: none;
+        .days-btn {
+          p, &:disabled {
+            font-family: $font-family-OpenSans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+            color: color($colors, 'ship-gray')!important;
+            opacity: 1;
+          }
+
+          &.today {
+            background: color($colors, 'coral')!important;
+            border: thin solid color($colors, 'coral')!important;
+            font-family: $font-family-OpenSans;
+            font-style: normal;
+            font-weight: 600;
+            font-size: 15px;
+
+            &.is-available p {
+              color: color($colors, 'black')!important;
             }
           }
 
-          &-btn {
+          &.on-selected {
+            border: thin solid color($colors, 'white');
+            background-color: transparent;
+          }
+
+          &.is-available {
             p {
-              font-family: $font-family-OpenSans;
-              font-style: normal;
-              font-weight: 600;
-              font-size: 15px;
-              color: color($colors, 'ship-gray')!important;
-            }
-
-            &.today {
-              background: color($colors, 'coral');
-              font-family: $font-family-OpenSans;
-              font-style: normal;
-              font-weight: 600;
-              font-size: 15px;
-
-              p {
-                color: color($colors, 'black')!important;
-              }
-            }
-
-            &.on-selected {
-              border: thin solid color($colors, 'white');
-              background-color: transparent;
-
-              p {
-                color: color($colors, 'white')!important;
-              }
+              color: color($colors, 'white')!important;
             }
           }
         }
@@ -183,30 +179,17 @@ page-calendar {
     margin-bottom: 1px;
     border-top: thin solid color($colors, 'alto');
 
-    .eventDate {
+    p {
+      color: color($colors, 'white');
+    }
+
+    &__date {
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       text-align: center;
       padding: 0;
-
-      p {
-        margin: 0;
-      }
-
-      .priceEvent {
-        position: relative;
-        font-family: $font-family-OpenSans !important;
-        font-weight: 800;
-        font-size: 13px;
-        padding: 0 6px;
-
-        &.paid-event {
-          color: black;
-          background-color: #f8774e;
-        }
-      }
 
       .dayAndMonthEvent {
         display: flex;
@@ -215,16 +198,6 @@ page-calendar {
         flex-grow: 1;
         justify-content: center;
         padding: 2.5vh 0;
-
-        .eventDay {
-          font-weight: 800;
-          font-size: 2.4rem;
-          letter-spacing: 0.1em;
-        }
-        .eventMonth {
-          font-family: $font-family-OpenSans !important;
-          letter-spacing: 0.2em;
-        }
       }
 
       .ticket-type {
@@ -235,17 +208,47 @@ page-calendar {
         border-top: solid 1px color($colors, navBarCalendar, base);
 
         &.paid-event {
-          background-color: #f8774e;
+          background-color: color($colors, 'coral');
+        }
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .price-event {
+        position: relative;
+        font-family: $font-family-OpenSans !important;
+        font-weight: 800;
+        font-size: 13px;
+        padding: 0 6px;
+
+        &.paid-event {
+          color: color($colors, 'black');
+          background-color: color($colors, 'coral');
         }
       }
     }
 
-    .eventInfo {
+    &__day {
+      font-weight: 800;
+      font-size: 2.4rem;
+      letter-spacing: 0.1em;
+    }
+
+    &__month {
+      font-family: $font-family-OpenSans !important;
+      letter-spacing: 0.2em;
+    }
+
+    .event__info {
       background-color: #282a35;
       display: flex;
       align-items: start;
       flex-direction: column;
       justify-content: space-around;
+      padding: 8px 14px;
+      color: color($colors, 'white');
 
       .icon-icon-icono-menu:before,
       .ion-icon-icono-menu:before,
@@ -253,34 +256,36 @@ page-calendar {
       .ion-ios-icon-icono-menu-outline:before,
       .ion-md-icon-icono-menu:before,
       .ion-md-icon-icono-menu-outline:before {
-        color: #f8774e !important;
+        color: color($colors, 'coral') !important;
       }
 
-      p {
-        margin: 0 0 0 1.1vh;
+      &-author {
+        font-family: $font-family-OpenSans;
+        font-weight: 600;
+        font-size: 12px;
+        color: color($colors, 'coral');
       }
 
-      .eventAutor {
-        font-family: $font-family-OpenSans !important;
-        font-weight: 800;
-        color: #f8774e;
-      }
-
-      .eventTitle {
+      &-title {
+        font-family: $font-family-Bitter;
         font-weight: bold;
-        font-size: 1.7rem;
+        line-height: 27px;
+        font-size: 18px;
+        color: color($colors, 'white');
+        margin-top: 4px;
       }
 
-      .eventTime,
-      .eventPlace {
+      &-time, &-place {
         display: flex;
         flex-direction: row;
         justify-content: center;
         align-items: center;
         color: #aeaeae;
-        font-family: $font-family-OpenSans !important;
-        font-size: 12px;
-        margin-bottom: 3px;
+        font-family: $font-family-OpenSans;
+        font-size: 11px;
+        margin-top: 8px;
+
+        color: #AEAEAE;
 
         ion-icon {
           margin-right: 10px;
@@ -291,11 +296,6 @@ page-calendar {
           margin-bottom: 0;
         }
       }
-    }
-
-    p {
-      color: white;
-      font-size: 1.1rem;
     }
   }
 

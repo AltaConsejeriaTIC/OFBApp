@@ -1,8 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { EventDetailsPage } from '../event-details/event-details';
-import { CalendarComponentOptions, CalendarComponent } from 'ion2-calendar';
-import { CalendarService } from './calendar.service';
+import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { CalendarComponentOptions, CalendarComponent, DayConfig, CalendarComponentMonthChange } from 'ion2-calendar';
+import { CalendarService } from '../../providers/calendar/calendar.service';
+import { Event } from '../../interfaces/event.interface';
 
 @IonicPage()
 @Component({
@@ -10,165 +10,144 @@ import { CalendarService } from './calendar.service';
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
-  public monthsNames = {
-    '01': 'ENERO',
-    '02': 'FEBRERO',
-    '03': 'MARZO',
-    '04': 'ABRIL',
-    '05': 'MAYO',
-    '06': 'JUNIO',
-    '07': 'JULIO',
-    '08': 'AGOSTO',
-    '09': 'SEPTIEMBRE',
-    '10': 'OCTUBRE',
-    '11': 'NOVIEMBRE',
-    '12': 'DICIEMBRE',
-  };
-
-  public events: any;
-  public calendarIndex: any;
-  public selectedDayEvents: any;
-  public selectedMonth: any;
-  public noEvents: any;
-  public month: string;
-  public day: any;
-  public year: number;
+  public loaded = false;
   public showcalendar = true;
-  public date: string;
-  public type: 'string';
-
-  public optionsMulti: CalendarComponentOptions = {
-    weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
-    monthPickerFormat: [
-      'ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO', 'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE'
-    ],
-    monthFormat: 'MMM YYYY',
-    weekStart: 1,
-    from: new Date('2018-11-01')
-  };
+  public selectedDate = new Date();
+  private events: Event[];
+  public options: CalendarComponentOptions;
+  public dayEvents: Event[];
+  private from: Date;
+  private to: Date;
+  public all = false;
 
   @ViewChild('calendario')
   public calendario: CalendarComponent;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private calendarService: CalendarService) {
-    this.selectedMonth = navParams['data'];
+  @ViewChild(Content)
+  public content: Content;
+
+  get firstDay(): number {
+    return new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth(), 1).getDate();
   }
+
+  get lastDay(): number {
+    return new Date(this.selectedDate.getFullYear(), this.selectedDate.getMonth() + 1, 0).getDate();
+  }
+
+  get day(): number {
+    return this.selectedDate.getDate();
+  }
+
+  get month(): number {
+    return this.selectedDate.getMonth();
+  }
+
+  get year(): number {
+    return this.selectedDate.getFullYear();
+  }
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, private calendarService: CalendarService) { }
 
   public ionViewDidLoad() {
-    this.getDate();
-    this.getMonthlyEvents();
+    this.init();
+    this.getEvents().then(() => {
+      this.loaded = true;
+    });
   }
 
-  public getDate() {
-    const currentDate = new Date();
-    const monthNames = [
-      'enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'
-    ];
-    this.year = currentDate.getFullYear();
-    this.month = monthNames[(currentDate).getMonth()];
-    this.day = currentDate.getDate();
-    if (this.day.length < 2) {
-      this.day = `0${this.day}`;
+  private init() {
+    const now = new Date();
+
+    this.from = new Date(now.getFullYear() - 1, now.getMonth(), now.getDate());
+    this.to = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
+
+    const month = this.navParams['data'] - 1;
+    const day = now.getMonth() === month ? now.getDate() : 1;
+
+    this.selectedDate = new Date(now.getFullYear(), month, day);
+  }
+
+  private getEvents(): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.calendarService.getEventsByMonth(this.selectedDate.getMonth() + 1, this.selectedDate.getFullYear()).subscribe(
+        (response: Event[]) => {
+          this.events = response.map((event: Event) => {
+            event.date = new Date(event.date as string);
+            event.entry = event.entry.trim().toLowerCase();
+            event.isFree = !(event.entry === 'tuboleta' || event.entry === 'primerafila');
+            return event;
+          });
+          this.setOptions();
+          this.filterEvents();
+          resolve();
+        },
+        (exception) => {
+          reject(exception);
+        }
+      );
+    });
+  }
+
+  private setOptions() {
+    const daysConfig: DayConfig[] = [];
+
+    for (let day = this.firstDay; day <= this.lastDay; day++) {
+      const currentDate = new Date(this.year, this.month, day);
+      const available = this.events.find((i) => (i.date as Date).getTime() === currentDate.getTime());
+      const selected = currentDate.getTime() === this.selectedDate.getTime() ? 'on-selected' : null;
+
+      if (available) {
+        daysConfig.push({ date: currentDate, cssClass: `is-available ${selected}` });
+      } else {
+        daysConfig.push({ date: currentDate, cssClass: selected });
+      }
     }
+
+    this.options = {
+      showToggleButtons: false,
+      showMonthPicker: false,
+      showAdjacentMonthDay: false,
+      weekdays: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+      from: this.from,
+      to: this.to,
+      daysConfig
+    };
   }
 
-  public close() {
-    this.navCtrl.pop();
+  private filterEvents() {
+    this.dayEvents =  this.events.filter((i) => (i.date as Date).getTime() === this.selectedDate.getTime());
   }
 
   public toggleCalendar() {
     this.showcalendar = !this.showcalendar;
+    this.content.scrollToTop();
   }
 
-  public showAllEvents(toggling) {
-    this.selectedDayEvents = this.events;
-    this.noEvents = false;
-    if ( toggling ) {
-      this.toggleCalendar();
+  public allEvents() {
+    this.dayEvents = this.events;
+    this.showcalendar = false;
+    this.all = true;
+  }
+
+  public nextMonthChange() {
+    if (this.calendario.canNext()) {
+      this.calendario.next();
     }
   }
 
-  public nextMonthChange($event) {
-    this.calendario.next();
-  }
-
-  public prevMonthChange($event) {
-    this.calendario.prev();
-  }
-
-  public onChange($event) {
-    const splitedDate = $event.split('-');
-    this.month = this.monthsNames[splitedDate[1]];
-    this.day = splitedDate[2];
-    this.year = splitedDate[0];
-    this.selectedDayEvents = this.getEventsForDay();
-  }
-
-  public monthChange($event) {
-    const splitedDate = $event.newMonth.string.split('-');
-    this.month = this.monthsNames[splitedDate[1]];
-    this.selectedMonth = $event.newMonth.months;
-    this.year = $event.newMonth.years;
-    this.day = $event.newMonth.date;
-    this.refreshMonthlyEvents();
-  }
-
-  public getEventsForDay() {
-    if (!this.calendarIndex[this.day]) {
-      this.noEvents = true;
-      return [];
+  public prevMonthChange() {
+    if (this.calendario.canBack()) {
+      this.calendario.prev();
     }
-    const events = [];
-    this.calendarIndex[this.day].forEach((eventIndex) => {
-      events.push(this.events[eventIndex]);
-    });
-    this.noEvents = false;
-    return events;
   }
 
-  public getMonthlyEvents() {
-    this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
-    .subscribe((data) => {
-      const normalizedData = this.normalizeEventData(data);
-      this.events = normalizedData[0];
-      this.calendarIndex = normalizedData[1];
-      this.selectedDayEvents = this.getEventsForDay();
-    });
+  public onChange() {
+    this.filterEvents();
+    this.all = false;
   }
 
-  public refreshMonthlyEvents() {
-    this.calendarService.getEventsByMonth(this.selectedMonth, this.year)
-    .subscribe((data) => {
-      const normalizedData = this.normalizeEventData(data);
-      this.events = normalizedData[0];
-      this.calendarIndex = normalizedData[1];
-      this.showAllEvents(false);
-    });
-  }
-
-  public normalizeEventData(data) {
-    const calendarIndex = {};
-    data.forEach((eventObject, i) => {
-      eventObject.isFree = true;
-      eventObject.splitedDate = eventObject.date.split(' ');
-      eventObject.stripedTitle = eventObject.title.substring(0, 70);
-      if (eventObject.stripedTitle.length === 70) {
-        eventObject.stripedTitle = `${eventObject.stripedTitle}...`;
-      }
-      if (eventObject.entry === 'Tuboleta' || eventObject.entry === 'primerafila') {
-        eventObject.isFree = false;
-      }
-      calendarIndex[eventObject.splitedDate[0]] ?
-      calendarIndex[eventObject.splitedDate[0]].push(i) : calendarIndex[eventObject.splitedDate[0]] = [i];
-    });
-    return [data, calendarIndex];
-  }
-
-  public removeHTMLTagFromString(str) {
-    return str.replace(/<[^>]+>/g, '');
-  }
-
-  public goToEventDetails(event) {
-    this.navCtrl.push(EventDetailsPage, event);
+  public monthChange(event: CalendarComponentMonthChange) {
+    this.selectedDate = event.newMonth.dateObj;
+    this.getEvents();
   }
 }
