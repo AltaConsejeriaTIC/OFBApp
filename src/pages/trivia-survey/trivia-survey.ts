@@ -93,12 +93,12 @@ export class TriviaSurveyPage {
     }
     if (this.inputs.tos) {
       this.inputsError.tos = true;
+      inputError = true;
     } else {
       this.inputsError.tos = false;
+      inputError = false;
     }
-    console.log(inputError)
     this.inputError = inputError;
-    console.log(this.inputsError)
     return inputError;
   }
 

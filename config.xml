@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="gov.altaconsejeriatic.ofbapp" version="0.9.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>OFBApp</name>
+    <name>Fil Bogotá</name>
     <description>Orquesta Filarmónica de Bogotá.</description>
     <author email="vivelab@unal.edu.co" href="http://vivelabbogota.com/">ViveLab Bogota</author>
     <content src="index.html" />

@@ -39,11 +39,21 @@ export class TriviaPage {
   }
 
   public getWinners() {
-    this.triviaService.getWinners().subscribe((data) => {
+    this.triviaService.getWinners().subscribe((data : any) => {
       if (Object.keys(data).length === 0 && data.constructor === Object) {
         this.goToNotTriviaAvailable();
       } else {
-        this.navCtrl.setRoot(TriviaWinnersPage, data);
+        const offsetEndTriviaDate = new Date(data.date);
+        offsetEndTriviaDate.setDate(offsetEndTriviaDate.getDate() + 3);
+        console.log(new Date());
+        console.log(offsetEndTriviaDate);
+        console.log(new Date() > offsetEndTriviaDate);
+
+        if(new Date() > offsetEndTriviaDate){
+          this.goToNotTriviaAvailable()
+        } else {
+          this.navCtrl.setRoot(TriviaWinnersPage, data);
+        }
       }
     });
   }
