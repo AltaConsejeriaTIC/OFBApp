@@ -53,7 +53,7 @@
 				<span class="checkmark"></span>
 				<div>
 					Al participar en la trivia acepto los <a navPush="TermsPage">términos y condiciones</a>. Sólo pueden participar mayores de edad.
-					<p class="input-error" [ngClass]="{'hide': !inputsError.name}">Para enviar tu respuesta, debes aceptar antes los términos y condiciones.</p>
+					<p class="input-error" [ngClass]="{'hide': !inputsError.tos}">Para enviar tu respuesta, debes aceptar antes los términos y condiciones.</p>
 				</div>
 			</label>
 			<input class="submit-button" type="submit" name="submit" value="Enviar respuesta" (click)='uploadAnswer()'> 

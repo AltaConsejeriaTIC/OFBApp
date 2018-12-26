@@ -93,13 +93,11 @@ export class TriviaSurveyPage {
       this.inputsError.phone = false;
     }
     if (this.inputs.tos) {
-      this.inputsError.tos = true;
-      inputError = false;
-    } else {
       this.inputsError.tos = false;
+    } else {
+      this.inputsError.tos = true;
       inputError = true;
     }
-    this.inputError = inputError;
     return inputError;
   }
 
@@ -120,6 +118,7 @@ export class TriviaSurveyPage {
     const target = $event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.inputs[target.name] = value;
+    console.log(target.name , value)
   }
 
   public showSuccessAlert() {
