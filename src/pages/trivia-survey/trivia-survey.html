@@ -27,12 +27,12 @@
 			</label>
 			<label>
 				Correo electrónico
-				<input type="text" name="email" maxlength="40" placeholder="Correo electrónico" (input)=onInputChange($event)>
+				<input type="email" name="email" maxlength="40" placeholder="Correo electrónico" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.email}">Debes ingresar un email válido.</p>
 			</label>
 			<label>
 				Teléfono
-				<input type="number" name="phone" placeholder="Teléfono" maxlength="10" (input)=onInputChange($event)>
+				<input type="text"  pattern="\d*" name="phone" placeholder="Teléfono" maxlength="10" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.phone}">Debes ingresar un número de célular válido.</p>
 			</label>
 			<div class="separator"></div>

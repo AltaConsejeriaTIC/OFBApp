@@ -56,6 +56,11 @@ export class TriviaSurveyPage {
       }
       this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
         this.showSuccessAlert();
+      }, (err) => {
+        console.log(err)
+        if(err.error.message === 'user already answered the question.') {
+          this.userAlreadyRegistered();
+        }
       });
     }
   }
@@ -118,7 +123,6 @@ export class TriviaSurveyPage {
     const target = $event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     this.inputs[target.name] = value;
-    console.log(target.name , value)
   }
 
   public showSuccessAlert() {
@@ -131,7 +135,20 @@ export class TriviaSurveyPage {
           this.navCtrl.pop();
         },
       }],
-      cssClass: 'trivia-alert'
+      cssClass: 'trivia-alert',
+      enableBackdropDismiss : false,
+    }).present();
+  }
+
+  public userAlreadyRegistered() {
+    this.alertCtrl.create({
+      title: '¡Esta combinación de email y teléfono ya respondió la trivia.!',
+      message: 'Un usuario solo puede particiar una vez por trivia.',
+      buttons: [{
+        text: 'OK',
+      }],
+      cssClass: 'trivia-alert',
+      enableBackdropDismiss : false,
     }).present();
   }
 }
