@@ -39,7 +39,7 @@ export class TriviaPage {
   }
 
   public getWinners() {
-    this.triviaService.getWinners().subscribe((data : any) => {
+    this.triviaService.getWinners().subscribe((data: any) => {
       if (Object.keys(data).length === 0 && data.constructor === Object) {
         this.goToNotTriviaAvailable();
       } else {
@@ -49,8 +49,8 @@ export class TriviaPage {
         console.log(offsetEndTriviaDate);
         console.log(new Date() > offsetEndTriviaDate);
 
-        if(new Date() > offsetEndTriviaDate){
-          this.goToNotTriviaAvailable()
+        if (new Date() > offsetEndTriviaDate) {
+          this.goToNotTriviaAvailable();
         } else {
           this.navCtrl.setRoot(TriviaWinnersPage, data);
         }
