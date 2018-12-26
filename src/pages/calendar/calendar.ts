@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Content } from 'ionic-angular';
+import { IonicPage, NavParams, Content, LoadingController, Loading } from 'ionic-angular';
 import { CalendarComponentOptions, CalendarComponent, DayConfig, CalendarComponentMonthChange } from 'ion2-calendar';
 import { CalendarService } from '../../providers/calendar/calendar.service';
 import { Event } from '../../interfaces/event.interface';
@@ -10,7 +10,7 @@ import { Event } from '../../interfaces/event.interface';
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
-  public loaded = false;
+  private loading: Loading;
   public showcalendar = true;
   public selectedDate = new Date();
   private events: Event[];
@@ -46,13 +46,11 @@ export class CalendarPage {
     return this.selectedDate.getFullYear();
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private calendarService: CalendarService) { }
+  constructor(public navParams: NavParams, private calendarService: CalendarService, private loadingCtrl: LoadingController) { }
 
   public ionViewDidLoad() {
     this.init();
-    this.getEvents().then(() => {
-      this.loaded = true;
-    });
+    this.getEvents();
   }
 
   private init() {
@@ -67,25 +65,30 @@ export class CalendarPage {
     this.selectedDate = new Date(now.getFullYear(), month, day);
   }
 
-  private getEvents(): Promise<any> {
-    return new Promise((resolve, reject) => {
-      this.calendarService.getEventsByMonth(this.selectedDate.getMonth() + 1, this.selectedDate.getFullYear()).subscribe(
-        (response: Event[]) => {
-          this.events = response.map((event: Event) => {
-            event.date = new Date(event.date as string);
-            event.entry = event.entry.trim().toLowerCase();
-            event.isFree = !(event.entry === 'tuboleta' || event.entry === 'primerafila');
-            return event;
-          });
-          this.setOptions();
-          this.filterEvents();
-          resolve();
-        },
-        (exception) => {
-          reject(exception);
-        }
-      );
+  private getEvents(): void {
+    this.loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Cargando...'
     });
+
+    this.loading.present();
+
+    this.calendarService.getEventsByMonth(this.selectedDate.getMonth() + 1, this.selectedDate.getFullYear()).subscribe(
+      (response: Event[]) => {
+        this.events = response.map((event: Event) => {
+          event.date = new Date(event.date as string);
+          event.entry = event.entry.trim().toLowerCase();
+          event.isFree = !(event.entry === 'tuboleta' || event.entry === 'primerafila');
+          return event;
+        });
+        this.setOptions();
+        this.filterEvents();
+        this.loading.dismiss();
+      },
+      () => {
+        this.loading.dismiss();
+      }
+    );
   }
 
   private setOptions() {

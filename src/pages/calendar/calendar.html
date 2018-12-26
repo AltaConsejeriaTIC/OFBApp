@@ -17,7 +17,7 @@
 </ion-header>
 
 <ion-content appBackground="dark">
-  <ng-container *ngIf="loaded else loading">
+  <ng-container *ngIf="dayEvents">
     <div *ngIf="showcalendar" class="calendar">
       <div class="calendar__label">Selecciona un día:</div>
       <ion-calendar #calendario [(ngModel)]="selectedDate" [options]="options" (onChange)="onChange()" (monthChange)="monthChange($event)" type="js-date"></ion-calendar>
@@ -56,7 +56,3 @@
     </div>
   </ng-container>
 </ion-content>
-
-<ng-template #loading>
-  <h3>Cargando...</h3>
-</ng-template>

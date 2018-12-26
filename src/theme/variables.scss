@@ -86,3 +86,8 @@ $toolbar-ios-title-font-weight: bold;
 .back-button-icon-ios {
   font-size: 2rem!important;
 }
+
+$loading-ios-background: color($colors, 'darker');
+$loading-ios-text-color: color($colors, 'white');
+$loading-ios-spinner-color: color($colors, 'coral');
+$loading-ios-content-font-weight: normal;
