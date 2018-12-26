@@ -32,7 +32,7 @@
 			</label>
 			<label>
 				Teléfono
-				<input type="text" name="phone" placeholder="3001234567" maxlength="10" (input)=onInputChange($event)>
+				<input type="number" name="phone" placeholder="Teléfono" maxlength="10" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.phone}">Debes ingresar un número de célular válido.</p>
 			</label>
 			<div class="separator"></div>

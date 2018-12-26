@@ -94,10 +94,10 @@ export class TriviaSurveyPage {
     }
     if (this.inputs.tos) {
       this.inputsError.tos = true;
-      inputError = true;
+      inputError = false;
     } else {
       this.inputsError.tos = false;
-      inputError = false;
+      inputError = true;
     }
     this.inputError = inputError;
     return inputError;
