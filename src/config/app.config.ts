@@ -1,7 +1,7 @@
 import { ENV } from '../env';
 
 export class AppConfig {
-  public static apiTrivia = `${ENV.endpoint.app}/trivia`;
+  public static apiTrivia = `${ENV.endpoint.admin}/trivia`;
   public static recentEvents = `${ENV.endpoint.app}/eventos/home`;
   public static recentNews = `${ENV.endpoint.app}/blog/home`;
   public static news = `${ENV.endpoint.app}/blog`;
