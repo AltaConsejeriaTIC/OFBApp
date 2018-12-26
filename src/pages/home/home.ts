@@ -5,6 +5,7 @@ import { NewsPage } from '../news/news';
 import { EventDetailsPage } from '../event-details/event-details';
 import { ClassesPage } from '../classes/classes';
 import { ClassDetailsPage } from '../class-details/class-details';
+import { Event } from '../../interfaces/event.interface';
 
 @IonicPage()
 @Component({
@@ -37,8 +38,13 @@ export class HomePage {
   }
 
   public getFeaturedEvents() {
-    this.homeService.getFeaturedEvents().subscribe((data) => {
-      this.featuredEvents = data;
+    this.homeService.getFeaturedEvents().subscribe((data: Event[]) => {
+      this.featuredEvents = data.map((event: Event) => {
+        event.date = new Date(event.date as string);
+        event.entry = event.entry.trim().toLowerCase();
+        event.isFree = !(event.entry === 'tuboleta' || event.entry === 'primerafila');
+        return event;
+      });
     });
   }
 
