@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavParams, ToastController } from 'ionic-angular';
 import { SocialSharing } from '@ionic-native/social-sharing';
+import { Event } from '../../interfaces/event.interface';
 
 @IonicPage()
 @Component({
@@ -28,5 +29,9 @@ export class EventDetailsPage {
 
   private toast(message: string) {
     this.toastCtrl.create({ message, duration: 3000 }).present();
+  }
+
+  public mapsLink(event: Event): string {
+    return `http://maps.google.com/maps?q=@${event.place.latitude},${event.place.longitude}`;
   }
 }

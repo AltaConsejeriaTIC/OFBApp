@@ -40,7 +40,7 @@ page-event-details {
     }
   }
 
-  .eventInfo {
+  .event__info {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -48,7 +48,7 @@ page-event-details {
     div {
       display: flex;
       font-size: 13px;
-      align-items: center;
+      align-items: start;
       margin-bottom: 5px;
 
       ion-icon {
@@ -57,6 +57,11 @@ page-event-details {
         margin-right: 10px;
       }
     }
+  }
+
+  .event__maps {
+    color: color($colors, 'malibu');
+    text-decoration: none;
   }
 
   .buy-tickets-button,
@@ -132,23 +137,6 @@ page-event-details {
       font-family: $font-family-OpenSans;
       color: color($colors, 'malibu');
       display: block;
-    }
-  }
-
-  .mapTag {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-
-    ion-icon {
-      color: color($colors, navBarCalendar, base);
-      font-size: 25px;
-      margin-right: 10px;
-    }
-
-    h6 {
-      font-weight: 800;
-      margin: 0;
     }
   }
 }

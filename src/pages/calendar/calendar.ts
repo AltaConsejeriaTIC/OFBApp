@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavParams, Content, LoadingController, Loading } from 'ionic-angular';
+import { IonicPage, NavParams, Content, LoadingController } from 'ionic-angular';
 import { CalendarComponentOptions, CalendarComponent, DayConfig, CalendarComponentMonthChange } from 'ion2-calendar';
 import { CalendarService } from '../../providers/calendar/calendar.service';
 import { Event } from '../../interfaces/event.interface';
@@ -10,7 +10,6 @@ import { Event } from '../../interfaces/event.interface';
   templateUrl: 'calendar.html',
 })
 export class CalendarPage {
-  private loading: Loading;
   public showcalendar = true;
   public selectedDate = new Date();
   private events: Event[];
@@ -66,12 +65,12 @@ export class CalendarPage {
   }
 
   private getEvents(): void {
-    this.loading = this.loadingCtrl.create({
+    const loading = this.loadingCtrl.create({
       spinner: 'crescent',
       content: 'Cargando...'
     });
 
-    this.loading.present();
+    loading.present();
 
     this.calendarService.getEventsByMonth(this.selectedDate.getMonth() + 1, this.selectedDate.getFullYear()).subscribe(
       (response: Event[]) => {
@@ -83,10 +82,10 @@ export class CalendarPage {
         });
         this.setOptions();
         this.filterEvents();
-        this.loading.dismiss();
+        loading.dismiss();
       },
       () => {
-        this.loading.dismiss();
+        loading.dismiss();
       }
     );
   }

@@ -1,43 +1,32 @@
 <ion-content appBackground="white">
   <app-back-button ion-fixed color="coral"></app-back-button>
-  <img [src]="event.image">
+  <img [src]="event.image" />
   <div class="eventContent">
-    <span [ngClass]="{'hide': event.entry == 'Tuboleta' || event.entry == 'primerafila'}" class="free-event-tag">ENTRADA LIBRE</span>
-    <h2>{{event.title}}</h2>
+    <span [hidden]="!event.isFree" class="free-event-tag">ENTRADA LIBRE</span>
+    <h2>{{ event.title }}</h2>
     <div class="separator"><div></div></div>
-    <div class="eventInfo">
+    <div class="event__info">
       <div>
         <ion-icon name="icon-event-details-calendar"></ion-icon>
-        <span>{{ event.date | date:'fullDate' | ucfirst }}</span>
+        <span>{{ event.date | date: 'fullDate' | ucfirst }}</span>
       </div>
       <div>
         <ion-icon name="icon-clock"></ion-icon>
-        <span>{{event.startHour}}</span>
+        <span>{{ event.startHour }}</span>
       </div>
       <div>
         <ion-icon name="icon-map-marker"></ion-icon>
-        <span>{{event.place.name}}</span>
-      </div>
-     </div>
-     <div class="separator"><div></div></div>
-     <button [ngClass]="{'hide': event.entry != 'Tuboleta' && event.entry != 'primerafila'}" class="buy-tickets-button">
-       Comprar boleta
-     </button>
-     <button class="shareEventButton" (click)='share()'>
-        <img src='./assets/icon/share-event.svg'>
-        Compartir este evento
-     </button>
-     <div class="separator"><div></div></div>
-    <h2 class="content-title">Descripción del evento:</h2>
-     <div class="htmlContent" [innerHtml]="description | stripHtml:'p':'a':'strong':'b':'em':'h3' | html"></div>
-     <div class="separator"><div></div></div>
-    <div class="mapTag">
-      <ion-icon name="icon-map-marker"></ion-icon>
-      <div>
-        <h6>Lugar de la función</h6>
-        <span>{{ event.place.name }}</span>
+        <span>
+          <div>{{ event.place.name }}</div>
+          <div><a class="event__maps" [href]="mapsLink(event)" target="_blank">Ver ubicación</a></div>
+        </span>
       </div>
     </div>
     <div class="separator"><div></div></div>
+    <button [hidden]="event.isFree" class="buy-tickets-button">Comprar boleta</button>
+    <button class="shareEventButton" (click)="share()"><img src="./assets/icon/share-event.svg" /> Compartir este evento</button>
+    <div class="separator"><div></div></div>
+    <h2 class="content-title">Descripción del evento:</h2>
+    <div class="htmlContent" [innerHtml]="description | stripHtml: 'p':'a':'strong':'b':'em':'h3' | html"></div>
   </div>
 </ion-content>
