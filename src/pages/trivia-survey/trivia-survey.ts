@@ -30,7 +30,13 @@ export class TriviaSurveyPage {
   };
   public inputError = false;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private triviaSurveyService: TriviaSurveyService, private storage: Storage) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public alertCtrl: AlertController,
+    private triviaSurveyService: TriviaSurveyService,
+    private storage: Storage
+  ) {
     this.triviaContent = navParams['data'];
   }
 
@@ -40,8 +46,7 @@ export class TriviaSurveyPage {
 
   private async getStoragedData() {
     const isUserDataAvilable = await this.storage.get('userData');
-    console.log(isUserDataAvilable)
-    if(isUserDataAvilable !== null){
+    if (isUserDataAvilable !== null) {
       this.inputs.name = await this.storage.get('name');
       this.inputs.lastName = await this.storage.get('lastName');
       this.inputs.phone = await this.storage.get('phone');
@@ -71,7 +76,6 @@ export class TriviaSurveyPage {
 
   public uploadAnswer() {
     if (!this.validateFields()) {
-      console.log("test")
       const answer = {
         name: this.inputs.name,
         lastName: this.inputs.lastName,
@@ -83,9 +87,9 @@ export class TriviaSurveyPage {
       if (answer.contactPreference === '') {
         delete answer.contactPreference;
       }
-      if (this.inputs.rememberData){
+      if (this.inputs.rememberData) {
         this.saveUserData();
-      }else {
+      } else {
         this.deleteUserData();
       }
       this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
@@ -135,7 +139,6 @@ export class TriviaSurveyPage {
       this.inputsError.tos = true;
       this.inputError = true;
     }
-    console.log(this.inputsError)
     return this.inputError;
   }
 

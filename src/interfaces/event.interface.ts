@@ -2,6 +2,7 @@ export interface Event {
   date: Date | string;
   startHour: string;
   entry: string;
+  entryLink: string;
   title: string;
   content: string;
   image: string;

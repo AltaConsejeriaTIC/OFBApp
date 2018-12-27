@@ -23,10 +23,10 @@
       </div>
     </div>
     <div class="separator"><div></div></div>
-    <button [hidden]="event.isFree" class="buy-tickets-button">Comprar boleta</button>
+    <a [hidden]="event.isFree || !event.entryLink" class="buy-tickets-button" [href]="event.entryLink">Comprar boleta</a>
     <button class="shareEventButton" (click)="share()"><img src="./assets/icon/share-event.svg" /> Compartir este evento</button>
     <div class="separator"><div></div></div>
     <h2 class="content-title">Descripción del evento:</h2>
-    <div class="htmlContent" [innerHtml]="description | stripHtml: 'p':'a':'strong':'b':'em':'h3' | html"></div>
+    <div class="htmlContent" [innerHtml]="description | stripHtml:'p':'a':'strong':'b':'em':'h3' | html"></div>
   </div>
 </ion-content>
