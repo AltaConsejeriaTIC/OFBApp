@@ -57,8 +57,7 @@ export class TriviaSurveyPage {
       this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
         this.showSuccessAlert();
       }, (err) => {
-        console.log(err)
-        if(err.error.message === 'user already answered the question.') {
+        if (err.error.message === 'user already answered the question.') {
           this.userAlreadyRegistered();
         }
       });

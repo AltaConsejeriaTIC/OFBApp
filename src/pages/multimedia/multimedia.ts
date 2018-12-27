@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
+import { IonicPage, LoadingController } from 'ionic-angular';
 import { Video } from '../../interfaces/video.interface';
 import { VideoProvider } from '../../providers/video/video';
 import { AudioProvider } from '../../providers/audio/audio';
@@ -15,11 +15,24 @@ export class MultimediaPage {
   public videos: Video[];
   public audios: Audio[];
 
-  constructor(private videoService: VideoProvider, private audioService: AudioProvider) { }
+  constructor(private videoService: VideoProvider, private audioService: AudioProvider, private loadingCtrl: LoadingController) { }
 
   public ionViewDidLoad() {
-    this.getAudios();
-    this.getVideos();
+    this.init();
+  }
+
+  private async init() {
+    const loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Cargando...'
+    });
+
+    loading.present();
+
+    await this.getAudios();
+    await this.getVideos();
+
+    loading.dismiss();
   }
 
   public changeTab(id: number) {
@@ -32,14 +45,22 @@ export class MultimediaPage {
   }
 
   private getAudios() {
-    this.audioService.getAudios().subscribe((response: any) => {
-      this.audios = response;
-    });
+    this.audioService.getAudios().subscribe(
+      (response: any) => {
+        this.audios = response;
+      }, (exception) => {
+        console.error(exception);
+      }
+    );
   }
 
   private getVideos() {
-    this.videoService.getVideos().subscribe((response: any) => {
-      this.videos = response;
-    });
+    this.videoService.getVideos().subscribe(
+      (response: any) => {
+        this.videos = response;
+      }, (exception) => {
+        console.error(exception);
+      }
+    );
   }
 }
