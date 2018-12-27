@@ -28,7 +28,6 @@ import { TriviaNotAvailablePageModule } from '../pages/trivia-not-available/triv
 import { TriviaWinnersPageModule } from '../pages/trivia-winners/trivia-winners.module';
 import { NewsPageModule } from '../pages/news/news.module';
 import { NewsDetailsPageModule } from '../pages/news-details/news-details.module';
-import { EventsMonthPageModule } from '../pages/events-month/events-month.module';
 import { EventDetailsPageModule } from '../pages/event-details/event-details.module';
 import { ClassesPageModule } from '../pages/classes/classes.module';
 import { ClassDetailsPageModule } from '../pages/class-details/class-details.module';
