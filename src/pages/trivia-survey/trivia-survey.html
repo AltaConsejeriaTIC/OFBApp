@@ -17,34 +17,34 @@
 			<h2>Datos personales:</h2>
 			<label>
 				Nombre
-				<input type="text" name="name" maxlength="25" placeholder="Nombre" (input)=onInputChange($event)>
+				<input type="text" name="name" defaultValue={{inputs.name}} maxlength="25" placeholder="Nombre" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.name}">Escribe tu nombre.</p>
 			</label>
 			<label>
 				Apellidos
-				<input type="text" name="lastName" maxlength="25" placeholder="Apellidos" (input)=onInputChange($event)>
+				<input type="text" name="lastName" defaultValue={{inputs.lastName}} maxlength="25" placeholder="Apellidos" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.lastName}">Escribe tus apellidos.</p>
 			</label>
 			<label>
 				Correo electrónico
-				<input type="email" name="email" maxlength="40" placeholder="Correo electrónico" (input)=onInputChange($event)>
+				<input type="email" name="email" defaultValue={{inputs.email}} maxlength="40" placeholder="Correo electrónico" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.email}">Debes ingresar un email válido.</p>
 			</label>
 			<label>
-				Teléfono
-				<input type="text"  pattern="\d*" name="phone" placeholder="Teléfono" maxlength="10" (input)=onInputChange($event)>
+				Teléfono celular
+				<input type="text" pattern="\d*" name="phone" defaultValue={{inputs.phone}} placeholder="Teléfono celular" maxlength="10" (input)=onInputChange($event)>
 				<p class="input-error personal-data-error" [ngClass]="{'hide': !inputsError.phone}">Debes ingresar un número de célular válido.</p>
 			</label>
 			<div class="separator"></div>
 			<p>Deseo recibir comunicaciones de la Orquesta Filamónica de Bogotá por:</p>
 			<label class="checkbox-label">
-				<input type="checkbox" name="newsletterEmail" (input)=onInputChange($event)>
+				<input type="checkbox" name="newsletterEmail" [checked]="inputs.newsletterEmail" (input)=onInputChange($event)>
 				<span class="checkmark"></span>
 				Correo electrónico.
 			</label>
 			<div class="separator"></div>
 			<label class="checkbox-label">
-				<input type="checkbox" name="rememberData" (input)=onInputChange($event)>
+				<input type="checkbox" name="rememberData" [checked]="inputs.rememberData" (input)=onInputChange($event)>
 				<span class="checkmark"></span>
 				Deseo que la aplicación recuerde mis datos.
 			</label>

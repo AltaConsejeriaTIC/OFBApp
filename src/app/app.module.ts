@@ -11,6 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { CalendarModule } from 'ion2-calendar';
 import { Firebase } from '@ionic-native/firebase';
+import { IonicStorageModule } from '@ionic/storage';
 
 // Locale language ...
 import { registerLocaleData } from '@angular/common';
@@ -75,11 +76,11 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
     TriviaWinnersPageModule,
     NewsPageModule,
     NewsDetailsPageModule,
-    EventsMonthPageModule,
     CalendarModule,
     EventDetailsPageModule,
     ClassesPageModule,
-    ClassDetailsPageModule
+    ClassDetailsPageModule,
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -100,7 +101,7 @@ import { ResponseInterceptor } from '../interceptors/response.interceptor';
     TriviaService,
     TriviaSurveyService,
     { provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptor, multi: true },
-    Firebase
+    Firebase,
   ]
 })
 export class AppModule { }

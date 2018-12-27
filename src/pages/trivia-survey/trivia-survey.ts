@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 import { TriviaSurveyService } from './trivia-survey.service';
 
 @IonicPage()
@@ -29,20 +30,48 @@ export class TriviaSurveyPage {
   };
   public inputError = false;
 
-  constructor(
-    public navCtrl: NavController,
-    public navParams: NavParams,
-    public alertCtrl: AlertController,
-    private triviaSurveyService: TriviaSurveyService
-  ) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController, private triviaSurveyService: TriviaSurveyService, private storage: Storage) {
     this.triviaContent = navParams['data'];
   }
 
-  public ionViewDidLeave() {
+  public ionViewWillEnter() {
+    this.getStoragedData();
+  }
+
+  private async getStoragedData() {
+    const isUserDataAvilable = await this.storage.get('userData');
+    console.log(isUserDataAvilable)
+    if(isUserDataAvilable !== null){
+      this.inputs.name = await this.storage.get('name');
+      this.inputs.lastName = await this.storage.get('lastName');
+      this.inputs.phone = await this.storage.get('phone');
+      this.inputs.email = await this.storage.get('email');
+      this.inputs.newsletterEmail = await this.storage.get('newsLetterEmail');
+      this.inputs.rememberData = true;
+    }
+  }
+
+  private async saveUserData() {
+    await this.storage.set('userData', 'true');
+    await this.storage.set('name', this.inputs.name);
+    await this.storage.set('lastName', this.inputs.lastName);
+    await this.storage.set('phone', this.inputs.phone);
+    await this.storage.set('email', this.inputs.email);
+    await this.storage.set('newsLetterEmail', this.inputs.newsletterEmail);
+  }
+
+  private async deleteUserData() {
+    await this.storage.remove('userData');
+    await this.storage.remove('name');
+    await this.storage.remove('lastName');
+    await this.storage.remove('phone');
+    await this.storage.remove('email');
+    await this.storage.remove('newsLetterEmail');
   }
 
   public uploadAnswer() {
     if (!this.validateFields()) {
+      console.log("test")
       const answer = {
         name: this.inputs.name,
         lastName: this.inputs.lastName,
@@ -53,6 +82,11 @@ export class TriviaSurveyPage {
       };
       if (answer.contactPreference === '') {
         delete answer.contactPreference;
+      }
+      if (this.inputs.rememberData){
+        this.saveUserData();
+      }else {
+        this.deleteUserData();
       }
       this.triviaSurveyService.uploadAnswer(answer).subscribe((data) => {
         this.showSuccessAlert();
@@ -65,34 +99,33 @@ export class TriviaSurveyPage {
   }
 
   public validateFields() {
-    let inputError = false;
     if (this.inputs.triviaAnswer === '') {
       this.inputsError.triviaAnswer = true;
-      inputError = true;
+      this.inputError = true;
     } else {
       this.inputsError.triviaAnswer = false;
     }
     if (this.inputs.name === '') {
       this.inputsError.name = true;
-      inputError = true;
+      this.inputError = true;
     } else {
       this.inputsError.name = false;
     }
     if (this.inputs.lastName === '') {
       this.inputsError.lastName = true;
-      inputError = true;
+      this.inputError = true;
     } else {
       this.inputsError.lastName = false;
     }
     if (!this.validateEmail()) {
       this.inputsError.email = true;
-      inputError = true;
+      this.inputError = true;
     } else {
       this.inputsError.email = false;
     }
     if (!this.validatePhone()) {
       this.inputsError.phone = true;
-      inputError = true;
+      this.inputError = true;
     } else {
       this.inputsError.phone = false;
     }
@@ -100,9 +133,10 @@ export class TriviaSurveyPage {
       this.inputsError.tos = false;
     } else {
       this.inputsError.tos = true;
-      inputError = true;
+      this.inputError = true;
     }
-    return inputError;
+    console.log(this.inputsError)
+    return this.inputError;
   }
 
   public validateEmail() {
