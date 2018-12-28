@@ -25,6 +25,9 @@ export class ResponseInterceptor implements HttpInterceptor {
       (exception: any) => {
         if (exception instanceof HttpErrorResponse) {
           switch (exception.status) {
+            case 412:
+              console.error('Interceptor exception:', exception);
+              break;
             default:
               this.toast(exception.status, exception.statusText);
               console.error('Interceptor exception:', exception);
