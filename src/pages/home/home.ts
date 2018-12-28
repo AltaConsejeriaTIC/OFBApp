@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { IonicPage, NavController, NavParams, Slides } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, Slides, LoadingController } from 'ionic-angular';
 import { HomeService } from './home.service';
 import { NewsPage } from '../news/news';
 import { EventDetailsPage } from '../event-details/event-details';
@@ -14,23 +14,37 @@ import { Event } from '../../interfaces/event.interface';
 })
 export class HomePage {
   public showMenu = true;
-  public featuredEvents: any;
+  public featuredEvents: Event[];
   public news: any;
   public magistralClasses: any;
 
   @ViewChild('slides')
   public slides: Slides;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private homeService: HomeService) { }
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    private homeService: HomeService,
+    private loadingCtrl: LoadingController
+  ) { }
 
   public ionViewDidLoad() {
-    this.initView();
+    this.init();
   }
 
-  public initView() {
-    this.getRecentNews();
-    this.getFeaturedEvents();
-    this.getMagistralClasses();
+  private async init() {
+    const loading = this.loadingCtrl.create({
+      spinner: 'crescent',
+      content: 'Cargando...'
+    });
+
+    loading.present();
+
+    await this.getRecentNews();
+    await this.getFeaturedEvents();
+    await this.getMagistralClasses();
+
+    loading.dismiss();
   }
 
   public toogleMenu() {

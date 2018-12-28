@@ -102,17 +102,6 @@ page-home {
     }
   }
 
-  ion-content {
-
-    .scroll-content {
-      margin-bottom: 0px !important;
-    }
-
-    .scroll-content {
-      background-color: color($colors, background, base);
-    }
-  }
-
   .slide-concert {
     background-color: #222433;
     height: auto;
@@ -412,4 +401,14 @@ page-home {
     padding-left: 10px;
     margin-top: 14px;
   }
+
+  .event__image {
+    height: 180px;
+    width: 100%;
+    background-color: color($colors, 'darker');
+  }
+
+  // .swiper-slide img {
+
+  // }
 }
