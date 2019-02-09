@@ -69,6 +69,22 @@ compilar directamente en el teléfono:
 ionic cordova run android --device
 ```
 
+---
+
+## Build Android con Firebase
+
+> Ajustar la versión del NDK de Android a la [versión **r17c**](https://developer.android.com/ndk/downloads/older_releases#ndk-17c-downloads)
+
+- Ejecute `ionic cordova platform rm android` para borrar la plataforma Android.
+
+- Ejecute `ionic cordova platform add android@6.4.0` para agregar una nueva plataforma Android en la versión *6.4.0*.
+
+- Ejecute `ionic cordova build android` para generar un nuevo compilado en modo debug o agregue el argumento `--release` para generar un compilado para la tienda.
+
+**Nota:** Versionar los cambios que se realizan en los archivos `config.xml`, `package.json` y `package-lock.json`.
+
+---
+
 ## Iconos
 
 ### Android
@@ -142,3 +158,10 @@ ionic cordova run android --device
 | 640 x 960   | Default@2x~iphone.png           |
 | 2732 x 2732 | Default@2x~universal~anyany.png |
 | 320 x 480   | Default~iphone.png              |
+
+
+---
+
+## Enlaces
+
+- [Ajustar versión del NDK r17c](https://medium.com/@ivancse.58/how-to-resolve-no-toolchains-found-in-the-ndk-toolchains-folder-for-abi-with-prefix-b37086380193)
