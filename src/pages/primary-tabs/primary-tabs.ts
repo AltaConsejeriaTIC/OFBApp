@@ -8,14 +8,14 @@ import { TriviaService } from '../trivia/trivia.service';
   templateUrl: 'primary-tabs.html'
 })
 export class PrimaryTabsPage {
-	private triviaPages = {
-		trivia: 'TriviaPage',
-		survey: 'TriviaSurveyPage',
-		notAvailable: 'TriviaNotAvailablePage',
-		winners: 'TriviaWinnersPage',
-	}
-	public triviaController = 'TriviaNotAvailablePage';
-  public pageParams : any = {};
+  private triviaPages = {
+    trivia: 'TriviaPage',
+    survey: 'TriviaSurveyPage',
+    notAvailable: 'TriviaNotAvailablePage',
+    winners: 'TriviaWinnersPage',
+  };
+  public triviaController = 'TriviaNotAvailablePage';
+  public pageParams: any = {};
 
   constructor(private triviaService: TriviaService) {}
 
@@ -24,8 +24,7 @@ export class PrimaryTabsPage {
   }
 
   public getTrivia() {
-    this.triviaService.getTrivia().subscribe((data : any) => {
-      console.log(data)
+    this.triviaService.getTrivia().subscribe((data: any) => {
       if (Object.keys(data).length === 0 && data.constructor === Object) {
         this.getWinners();
       } else {
@@ -37,8 +36,6 @@ export class PrimaryTabsPage {
 
   public getWinners() {
     this.triviaService.getWinners().subscribe((data: any) => {
-      console.log("winners")
-      console.log(data)
       if (Object.keys(data).length === 0 && data.constructor === Object) {
         this.triviaController = this.triviaPages.notAvailable;
       } else {
@@ -55,8 +52,8 @@ export class PrimaryTabsPage {
   }
 
   public reloadTrivia() {
-  	if(this.triviaController === this.triviaPages.notAvailable) {
-  		this.getTrivia();
-  	}
+    if (this.triviaController === this.triviaPages.notAvailable) {
+      this.getTrivia();
+    }
   }
 }

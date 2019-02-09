@@ -127,13 +127,14 @@ export class TriviaSurveyPage {
     } else {
       this.inputsError.email = false;
     }
+
     if (!this.validatePhone()) {
       this.inputsError.phone = true;
       this.inputError = true;
     } else {
       this.inputsError.phone = false;
     }
-    console.log(this.inputs.tos)
+
     if (this.inputs.tos) {
       this.inputsError.tos = false;
     } else {

@@ -9,20 +9,12 @@ import { TriviaService } from '..//trivia/trivia.service';
   templateUrl: 'trivia-not-available.html',
 })
 export class TriviaNotAvailablePage {
-
   constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) { }
-
-  public ionViewWillEnter() {
-    //this.getTrivia();
-  }
 
   public getTrivia() {
     this.triviaService.getTrivia().subscribe((data) => {
       if (Object.keys(data).length > 0) {
         this.goToTrivia(data);
-      }
-      else{ 
-
       }
     });
   }

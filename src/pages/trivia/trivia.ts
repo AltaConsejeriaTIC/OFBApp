@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { TriviaNotAvailablePage } from '../trivia-not-available/trivia-not-available';
-import { TriviaWinnersPage } from '../trivia-winners/trivia-winners';
-import { TriviaService } from './trivia.service';
 
 @IonicPage()
 @Component({
@@ -17,14 +15,13 @@ export class TriviaPage {
     m: '-'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     this.trivia = navParams['data'];
     this.getRemainingTime();
   }
 
   public ionViewWillEnter() {
     this.trivia = this.navParams['data'];
-    console.log(this.navParams['data'])
     this.getRemainingTime();
   }
 
@@ -35,7 +32,6 @@ export class TriviaPage {
   public getRemainingTime() {
     const eventStartTime = new Date();
     const eventEndTime = new Date(this.trivia.endDate);
-    //Adding 23:59 hours.
     eventEndTime.setTime(eventEndTime.getTime() + (1000 * 60 * 60 * 24) - (1000 * 60));
     const seconds = Number(eventEndTime.valueOf() - eventStartTime.valueOf()) / 1000;
     this.remainingTime.d = Math.floor(seconds / (3600 * 24));
