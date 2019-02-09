@@ -3,5 +3,5 @@
   <ion-tab [root]="'CalendarHomePage'" tabTitle="Eventos" tabIcon="icon-icono-calendario"></ion-tab>
   <ion-tab [root]="'EduProjectPage'" tabTitle="Educación" tabIcon="icon-icono-educacion"></ion-tab>
   <ion-tab [root]="'MultimediaPage'" tabTitle="Música" tabIcon="icon-icono-contenido"></ion-tab>
-  <ion-tab [root]="'TriviaPage'" tabTitle="Trivia" tabIcon="icon-icono-trivia"></ion-tab>
+  <ion-tab [root]="triviaController" [rootParams]="pageParams" (ionSelect)="reloadTrivia()" tabTitle="Trivia" tabIcon="icon-icono-trivia"></ion-tab>
 </ion-tabs>

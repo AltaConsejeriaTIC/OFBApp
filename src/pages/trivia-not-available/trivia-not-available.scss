@@ -37,6 +37,11 @@ page-trivia-not-available {
           margin-top: 0;
           font-family: $font-family-OpenSans;
           color: #a8abba;
+          text-align: left;
+
+          a {
+            color: color($colors, navBarTrivia, base)
+          }
         }
       }
     }

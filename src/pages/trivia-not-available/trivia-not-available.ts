@@ -13,19 +13,21 @@ export class TriviaNotAvailablePage {
   constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) { }
 
   public ionViewWillEnter() {
-    this.getTrivia();
-
+    //this.getTrivia();
   }
 
   public getTrivia() {
     this.triviaService.getTrivia().subscribe((data) => {
       if (Object.keys(data).length > 0) {
-        this.goToTrivia();
+        this.goToTrivia(data);
+      }
+      else{ 
+
       }
     });
   }
 
-  public goToTrivia() {
-    this.navCtrl.setRoot(TriviaPage);
+  public goToTrivia(data) {
+    this.navCtrl.setRoot(TriviaPage, data);
   }
 }

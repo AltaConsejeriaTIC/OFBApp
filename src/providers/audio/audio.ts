@@ -7,6 +7,6 @@ export class AudioProvider {
   constructor(public http: HttpClient) { }
 
   public getAudios() {
-    return this.http.get(`${AppConfig.apiTrivia}/get-audios`);
+    return this.http.get(`${AppConfig.audios}`);
   }
 }

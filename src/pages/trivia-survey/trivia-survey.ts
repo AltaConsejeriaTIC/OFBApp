@@ -133,6 +133,7 @@ export class TriviaSurveyPage {
     } else {
       this.inputsError.phone = false;
     }
+    console.log(this.inputs.tos)
     if (this.inputs.tos) {
       this.inputsError.tos = false;
     } else {
@@ -158,6 +159,12 @@ export class TriviaSurveyPage {
   public onInputChange($event) {
     const target = $event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
+    this.inputs[target.name] = value;
+  }
+
+  public checkboxHandler($event) {
+    const target = $event.target;
+    const value = target.checked;
     this.inputs[target.name] = value;
   }
 

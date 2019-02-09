@@ -7,6 +7,6 @@ export class VideoProvider {
   constructor(public http: HttpClient) { }
 
   public getVideos() {
-    return this.http.get(`${AppConfig.apiTrivia}/get-videos`);
+    return this.http.get(`${AppConfig.videos}`);
   }
 }

@@ -27,7 +27,7 @@ export class MyApp {
           if (platform.is('ios')) {
             firebase.grantPermission();
           }
-          this.http.get(`${AppConfig.apiTrivia}/token/${t}`).subscribe(() => {
+          this.http.get(`${AppConfig.notificationToken}/${t}`).subscribe(() => {
             localStorage.setItem(TOKEN_KEY, t);
           });
         }).catch(err => console.error(err));

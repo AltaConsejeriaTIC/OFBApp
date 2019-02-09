@@ -38,18 +38,18 @@
 			<div class="separator"></div>
 			<p>Deseo recibir comunicaciones de la Orquesta Filamónica de Bogotá por:</p>
 			<label class="checkbox-label">
-				<input type="checkbox" name="newsletterEmail" [checked]="inputs.newsletterEmail" (input)=onInputChange($event)>
+				<input type="checkbox" name="newsletterEmail" [checked]="inputs.newsletterEmail" (click)=checkboxHandler($event)>
 				<span class="checkmark"></span>
 				Correo electrónico.
 			</label>
 			<div class="separator"></div>
 			<label class="checkbox-label">
-				<input type="checkbox" name="rememberData" [checked]="inputs.rememberData" (input)=onInputChange($event)>
+				<input type="checkbox" name="rememberData" [checked]="inputs.rememberData" (click)=checkboxHandler($event)>
 				<span class="checkmark"></span>
 				Deseo que la aplicación recuerde mis datos.
 			</label>
 			<label class="checkbox-label no-margin">
-				<input type="checkbox" name="tos" (input)=onInputChange($event)>
+				<input type="checkbox" name="tos" (click)=checkboxHandler($event)>
 				<span class="checkmark"></span>
 				<div>
 					Al participar en la trivia acepto los <a navPush="TermsPage">términos y condiciones</a>. Sólo pueden participar mayores de edad.

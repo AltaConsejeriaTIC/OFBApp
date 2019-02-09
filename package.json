@@ -38,6 +38,7 @@
     "cordova-plugin-x-socialsharing": "^5.4.3",
     "cordova-sqlite-storage": "2.6.0",
     "es6-promise-plugin": "^4.2.2",
+    "gradle": "^1.0.9",
     "intl": "^1.2.5",
     "ion2-calendar": "^2.2.0",
     "ionic-angular": "3.9.2",
@@ -57,8 +58,8 @@
   "description": "An Ionic project",
   "cordova": {
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ],
     "plugins": {
       "cordova-plugin-whitelist": {},

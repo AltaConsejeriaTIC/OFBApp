@@ -17,50 +17,26 @@ export class TriviaPage {
     m: '-'
   };
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) { }
+  constructor(public navCtrl: NavController, public navParams: NavParams, private triviaService: TriviaService) {
+    this.trivia = navParams['data'];
+    this.getRemainingTime();
+  }
 
   public ionViewWillEnter() {
-    this.getTrivia();
+    this.trivia = this.navParams['data'];
+    console.log(this.navParams['data'])
+    this.getRemainingTime();
   }
 
   public goToNotTriviaAvailable() {
     this.navCtrl.setRoot(TriviaNotAvailablePage);
   }
 
-  public getTrivia() {
-    this.triviaService.getTrivia().subscribe((data) => {
-      if (Object.keys(data).length === 0 && data.constructor === Object) {
-        this.getWinners();
-      } else {
-        this.trivia = data;
-        this.getRemainingTime();
-      }
-    });
-  }
-
-  public getWinners() {
-    this.triviaService.getWinners().subscribe((data: any) => {
-      if (Object.keys(data).length === 0 && data.constructor === Object) {
-        this.goToNotTriviaAvailable();
-      } else {
-        const offsetEndTriviaDate = new Date(data.date);
-        offsetEndTriviaDate.setDate(offsetEndTriviaDate.getDate() + 3);
-        console.log(new Date());
-        console.log(offsetEndTriviaDate);
-        console.log(new Date() > offsetEndTriviaDate);
-
-        if (new Date() > offsetEndTriviaDate) {
-          this.goToNotTriviaAvailable();
-        } else {
-          this.navCtrl.setRoot(TriviaWinnersPage, data);
-        }
-      }
-    });
-  }
-
   public getRemainingTime() {
     const eventStartTime = new Date();
     const eventEndTime = new Date(this.trivia.endDate);
+    //Adding 23:59 hours.
+    eventEndTime.setTime(eventEndTime.getTime() + (1000 * 60 * 60 * 24) - (1000 * 60));
     const seconds = Number(eventEndTime.valueOf() - eventStartTime.valueOf()) / 1000;
     this.remainingTime.d = Math.floor(seconds / (3600 * 24));
     this.remainingTime.h = Math.floor(seconds % (3600 * 24) / 3600);

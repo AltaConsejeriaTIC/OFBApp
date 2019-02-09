@@ -9,6 +9,7 @@ import { CalendarPage } from '../calendar/calendar';
 })
 export class CalendarHomePage {
   public month: any;
+  public currentYear = new Date().getFullYear();
 
   constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
