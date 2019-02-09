@@ -1,9 +1,7 @@
 import { Component, Input } from '@angular/core';
-import { IonicPage } from 'ionic-angular';
 import { ExternalConfig } from '../../config/external.config';
 import { Audio } from '../../interfaces/audio.interface';
 
-@IonicPage()
 @Component({
   selector: 'page-music',
   templateUrl: 'music.html',
