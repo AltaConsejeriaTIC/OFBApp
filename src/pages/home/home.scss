@@ -13,20 +13,20 @@ page-home {
       align-items: center;
       ion-icon {
         color: #ffffff;
+        padding: 0 12px;
       }
     }
 
     .toolbar-ios,
     .toolbar-md,
     .toolbar {
-      max-height: 10vh;
+      padding: 0;
     }
 
     .toolbar-content-ios,
     .toolbar-content-md,
     .toolbar-content {
       width: 100%;
-      max-height: 10vh;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -82,16 +82,30 @@ page-home {
     }
 
     .icon-filarmonica {
-      flex-grow: 1;
-      margin-left: 6%;
-      font-size: 4.5em;
-      color: #ffffff;
+      margin-left: 16px;
+      margin-right: 12px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+
+      ion-icon {
+        padding: 0;
+        font-size: 4.8em;
+        color: #ffffff;
+      }
     }
 
     .header-logo-alcaldia {
-      height: 90%;
-      width: auto;
-      object-fit: contain;
+      height: 100%;
+      display: flex;
+      flex: 1;
+
+      img {
+        width: 100%;
+        max-width: 180px;
+        object-fit: contain;
+        margin-bottom: 2px;
+      }
     }
 
     .header-line {
